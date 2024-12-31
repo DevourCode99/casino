@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>4×3 Slot Machine with Cool Minigames</title>
+  <title>4×3 Slot Machine with Cool Minigames + Audio</title>
   <style>
     /* RESET & BASE STYLES */
     * {
@@ -279,6 +279,12 @@
     #hangmanGame {
       display: none;
     }
+    .hangman-figure {
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #ccc;
+      height: 60px;
+    }
     .hangman-word {
       font-size: 1.8rem;
       margin-bottom: 10px;
@@ -308,15 +314,11 @@
     .hangman-status {
       margin: 8px 0;
     }
-    .hangman-figure {
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-      color: #ccc;
-      height: 60px;
-    }
+
   </style>
 </head>
 <body>
+
   <div class="slot-machine-container">
     <h1>4×3 Slot Machine</h1>
 
@@ -336,18 +338,17 @@
       <label><input type="radio" name="bet" value="1000" /> $10.00</label>
     </div>
 
-    <!-- REELS -->
+    <!-- REELS & PAY-LINE -->
     <div class="reels">
-      <div class="reel" id="reel1"><div class="reel-inner" id="reel1-inner"></div></div>
-      <div class="reel" id="reel2"><div class="reel-inner" id="reel2-inner"></div></div>
-      <div class="reel" id="reel3"><div class="reel-inner" id="reel3-inner"></div></div>
-      <div class="reel" id="reel4"><div class="reel-inner" id="reel4-inner"></div></div>
+      <div class="reel"><div class="reel-inner" id="reel1-inner"></div></div>
+      <div class="reel"><div class="reel-inner" id="reel2-inner"></div></div>
+      <div class="reel"><div class="reel-inner" id="reel3-inner"></div></div>
+      <div class="reel"><div class="reel-inner" id="reel4-inner"></div></div>
       <div class="win-line" id="winLine"></div>
     </div>
 
-    <!-- SPIN BUTTON -->
+    <!-- SPIN BUTTON & MESSAGE -->
     <button class="spin-button" id="spinBtn">SPIN</button>
-    <!-- STATUS MESSAGE -->
     <div class="message" id="message"></div>
 
     <!-- CHEATS MENU -->
@@ -360,11 +361,17 @@
     </div>
   </div>
 
+  <!-- AUDIO ELEMENTS -->
+  <!-- Background music (looped) -->
+  <audio id="bgMusic" src="assets/background.mp3" loop></audio>
+  <!-- Spin sound -->
+  <audio id="spinSound" src="assets/roll.mp3"></audio>
+  <!-- Win sound -->
+  <audio id="winSound" src="assets/win.mp3"></audio>
+
   <!-- OVERLAY for MINIGAMES -->
   <div class="overlay" id="minigameOverlay">
     <div class="overlay-content" id="overlayContent">
-      <!-- We’ll dynamically show one of these child containers: -->
-      
       <!-- MINIGAME #1: PICK 3 CARDS -->
       <div id="cardsGame">
         <h2>Pick 3 Cards</h2>
@@ -395,8 +402,9 @@
 
   <script>
     /********************************************
-     *        SLOT MACHINE CORE LOGIC           *
+     *          SLOT MACHINE + AUDIO            *
      ********************************************/
+    // Slot data
     const iconSet = [
       "🍆","🍒","🍋","💎","7","🍉","⭐","🍇","🌽","🍅",
       "🍑","🥭","🍍","🍈","🍎","🍏","🍐","🍊","🍌","🍔",
@@ -405,22 +413,24 @@
     ];
     const symbolsCount = iconSet.length; // 40
     const symbolHeight = 70;
-    let balanceCents   = 2000; // $20
-    let freeSpins      = 0;
-    let isSpinning     = false;
+
+    let balanceCents = 2000;  // $20
+    let freeSpins    = 0;
+    let isSpinning   = false;
 
     const MINIGAME_CHANCE = 0.05;
 
-    // DOM
-    const balanceEl     = document.getElementById("balance");
-    const bonusMessage  = document.getElementById("bonusMessage");
-    const messageEl     = document.getElementById("message");
-    const spinBtn       = document.getElementById("spinBtn");
-    const winLine       = document.getElementById("winLine");
-    const reel1Inner    = document.getElementById("reel1-inner");
-    const reel2Inner    = document.getElementById("reel2-inner");
-    const reel3Inner    = document.getElementById("reel3-inner");
-    const reel4Inner    = document.getElementById("reel4-inner");
+    // DOM references
+    const balanceEl    = document.getElementById("balance");
+    const bonusMessage = document.getElementById("bonusMessage");
+    const messageEl    = document.getElementById("message");
+    const spinBtn      = document.getElementById("spinBtn");
+    const winLine      = document.getElementById("winLine");
+
+    const reel1Inner = document.getElementById("reel1-inner");
+    const reel2Inner = document.getElementById("reel2-inner");
+    const reel3Inner = document.getElementById("reel3-inner");
+    const reel4Inner = document.getElementById("reel4-inner");
 
     // Bets & Cheats
     const betRadios              = document.getElementsByName("bet");
@@ -429,15 +439,32 @@
     const cheatUnlimitedFunds    = document.getElementById("cheatUnlimitedFunds");
     const cheatAlwaysMinigame    = document.getElementById("cheatAlwaysMinigame");
 
-    // Build the reel inners (120 symbols each)
+    // AUDIO elements
+    const bgMusic   = document.getElementById('bgMusic');
+    const spinSound = document.getElementById('spinSound');
+    const winSound  = document.getElementById('winSound');
+
+    // Attempt background music on load (browser may block without user gesture)
+    window.addEventListener('DOMContentLoaded', () => {
+      bgMusic.play().catch(() => {
+        console.warn("Background music autoplay was blocked. " +
+                     "User must interact first.");
+      });
+    });
+
+    /********************************************
+     *       BUILD THE REELS (REPEAT 40×3)      *
+     ********************************************/
     function initReels() {
-      const repeated = [];
+      let repeated = [];
       for (let i=0; i<3; i++) {
         for (let j=0; j<symbolsCount; j++) {
           repeated.push(iconSet[j]);
         }
       }
-      const reelHTML = repeated.map(icon => `<div class="reel-symbol">${icon}</div>`).join("");
+      const reelHTML = repeated
+        .map(icon => `<div class="reel-symbol">${icon}</div>`)
+        .join("");
       reel1Inner.innerHTML = reelHTML;
       reel2Inner.innerHTML = reelHTML;
       reel3Inner.innerHTML = reelHTML;
@@ -460,24 +487,23 @@
       return Math.floor(Math.random() * n);
     }
 
-    // Spin one reel so finalIndex is the middle row symbol
+    // Spin a reel so finalIndex is the middle row
     function spinOneReel(reelInner, finalIndex, duration) {
       reelInner.style.transition = "none";
       reelInner.style.transform  = "translateY(0)";
       void reelInner.offsetWidth; // reflow
 
-      // top row is finalIndex-1 => do 1 loop(2800) + randomOffset + that top index
+      // The top row = (finalIndex - 1) mod 40
       const topIndex = (finalIndex - 1 + symbolsCount) % symbolsCount;
-      const randomOffset = randInt(10) * symbolHeight; 
-      const distance = 2800 + randomOffset + topIndex * symbolHeight;
+      const randomOffset = randInt(10) * symbolHeight;
+      const distance = 2800 + randomOffset + topIndex*symbolHeight;
 
       reelInner.style.transition = `transform ${duration}s linear`;
       reelInner.style.transform  = `translateY(-${distance}px)`;
     }
 
-    // Evaluate pay line
     function evaluateMiddleRow(finalIndices, bet) {
-      // finalIndices[i] is the middle symbol
+      // finalIndices[i] => the middle symbol index
       const midSymbols = finalIndices.map(idx => iconSet[idx]);
       const firstSym = midSymbols[0];
       let matches = 1;
@@ -517,7 +543,8 @@
           return;
         }
       }
-      // Deduct bet if no free spin / unlimited funds
+
+      // Deduct bet if no free spin / not unlimited
       if (!isFreeSpin && !cheatUnlimitedFunds.checked) {
         balanceCents -= bet;
       }
@@ -527,31 +554,34 @@
       handleWinLine(0);
 
       isSpinning = true;
+
+      // Play spin/roll sound
+      spinSound.currentTime = 0;
+      spinSound.play().catch(err => console.log("Spin sound blocked:", err));
+
       // Decide final indices for each reel
       const finalIndices = [0,0,0,0];
-
-      // cheat #2 => 4 eggplants
       if (cheatAlwaysJackpot.checked) {
+        // 4 eggplants
         finalIndices[0] = 0;
         finalIndices[1] = 0;
         finalIndices[2] = 0;
         finalIndices[3] = 0;
-      }
-      // cheat #1 => force ≥2-of-a-kind
-      else if (cheatAlwaysWinMoney.checked) {
+      } else if (cheatAlwaysWinMoney.checked) {
+        // Force ≥2-of-a-kind
         const r = randInt(symbolsCount);
         finalIndices[0] = r;
         finalIndices[1] = r;
         finalIndices[2] = randInt(symbolsCount);
         finalIndices[3] = randInt(symbolsCount);
       } else {
-        // truly random
+        // random
         for (let i=0; i<4; i++) {
           finalIndices[i] = randInt(symbolsCount);
         }
       }
 
-      // All reels start spinning simultaneously, each stops in left->right order
+      // All reels start now, each stops left->right after 1s,2s,3s,4s
       spinOneReel(reel1Inner, finalIndices[0], 1);
       spinOneReel(reel2Inner, finalIndices[1], 2);
       spinOneReel(reel3Inner, finalIndices[2], 3);
@@ -564,6 +594,10 @@
         updateBalanceDisplay();
 
         if (winnings > 0) {
+          // Play the win sound
+          winSound.currentTime = 0;
+          winSound.play().catch(err => console.log("Win sound blocked:", err));
+
           let msg = "";
           if (matches === 2) {
             msg = "2-of-a-kind!";
@@ -599,56 +633,42 @@
         isSpinning = false;
       }, 4000);
     }
-
     spinBtn.addEventListener("click", spinAllReels);
 
     /********************************************
-     *      MULTI-MINIGAME OVERLAY LOGIC        *
+     *           MULTI-MINIGAME LOGIC           *
      ********************************************/
+    // We'll pick one of these 3 minigames at random if triggered:
+    // 1) Cards  2) Tic-Tac-Toe  3) Hangman
+    const minigameOverlay = document.getElementById("minigameOverlay");
 
-    // We have 3 minigames. We'll pick one at random if triggered.
-    // 1) "Pick 3 Cards"
-    // 2) "Tic-Tac-Toe"
-    // 3) "Hangman"
     function showRandomMinigame(bet) {
-      // 0->cards, 1->tic, 2->hangman
       const pick = randInt(3);
-      if (pick === 0) {
-        showCardsMinigame(bet);
-      } else if (pick === 1) {
-        showTicMinigame(bet);
-      } else {
-        showHangmanMinigame(bet);
-      }
+      if (pick === 0) showCardsMinigame(bet);
+      else if (pick === 1) showTicMinigame(bet);
+      else showHangmanMinigame(bet);
     }
 
-    const minigameOverlay = document.getElementById("minigameOverlay");
-    const overlayContent  = document.getElementById("overlayContent");
-
-    // Common function: open overlay
     function openOverlay(whichId) {
-      // Hide all child game divs
+      // Hide all
       document.getElementById("cardsGame").style.display     = "none";
       document.getElementById("ticTacToeGame").style.display = "none";
       document.getElementById("hangmanGame").style.display   = "none";
-
-      // Show the requested minigame
+      // Show the chosen
       document.getElementById(whichId).style.display = "block";
-
       minigameOverlay.style.display = "flex";
     }
-    // Common function: close overlay
     function closeOverlay() {
       minigameOverlay.style.display = "none";
     }
 
     /********************************************
-     *         MINIGAME #1: PICK 3 CARDS        *
+     *    MINIGAME #1: PICK 3 CARDS (cardsGame) *
      ********************************************/
-    const cardsGame       = document.getElementById("cardsGame");
-    const cardsContainer  = document.getElementById("cardsContainer");
-    const cardsMessage    = document.getElementById("cardsMessage");
-    const cardsQuitBtn    = document.getElementById("cardsQuitBtn");
+    const cardsGame      = document.getElementById("cardsGame");
+    const cardsContainer = document.getElementById("cardsContainer");
+    const cardsMessage   = document.getElementById("cardsMessage");
+    const cardsQuitBtn   = document.getElementById("cardsQuitBtn");
 
     let cardsPicks   = 0;
     let cardsValues  = [];
@@ -657,8 +677,7 @@
     function showCardsMinigame(bet) {
       cardsBet    = bet;
       cardsPicks  = 0;
-      cardsValues = new Array(6).fill(0).map(() => randInt(10)+1); // 1..10
-
+      cardsValues = new Array(6).fill(0).map(() => randInt(10)+1);
       cardsMessage.textContent = "";
       cardsContainer.innerHTML = "";
 
@@ -669,38 +688,31 @@
         div.onclick = () => pickOneCard(i, div);
         cardsContainer.appendChild(div);
       }
-
       openOverlay("cardsGame");
     }
 
     function pickOneCard(i, cardDiv) {
-      // If already flipped
-      if (cardDiv.classList.contains("flipped")) return;
-      // Flip
+      if (cardDiv.classList.contains("flipped")) return; // already flipped
       cardDiv.textContent = cardsValues[i];
       cardDiv.classList.add("flipped");
       cardsPicks++;
-      if (cardsPicks === 3) {
-        finishCardsGame();
-      }
+      if (cardsPicks === 3) finishCardsGame();
     }
     function finishCardsGame() {
       // sum the 3 flipped
       const flipped = document.querySelectorAll("#cardsContainer .card.flipped");
       let sum = 0;
-      flipped.forEach(card => {
-        sum += parseInt(card.textContent, 10) || 0;
-      });
-      const bonus = sum * 10; // e.g. sum=15 => 150 cents
+      flipped.forEach(card => sum += parseInt(card.textContent,10) || 0);
+      const bonus = sum * 10; // e.g. sum=15 => +150 cents
       balanceCents += bonus;
       updateBalanceDisplay();
-      cardsMessage.textContent = `You got a total of ${sum}! Bonus: $${(bonus/100).toFixed(2)}.`;
+      cardsMessage.textContent = `You got ${sum}! Bonus: $${(bonus/100).toFixed(2)}.`;
       setTimeout(() => closeOverlay(), 1500);
     }
     cardsQuitBtn.onclick = () => closeOverlay();
 
     /********************************************
-     *        MINIGAME #2: TIC-TAC-TOE          *
+     *     MINIGAME #2: TIC-TAC-TOE (ticGame)    *
      ********************************************/
     const ticTacToeGame = document.getElementById("ticTacToeGame");
     const ticGrid       = document.getElementById("ticGrid");
@@ -708,8 +720,8 @@
     const ticQuitBtn    = document.getElementById("ticQuitBtn");
 
     let ticBet = 0;
-    let ticBoard = []; // 9 cells
-    let currentPlayer = "X"; // always user first
+    let ticBoard = [];
+    let currentPlayer = "X";
     let ticActive = false;
 
     function showTicMinigame(bet) {
@@ -719,7 +731,6 @@
       ticActive = true;
       ticMessage.textContent = "You are X. Take your turn!";
 
-      // Build 3x3 grid
       ticGrid.innerHTML = "";
       for (let i=0; i<9; i++) {
         const cell = document.createElement("div");
@@ -732,37 +743,27 @@
 
     function ticClickCell(index, cellDiv) {
       if (!ticActive) return;
-      if (ticBoard[index] !== "") return; // used cell
-
-      // Place X
+      if (ticBoard[index] !== "") return; // already used
+      // user = X
       ticBoard[index] = "X";
       cellDiv.textContent = "X";
-      cellDiv.classList.add("X");
-      cellDiv.classList.add("disabled");
+      cellDiv.classList.add("X", "disabled");
 
-      // Check win
       let result = checkTicWin(ticBoard);
-      if (result) {
-        endTicGame(result);
-        return;
-      }
-      // If board full -> tie
-      if (ticBoard.every(c => c !== "")) {
-        endTicGame("tie");
-        return;
-      }
+      if (result) { endTicGame(result); return; }
+      if (ticBoard.every(c => c!== "")) { endTicGame("tie"); return; }
 
-      // AI move
-      ticMessage.textContent = "AI is thinking...";
+      ticMessage.textContent = "AI's turn...";
       ticActive = false;
-      setTimeout(() => {
-        aiMove();
-      }, 700);
+      setTimeout(() => aiMove(), 700);
     }
 
     function aiMove() {
-      // Simple AI: pick random empty cell
-      const emptyIndices = ticBoard.map((v,i)=> [v,i]).filter(([val]) => val==="").map(arr=>arr[1]);
+      // random AI
+      const emptyIndices = ticBoard
+        .map((val,i)=>[val,i])
+        .filter(x=>x[0]==="")
+        .map(x=>x[1]);
       if (emptyIndices.length === 0) {
         endTicGame("tie");
         return;
@@ -771,31 +772,23 @@
       ticBoard[pick] = "O";
       const cellDiv = ticGrid.children[pick];
       cellDiv.textContent = "O";
-      cellDiv.classList.add("O");
-      cellDiv.classList.add("disabled");
+      cellDiv.classList.add("O","disabled");
 
-      // Check win
       let result = checkTicWin(ticBoard);
-      if (result) {
-        endTicGame(result);
-        return;
-      }
-      if (ticBoard.every(c => c !== "")) {
-        endTicGame("tie");
-        return;
-      }
-      // Otherwise, user's turn
+      if (result) { endTicGame(result); return; }
+      if (ticBoard.every(c => c!== "")) { endTicGame("tie"); return; }
+
       ticActive = true;
       ticMessage.textContent = "Your turn!";
     }
 
     function checkTicWin(bd) {
-      const wCombos = [
+      const combos = [
         [0,1,2],[3,4,5],[6,7,8],
         [0,3,6],[1,4,7],[2,5,8],
         [0,4,8],[2,4,6]
       ];
-      for (let c of wCombos) {
+      for (let c of combos) {
         if (bd[c[0]]!=="" && bd[c[0]]===bd[c[1]] && bd[c[1]]===bd[c[2]]) {
           return bd[c[0]]; // "X" or "O"
         }
@@ -806,15 +799,15 @@
     function endTicGame(result) {
       ticActive = false;
       if (result === "X") {
-        // user win => 2× bet
+        // user wins => 2× bet
         balanceCents += ticBet*2;
         updateBalanceDisplay();
-        ticMessage.textContent = `You WIN! +$${(ticBet*2/100).toFixed(2)} bonus.`;
+        ticMessage.textContent = `You WIN! +$${(ticBet*2/100).toFixed(2)}.`;
       } else if (result === "O") {
-        // AI win => 0
+        // AI wins => 0
         ticMessage.textContent = "AI Wins. No bonus!";
       } else {
-        // tie => 1× bet
+        // tie => 1× bet (refund)
         balanceCents += ticBet;
         updateBalanceDisplay();
         ticMessage.textContent = `Tie! You get your bet ($${(ticBet/100).toFixed(2)}) back.`;
@@ -824,7 +817,7 @@
     ticQuitBtn.onclick = () => closeOverlay();
 
     /********************************************
-     *         MINIGAME #3: HANGMAN             *
+     *     MINIGAME #3: HANGMAN (hangmanGame)   *
      ********************************************/
     const hangmanGame     = document.getElementById("hangmanGame");
     const hangmanFigure   = document.getElementById("hangmanFigure");
@@ -833,57 +826,55 @@
     const hangmanStatus   = document.getElementById("hangmanStatus");
     const hangmanQuitBtn  = document.getElementById("hangmanQuitBtn");
 
-    let hangmanBet = 0;
+    const hangmanWords = ["SLOT","EGGPLANT","JACKPOT","HANGMAN","BONUS","WALRUS","BALLOON","WINDOW"];
+    let hangmanBet    = 0;
     let hangmanSecret = "";
-    let hangmanGuessed = [];
-    let hangmanWrong   = 0;
-    let hangmanActive  = false;
-
-    const hangmanWords = ["SLOT", "EGGPLANT", "JACKPOT", "HANGMAN", "BONUS", "WALRUS", "BALLOON", "WINDOW"];
+    let hangmanGuessed= [];
+    let hangmanWrong  = 0;
+    let hangmanActive = false;
 
     function showHangmanMinigame(bet) {
-      hangmanBet = bet;
+      hangmanBet    = bet;
       hangmanSecret = hangmanWords[randInt(hangmanWords.length)].toUpperCase();
-      hangmanGuessed = [];
-      hangmanWrong   = 0;
-      hangmanActive  = true;
+      hangmanGuessed= [];
+      hangmanWrong  = 0;
+      hangmanActive = true;
       updateHangmanDisplay();
-
       openOverlay("hangmanGame");
     }
 
     function updateHangmanDisplay() {
-      // figure
       hangmanFigure.textContent = `Attempts left: ${6 - hangmanWrong}`;
-
-      // word display
+      // build word display
       let display = "";
       for (let c of hangmanSecret) {
-        if (hangmanGuessed.includes(c)) display += c+" ";
+        if (hangmanGuessed.includes(c)) display += c + " ";
         else display += "_ ";
       }
       hangmanWord.textContent = display.trim();
 
-      // check if won or lost
+      // check win/lose
       if (!display.includes("_")) {
-        // won
+        // user won => 2× bet
         hangmanActive = false;
         balanceCents += hangmanBet*2;
         updateBalanceDisplay();
-        hangmanStatus.textContent = `You WON! +$${(hangmanBet*2/100).toFixed(2)} bonus.`;
+        hangmanStatus.textContent = `You WON! +$${(hangmanBet*2/100).toFixed(2)}.`;
         setTimeout(() => closeOverlay(), 2000);
-      } else if (hangmanWrong >= 6) {
+        return;
+      }
+      if (hangmanWrong >= 6) {
         // lost
         hangmanActive = false;
         hangmanStatus.textContent = `You Lost! The word was ${hangmanSecret}.`;
         setTimeout(() => closeOverlay(), 2000);
+        return;
       }
 
       // build alphabet
       hangmanAlphabet.innerHTML = "";
       const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      for (let i=0; i<letters.length; i++) {
-        const letter = letters[i];
+      for (let letter of letters) {
         const btn = document.createElement("button");
         btn.textContent = letter;
         if (hangmanGuessed.includes(letter) || hangmanWrong>=6 || !hangmanActive) {
