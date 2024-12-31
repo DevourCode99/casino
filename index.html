@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>EPIC CASINO SLOTS - Enhanced</title>
+  <title>Epic Casino Slot Machine - Final Combined</title>
   <style>
     /****************************************************
      *            FULLSCREEN LAYOUT & BASE              *
@@ -48,8 +48,9 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       color: #ffcb05;
-      text-shadow: 0 0 15px rgba(255, 203, 5, 0.7),
-                   0 0 30px rgba(255, 203, 5, 0.5);
+      text-shadow: 
+        0 0 15px rgba(255, 203, 5, 0.7),
+        0 0 30px rgba(255, 203, 5, 0.5);
     }
     .message {
       margin-top: 10px;
@@ -118,7 +119,7 @@
       margin-bottom: 40px;
     }
     .reel {
-      width: 150px;   /* Each symbol is 150px tall, so reel is 3 symbols => 450px tall */
+      width: 150px;   /* Each symbol is 150px tall, reel is 3 rows => 450px */
       height: 450px;  
       overflow: hidden;
       background: #111;
@@ -147,7 +148,7 @@
       position: absolute;
       top: 150px;  /* middle row => row #2 */
       left: 0;
-      width: calc(150px*4 + 25px*3); /* 4 reels + 3 gaps => 4*150 + 3*25 = 600 + 75 = 675 */
+      width: calc(150px*4 + 25px*3); /* 4 reels + 3 gaps => 675 total width */
       height: 150px;
       border: 4px solid #f00;
       box-sizing: border-box;
@@ -157,28 +158,6 @@
     @keyframes flickerLine {
       0%   { box-shadow: 0 0 10px #f00; }
       100% { box-shadow: 0 0 25px #f00; }
-    }
-
-    /* Flashing lights border around reels container */
-    .reels-container::before {
-      content: "";
-      position: absolute;
-      top: -30px; left: -30px; 
-      right: -30px; bottom: -30px;
-      border: 5px dashed rgba(255, 255, 0, 0.5);
-      border-radius: 30px;
-      box-shadow: 0 0 30px rgba(255, 255, 0, 0.5),
-                  inset 0 0 20px rgba(255,255,255,0.2);
-      animation: borderFlash 2s infinite linear;
-      pointer-events: none;
-      z-index: -1;
-    }
-    @keyframes borderFlash {
-      0%   { border-color: rgba(255,255,0,0.5); }
-      25%  { border-color: rgba(255,0,0,0.5);   }
-      50%  { border-color: rgba(0,255,0,0.5);   }
-      75%  { border-color: rgba(0,0,255,0.5);   }
-      100% { border-color: rgba(255,255,0,0.5); }
     }
 
     /****************************************************
@@ -267,19 +246,18 @@
     }
 
     /****************************************************
-     *              JACKPOT GRAPHIC / ANIMATION         *
+     *          JACKPOT OVERLAY (EGGPLANT x4)           *
      ****************************************************/
     .jackpot-overlay {
       display: none;
       position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100vw;
+      top: 0; left: 0;
+      width: 100vw; 
       height: 100vh;
       background: rgba(0,0,0,0.7);
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 9999; /* on top of everything */
     }
     .jackpot-content {
       font-size: 6rem;
@@ -299,19 +277,18 @@
     }
 
     /****************************************************
-     *                    OVERLAY (MINIGAMES)           *
+     *          MINIGAME OVERLAY & STYLES               *
      ****************************************************/
     .overlay {
       display: none;
       position: fixed;
-      top: 0; 
-      left: 0;
+      top: 0; left: 0;
       width: 100vw; 
       height: 100vh;
       background: rgba(0,0,0,0.7);
       justify-content: center;
       align-items: center;
-      z-index: 998; /* below jackpot */
+      z-index: 999;
       animation: fadeIn 0.5s forwards;
     }
     @keyframes fadeIn {
@@ -357,23 +334,7 @@
       transform: scale(0.95);
     }
 
-    /****************************************************
-     *   EXAMPLE STYLES FOR THE THREE NEW MINIGAMES     *
-     ****************************************************/
-    .game-container {
-      margin: 10px 0;
-    }
-    /* Just some placeholders for unique new games */
-    .one-row-shooter, 
-    .memory-flip, 
-    .coin-flip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0;
-    }
+    /* Minigame tile styles */
     .mini-tile {
       width: 60px;
       height: 60px;
@@ -385,17 +346,26 @@
       font-size: 1.4rem;
       color: #fff;
       cursor: pointer;
+      margin: 5px;
       transition: transform 0.2s, background 0.2s;
     }
     .mini-tile:hover {
       transform: scale(1.1);
       background: #777;
     }
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
 
   </style>
 </head>
 <body>
   <div class="slot-machine-container">
+
     <!-- CHEAT MENU (top-right) -->
     <div class="cheats-menu">
       <h2>Cheats</h2>
@@ -473,444 +443,434 @@
     <!-- MINIGAME OVERLAY -->
     <div class="overlay" id="minigameOverlay">
       <div class="overlay-content" id="overlayContent">
-        <!-- We'll dynamically show one of the three new minigames here -->
         <h2 id="miniTitle">???</h2>
         <div class="game-container" id="miniGameContainer"></div>
         <div class="message" id="miniGameMessage"></div>
         <button id="minigameQuitBtn">Quit</button>
       </div>
     </div>
-  </div>
 
-  <script>
-    /********************************************
-     *          SLOT MACHINE + AUDIO            *
-     ********************************************/
-    const iconSet = [
-      "🍆","🍒","🍋","💎","7","🍉","⭐","🍇","🌽","🍅",
-      "🍑","🥭","🍍","🍈","🍎","🍏","🍐","🍊","🍌","🍔",
-      "🍕","🍤","🍚","🍿","🍭","🍬","🍩","🍪","🎂","🍰",
-      "🥩","🍗","🌮","🌭","🍣","🥑","🥦","🥕","🥐","🍄"
-    ];
-    const symbolsCount = iconSet.length; // 40
-    const symbolSize   = 150;  // 150px each row => reel is 450px tall (3 rows)
-    let balanceCents   = 2000; // $20
-    let freeSpins      = 0;
-    let isSpinning     = false;
-    const MINIGAME_CHANCE = 0.05;
+    <script>
+      /********************************************
+       *        SLOT MACHINE CORE LOGIC           *
+       ********************************************/
+      const iconSet = [
+        "🍆","🍒","🍋","💎","7","🍉","⭐","🍇","🌽","🍅",
+        "🍑","🥭","🍍","🍈","🍎","🍏","🍐","🍊","🍌","🍔",
+        "🍕","🍤","🍚","🍿","🍭","🍬","🍩","🍪","🎂","🍰",
+        "🥩","🍗","🌮","🌭","🍣","🥑","🥦","🥕","🥐","🍄"
+      ];
+      const symbolsCount = iconSet.length; // 40
+      const symbolSize   = 150;           // each symbol = 150px
+      let balanceCents   = 2000;          // $20.00
+      let freeSpins      = 0;
+      let isSpinning     = false;
 
-    // DOM references
-    const balanceEl    = document.getElementById("balance");
-    const bonusMessage = document.getElementById("bonusMessage");
-    const messageEl    = document.getElementById("message");
-    const spinBtn      = document.getElementById("spinBtn");
-    const winLine      = document.getElementById("winLine");
+      // Multipliers (for more realistic big payouts)
+      // Example: if bet=1000 ($10) and 4 eggplants => 1000× => $10,000
+      const MULTIPLIERS = {
+        jackpotEggplant: 1000, // 4 eggplants
+        fourOfKind: 500,
+        threeOfKind: 100,
+        twoOfKind: 25
+      };
 
-    const reel1Inner = document.getElementById("reel1-inner");
-    const reel2Inner = document.getElementById("reel2-inner");
-    const reel3Inner = document.getElementById("reel3-inner");
-    const reel4Inner = document.getElementById("reel4-inner");
+      // Minigame chance
+      let MINIGAME_CHANCE = 0.05;
 
-    // CHEATS
-    const cheatAlwaysWinMoney  = document.getElementById("cheatAlwaysWinMoney");
-    const cheatAlwaysJackpot   = document.getElementById("cheatAlwaysJackpot");
-    const cheatUnlimitedFunds  = document.getElementById("cheatUnlimitedFunds");
-    const cheatAlwaysMinigame  = document.getElementById("cheatAlwaysMinigame");
+      // DOM Elements
+      const balanceEl    = document.getElementById("balance");
+      const bonusMessage = document.getElementById("bonusMessage");
+      const messageEl    = document.getElementById("message");
+      const spinBtn      = document.getElementById("spinBtn");
+      const winLine      = document.getElementById("winLine");
 
-    // AUDIO
-    const bgMusic   = document.getElementById('bgMusic');
-    const spinSound = document.getElementById('spinSound');
-    const winSound  = document.getElementById('winSound');
+      const reel1Inner = document.getElementById("reel1-inner");
+      const reel2Inner = document.getElementById("reel2-inner");
+      const reel3Inner = document.getElementById("reel3-inner");
+      const reel4Inner = document.getElementById("reel4-inner");
 
-    // JACKPOT OVERLAY
-    const jackpotOverlay = document.getElementById("jackpotOverlay");
+      // Cheats
+      const cheatAlwaysWinMoney = document.getElementById("cheatAlwaysWinMoney");
+      const cheatAlwaysJackpot  = document.getElementById("cheatAlwaysJackpot");
+      const cheatUnlimitedFunds = document.getElementById("cheatUnlimitedFunds");
+      const cheatAlwaysMinigame = document.getElementById("cheatAlwaysMinigame");
 
-    // Attempt to start background music after user interacts (spinBtn).
-    // Some browsers require a click to enable audio.
-    function startBackgroundMusic() {
-      bgMusic.play().catch(err => {
-        console.log("Could not start background music:", err);
-      });
-    }
+      // Audio
+      const bgMusic   = document.getElementById("bgMusic");
+      const spinSound = document.getElementById("spinSound");
+      const winSound  = document.getElementById("winSound");
 
-    /********************************************
-     *       BUILD THE REELS (40×3 = 120)       *
-     ********************************************/
-    function initReels() {
-      let repeated = [];
-      for (let i=0; i<3; i++) {
-        for (let j=0; j<symbolsCount; j++) {
-          repeated.push(iconSet[j]);
+      // JACKPOT overlay
+      const jackpotOverlay = document.getElementById("jackpotOverlay");
+
+      // Build repeated reels (40 × 3 = 120)
+      function initReels() {
+        let repeated = [];
+        for (let i=0; i<3; i++){
+          for (let j=0; j<symbolsCount; j++){
+            repeated.push(iconSet[j]);
+          }
         }
+        const reelHTML = repeated.map(sym => `<div class="reel-symbol">${sym}</div>`).join("");
+        reel1Inner.innerHTML = reelHTML;
+        reel2Inner.innerHTML = reelHTML;
+        reel3Inner.innerHTML = reelHTML;
+        reel4Inner.innerHTML = reelHTML;
       }
-      const reelHTML = repeated.map(icon => `<div class="reel-symbol">${icon}</div>`).join("");
-      reel1Inner.innerHTML = reelHTML;
-      reel2Inner.innerHTML = reelHTML;
-      reel3Inner.innerHTML = reelHTML;
-      reel4Inner.innerHTML = reelHTML;
-    }
-    initReels();
+      initReels();
 
-    function updateBalanceDisplay() {
-      balanceEl.textContent = (balanceCents / 100).toFixed(2);
-    }
-    updateBalanceDisplay();
-
-    function getSelectedBet() {
-      const betRadios = document.getElementsByName("bet");
-      let betValue = 0;
-      betRadios.forEach(r => {
-        if (r.checked) betValue = parseInt(r.value, 10);
-      });
-      return betValue;
-    }
-
-    function randInt(n) {
-      return Math.floor(Math.random() * n);
-    }
-
-    // Spin reel so that finalIndex is the middle row => top row = finalIndex-1
-    function spinOneReel(reelInner, finalIndex, durationSec) {
-      reelInner.style.transition = "none";
-      reelInner.style.transform  = "translateY(0)";
-      void reelInner.offsetWidth; // reflow
-
-      // 1 loop = 40 * symbolSize = 40*150 = 6000 px
-      // topIndex => (finalIndex - 1)
-      const topIndex = (finalIndex - 1 + symbolsCount) % symbolsCount;
-      const randomOffset = randInt(10) * symbolSize;
-      const distance = 6000 + randomOffset + topIndex * symbolSize;
-
-      reelInner.style.transition = `transform ${durationSec}s linear`;
-      reelInner.style.transform  = `translateY(-${distance}px)`;
-    }
-
-    function evaluateMiddleRow(finalIndices, bet) {
-      const midSymbols = finalIndices.map(idx => iconSet[idx]);
-      const firstSym = midSymbols[0];
-      let matches = 1;
-      for (let i=1; i<4; i++) {
-        if (midSymbols[i] === firstSym) matches++;
-      }
-      let winnings = 0;
-      if (firstSym === "🍆" && matches === 4) {
-        winnings = bet * 10; // jackpot
-      } else if (matches === 4) {
-        winnings = bet * 5;
-      } else if (matches === 3) {
-        winnings = bet * 3;
-      } else if (matches === 2) {
-        winnings = bet * 2;
-      }
-      return {winnings, matches, midSymbols};
-    }
-
-    function handleWinLine(matches) {
-      winLine.style.display = (matches >= 2) ? "block" : "none";
-    }
-
-    // Show or hide jackpot overlay
-    function showJackpotOverlay(show) {
-      jackpotOverlay.style.display = show ? "flex" : "none";
-    }
-
-    function spinAllReels() {
-      if (isSpinning) return;
-      startBackgroundMusic(); // Attempt to start music on spin
-
-      let bet = getSelectedBet();
-      if (!bet) {
-        messageEl.textContent = "Please select a bet first!";
-        return;
-      }
-
-      const isFreeSpin = (freeSpins > 0);
-      if (!isFreeSpin && !cheatUnlimitedFunds.checked) {
-        if (balanceCents < bet) {
-          messageEl.textContent = "Not enough balance!";
-          return;
-        }
-      }
-
-      // Deduct bet unless free spin or unlimited
-      if (!isFreeSpin && !cheatUnlimitedFunds.checked) {
-        balanceCents -= bet;
+      function updateBalanceDisplay(){
+        balanceEl.textContent = (balanceCents / 100).toFixed(2);
       }
       updateBalanceDisplay();
-      messageEl.textContent = "";
-      bonusMessage.textContent = "";
-      handleWinLine(0);
 
-      isSpinning = true;
-
-      // spin sound
-      spinSound.currentTime = 0;
-      spinSound.play().catch(err => console.log("Spin sound blocked:", err));
-
-      // Decide final indices
-      const finalIndices = [0,0,0,0];
-      if (cheatAlwaysJackpot.checked) {
-        finalIndices[0] = 0; 
-        finalIndices[1] = 0;
-        finalIndices[2] = 0;
-        finalIndices[3] = 0;
+      function getSelectedBet(){
+        const betRadios = document.getElementsByName("bet");
+        let betValue=0;
+        betRadios.forEach(r=>{
+          if(r.checked) betValue = parseInt(r.value,10);
+        });
+        return betValue;
       }
-      else if (cheatAlwaysWinMoney.checked) {
-        const r = randInt(symbolsCount);
-        finalIndices[0] = r;
-        finalIndices[1] = r;
-        finalIndices[2] = randInt(symbolsCount);
-        finalIndices[3] = randInt(symbolsCount);
+
+      function randInt(n){ return Math.floor(Math.random()*n); }
+
+      // Try to start background music once user interacts
+      function startBgMusic(){
+        bgMusic.play().catch(err=>{
+          console.warn("Background music blocked:", err);
+        });
       }
-      else {
-        for (let i=0; i<4; i++) {
-          finalIndices[i] = randInt(symbolsCount);
+
+      // Spin reel so finalIndex is the MIDDLE row symbol.
+      // We'll do 2 full loops => 2*(40*symbolSize)=2*6000=12000
+      // plus a random offset + topIndex
+      function spinOneReel(reelInner, finalIndex, durationSec){
+        reelInner.style.transition="none";
+        reelInner.style.transform="translateY(0)";
+        void reelInner.offsetWidth; // reflow
+
+        const topIndex = (finalIndex - 1 + symbolsCount) % symbolsCount;
+        const randomOffset = randInt(5)*symbolSize; // up to 4 symbols offset
+        const distance = (2*symbolsCount*symbolSize) + randomOffset + topIndex*symbolSize;
+        reelInner.style.transition = `transform ${durationSec}s linear`;
+        reelInner.style.transform = `translateY(-${distance}px)`;
+      }
+
+      // Evaluate the MIDDLE row
+      function evaluateMiddleRow(finalIndices, betCents){
+        const midSymbols = finalIndices.map(idx => iconSet[idx]);
+        const firstSym   = midSymbols[0];
+        let matches=1;
+        for(let i=1; i<4; i++){
+          if(midSymbols[i]===firstSym) matches++;
         }
+        let winnings=0;
+        if(firstSym==="🍆" && matches===4){
+          // 4 eggplants => 1000×
+          winnings = betCents * MULTIPLIERS.jackpotEggplant;
+        } else if(matches===4){
+          winnings = betCents * MULTIPLIERS.fourOfKind;
+        } else if(matches===3){
+          winnings = betCents * MULTIPLIERS.threeOfKind;
+        } else if(matches===2){
+          winnings = betCents * MULTIPLIERS.twoOfKind;
+        }
+        return {winnings, matches, midSymbols};
       }
 
-      // Spin reels left->right: 1s, 2s, 3s, 4s
-      spinOneReel(reel1Inner, finalIndices[0], 1);
-      spinOneReel(reel2Inner, finalIndices[1], 2);
-      spinOneReel(reel3Inner, finalIndices[2], 3);
-      spinOneReel(reel4Inner, finalIndices[3], 4);
+      function handleWinLine(matches){
+        winLine.style.display = (matches>=2)?"block":"none";
+      }
 
-      setTimeout(() => {
-        const {winnings, matches, midSymbols} = evaluateMiddleRow(finalIndices, bet);
-        balanceCents += winnings;
-        updateBalanceDisplay();
+      // Show/hide JACKPOT overlay
+      function showJackpotOverlay(show){
+        jackpotOverlay.style.display = show?"flex":"none";
+      }
 
-        if (winnings > 0) {
-          // play win sound
-          winSound.currentTime = 0;
-          winSound.play().catch(err => console.log("Win sound blocked:", err));
+      function spinAllReels(){
+        if(isSpinning) return;
+        startBgMusic(); // attempt to start music
 
-          let msg = "";
-          if (matches === 2) {
-            msg = "2-of-a-kind!";
-          } else if (matches === 3) {
-            msg = "3-of-a-kind!";
-          } else if (matches === 4 && midSymbols[0] === "🍆") {
-            // JACKPOT
-            msg = "EGGPLANT JACKPOT!";
-            showJackpotOverlay(true);
-            // hide after 3s
-            setTimeout(() => showJackpotOverlay(false), 3000);
-          } else if (matches === 4) {
-            msg = "4-of-a-kind!";
+        let bet = getSelectedBet();
+        if(!bet){
+          messageEl.textContent="Please select a bet first!";
+          return;
+        }
+        const isFreeSpin=(freeSpins>0);
+
+        if(!isFreeSpin && !cheatUnlimitedFunds.checked){
+          if(balanceCents<bet){
+            messageEl.textContent="Not enough balance!";
+            return;
           }
-          messageEl.textContent = `${msg} Middle row: ${midSymbols.join(" ")}. You won $${(winnings/100).toFixed(2)}!`;
+        }
+
+        // Deduct bet if not free spin & not unlimited
+        if(!isFreeSpin && !cheatUnlimitedFunds.checked){
+          balanceCents-=bet;
+          updateBalanceDisplay();
+        }
+
+        messageEl.textContent="";
+        bonusMessage.textContent="";
+        handleWinLine(0);
+
+        isSpinning=true;
+
+        // spin sound
+        spinSound.currentTime=0;
+        spinSound.play().catch(err=> console.log("spinSound blocked:", err));
+
+        // Decide final indices
+        const finalIndices=[0,0,0,0];
+        if(cheatAlwaysJackpot.checked){
+          // 4 eggplants => 🍆 is iconSet[0]
+          finalIndices[0]=0; finalIndices[1]=0; finalIndices[2]=0; finalIndices[3]=0;
+        } else if(cheatAlwaysWinMoney.checked){
+          // Force >=2-of-a-kind
+          const r=randInt(symbolsCount);
+          finalIndices[0]=r; 
+          finalIndices[1]=r;
+          finalIndices[2]=randInt(symbolsCount);
+          finalIndices[3]=randInt(symbolsCount);
         } else {
-          messageEl.textContent = `No match. Middle row: ${midSymbols.join(" ")}. Better luck next time!`;
-        }
-        handleWinLine(matches);
-
-        // free spins on 3-of-a-kind+
-        if (matches >= 3 && winnings > 0) {
-          freeSpins++;
-          bonusMessage.textContent = `You earned +1 FREE SPIN! (Now ${freeSpins})`;
-        } else if (isFreeSpin) {
-          freeSpins--;
-          bonusMessage.textContent = `Used 1 FREE SPIN. ${freeSpins} left.`;
-        }
-
-        // Possibly minigame
-        let launchMini = (Math.random() < MINIGAME_CHANCE);
-        if (cheatAlwaysMinigame.checked) launchMini = true;
-        if (launchMini) {
-          showRandomMinigame(bet);
-        }
-
-        isSpinning = false;
-      }, 4000);
-    }
-    spinBtn.addEventListener("click", spinAllReels);
-
-    /********************************************
-     *            NEW MINIGAMES OVERLAY         *
-     ********************************************/
-    const minigameOverlay     = document.getElementById("minigameOverlay");
-    const overlayContent      = document.getElementById("overlayContent");
-    const miniTitle           = document.getElementById("miniTitle");
-    const miniGameContainer   = document.getElementById("miniGameContainer");
-    const miniGameMessage     = document.getElementById("miniGameMessage");
-    const minigameQuitBtn     = document.getElementById("minigameQuitBtn");
-
-    function showRandomMinigame(bet) {
-      // We have 3 brand-new minigames to pick from:
-      // 0) 1-Row Shooter
-      // 1) Memory Flip
-      // 2) Coin Flip
-      const pick = randInt(3);
-      if (pick === 0) {
-        showOneRowShooter(bet);
-      } else if (pick === 1) {
-        showMemoryFlip(bet);
-      } else {
-        showCoinFlip(bet);
-      }
-    }
-
-    function openMinigameOverlay(title) {
-      miniTitle.textContent = title;
-      miniGameMessage.textContent = "";
-      miniGameContainer.innerHTML = "";
-      minigameOverlay.style.display = "flex";
-    }
-    function closeMinigameOverlay() {
-      minigameOverlay.style.display = "none";
-    }
-    minigameQuitBtn.onclick = () => closeMinigameOverlay();
-
-    /********************************************
-     *  MINIGAME #1: One-Row Shooter (example)  *
-     ********************************************/
-    function showOneRowShooter(bet) {
-      openMinigameOverlay("One-Row Shooter");
-      // user sees 7 tiles in a row, 3 random "enemies"
-      const rowCount = 7;
-      let enemies = [];
-      for (let i=0; i<rowCount; i++) {
-        enemies.push(false);
-      }
-      // randomly place 3 enemies
-      for (let i=0; i<3; i++) {
-        const randPos = randInt(rowCount);
-        enemies[randPos] = true;
-      }
-
-      enemies.forEach((isEnemy, index) => {
-        const div = document.createElement("div");
-        div.className = "mini-tile";
-        div.textContent = isEnemy ? "?" : " ";
-        div.onclick = () => {
-          if (isEnemy) {
-            div.textContent = "X";
-            div.style.background = "#f00";
-            enemies[index] = false;
-            checkShooterWin();
-          } else {
-            div.textContent = "O";
-            div.style.background = "#333";
+          for(let i=0;i<4;i++){
+            finalIndices[i]=randInt(symbolsCount);
           }
-          div.onclick = null; // used once
-        };
-        miniGameContainer.appendChild(div);
-      });
-
-      function checkShooterWin() {
-        // if no more enemies => user gets 1.5× bet
-        if (!enemies.some(e => e)) {
-          const bonus = Math.floor(bet * 1.5);
-          balanceCents += bonus;
-          updateBalanceDisplay();
-          miniGameMessage.textContent = `You defeated all enemies! Bonus: $${(bonus/100).toFixed(2)}.`;
-          setTimeout(() => closeMinigameOverlay(), 2000);
         }
-      }
-    }
 
-    /********************************************
-     *  MINIGAME #2: Memory Flip (example)      *
-     ********************************************/
-    function showMemoryFlip(bet) {
-      openMinigameOverlay("Memory Flip");
-      // We have 6 tiles, 3 pairs
-      const pairs = ["A","B","C"];
-      const memoryArr = [...pairs, ...pairs]; // 6 tiles
-      // shuffle
-      for (let i=memoryArr.length-1; i>0; i--) {
-        const j = randInt(i+1);
-        [memoryArr[i], memoryArr[j]] = [memoryArr[j], memoryArr[i]];
-      }
+        // spin reels left->right: 1s,2s,3s,4s
+        spinOneReel(reel1Inner, finalIndices[0], 1);
+        spinOneReel(reel2Inner, finalIndices[1], 2);
+        spinOneReel(reel3Inner, finalIndices[2], 3);
+        spinOneReel(reel4Inner, finalIndices[3], 4);
 
-      let flippedIndices = [];
-      let matchedCount   = 0;
+        setTimeout(()=>{
+          const {winnings,matches,midSymbols}=evaluateMiddleRow(finalIndices, bet);
+          balanceCents += winnings;
+          updateBalanceDisplay();
 
-      memoryArr.forEach((val, idx) => {
-        const div = document.createElement("div");
-        div.className = "mini-tile";
-        div.textContent = "?";
-        div.onclick = () => flipCard(idx, div);
-        miniGameContainer.appendChild(div);
-      });
+          if(winnings>0){
+            // win sound
+            winSound.currentTime=0;
+            winSound.play().catch(err=>console.log("winSound blocked:",err));
 
-      function flipCard(i, tile) {
-        if (tile.dataset.flipped === "true") return;
-        tile.textContent = memoryArr[i];
-        tile.dataset.flipped = "true";
-        flippedIndices.push(i);
-
-        if (flippedIndices.length === 2) {
-          // check match
-          const i1 = flippedIndices[0];
-          const i2 = flippedIndices[1];
-          const tile1 = miniGameContainer.children[i1];
-          const tile2 = miniGameContainer.children[i2];
-
-          if (memoryArr[i1] === memoryArr[i2]) {
-            // match
-            tile1.style.background = "#4f4";
-            tile2.style.background = "#4f4";
-            matchedCount++;
+            let msg="";
+            if(matches===2){
+              msg="2-of-a-kind!";
+            } else if(matches===3){
+              msg="3-of-a-kind!";
+            } else if(matches===4&&midSymbols[0]==="🍆"){
+              msg="EGGPLANT JACKPOT!";
+              // show overlay for 3s
+              showJackpotOverlay(true);
+              setTimeout(()=>showJackpotOverlay(false),3000);
+            } else if(matches===4){
+              msg="4-of-a-kind!";
+            }
+            messageEl.textContent=`${msg} Middle row: ${midSymbols.join(" ")}. You won $${(winnings/100).toFixed(2)}!`;
           } else {
-            // not match -> flip back
-            setTimeout(() => {
-              tile1.textContent = "?";
-              tile2.textContent = "?";
-              tile1.dataset.flipped = "false";
-              tile2.dataset.flipped = "false";
-            }, 1000);
+            messageEl.textContent=`No match. Middle row: ${midSymbols.join(" ")}. Better luck next time!`;
           }
-          flippedIndices = [];
+          handleWinLine(matches);
+
+          // free spin if 3-of-a-kind or better
+          if(matches>=3 && winnings>0){
+            freeSpins++;
+            bonusMessage.textContent=`You earned +1 FREE SPIN! (Now ${freeSpins})`;
+          } else if(isFreeSpin){
+            freeSpins--;
+            bonusMessage.textContent=`Used 1 FREE SPIN. ${freeSpins} left.`;
+          }
+
+          // Possibly minigame
+          let chance=MINIGAME_CHANCE;
+          if(cheatAlwaysMinigame.checked) chance=1;
+          if(Math.random()<chance){
+            showRandomMinigame(bet);
+          }
+
+          isSpinning=false;
+        },4000);
+      }
+      spinBtn.addEventListener("click", spinAllReels);
+
+      /********************************************
+       *        JACKPOT & MINIGAME FEATURES       *
+       ********************************************/
+      // JACKPOT overlay is handled above
+
+      // MINIGAME overlay
+      const minigameOverlay   = document.getElementById("minigameOverlay");
+      const miniTitle         = document.getElementById("miniTitle");
+      const miniGameContainer = document.getElementById("miniGameContainer");
+      const miniGameMessage   = document.getElementById("miniGameMessage");
+      const minigameQuitBtn   = document.getElementById("minigameQuitBtn");
+
+      minigameQuitBtn.onclick=()=>closeMinigameOverlay();
+
+      function openMinigameOverlay(title){
+        miniTitle.textContent=title;
+        miniGameMessage.textContent="";
+        miniGameContainer.innerHTML="";
+        minigameOverlay.style.display="flex";
+      }
+      function closeMinigameOverlay(){
+        minigameOverlay.style.display="none";
+      }
+
+      // We have 3 new minigames:
+      //   1) One-Row Shooter
+      //   2) Memory Flip
+      //   3) Coin Flip
+      function showRandomMinigame(bet){
+        const pick=randInt(3);
+        if(pick===0) showOneRowShooter(bet);
+        else if(pick===1) showMemoryFlip(bet);
+        else showCoinFlip(bet);
+      }
+
+      /********************************************
+       * MINIGAME #1: One-Row Shooter
+       ********************************************/
+      function showOneRowShooter(bet){
+        openMinigameOverlay("One-Row Shooter");
+        const rowCount=7;
+        let enemies=new Array(rowCount).fill(false);
+        // place 3 random enemies
+        for(let i=0; i<3; i++){
+          const pos=randInt(rowCount);
+          enemies[pos]=true;
         }
-        if (matchedCount === 3) {
-          // all matched => 2× bet
-          const bonus = bet*2;
-          balanceCents += bonus;
-          updateBalanceDisplay();
-          miniGameMessage.textContent = `All pairs matched! Bonus: $${(bonus/100).toFixed(2)}.`;
-          setTimeout(() => closeMinigameOverlay(), 2000);
+        enemies.forEach((isEnemy,idx)=>{
+          const div=document.createElement("div");
+          div.className="mini-tile";
+          div.textContent=isEnemy?"?":" ";
+          div.onclick=()=>{
+            if(isEnemy){
+              div.textContent="X";
+              div.style.background="#f00";
+              enemies[idx]=false;
+              checkShooterWin();
+            } else {
+              div.textContent="O";
+              div.style.background="#333";
+            }
+            div.onclick=null;
+          };
+          miniGameContainer.appendChild(div);
+        });
+        function checkShooterWin(){
+          if(!enemies.some(e=>e)){
+            // all enemies defeated => 1.5× bet
+            const bonus=Math.floor(bet*1.5);
+            balanceCents+=bonus;
+            updateBalanceDisplay();
+            miniGameMessage.textContent=`All enemies down! +$${(bonus/100).toFixed(2)}.`;
+            setTimeout(()=>closeMinigameOverlay(),2000);
+          }
         }
       }
-    }
 
-    /********************************************
-     *  MINIGAME #3: Coin Flip (example)        *
-     ********************************************/
-    function showCoinFlip(bet) {
-      openMinigameOverlay("Coin Flip");
-      // user picks Heads or Tails
-      const container = document.createElement("div");
-      container.className = "coin-flip";
-      const headsBtn = document.createElement("div");
-      headsBtn.className = "mini-tile";
-      headsBtn.textContent = "Heads";
-      headsBtn.onclick = () => guess("Heads");
-      const tailsBtn = document.createElement("div");
-      tailsBtn.className = "mini-tile";
-      tailsBtn.textContent = "Tails";
-      tailsBtn.onclick = () => guess("Tails");
-
-      container.appendChild(headsBtn);
-      container.appendChild(tailsBtn);
-      miniGameContainer.appendChild(container);
-
-      function guess(choice) {
-        // flip coin
-        const result = (Math.random()<0.5) ? "Heads" : "Tails";
-        if (result === choice) {
-          // user wins 2× bet
-          const bonus = bet*2;
-          balanceCents += bonus;
-          updateBalanceDisplay();
-          miniGameMessage.textContent = `Coin landed ${result}! You win $${(bonus/100).toFixed(2)}.`;
-        } else {
-          miniGameMessage.textContent = `Coin landed ${result}. No bonus.`;
+      /********************************************
+       * MINIGAME #2: Memory Flip
+       ********************************************/
+      function showMemoryFlip(bet){
+        openMinigameOverlay("Memory Flip");
+        // 6 tiles total => 3 pairs
+        const pairs=["A","B","C"];
+        const memoryArr=[...pairs,...pairs];
+        // shuffle
+        for(let i=memoryArr.length-1; i>0; i--){
+          const j=randInt(i+1);
+          [memoryArr[i],memoryArr[j]]=[memoryArr[j],memoryArr[i]];
         }
-        // end after a moment
-        setTimeout(() => closeMinigameOverlay(), 2000);
+        let flippedIndices=[];
+        let matchedCount=0;
+
+        memoryArr.forEach((val,idx)=>{
+          const tile=document.createElement("div");
+          tile.className="mini-tile";
+          tile.textContent="?";
+          tile.onclick=()=>flipCard(idx,tile);
+          miniGameContainer.appendChild(tile);
+        });
+        function flipCard(i,tile){
+          if(tile.dataset.flipped==="true") return;
+          tile.textContent=memoryArr[i];
+          tile.dataset.flipped="true";
+          flippedIndices.push(i);
+
+          if(flippedIndices.length===2){
+            const i1=flippedIndices[0], i2=flippedIndices[1];
+            const tile1=miniGameContainer.children[i1];
+            const tile2=miniGameContainer.children[i2];
+            if(memoryArr[i1]===memoryArr[i2]){
+              tile1.style.background="#4f4";
+              tile2.style.background="#4f4";
+              matchedCount++;
+            } else {
+              setTimeout(()=>{
+                tile1.textContent="?";
+                tile2.textContent="?";
+                tile1.dataset.flipped="false";
+                tile2.dataset.flipped="false";
+              },1000);
+            }
+            flippedIndices=[];
+          }
+          if(matchedCount===3){
+            // matched all => 2× bet
+            const bonus=bet*2;
+            balanceCents+=bonus;
+            updateBalanceDisplay();
+            miniGameMessage.textContent=`All matched! +$${(bonus/100).toFixed(2)}.`;
+            setTimeout(()=>closeMinigameOverlay(),2000);
+          }
+        }
       }
-    }
-  </script>
+
+      /********************************************
+       * MINIGAME #3: Coin Flip
+       ********************************************/
+      function showCoinFlip(bet){
+        openMinigameOverlay("Coin Flip");
+        const container=document.createElement("div");
+        container.style.display="flex";
+        container.style.gap="10px";
+        container.style.justifyContent="center";
+
+        const headsBtn=document.createElement("div");
+        headsBtn.className="mini-tile";
+        headsBtn.textContent="Heads";
+        headsBtn.onclick=()=>guess("Heads");
+
+        const tailsBtn=document.createElement("div");
+        tailsBtn.className="mini-tile";
+        tailsBtn.textContent="Tails";
+        tailsBtn.onclick=()=>guess("Tails");
+
+        container.appendChild(headsBtn);
+        container.appendChild(tailsBtn);
+        miniGameContainer.appendChild(container);
+
+        function guess(choice){
+          const result=(Math.random()<0.5)?"Heads":"Tails";
+          if(result===choice){
+            // 2× bet
+            const bonus=bet*2;
+            balanceCents+=bonus;
+            updateBalanceDisplay();
+            miniGameMessage.textContent=`Coin: ${result}! You won $${(bonus/100).toFixed(2)}.`;
+          } else {
+            miniGameMessage.textContent=`Coin: ${result}. No bonus.`;
+          }
+          setTimeout(()=>closeMinigameOverlay(),2000);
+        }
+      }
+    </script>
+  </div>
 </body>
 </html>
