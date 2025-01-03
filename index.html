@@ -7,54 +7,29 @@
 
   <style>
     /************************************************************
-     * CSS VARIABLES FOR ACCESSIBILITY
+     * BASIC & GLOBAL STYLES
      ************************************************************/
-    :root {
-      --base-font-size: 100%; /* can be changed for larger text */
-      --contrast-bg: #fff;    /* can be changed for high contrast */
-      --contrast-text: #333;  /* can be changed for high contrast */
-    }
-
     body {
-      font-size: var(--base-font-size);
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: var(--contrast-text);
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: Arial, sans-serif; /* <--- REPLACES TIMES NEW ROMAN */
+      color: #333;
       overflow-x: hidden;
     }
 
-    /************************************************************
-     * CONTAINER & LAYOUT
-     ************************************************************/
     .container {
       width: 100%;
       max-width: 900px;
       margin: 2rem auto;
-      background: var(--contrast-bg);
-      color: var(--contrast-text);
+      background: #fff;
       border-radius: 0.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       animation: fadeInUp 0.5s ease forwards;
       opacity: 0; 
       transform: translateY(20px);
       padding: 2rem;
-    }
-
-    /* Center content for "one at a time" mode. Also make it bigger. */
-    .centered-quiz {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    /* Slightly bigger font for one-question mode */
-    .one-question-mode .question-container h3,
-    .one-question-mode .options-container {
-      font-size: 1.15rem;
-      line-height: 1.5;
     }
 
     @keyframes fadeInUp {
@@ -64,71 +39,58 @@
       }
     }
 
-    /************************************************************
-     * MENU (TOP RIGHT)
-     ************************************************************/
-    .top-right-menu {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1000;
+    /* For "oneAtATime" mode, we center everything */
+    .centered-quiz {
       display: flex;
-      gap: 0.5rem;
+      flex-direction: column;
       align-items: center;
-    }
-    .menu-dropdown {
-      position: relative;
-    }
-    .menu-btn {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 0.25rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background-color 0.2s, transform 0.2s;
-    }
-    .menu-btn:hover {
-      background-color: #1d4ed8;
-      transform: translateY(-1px);
-    }
-    .menu-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 2.7rem;
-      right: 0;
-      background: #fff;
-      color: #333;
-      border-radius: 0.25rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      min-width: 200px;
-      padding: 1rem;
-      z-index: 9999;
-    }
-    .menu-dropdown:hover .menu-dropdown-content {
-      display: block;
-    }
-    .menu-dropdown-content label {
-      display: block;
-      margin: 0.5rem 0 0.25rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    .menu-dropdown-content select {
-      width: 100%;
-      padding: 0.4rem;
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      text-align: center;
     }
 
-    /************************************************************
-     * FULLSCREEN BUTTON (BOTTOM RIGHT)
-     ************************************************************/
+    /* 2x2 answer grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      max-width: 600px; /* to keep it from stretching too wide */
+    }
+    .option-block {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      text-align: center;
+    }
+    .option-block:hover {
+      background-color: #eee;
+    }
+
+    .question-container {
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.4s ease; /* fade up each question */
+    }
+
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .feedback.correct {
+      color: green;
+    }
+    .feedback.incorrect {
+      color: red;
+    }
+    .explanation {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* FULLSCREEN BUTTON (BOTTOM RIGHT) */
     #fullscreen-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -150,9 +112,27 @@
       transform: scale(1.05);
     }
 
-    /************************************************************
-     * BUTTON STYLES
-     ************************************************************/
+    /* MENU (TOP RIGHT) */
+    .top-right-menu {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      display: none; /* shown after user starts quiz */
+    }
+    .menu-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+    /* BASIC BUTTONS */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -178,9 +158,7 @@
       background-color: #ddd;
     }
 
-    /************************************************************
-     * START MENU
-     ************************************************************/
+    /* START MENU */
     #start-menu h1 {
       text-align: center;
       margin-bottom: 1rem;
@@ -188,11 +166,6 @@
     }
     .form-group {
       margin-bottom: 1.25rem;
-    }
-    label {
-      display: inline-block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
     }
     select, .radio-group {
       width: 100%;
@@ -207,105 +180,28 @@
       gap: 1rem;
       align-items: center;
     }
-    .radio-group label {
-      margin: 0;
-      font-weight: normal;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      cursor: pointer;
-    }
 
-    /************************************************************
-     * QUIZ SECTION
-     ************************************************************/
-    .question-container {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
-      animation: fadeInUp 0.4s ease; /* fade up each question */
-    }
-
-    .options-container {
-      margin: 1rem 0;
-    }
-
-    .feedback {
-      margin-top: 0.5rem;
-      font-weight: 600;
-    }
-    .feedback.correct {
-      color: green;
-    }
-    .feedback.incorrect {
-      color: red;
-    }
-    .explanation {
-      margin-top: 0.5rem;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /************************************************************
-     * RESULT SECTION
-     ************************************************************/
+    /* RESULT SECTION */
     #score-display {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 1rem;
       font-weight: bold;
     }
-
-    /************************************************************
-     * MEDIA QUERIES
-     ************************************************************/
-    @media (max-width: 600px) {
-      .menu-btn, #fullscreen-btn {
-        font-size: 0.85rem;
-      }
-      .btn {
-        font-size: 0.9rem;
-      }
-      select, .radio-group {
-        max-width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- TOP RIGHT MENU -->
-  <div class="top-right-menu" id="top-right-menu" style="display: none;">
-    <!-- "Back to Main Menu" button -->
+  <div class="top-right-menu" id="top-right-menu">
     <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main Menu</button>
-
-    <!-- Accessibility Options -->
-    <div class="menu-dropdown">
-      <button class="menu-btn">Accessibility</button>
-      <div class="menu-dropdown-content">
-        <label for="font-size-select">Text Size</label>
-        <select id="font-size-select">
-          <option value="100%">100%</option>
-          <option value="125%">125%</option>
-          <option value="150%">150%</option>
-        </select>
-
-        <label for="contrast-select">Contrast</label>
-        <select id="contrast-select">
-          <option value="normal">Normal</option>
-          <option value="high">High Contrast</option>
-        </select>
-      </div>
-    </div>
   </div>
 
-  <!-- FULLSCREEN BUTTON (BOTTOM RIGHT) -->
+  <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
-  <!-- MAIN CONTAINER -->
   <div class="container" id="main-container">
-    
+
     <!-- START MENU -->
     <div id="start-menu">
       <h1>Real Estate Broker Quiz</h1>
@@ -357,16 +253,15 @@
       <!-- START QUIZ BUTTON -->
       <button class="btn" id="start-quiz-btn">Start Quiz</button>
     </div>
-    <!-- END START MENU -->
 
-    <!-- QUIZ SECTION (no heading) -->
+    <!-- QUIZ SECTION -->
     <div id="quiz-section" style="display: none;">
       <div id="quiz-questions-container"></div>
 
-      <!-- NEXT BUTTON (for 'oneAtATime' mode) -->
+      <!-- NEXT BUTTON (only needed in certain scenarios) -->
       <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
 
-      <!-- SUBMIT BUTTON (for 'allAtOnce' mode) -->
+      <!-- SUBMIT BUTTON (All-at-once mode) -->
       <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
     </div>
 
@@ -378,374 +273,402 @@
     </div>
   </div>
 
-  <script>
-  /********************************************************************
-   * DOM ELEMENTS & GLOBAL STATE
-   ********************************************************************/
-  const mainContainer       = document.getElementById('main-container');
-  const startMenu           = document.getElementById('start-menu');
-  const quizSection         = document.getElementById('quiz-section');
-  const resultSection       = document.getElementById('result-section');
-  const quizContainer       = document.getElementById('quiz-questions-container');
-  const startQuizBtn        = document.getElementById('start-quiz-btn');
-  const nextQuestionBtn     = document.getElementById('next-question-btn');
-  const submitBtn           = document.getElementById('submit-btn');
-  const scoreDisplay        = document.getElementById('score-display');
-  const restartBtn          = document.getElementById('restart-btn');
-  const backToMenuBtn       = document.getElementById('back-to-menu-btn');
-  const topRightMenu        = document.getElementById('top-right-menu');
-  const fullscreenBtn       = document.getElementById('fullscreen-btn');
+<script>
+/********************************************************************
+ * GLOBAL DOM ELEMENTS
+ ********************************************************************/
+const mainContainer       = document.getElementById('main-container');
+const startMenu           = document.getElementById('start-menu');
+const quizSection         = document.getElementById('quiz-section');
+const resultSection       = document.getElementById('result-section');
+const quizContainer       = document.getElementById('quiz-questions-container');
+const startQuizBtn        = document.getElementById('start-quiz-btn');
+const nextQuestionBtn     = document.getElementById('next-question-btn');
+const submitBtn           = document.getElementById('submit-btn');
+const scoreDisplay        = document.getElementById('score-display');
+const restartBtn          = document.getElementById('restart-btn');
+const backToMenuBtn       = document.getElementById('back-to-menu-btn');
+const topRightMenu        = document.getElementById('top-right-menu');
+const fullscreenBtn       = document.getElementById('fullscreen-btn');
 
-  // Accessibility controls
-  const fontSizeSelect      = document.getElementById('font-size-select');
-  const contrastSelect      = document.getElementById('contrast-select');
+// Form Controls
+const chapterSelect       = document.getElementById('chapter-select');
+const questionCountSelect = document.getElementById('question-count-select');
+const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
 
-  // Form Controls
-  const chapterSelect       = document.getElementById('chapter-select');
-  const questionCountSelect = document.getElementById('question-count-select');
-  const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
+/********************************************************************
+ * QUIZ STATE
+ ********************************************************************/
+let currentQuestions = [];  // For "allAtOnce" or to seed "oneAtATime"
+let questionQueue    = [];  // For "oneAtATime" we use this queue approach
+let userAnswers      = [];  // For "allAtOnce" only
+let currentIndex     = 0;   // For "oneAtATime" display
+let chosenFormat     = 'allAtOnce'; 
 
-  // Global Variables
-  let currentQuestions      = []; 
-  let currentIndex          = 0;  
-  let chosenFormat          = 'allAtOnce'; 
-  let userAnswers           = []; 
-  let questionAnswered      = false;  // track if user has chosen an option for "oneAtATime"
+/********************************************************************
+ * CHAPTER -> QUESTION COUNT MAP
+ ********************************************************************/
+const CHAPTER_QUESTION_OPTIONS = {
+  all:    [15, 30, 45, 60, 75, 90, 100],
+  1:      [10, 20, 35, 50, 60],
+  2:      [10, 20, 35, 50, 60],
+  3:      [10, 20, 35, 50, 60],
+  4:      [10, 20, 35, 50, 60],
+  5:      [10, 20, 35, 50, 60],
+  6:      [6, 14, 20, 28],
+  7:      [6, 14, 20, 28],
+  8:      [10, 20, 35, 50, 60],
+  9:      [10, 20, 35, 50, 60],
+  10:     [10, 20, 35, 45],
+  11:     [6, 12, 18, 24],
+  12:     [6, 12, 18, 24],
+};
 
-  /********************************************************************
-   * CHAPTER QUESTION LIMITS / OPTIONS
-   ********************************************************************/
-  const CHAPTER_QUESTION_OPTIONS = {
-    all:    [15, 30, 45, 60, 75, 90, 100],
-    1:      [10, 20, 35, 50, 60],
-    2:      [10, 20, 35, 50, 60],
-    3:      [10, 20, 35, 50, 60],
-    4:      [10, 20, 35, 50, 60],
-    5:      [10, 20, 35, 50, 60],
-    6:      [6, 14, 20, 28],
-    7:      [6, 14, 20, 28],
-    8:      [10, 20, 35, 50, 60],
-    9:      [10, 20, 35, 50, 60],
-    10:     [10, 20, 35, 45],
-    11:     [6, 12, 18, 24],
-    12:     [6, 12, 18, 24],
-  };
+/********************************************************************
+ * EVENT LISTENERS
+ ********************************************************************/
+startQuizBtn.addEventListener('click', startQuiz);
+restartBtn.addEventListener('click', resetQuiz);
+backToMenuBtn.addEventListener('click', resetQuiz);
+chapterSelect.addEventListener('change', updateQuestionCountOptions);
 
-  /********************************************************************
-   * EVENT LISTENERS
-   ********************************************************************/
-  startQuizBtn.addEventListener('click', startQuiz);
-  nextQuestionBtn.addEventListener('click', handleNextQuestion);
-  submitBtn.addEventListener('click', handleSubmitQuiz);
-  restartBtn.addEventListener('click', resetQuiz);
-  backToMenuBtn.addEventListener('click', resetQuiz);
-  chapterSelect.addEventListener('change', updateQuestionCountOptions);
+nextQuestionBtn.addEventListener('click', handleNextQuestion);
+submitBtn.addEventListener('click', handleSubmitQuiz);
 
-  // Fullscreen
-  fullscreenBtn.addEventListener('click', toggleFullScreen);
+// Fullscreen toggle
+fullscreenBtn.addEventListener('click', toggleFullScreen);
 
-  // Accessibility
-  fontSizeSelect.addEventListener('change', updateFontSize);
-  contrastSelect.addEventListener('change', updateContrast);
+// On load, initialize question-count for default selection
+window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
-  // On load, init question count
-  window.addEventListener('DOMContentLoaded', () => {
-    updateQuestionCountOptions();
+/********************************************************************
+ * DYNAMIC QUESTION COUNT DROPDOWN
+ ********************************************************************/
+function updateQuestionCountOptions() {
+  const selectedChapter = chapterSelect.value;
+  const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
+
+  questionCountSelect.innerHTML = '';
+  questionOptions.forEach(num => {
+    const opt = document.createElement('option');
+    opt.value = num;
+    opt.textContent = num;
+    questionCountSelect.appendChild(opt);
   });
+  questionCountSelect.selectedIndex = 0;
+}
 
-  /********************************************************************
-   * DYNAMIC QUESTION COUNT DROPDOWN
-   ********************************************************************/
-  function updateQuestionCountOptions() {
-    const selectedChapter = chapterSelect.value;
-    const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
+/********************************************************************
+ * MAIN START QUIZ LOGIC
+ ********************************************************************/
+async function startQuiz() {
+  // Show top-right menu
+  topRightMenu.style.display = 'block';
 
-    questionCountSelect.innerHTML = '';
-    questionOptions.forEach(num => {
-      const opt = document.createElement('option');
-      opt.value = num;
-      opt.textContent = num;
-      questionCountSelect.appendChild(opt);
-    });
-    questionCountSelect.selectedIndex = 0;
+  // Hide start menu, show quiz
+  startMenu.style.display   = 'none';
+  quizSection.style.display = 'block';
+  resultSection.style.display = 'none';
+
+  chosenFormat = getSelectedFormat();
+
+  // For "allAtOnce," we'll just fill userAnswers at the end
+  userAnswers = [];
+
+  // If "oneAtATime," we use a queue for the question-by-question approach
+  questionQueue = [];
+
+  // Possibly fetch the relevant JSON
+  const chapterValue = chapterSelect.value;
+  const questionCount = parseInt(questionCountSelect.value, 10);
+
+  const allFetched = (chapterValue === 'all')
+    ? await fetchAllChapters()
+    : await fetchSingleChapter(chapterValue);
+
+  // Shuffle entire question set, then pick the slice
+  shuffleArray(allFetched);
+  currentQuestions = allFetched.slice(0, questionCount);
+
+  // Also ensure each question's options are shuffled (for both modes).
+  currentQuestions.forEach(q => shuffleArray(q.options));
+
+  if (chosenFormat === 'allAtOnce') {
+    nextQuestionBtn.style.display = 'none';
+    submitBtn.style.display = 'inline-block';
+    renderAllAtOnceMode(currentQuestions);
+  } else {
+    nextQuestionBtn.style.display = 'none'; 
+    submitBtn.style.display = 'none'; 
+    quizContainer.classList.add('centered-quiz'); 
+
+    // For the new "must get all correct" approach:
+    // We'll copy currentQuestions into questionQueue 
+    questionQueue = [...currentQuestions];
+
+    // Start with the first question
+    showNextOneAtATimeQuestion();
   }
+}
 
-  /********************************************************************
-   * QUIZ FLOW
-   ********************************************************************/
-  async function startQuiz() {
-    const chapterValue = chapterSelect.value;       
-    const questionCount = parseInt(questionCountSelect.value, 10);
-    chosenFormat = getSelectedFormat();
-
-    // Show top-right menu now
-    topRightMenu.style.display = 'flex';
-
-    // Hide start menu, show quiz
-    startMenu.style.display = 'none';
-    quizSection.style.display = 'block';
-    resultSection.style.display = 'none';
-
-    // For "one question at a time" => center layout
-    if (chosenFormat === 'oneAtATime') {
-      quizContainer.classList.add('centered-quiz', 'one-question-mode');
-    } else {
-      quizContainer.classList.remove('centered-quiz', 'one-question-mode');
-    }
-
-    // Fetch questions
-    const allFetchedQuestions = (chapterValue === 'all')
-      ? await fetchAllChapters()
-      : await fetchSingleChapter(chapterValue);
-
-    shuffleArray(allFetchedQuestions);
-    currentQuestions = allFetchedQuestions.slice(0, questionCount);
-
-    userAnswers  = Array(currentQuestions.length).fill(null);
-    currentIndex = 0;
-
-    if (chosenFormat === 'oneAtATime') {
-      submitBtn.style.display       = 'none';
-      nextQuestionBtn.style.display = 'none'; // hidden until user answers
-      renderSingleQuestion(0);
-    } else {
-      submitBtn.style.display       = 'inline-block';
-      nextQuestionBtn.style.display = 'none';
-      renderAllQuestions();
-    }
+/********************************************************************
+ * FETCH HELPERS
+ ********************************************************************/
+async function fetchAllChapters() {
+  let merged = [];
+  for (let i = 1; i <= 12; i++) {
+    const data = await fetchSingleChapter(i);
+    merged = merged.concat(data);
   }
+  return merged;
+}
 
-  async function fetchAllChapters() {
-    let merged = [];
-    for (let i = 1; i <= 12; i++) {
-      const data = await fetchSingleChapter(i);
-      merged = merged.concat(data);
-    }
-    return merged;
-  }
-
-  async function fetchSingleChapter(chapterNumber) {
-    const url = `./data/chapter${chapterNumber}.json`; 
-    // Adjust for GitHub raw link if needed
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
-        return [];
-      }
-      const jsonData = await response.json();
-      return jsonData.questions || [];
-    } catch (error) {
-      console.error("Error fetching chapter data:", error);
+async function fetchSingleChapter(chapterNumber) {
+  const url = `./data/chapter${chapterNumber}.json`; 
+  // Adjust for GitHub raw link if needed
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
       return [];
     }
+    const jsonData = await response.json();
+    return jsonData.questions || [];
+  } catch (error) {
+    console.error("Error fetching chapter data:", error);
+    return [];
   }
+}
 
-  /********************************************************************
-   * RENDERING
-   ********************************************************************/
-  function renderSingleQuestion(index) {
-    quizContainer.innerHTML = '';
-    questionAnswered = false; // user hasn't chosen yet
+/********************************************************************
+ * ALL-AT-ONCE RENDER
+ ********************************************************************/
+function renderAllAtOnceMode(questions) {
+  quizContainer.classList.remove('centered-quiz');
 
-    const qData = currentQuestions[index];
-    if (!qData) return;
+  quizContainer.innerHTML = '';
+  questions.forEach((qData, qIndex) => {
+    // Shuffle each question's options (already done, but let's be safe).
+    // shuffleArray(qData.options);
 
     const questionDiv = document.createElement('div');
     questionDiv.classList.add('question-container');
 
     const header = document.createElement('h3');
-    header.textContent = `Question ${index+1}: ${qData.questionText}`;
+    header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
     questionDiv.appendChild(header);
 
-    const optionsDiv = document.createElement('div');
-    optionsDiv.classList.add('options-container');
+    // Create 4 radio inputs
+    const optsDiv = document.createElement('div');
+    // Just keep normal vertical arrangement for "all at once"
+    // If you want the 2x2 style for allAtOnce too, you can re-use .options-grid
+    optsDiv.style.margin = '1rem 0';
 
-    qData.options.forEach((optText, optIndex) => {
+    qData.options.forEach((optText, optIdx) => {
       const label = document.createElement('label');
+      label.style.display = 'block';
+
       const radio = document.createElement('input');
-      radio.type  = 'radio';
-      radio.name  = `question${index}`;
-      radio.value = optIndex;
+      radio.type = 'radio';
+      radio.name = `question${qIndex}`;
+      radio.value = optIdx;
 
-      if (userAnswers[index] === optIndex) radio.checked = true;
-
-      // On selection => provide immediate feedback, show "why," reveal Next button
       radio.addEventListener('change', () => {
-        userAnswers[index] = optIndex;
-        questionAnswered = true;
-
-        // Show next question button (now that user answered)
-        nextQuestionBtn.style.display = 'inline-block';
-
-        // Immediate feedback
-        const isCorrect = (optIndex === qData.correctOption);
-        showInstantFeedback(questionDiv, isCorrect, qData.explanation);
+        userAnswers[qIndex] = optIdx; 
       });
 
       label.appendChild(radio);
       label.appendChild(document.createTextNode(" " + optText));
-      optionsDiv.appendChild(label);
-      optionsDiv.appendChild(document.createElement('br'));
+
+      optsDiv.appendChild(label);
     });
 
-    questionDiv.appendChild(optionsDiv);
+    questionDiv.appendChild(optsDiv);
     quizContainer.appendChild(questionDiv);
+  });
+}
+
+/********************************************************************
+ * ONE-AT-A-TIME LOGIC: MUST GET ALL CORRECT
+ * If user is correct, remove from queue; if wrong, re-scramble & re-append
+ ********************************************************************/
+function showNextOneAtATimeQuestion() {
+  // If queue is empty => done => show results
+  if (questionQueue.length === 0) {
+    // They got them all correct
+    handleSubmitOneAtATime();
+    return;
   }
 
-  function renderAllQuestions() {
-    quizContainer.innerHTML = '';
+  quizContainer.innerHTML = '';
 
-    currentQuestions.forEach((qData, qIndex) => {
-      const questionDiv = document.createElement('div');
-      questionDiv.classList.add('question-container');
+  const qData = questionQueue[0]; // front of the queue
+  // Create the question
+  const questionDiv = document.createElement('div');
+  questionDiv.classList.add('question-container');
 
-      const header = document.createElement('h3');
-      header.textContent = `Q${qIndex+1}: ${qData.questionText}`;
-      questionDiv.appendChild(header);
+  const header = document.createElement('h3');
+  header.textContent = `Question: ${qData.questionText}`;
+  questionDiv.appendChild(header);
 
-      const optionsDiv = document.createElement('div');
-      optionsDiv.classList.add('options-container');
+  // 2x2 grid of answer blocks
+  const gridDiv = document.createElement('div');
+  gridDiv.classList.add('options-grid');
 
-      qData.options.forEach((optText, optIndex) => {
-        const label = document.createElement('label');
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.name = `question${qIndex}`;
-        radio.value = optIndex;
+  // For each option, create a "rectangle" (div) or label
+  qData.options.forEach((optText, optIdx) => {
+    const blockDiv = document.createElement('div');
+    blockDiv.classList.add('option-block');
+    blockDiv.textContent = optText;
 
-        radio.addEventListener('change', () => {
-          userAnswers[qIndex] = optIndex;
-        });
+    // When user clicks, check correctness
+    blockDiv.addEventListener('click', () => {
+      // Disable further clicks
+      const siblings = gridDiv.querySelectorAll('.option-block');
+      siblings.forEach(el => el.style.pointerEvents = 'none');
 
-        label.appendChild(radio);
-        label.appendChild(document.createTextNode(" " + optText));
-        optionsDiv.appendChild(label);
-        optionsDiv.appendChild(document.createElement('br'));
-      });
+      const isCorrect = (optIdx === qData.correctOption);
+      if (isCorrect) {
+        showFeedback(questionDiv, true, qData.explanation);
 
-      questionDiv.appendChild(optionsDiv);
-      quizContainer.appendChild(questionDiv);
-    });
-  }
+        // remove the question from queue
+        questionQueue.shift();
 
-  /********************************************************************
-   * FEEDBACK (one-at-a-time mode)
-   ********************************************************************/
-  function showInstantFeedback(questionDiv, isCorrect, explanation) {
-    // Remove old feedback
-    let oldFeedback = questionDiv.querySelector('.feedback');
-    if (oldFeedback) oldFeedback.remove();
+        // Show "Next Question" button
+        nextQuestionBtn.style.display = 'inline-block';
+        nextQuestionBtn.onclick = () => {
+          nextQuestionBtn.style.display = 'none';
+          showNextOneAtATimeQuestion();
+        };
+      } else {
+        // Wrong => re-scramble question => push to end
+        showFeedback(questionDiv, false, qData.explanation);
 
-    let oldExpl = questionDiv.querySelector('.explanation');
-    if (oldExpl) oldExpl.remove();
+        // We do a slight timeout to show feedback, then move on
+        setTimeout(() => {
+          // remove from front
+          questionQueue.shift();
 
-    // Add new feedback
-    const feedbackEl = document.createElement('div');
-    feedbackEl.classList.add('feedback');
-    feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
-    feedbackEl.classList.add(isCorrect ? 'correct' : 'incorrect');
-    questionDiv.appendChild(feedbackEl);
+          // re-scramble its options
+          shuffleArray(qData.options);
 
-    // Explanation
-    if (explanation) {
-      const explEl = document.createElement('div');
-      explEl.classList.add('explanation');
-      explEl.textContent = explanation;
-      questionDiv.appendChild(explEl);
-    }
-  }
+          // push it to the end
+          questionQueue.push(qData);
 
-  /********************************************************************
-   * NAVIGATION / SUBMIT
-   ********************************************************************/
-  function handleNextQuestion() {
-    if (!questionAnswered) return; // user must pick something
-    currentIndex++;
-    if (currentIndex >= currentQuestions.length) {
-      handleSubmitQuiz();
-    } else {
-      renderSingleQuestion(currentIndex);
-      nextQuestionBtn.style.display = 'none'; // hide until next choice
-    }
-  }
-
-  function handleSubmitQuiz() {
-    let score = 0;
-    currentQuestions.forEach((q, i) => {
-      if (userAnswers[i] === q.correctOption) {
-        score++;
+          // automatically proceed to next question
+          showNextOneAtATimeQuestion();
+        }, 1500);
       }
     });
-    const total = currentQuestions.length;
-    showResults(score, total);
-  }
 
-  function showResults(score, total) {
-    quizSection.style.display = 'none';
-    resultSection.style.display = 'block';
-    scoreDisplay.textContent = `You answered ${score} out of ${total} correctly.`;
-  }
+    gridDiv.appendChild(blockDiv);
+  });
 
-  function resetQuiz() {
-    startMenu.style.display   = 'block';
-    quizSection.style.display = 'none';
-    resultSection.style.display = 'none';
-    topRightMenu.style.display = 'none';
-    quizContainer.innerHTML   = '';
-    userAnswers = [];
-    currentIndex = 0;
-  }
+  questionDiv.appendChild(gridDiv);
+  quizContainer.appendChild(questionDiv);
+}
 
-  /********************************************************************
-   * ACCESSIBILITY
-   ********************************************************************/
-  function updateFontSize() {
-    const val = fontSizeSelect.value;
-    document.documentElement.style.setProperty('--base-font-size', val);
-  }
+// Show final results after user eventually gets them all correct
+function handleSubmitOneAtATime() {
+  quizSection.style.display = 'none';
+  resultSection.style.display = 'block';
+  scoreDisplay.textContent = `Congratulations! You eventually got them all right.`;
+}
 
-  function updateContrast() {
-    const val = contrastSelect.value;
-    if (val === 'high') {
-      document.documentElement.style.setProperty('--contrast-bg', '#000');
-      document.documentElement.style.setProperty('--contrast-text', '#fff');
-    } else {
-      document.documentElement.style.setProperty('--contrast-bg', '#fff');
-      document.documentElement.style.setProperty('--contrast-text', '#333');
+/********************************************************************
+ * NEXT QUESTION BUTTON (One at a Time)
+ ********************************************************************/
+function handleNextQuestion() {
+  // Not used in the new forced-correct approach, but let's keep it if needed
+}
+
+/********************************************************************
+ * SUBMIT BUTTON (All at Once)
+ ********************************************************************/
+function handleSubmitQuiz() {
+  // Grade userAnswers vs. currentQuestions
+  let score = 0;
+  currentQuestions.forEach((q, i) => {
+    // userAnswers[i] might be undefined if user didn't pick anything
+    if (userAnswers[i] === q.correctOption) {
+      score++;
     }
-  }
+  });
 
-  /********************************************************************
-   * UTILITIES
-   ********************************************************************/
-  function getSelectedFormat() {
-    let val = 'allAtOnce';
-    formatRadioButtons.forEach(rb => {
-      if (rb.checked) {
-        val = rb.value;
-      }
+  quizSection.style.display = 'none';
+  resultSection.style.display = 'block';
+  scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.`;
+}
+
+/********************************************************************
+ * SHOW FEEDBACK FOR ONE-AT-A-TIME
+ ********************************************************************/
+function showFeedback(parentDiv, isCorrect, explanation) {
+  // Remove old feedback if any
+  const oldFeedback = parentDiv.querySelector('.feedback');
+  if (oldFeedback) oldFeedback.remove();
+
+  const feedbackEl = document.createElement('div');
+  feedbackEl.classList.add('feedback', isCorrect ? 'correct' : 'incorrect');
+  feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
+  parentDiv.appendChild(feedbackEl);
+
+  // Explanation (optional)
+  if (explanation) {
+    const explEl = document.createElement('div');
+    explEl.classList.add('explanation');
+    explEl.textContent = explanation;
+    parentDiv.appendChild(explEl);
+  }
+}
+
+/********************************************************************
+ * RESET & BACK TO MENU
+ ********************************************************************/
+function resetQuiz() {
+  // Show start menu, hide quiz & results
+  startMenu.style.display = 'block';
+  quizSection.style.display = 'none';
+  resultSection.style.display = 'none';
+  topRightMenu.style.display = 'none';
+
+  quizContainer.innerHTML = '';
+  currentQuestions = [];
+  questionQueue = [];
+  userAnswers = [];
+  currentIndex = 0;
+}
+
+/********************************************************************
+ * UTILS
+ ********************************************************************/
+function getSelectedFormat() {
+  let val = 'allAtOnce';
+  formatRadioButtons.forEach(rb => {
+    if (rb.checked) {
+      val = rb.value;
+    }
+  });
+  return val;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message}`);
     });
-    return val;
+  } else {
+    document.exitFullscreen();
   }
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(err => {
-        alert(`Error attempting to enable fullscreen mode: ${err.message}`);
-      });
-    } else {
-      document.exitFullscreen();
-    }
-  }
-  </script>
+}
+</script>
 </body>
 </html>
