@@ -1,590 +1,1588 @@
 {
-  "chapter": 10,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What must a licensee do when advertising a personally owned rental property?",
       "options": [
-        "A) Always include the firm’s name",
-        "B) Follow the National Association of REALTORS® Code of Ethics if applicable",
-        "C) Disclose lead-based paint hazards",
-        "D) File an advertisement approval form with the DSPS"
+        "Always include the firm’s name",
+        "Follow the National Association of REALTORS® Code of Ethics if applicable",
+        "Disclose lead-based paint hazards",
+        "File an advertisement approval form with the DSPS"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Follow the National Association of REALTORS® Code of Ethics if applicable",
       "explanation": "NAR Code of Ethics requires disclosure of licensed status when advertising personally owned property."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "What is the WB-37 Residential Listing Contract used for?",
       "options": [
-        "A) Selling residential property",
-        "B) Renting residential property",
-        "C) Listing commercial properties for sale",
-        "D) Listing vacant land for sale"
+        "Selling residential property",
+        "Renting residential property",
+        "Listing commercial properties for sale",
+        "Listing vacant land for sale"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Renting residential property",
       "explanation": "The WB-37 is used to list residential properties for rental purposes."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "What determines if a mobile home is considered real property?",
       "options": [
-        "A) Location of the home",
-        "B) Connection to utilities, foundation, and land ownership",
-        "C) Size of the mobile home",
-        "D) Age of the mobile home"
+        "Location of the home",
+        "Connection to utilities, foundation, and land ownership",
+        "Size of the mobile home",
+        "Age of the mobile home"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Connection to utilities, foundation, and land ownership",
       "explanation": "These three elements define whether a mobile home is part of the real estate."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What is a tenant’s right under Wis. Stat. § 704.08 regarding a check-in sheet?",
       "options": [
-        "A) They must request it in writing",
-        "B) It is only available upon lease renewal",
-        "C) They have seven days to return it after occupancy",
-        "D) It is optional for the landlord to provide it"
+        "They must request it in writing",
+        "It is only available upon lease renewal",
+        "They have seven days to return it after occupancy",
+        "It is optional for the landlord to provide it"
       ],
-      "correctOption": 2,
+      "correctAnswer": "They have seven days to return it after occupancy",
       "explanation": "The law requires landlords to provide new tenants a check-in sheet with seven days to return it."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "What must a seller of a condominium provide within 10 days of accepting an offer?",
       "options": [
-        "A) The condominium’s financial history",
-        "B) A copy of the property deed",
-        "C) Required condominium documents",
-        "D) An appraisal of the unit"
+        "The condominium’s financial history",
+        "A copy of the property deed",
+        "Required condominium documents",
+        "An appraisal of the unit"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Required condominium documents",
       "explanation": "Sellers must provide the required documents within 10 days of accepting an offer."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "What is the primary purpose of a property management agreement?",
       "options": [
-        "A) To list a property for sale",
-        "B) To outline the responsibilities of a rental agent",
-        "C) To document the lease agreement with tenants",
-        "D) To structure the relationship between the property owner and the firm"
+        "To list a property for sale",
+        "To outline the responsibilities of a rental agent",
+        "To document the lease agreement with tenants",
+        "To structure the relationship between the property owner and the firm"
       ],
-      "correctOption": 3,
+      "correctAnswer": "To structure the relationship between the property owner and the firm",
       "explanation": "Property management agreements outline the firm’s responsibilities to the property owner."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What is the first step in listing a farm property?",
       "options": [
-        "A) Completing a WB-1 Residential Listing Contract",
-        "B) Using a WB-2 Farm Listing Contract",
-        "C) Determining the value of the crops",
-        "D) Submitting an agricultural zoning request"
+        "Completing a WB-1 Residential Listing Contract",
+        "Using a WB-2 Farm Listing Contract",
+        "Determining the value of the crops",
+        "Submitting an agricultural zoning request"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Using a WB-2 Farm Listing Contract",
       "explanation": "Farms are listed using the WB-2 Farm Listing Contract."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What is the timeline for returning a tenant’s security deposit after vacating the premises?",
       "options": [
-        "A) 15 days",
-        "B) 21 days",
-        "C) 30 days",
-        "D) 45 days"
+        "15 days",
+        "21 days",
+        "30 days",
+        "45 days"
       ],
-      "correctOption": 1,
+      "correctAnswer": "21 days",
       "explanation": "Security deposits must be returned within 21 days unless properly withheld."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "What type of account is appropriate for holding security deposits for property management?",
       "options": [
-        "A) Brokerage firm’s IBRETA account",
-        "B) Non-interest bearing trust account",
-        "C) General business account",
-        "D) Licensee’s personal account"
+        "Brokerage firm’s IBRETA account",
+        "Non-interest bearing trust account",
+        "General business account",
+        "Licensee’s personal account"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Non-interest bearing trust account",
       "explanation": "Security deposits must be held in a trust account for non-client funds."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "What must a licensee do when working with a buyer on vacant land?",
       "options": [
-        "A) Complete a WB-11 Residential Offer to Purchase",
-        "B) Assess the land for past uses and potential issues",
-        "C) Survey the land for zoning restrictions",
-        "D) File a conservation easement"
+        "Complete a WB-11 Residential Offer to Purchase",
+        "Assess the land for past uses and potential issues",
+        "Survey the land for zoning restrictions",
+        "File a conservation easement"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Assess the land for past uses and potential issues",
       "explanation": "Understanding the land’s past and intended uses is critical for drafting an effective offer."
     },
     {
-      "id": 11,
-      "difficulty": "easy",
       "questionText": "What defines a commercial transaction under Wis. Stat. § 779.32?",
       "options": [
-        "A) The presence of eight or fewer dwelling units",
-        "B) The inclusion of business assets in the sale",
-        "C) The property’s zoning classification",
-        "D) A contract with the local municipality"
+        "The presence of eight or fewer dwelling units",
+        "The inclusion of business assets in the sale",
+        "The property’s zoning classification",
+        "A contract with the local municipality"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The property’s zoning classification",
       "explanation": "Zoning classification helps define commercial transactions."
     },
     {
-      "id": 12,
-      "difficulty": "easy",
       "questionText": "What must a landlord provide to prospective tenants when collecting earnest money?",
       "options": [
-        "A) The rental agreement",
-        "B) A written receipt for the deposit",
-        "C) Proof of property insurance",
-        "D) An affidavit of ownership"
+        "The rental agreement",
+        "A written receipt for the deposit",
+        "Proof of property insurance",
+        "An affidavit of ownership"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A written receipt for the deposit",
       "explanation": "A receipt stating the deposit's purpose and amount is required."
     },
     {
-      "id": 13,
-      "difficulty": "easy",
       "questionText": "What is a \"quit or pay\" notice?",
       "options": [
-        "A) A warning about unauthorized tenants",
-        "B) A notice requiring rent payment or vacating the property",
-        "C) A 30-day termination notice",
-        "D) A notice of lease renewal options"
+        "A warning about unauthorized tenants",
+        "A notice requiring rent payment or vacating the property",
+        "A 30-day termination notice",
+        "A notice of lease renewal options"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A notice requiring rent payment or vacating the property",
       "explanation": "A \"quit or pay\" notice gives tenants a deadline to pay rent or vacate."
     },
     {
-      "id": 14,
-      "difficulty": "easy",
       "questionText": "When is a lead-based paint disclosure required?",
       "options": [
-        "A) For all residential properties",
-        "B) Only for properties built after 1978",
-        "C) For target housing built before 1978",
-        "D) Only when tenants request it"
+        "For all residential properties",
+        "Only for properties built after 1978",
+        "For target housing built before 1978",
+        "Only when tenants request it"
       ],
-      "correctOption": 2,
+      "correctAnswer": "For target housing built before 1978",
       "explanation": "Federal law requires lead-based paint disclosure for target housing built before 1978."
     },
     {
-      "id": 15,
-      "difficulty": "easy",
       "questionText": "What document does a buyer use to write an offer for a condominium unit?",
       "options": [
-        "A) WB-11 Residential Offer to Purchase",
-        "B) WB-13 Vacant Land Offer to Purchase",
-        "C) WB-14 Residential Condominium Offer to Purchase",
-        "D) WB-15 Commercial Offer to Purchase"
+        "WB-11 Residential Offer to Purchase",
+        "WB-13 Vacant Land Offer to Purchase",
+        "WB-14 Residential Condominium Offer to Purchase",
+        "WB-15 Commercial Offer to Purchase"
       ],
-      "correctOption": 2,
+      "correctAnswer": "WB-14 Residential Condominium Offer to Purchase",
       "explanation": "WB-14 is the specific form for condominium transactions."
     },
     {
-      "id": 16,
-      "difficulty": "medium",
       "questionText": "What must a licensee include when advertising for tenants for a property owned by their business entity?",
       "options": [
-        "A) The property address only",
-        "B) The licensee’s name and contact information",
-        "C) The firm’s name or trade name as registered with the DSPS",
-        "D) A copy of the rental agreement"
+        "The property address only",
+        "The licensee’s name and contact information",
+        "The firm’s name or trade name as registered with the DSPS",
+        "A copy of the rental agreement"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The firm’s name or trade name as registered with the DSPS",
       "explanation": "A business entity must advertise in the firm’s name as registered with the DSPS."
     },
     {
-      "id": 17,
-      "difficulty": "medium",
       "questionText": "What is required if a licensee uses a WB-1 Residential Listing Contract and simultaneously lists the property for rent?",
       "options": [
-        "A) WB-13 Vacant Land Offer to Purchase",
-        "B) WB-37 Residential Listing Contract - Exclusive Right to Rent",
-        "C) A signed waiver from the seller",
-        "D) The WB-14 Condominium Offer to Purchase"
+        "WB-13 Vacant Land Offer to Purchase",
+        "WB-37 Residential Listing Contract - Exclusive Right to Rent",
+        "A signed waiver from the seller",
+        "The WB-14 Condominium Offer to Purchase"
       ],
-      "correctOption": 1,
+      "correctAnswer": "WB-37 Residential Listing Contract - Exclusive Right to Rent",
       "explanation": "A WB-37 is required for rental listings."
     },
     {
-      "id": 18,
-      "difficulty": "medium",
       "questionText": "What determines if a person managing a rental property requires a real estate license?",
       "options": [
-        "A) The number of tenants",
-        "B) The manager’s compensation and activities",
-        "C) The owner’s consent",
-        "D) The age of the property"
+        "The number of tenants",
+        "The manager’s compensation and activities",
+        "The owner’s consent",
+        "The age of the property"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The manager’s compensation and activities",
       "explanation": "Negotiating leases and signing contracts for compensation require a real estate license."
     },
     {
-      "id": 19,
-      "difficulty": "medium",
       "questionText": "When must a seller of a condominium provide an executive summary?",
       "options": [
-        "A) Only when the buyer requests it",
-        "B) At least 30 days before closing",
-        "C) Along with other condominium documents",
-        "D) Within 3 business days of receiving an offer"
+        "Only when the buyer requests it",
+        "At least 30 days before closing",
+        "Along with other condominium documents",
+        "Within 3 business days of receiving an offer"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Along with other condominium documents",
       "explanation": "The executive summary is part of the required condominium documents."
     },
     {
-      "id": 20,
-      "difficulty": "medium",
       "questionText": "What is the purpose of an estoppel letter in commercial transactions?",
       "options": [
-        "A) To confirm zoning compliance",
-        "B) To certify facts about existing tenancies",
-        "C) To calculate property taxes",
-        "D) To disclose material defects"
+        "To confirm zoning compliance",
+        "To certify facts about existing tenancies",
+        "To calculate property taxes",
+        "To disclose material defects"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To certify facts about existing tenancies",
       "explanation": "Estoppel letters confirm details about tenants, such as rent and lease terms."
     },
     {
-      "id": 21,
-      "difficulty": "medium",
       "questionText": "What happens if a buyer receives incomplete condominium disclosure documents?",
       "options": [
-        "A) The seller is penalized",
-        "B) The buyer has five business days to request missing documents or rescind the offer",
-        "C) The sale is automatically canceled",
-        "D) The buyer has no recourse"
+        "The seller is penalized",
+        "The buyer has five business days to request missing documents or rescind the offer",
+        "The sale is automatically canceled",
+        "The buyer has no recourse"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The buyer has five business days to request missing documents or rescind the offer",
       "explanation": "The buyer must act within five business days or the documents are deemed acceptable."
     },
     {
-      "id": 22,
-      "difficulty": "medium",
       "questionText": "What must be disclosed to tenants before signing a lease?",
       "options": [
-        "A) All future rent increases",
-        "B) Name and address of the property owner or authorized agent",
-        "C) A detailed maintenance schedule",
-        "D) A list of the property’s previous tenants"
+        "All future rent increases",
+        "Name and address of the property owner or authorized agent",
+        "A detailed maintenance schedule",
+        "A list of the property’s previous tenants"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Name and address of the property owner or authorized agent",
       "explanation": "The property owner or agent’s contact details must be disclosed."
     },
     {
-      "id": 23,
-      "difficulty": "medium",
       "questionText": "What is the purpose of the WB-15 Commercial Offer to Purchase's environmental contingency?",
       "options": [
-        "A) To ensure compliance with ADA requirements",
-        "B) To assess the property’s environmental condition and risks",
-        "C) To allocate costs for future renovations",
-        "D) To transfer zoning rights"
+        "To ensure compliance with ADA requirements",
+        "To assess the property’s environmental condition and risks",
+        "To allocate costs for future renovations",
+        "To transfer zoning rights"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To assess the property’s environmental condition and risks",
       "explanation": "The environmental contingency protects buyers from environmental risks."
     },
     {
-      "id": 24,
-      "difficulty": "medium",
       "questionText": "How are tenant security deposits handled for properties owned by a licensee?",
       "options": [
-        "A) Deposited into the firm’s general account",
-        "B) Held in a real estate trust account or owner’s account per the lease agreement",
-        "C) Paid directly to the landlord in cash",
-        "D) Transferred to the DSPS"
+        "Deposited into the firm’s general account",
+        "Held in a real estate trust account or owner’s account per the lease agreement",
+        "Paid directly to the landlord in cash",
+        "Transferred to the DSPS"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Held in a real estate trust account or owner’s account per the lease agreement",
       "explanation": "Security deposits must be held in a designated account based on the lease terms."
     },
     {
-      "id": 25,
-      "difficulty": "medium",
       "questionText": "Which form is used to list a farm property?",
       "options": [
-        "A) WB-1 Residential Listing Contract",
-        "B) WB-2 Farm Listing Contract",
-        "C) WB-3 Vacant Land Listing Contract",
-        "D) WB-5 Commercial Listing Contract"
+        "WB-1 Residential Listing Contract",
+        "WB-2 Farm Listing Contract",
+        "WB-3 Vacant Land Listing Contract",
+        "WB-5 Commercial Listing Contract"
       ],
-      "correctOption": 1,
+      "correctAnswer": "WB-2 Farm Listing Contract",
       "explanation": "The WB-2 is tailored to agricultural properties."
     },
     {
-      "id": 26,
-      "difficulty": "medium",
       "questionText": "What does a “Proposed Use Contingency” in the WB-13 Vacant Land Offer to Purchase address?",
       "options": [
-        "A) Zoning restrictions, permits, and environmental issues",
-        "B) Title insurance requirements",
-        "C) Property tax assessments",
-        "D) Availability of public utilities"
+        "Zoning restrictions, permits, and environmental issues",
+        "Title insurance requirements",
+        "Property tax assessments",
+        "Availability of public utilities"
       ],
-      "correctOption": 0,
-      "explanation": "The contingency ensures the land can be used as intended."
+      "correctAnswer": "Zoning restrictions, permits, and environmental issues",
+      "explanation": "The contingency ensures the land is suitable for the buyer’s intended use."
     },
     {
-      "id": 27,
-      "difficulty": "medium",
       "questionText": "What type of auction allows a seller to set a minimum acceptable bid?",
       "options": [
-        "A) Absolute auction",
-        "B) Reserve auction",
-        "C) Open auction",
-        "D) Silent auction"
+        "Absolute auction",
+        "Reserve auction",
+        "Open auction",
+        "Silent auction"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Reserve auction",
       "explanation": "A reserve auction requires a minimum bid to sell the property."
     },
     {
-      "id": 28,
-      "difficulty": "medium",
       "questionText": "How can a buyer rescind an offer on a time-share purchase?",
       "options": [
-        "A) By filing a formal complaint",
-        "B) Within five business days of signing the offer",
-        "C) Within 48 hours of signing the offer",
-        "D) Only if the seller agrees"
+        "By filing a formal complaint",
+        "Within five business days of signing the offer",
+        "Within 48 hours of signing the offer",
+        "Only if the seller agrees"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Within five business days of signing the offer",
       "explanation": "Time-share purchases have a five-day rescission period."
     },
     {
-      "id": 29,
-      "difficulty": "medium",
       "questionText": "What is the timeline for completing promised repairs in a rental agreement?",
       "options": [
-        "A) No timeline is required",
-        "B) Within 30 days of the agreement",
-        "C) As specified in writing by the landlord",
-        "D) Before the tenant moves in"
+        "No timeline is required",
+        "Within 30 days of the agreement",
+        "As specified in writing by the landlord",
+        "Before the tenant moves in"
       ],
-      "correctOption": 2,
+      "correctAnswer": "As specified in writing by the landlord",
       "explanation": "Written repair promises must include a completion timeline."
     },
     {
-      "id": 30,
-      "difficulty": "medium",
-      "questionText": "What must a firm’s supervising broker ensure for every associated licensee?",
+      "questionText": "What is required when terminating a periodic tenancy?",
       "options": [
-        "A) Access to a local real estate association",
-        "B) Proper licensing and compliance with rules",
-        "C) Payment of licensing fees by the firm",
-        "D) Use of independent contractor agreements only"
+        "Mutual agreement between landlord and tenant",
+        "28 days’ notice before the end of a rental period",
+        "Immediate written notice",
+        "A court order"
       ],
-      "correctOption": 1,
-      "explanation": "Supervising brokers must ensure that all associated licensees are properly licensed and compliant."
+      "correctAnswer": "28 days’ notice before the end of a rental period",
+      "explanation": "Periodic tenancies require 28 days’ notice."
     },
     {
-      "id": 31,
-      "difficulty": "hard",
       "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
       "options": [
-        "A) Detailed inventory of machinery",
-        "B) Affirmation of annual crops as personal property unless agreed otherwise",
-        "C) A list of all livestock",
-        "D) Evidence of soil quality tests"
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
       "explanation": "Annual crops are not fixtures unless specified in the contract."
     },
     {
-      "id": 32,
-      "difficulty": "hard",
       "questionText": "How is a licensee’s competence in business opportunity transactions established?",
       "options": [
-        "A) By passing a specialty exam",
-        "B) By consulting a qualified expert if lacking experience",
-        "C) Through continuing education credits",
-        "D) By submitting a request to the DSPS"
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
       ],
-      "correctOption": 1,
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
       "explanation": "Licensees must seek expertise if they are not competent in business transactions."
     },
     {
-      "id": 33,
-      "difficulty": "hard",
       "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
       "options": [
-        "A) Proposed Use Contingency and environmental testing",
-        "B) Title insurance coverage",
-        "C) Approval from the local zoning board",
-        "D) Inclusion of soil testing permits"
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
       "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
     },
     {
-      "id": 34,
-      "difficulty": "hard",
       "questionText": "What are the elements of an executive summary for condominium sales?",
       "options": [
-        "A) Property history and maintenance records",
-        "B) Parking, pet rules, rental restrictions, and reserve account details",
-        "C) The seller’s previous utility bills",
-        "D) Market valuation of comparable units"
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
       "explanation": "The executive summary outlines critical condominium details for buyers."
     },
     {
-      "id": 35,
-      "difficulty": "hard",
       "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
       "options": [
-        "A) Intent to deceive",
-        "B) Negligence on the licensee’s part",
-        "C) Economic interest and false statement as fact",
-        "D) Buyer agreement on undisclosed terms"
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Economic interest and false statement as fact",
       "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
     },
     {
-      "id": 36,
-      "difficulty": "hard",
       "questionText": "What is required for trust account record retention?",
       "options": [
-        "A) Records must be retained for at least five years",
-        "B) Records must be retained electronically for two years or more",
-        "C) Records must be archived by DSPS within three months",
-        "D) Records must be submitted annually to the DSPS"
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Records must be retained electronically for two years or more",
       "explanation": "Records may be kept electronically for two years, per regulations."
     },
     {
-      "id": 37,
-      "difficulty": "hard",
       "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
       "options": [
-        "A) $1,000",
-        "B) $5,000",
-        "C) $10,000 per violation",
-        "D) $50,000"
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
       ],
-      "correctOption": 2,
+      "correctAnswer": "$10,000 per violation",
       "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
     },
     {
-      "id": 38,
-      "difficulty": "hard",
       "questionText": "How should a licensee handle historic property tax incentives?",
       "options": [
-        "A) Apply directly on behalf of the client",
-        "B) Refer the client to the Wisconsin Historical Society",
-        "C) Provide a tax adjustment at closing",
-        "D) Include tax incentives in the listing price"
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
       "explanation": "Referral ensures accurate information about historic tax incentives."
     },
     {
-      "id": 39,
-      "difficulty": "hard",
       "questionText": "What must be included when listing a business for sale without real estate?",
       "options": [
-        "A) Property inspection reports",
-        "B) Allocation of purchase price to goodwill and inventory",
-        "C) Proof of business income tax filing",
-        "D) Zoning approval for future business use"
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
       "explanation": "Allocation of price components is critical in business sales."
     },
     {
-      "id": 40,
-      "difficulty": "hard",
       "questionText": "What is required to transfer contracts during a broker's business closure?",
       "options": [
-        "A) Client consent and formal notifications",
-        "B) Automatic transfer to the firm’s successor",
-        "C) Approval by the DSPS",
-        "D) Immediate reassignment by the supervising broker"
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Client consent and formal notifications",
       "explanation": "Contracts require client consent and clear communication."
     },
     {
-      "id": 41,
-      "difficulty": "hard",
       "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
       "options": [
-        "A) None, as contractors hold sole responsibility",
-        "B) The licensee and firm may share liability if they hired the contractor",
-        "C) The DSPS is notified for resolution",
-        "D) The tenant must pursue the contractor directly"
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
       "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
     },
     {
-      "id": 42,
-      "difficulty": "hard",
       "questionText": "What is the main distinction between a commercial and a business transaction?",
       "options": [
-        "A) Inclusion of licenses and personal property in business transactions",
-        "B) Zoning compliance in commercial transactions",
-        "C) Use of different listing contracts",
-        "D) Buyer’s intent to modify the property"
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
       "explanation": "Business transactions often involve personal property and operational assets."
     },
     {
-      "id": 43,
-      "difficulty": "hard",
       "questionText": "What triggers the statute of limitations for legal action against a licensee?",
       "options": [
-        "A) The closing date or termination of an agency agreement",
-        "B) The listing contract's signing date",
-        "C) Discovery of fraud",
-        "D) Notification from the DSPS"
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
       ],
-      "correctOption": 0,
+      "correctAnswer": "The closing date or termination of an agency agreement",
       "explanation": "The two-year period begins with the closing or agency agreement termination."
     },
     {
-      "id": 44,
-      "difficulty": "hard",
       "questionText": "What document is critical for auction transactions?",
       "options": [
-        "A) Bidder’s package",
-        "B) Inspection report",
-        "C) Lead-based paint waiver",
-        "D) WB-12 Farm Offer to Purchase"
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Bidder’s package",
       "explanation": "The bidder’s package contains essential details for auction participants."
     },
     {
-      "id": 45,
-      "difficulty": "hard",
       "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
       "options": [
-        "A) Document review contingency",
-        "B) Accessibility contingency",
-        "C) Environmental contingency",
-        "D) Building inspection contingency"
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Accessibility contingency",
       "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
+    },
+    {
+      "questionText": "What is required to transfer contracts during a broker's business closure?",
+      "options": [
+        "Client consent and formal notifications",
+        "Automatic transfer to the firm’s successor",
+        "Approval by the DSPS",
+        "Immediate reassignment by the supervising broker"
+      ],
+      "correctAnswer": "Client consent and formal notifications",
+      "explanation": "Contracts require client consent and clear communication."
+    },
+    {
+      "questionText": "What liability arises if a contractor improperly remediates lead-based paint?",
+      "options": [
+        "None, as contractors hold sole responsibility",
+        "The licensee and firm may share liability if they hired the contractor",
+        "The DSPS is notified for resolution",
+        "The tenant must pursue the contractor directly"
+      ],
+      "correctAnswer": "The licensee and firm may share liability if they hired the contractor",
+      "explanation": "Improper remediation can result in liability for the hiring firm or licensee."
+    },
+    {
+      "questionText": "What is the main distinction between a commercial and a business transaction?",
+      "options": [
+        "Inclusion of licenses and personal property in business transactions",
+        "Zoning compliance in commercial transactions",
+        "Use of different listing contracts",
+        "Buyer’s intent to modify the property"
+      ],
+      "correctAnswer": "Inclusion of licenses and personal property in business transactions",
+      "explanation": "Business transactions often involve personal property and operational assets."
+    },
+    {
+      "questionText": "What triggers the statute of limitations for legal action against a licensee?",
+      "options": [
+        "The closing date or termination of an agency agreement",
+        "The listing contract's signing date",
+        "Discovery of fraud",
+        "Notification from the DSPS"
+      ],
+      "correctAnswer": "The closing date or termination of an agency agreement",
+      "explanation": "The two-year period begins with the closing or agency agreement termination."
+    },
+    {
+      "questionText": "What document is critical for auction transactions?",
+      "options": [
+        "Bidder’s package",
+        "Inspection report",
+        "Lead-based paint waiver",
+        "WB-12 Farm Offer to Purchase"
+      ],
+      "correctAnswer": "Bidder’s package",
+      "explanation": "The bidder’s package contains essential details for auction participants."
+    },
+    {
+      "questionText": "What contingency ensures compliance with ADA accessibility for a commercial property?",
+      "options": [
+        "Document review contingency",
+        "Accessibility contingency",
+        "Environmental contingency",
+        "Building inspection contingency"
+      ],
+      "correctAnswer": "Accessibility contingency",
+      "explanation": "Accessibility contingencies address ADA compliance issues."
+    },
+    {
+      "questionText": "What must be included in the WB-12 Farm Offer to Purchase for clarity in fixture inclusion?",
+      "options": [
+        "Detailed inventory of machinery",
+        "Affirmation of annual crops as personal property unless agreed otherwise",
+        "A list of all livestock",
+        "Evidence of soil quality tests"
+      ],
+      "correctAnswer": "Affirmation of annual crops as personal property unless agreed otherwise",
+      "explanation": "Annual crops are not fixtures unless specified in the contract."
+    },
+    {
+      "questionText": "How is a licensee’s competence in business opportunity transactions established?",
+      "options": [
+        "By passing a specialty exam",
+        "By consulting a qualified expert if lacking experience",
+        "Through continuing education credits",
+        "By submitting a request to the DSPS"
+      ],
+      "correctAnswer": "By consulting a qualified expert if lacking experience",
+      "explanation": "Licensees must seek expertise if they are not competent in business transactions."
+    },
+    {
+      "questionText": "What is the key consideration in drafting an offer for vacant land with potential contamination?",
+      "options": [
+        "Proposed Use Contingency and environmental testing",
+        "Title insurance coverage",
+        "Approval from the local zoning board",
+        "Inclusion of soil testing permits"
+      ],
+      "correctAnswer": "Proposed Use Contingency and environmental testing",
+      "explanation": "Environmental testing ensures the land is suitable for the buyer’s intended use."
+    },
+    {
+      "questionText": "What are the elements of an executive summary for condominium sales?",
+      "options": [
+        "Property history and maintenance records",
+        "Parking, pet rules, rental restrictions, and reserve account details",
+        "The seller’s previous utility bills",
+        "Market valuation of comparable units"
+      ],
+      "correctAnswer": "Parking, pet rules, rental restrictions, and reserve account details",
+      "explanation": "The executive summary outlines critical condominium details for buyers."
+    },
+    {
+      "questionText": "What does strict responsibility misrepresentation require in real estate transactions?",
+      "options": [
+        "Intent to deceive",
+        "Negligence on the licensee’s part",
+        "Economic interest and false statement as fact",
+        "Buyer agreement on undisclosed terms"
+      ],
+      "correctAnswer": "Economic interest and false statement as fact",
+      "explanation": "Strict responsibility holds licensees accountable even without intent to deceive."
+    },
+    {
+      "questionText": "What is required for trust account record retention?",
+      "options": [
+        "Records must be retained for at least five years",
+        "Records must be retained electronically for two years or more",
+        "Records must be archived by DSPS within three months",
+        "Records must be submitted annually to the DSPS"
+      ],
+      "correctAnswer": "Records must be retained electronically for two years or more",
+      "explanation": "Records may be kept electronically for two years, per regulations."
+    },
+    {
+      "questionText": "What is the maximum civil forfeiture for a property owner violating Wis. Admin. Code Ch. ATCP 134?",
+      "options": [
+        "$1,000",
+        "$5,000",
+        "$10,000 per violation",
+        "$50,000"
+      ],
+      "correctAnswer": "$10,000 per violation",
+      "explanation": "Violations can result in civil forfeitures up to $10,000 per infraction."
+    },
+    {
+      "questionText": "How should a licensee handle historic property tax incentives?",
+      "options": [
+        "Apply directly on behalf of the client",
+        "Refer the client to the Wisconsin Historical Society",
+        "Provide a tax adjustment at closing",
+        "Include tax incentives in the listing price"
+      ],
+      "correctAnswer": "Refer the client to the Wisconsin Historical Society",
+      "explanation": "Referral ensures accurate information about historic tax incentives."
+    },
+    {
+      "questionText": "What must be included when listing a business for sale without real estate?",
+      "options": [
+        "Property inspection reports",
+        "Allocation of purchase price to goodwill and inventory",
+        "Proof of business income tax filing",
+        "Zoning approval for future business use"
+      ],
+      "correctAnswer": "Allocation of purchase price to goodwill and inventory",
+      "explanation": "Allocation of price components is critical in business sales."
     }
   ]
 }
