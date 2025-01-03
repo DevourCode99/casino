@@ -1,0 +1,785 @@
+{
+  "chapter": 8,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "questionText": "What is the primary responsibility of a brokerage firm in financial matters?",
+      "options": [
+        "A) Maximize profits for the firm",
+        "B) Ensure compliance with legal consumer protection laws",
+        "C) Share transaction fees with licensees",
+        "D) Open trust accounts for personal funds"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms must protect consumers and follow all applicable laws."
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "questionText": "What is an IBRETA account used for?",
+      "options": [
+        "A) Holding licensee salaries",
+        "B) Holding client funds in real estate transactions",
+        "C) Managing non-client funds for escrow purposes",
+        "D) Storing the firm’s operational funds"
+      ],
+      "correctOption": 1,
+      "explanation": "An IBRETA account is specifically designed for client funds."
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "questionText": "What is the maximum amount of personal funds a firm can keep in a trust account?",
+      "options": [
+        "A) $0",
+        "B) $100",
+        "C) $300",
+        "D) $500"
+      ],
+      "correctOption": 2,
+      "explanation": "Up to $300 can be deposited to cover service charges."
+    },
+    {
+      "id": 4,
+      "difficulty": "easy",
+      "questionText": "How many types of real estate trust accounts are there?",
+      "options": [
+        "A) One",
+        "B) Two",
+        "C) Three",
+        "D) Four"
+      ],
+      "correctOption": 2,
+      "explanation": "Trust accounts include IBRETA, interest-bearing for non-client funds, and non-interest-bearing for non-client funds."
+    },
+    {
+      "id": 5,
+      "difficulty": "easy",
+      "questionText": "How long does a firm have to notify the DSPS after opening a trust account?",
+      "options": [
+        "A) 5 days",
+        "B) 10 days",
+        "C) 15 days",
+        "D) 30 days"
+      ],
+      "correctOption": 1,
+      "explanation": "Notification must occur within 10 days to ensure compliance."
+    },
+    {
+      "id": 6,
+      "difficulty": "easy",
+      "questionText": "What must a trust account include in its name?",
+      "options": [
+        "A) The firm owner’s name",
+        "B) The firm’s name and the words \"trust account\"",
+        "C) The account holder’s signature",
+        "D) A DSPS registration number"
+      ],
+      "correctOption": 1,
+      "explanation": "Trust accounts must include the firm’s name and the designation \"trust account.\""
+    },
+    {
+      "id": 7,
+      "difficulty": "easy",
+      "questionText": "What is the purpose of a trust account?",
+      "options": [
+        "A) Holding non-refundable fees",
+        "B) Managing real estate trust funds for transactions",
+        "C) Securing brokerage firm assets",
+        "D) Paying commission to agents"
+      ],
+      "correctOption": 1,
+      "explanation": "Trust accounts are used to hold real estate trust funds such as earnest money."
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "questionText": "What does FDIC insure?",
+      "options": [
+        "A) Brokerage commissions",
+        "B) Real estate transactions",
+        "C) Deposits in eligible trust accounts",
+        "D) Loan repayments"
+      ],
+      "correctOption": 2,
+      "explanation": "FDIC provides insurance for deposits in trust accounts up to a limit."
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "questionText": "What must be done if a trust account check is returned for insufficient funds?",
+      "options": [
+        "A) Notify the buyer immediately",
+        "B) Close the trust account",
+        "C) Withdraw additional funds from another trust account",
+        "D) Notify the DSPS"
+      ],
+      "correctOption": 0,
+      "explanation": "The client must be informed and decide on next steps."
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "questionText": "Who can sign checks for a trust account?",
+      "options": [
+        "A) Only licensed brokers",
+        "B) Any authorized individual 18 years or older",
+        "C) Only the firm owner",
+        "D) Only the transaction’s buyer"
+      ],
+      "correctOption": 1,
+      "explanation": "Authorized signatories do not have to be licensees."
+    },
+    {
+      "id": 11,
+      "difficulty": "easy",
+      "questionText": "How soon must earnest money be deposited into a trust account?",
+      "options": [
+        "A) Immediately",
+        "B) Within 24 hours",
+        "C) Within 48 hours",
+        "D) Within one week"
+      ],
+      "correctOption": 2,
+      "explanation": "Funds must be deposited within 48 hours to comply with regulations."
+    },
+    {
+      "id": 12,
+      "difficulty": "easy",
+      "questionText": "What happens to interest earned on IBRETA accounts?",
+      "options": [
+        "A) It is distributed to the firm’s employees",
+        "B) It is donated to homeless assistance programs",
+        "C) It is kept by the client",
+        "D) It is used to pay DSPS fees"
+      ],
+      "correctOption": 1,
+      "explanation": "Interest earned on IBRETA accounts supports homelessness programs."
+    },
+    {
+      "id": 13,
+      "difficulty": "easy",
+      "questionText": "What is a non-depositable item in a real estate transaction?",
+      "options": [
+        "A) A cashier’s check",
+        "B) A personal check",
+        "C) A vehicle title used as collateral",
+        "D) Cash payments"
+      ],
+      "correctOption": 2,
+      "explanation": "Non-depositable items like vehicle titles cannot be held in trust accounts."
+    },
+    {
+      "id": 14,
+      "difficulty": "easy",
+      "questionText": "What must be included on every trust account check?",
+      "options": [
+        "A) The firm's logo",
+        "B) The words “trust account”",
+        "C) A transaction number",
+        "D) The supervising broker’s signature"
+      ],
+      "correctOption": 1,
+      "explanation": "Trust account checks must clearly indicate their purpose."
+    },
+    {
+      "id": 15,
+      "difficulty": "easy",
+      "questionText": "What is the role of a firm in escrow agreements for earnest money?",
+      "options": [
+        "A) Drafting the agreement",
+        "B) Holding earnest money",
+        "C) Referring parties to an attorney for drafting",
+        "D) Collecting interest on escrowed funds"
+      ],
+      "correctOption": 2,
+      "explanation": "Firms cannot draft escrow agreements and must refer parties to an attorney."
+    },
+    {
+      "id": 16,
+      "difficulty": "medium",
+      "questionText": "What should a licensee do when selling personally owned property?",
+      "options": [
+        "A) Deposit earnest money into a personal bank account",
+        "B) Hold earnest money in a real estate trust account",
+        "C) Ignore earnest money rules",
+        "D) Allow the buyer to hold the earnest money"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must handle earnest money as trust funds."
+    },
+    {
+      "id": 17,
+      "difficulty": "medium",
+      "questionText": "How are non-client funds for leases under one year categorized?",
+      "options": [
+        "A) Real estate trust funds and client funds",
+        "B) Personal funds",
+        "C) Real estate trust funds but not client funds",
+        "D) Non-regulated funds"
+      ],
+      "correctOption": 2,
+      "explanation": "These funds are not client funds but must still follow trust fund rules."
+    },
+    {
+      "id": 18,
+      "difficulty": "medium",
+      "questionText": "What must be included in the bookkeeping system for a trust account?",
+      "options": [
+        "A) Daily balance updates",
+        "B) A monthly trial balance and reconciliation",
+        "C) Only cash disbursements",
+        "D) Quarterly reviews by the DSPS"
+      ],
+      "correctOption": 1,
+      "explanation": "Bookkeeping must include a monthly reconciliation and trial balance."
+    },
+    {
+      "id": 19,
+      "difficulty": "medium",
+      "questionText": "What document must be submitted to the DSPS when opening a trust account?",
+      "options": [
+        "A) A business plan",
+        "B) Consent to examine and audit trust account form",
+        "C) An IRS tax form",
+        "D) A personal financial statement"
+      ],
+      "correctOption": 1,
+      "explanation": "This form authorizes the DSPS to examine trust accounts."
+    },
+    {
+      "id": 20,
+      "difficulty": "medium",
+      "questionText": "Who benefits from the interest earned on client funds in an IBRETA account?",
+      "options": [
+        "A) The brokerage firm",
+        "B) The state’s homeless assistance programs",
+        "C) The listing agent",
+        "D) The buyer"
+      ],
+      "correctOption": 1,
+      "explanation": "Interest from IBRETA accounts is used for public benefit."
+    },
+    {
+      "id": 21,
+      "difficulty": "medium",
+      "questionText": "What must a firm do if a buyer’s earnest money check bounces?",
+      "options": [
+        "A) Hold the check until sufficient funds are available",
+        "B) Notify the buyer and seller immediately",
+        "C) Destroy the check",
+        "D) Reimburse the seller"
+      ],
+      "correctOption": 1,
+      "explanation": "Both parties must be notified promptly of insufficient funds."
+    },
+    {
+      "id": 22,
+      "difficulty": "medium",
+      "questionText": "How should a firm handle funds received that cannot be deposited?",
+      "options": [
+        "A) Deposit them into a business account",
+        "B) Forward them to the payee within one business day",
+        "C) Hold them indefinitely",
+        "D) Return them to the buyer within 48 hours"
+      ],
+      "correctOption": 1,
+      "explanation": "Funds that cannot be deposited must be forwarded or returned promptly."
+    },
+    {
+      "id": 23,
+      "difficulty": "medium",
+      "questionText": "What is the definition of client funds under Wis. Stat. § 452.13?",
+      "options": [
+        "A) Any payment related to leases under one year",
+        "B) Promissory notes held by the firm",
+        "C) Earnest money, down payments, or money related to conveyances",
+        "D) Fees paid directly to licensees"
+      ],
+      "correctOption": 2,
+      "explanation": "Client funds specifically relate to conveyances and real estate transactions."
+    },
+    {
+      "id": 24,
+      "difficulty": "medium",
+      "questionText": "What is the purpose of a journal in trust account bookkeeping?",
+      "options": [
+        "A) Recording a summary of monthly transactions",
+        "B) Recording the chronological sequence of all receipts and disbursements",
+        "C) Balancing the trial ledger",
+        "D) Filing tax returns"
+      ],
+      "correctOption": 1,
+      "explanation": "The journal tracks all financial activities in chronological order."
+    },
+    {
+      "id": 25,
+      "difficulty": "medium",
+      "questionText": "What does a title insurance policy protect against?",
+      "options": [
+        "A) Market fluctuations",
+        "B) Defects, liens, or encumbrances in the title",
+        "C) Property damage",
+        "D) Zoning changes"
+      ],
+      "correctOption": 1,
+      "explanation": "Title insurance ensures a clear and marketable title."
+    },
+    {
+      "id": 26,
+      "difficulty": "medium",
+      "questionText": "What is the standard method of proration for real estate taxes?",
+      "options": [
+        "A) Based on the seller's estimate",
+        "B) Divided equally between buyer and seller",
+        "C) Using the previous year’s tax bill as a reference",
+        "D) Calculated by the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "Parties typically use the previous year’s tax bill for proration."
+    },
+    {
+      "id": 27,
+      "difficulty": "medium",
+      "questionText": "What is required to clear a construction lien exception?",
+      "options": [
+        "A) Proof of mortgage payments",
+        "B) A contractor’s lien waiver",
+        "C) A title insurance policy",
+        "D) Payment of the buyer’s closing costs"
+      ],
+      "correctOption": 1,
+      "explanation": "Lien waivers confirm no outstanding construction liens."
+    },
+    {
+      "id": 28,
+      "difficulty": "medium",
+      "questionText": "What does an owner’s affidavit typically address?",
+      "options": [
+        "A) Payment of earnest money",
+        "B) Contractor work and parties in possession",
+        "C) Title insurance premiums",
+        "D) Closing fees and commissions"
+      ],
+      "correctOption": 1,
+      "explanation": "The affidavit addresses lien and possession issues."
+    },
+    {
+      "id": 29,
+      "difficulty": "medium",
+      "questionText": "What does a gap endorsement cover?",
+      "options": [
+        "A) Errors in the seller’s disclosure",
+        "B) Liens or claims arising between the title commitment date and deed recording",
+        "C) Boundary disputes",
+        "D) Loan defaults"
+      ],
+      "correctOption": 1,
+      "explanation": "A gap endorsement protects against issues during this period."
+    },
+    {
+      "id": 30,
+      "difficulty": "medium",
+      "questionText": "What is the primary purpose of a closing statement?",
+      "options": [
+        "A) To confirm the listing agent’s commission",
+        "B) To outline financial details of the transaction",
+        "C) To assign repair responsibilities",
+        "D) To verify inspection results"
+      ],
+      "correctOption": 1,
+      "explanation": "The closing statement summarizes the transaction’s financial details."
+    },
+    {
+      "id": 31,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before closing a trust account?",
+      "options": [
+        "A) Notify the DSPS within 15 days",
+        "B) Ensure all funds are disbursed or transferred",
+        "C) Submit a final audit to the DSPS",
+        "D) Obtain written approval from all clients"
+      ],
+      "correctOption": 1,
+      "explanation": "A trust account cannot be closed until all funds are disbursed or transferred."
+    },
+    {
+      "id": 32,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle trust account funds from a rejected offer?",
+      "options": [
+        "A) Retain the funds until further instructions",
+        "B) Deposit them in a temporary holding account",
+        "C) Return them to the payer or forward them to the payee within one business day",
+        "D) Transfer them to the firm’s operational account"
+      ],
+      "correctOption": 2,
+      "explanation": "Funds from a rejected offer must be returned or forwarded promptly."
+    },
+    {
+      "id": 33,
+      "difficulty": "hard",
+      "questionText": "What is the required action if a firm receives a non-depositable item as earnest money?",
+      "options": [
+        "A) Hold it in the firm’s safe until the transaction closes",
+        "B) Deposit it in a separate non-depositable account",
+        "C) Return it to the buyer or direct them to an escrow agent",
+        "D) Convert it to a check and deposit in the trust account"
+      ],
+      "correctOption": 2,
+      "explanation": "Firms cannot hold non-depositable items; parties must handle them separately."
+    },
+    {
+      "id": 34,
+      "difficulty": "hard",
+      "questionText": "What must be included in the ledger for each transaction?",
+      "options": [
+        "A) The supervising broker’s signature",
+        "B) A running balance, transaction details, and party names",
+        "C) Monthly reconciliations",
+        "D) The DSPS certification number for the trust account"
+      ],
+      "correctOption": 1,
+      "explanation": "Ledgers must detail receipts, disbursements, and balances for each transaction."
+    },
+    {
+      "id": 35,
+      "difficulty": "hard",
+      "questionText": "What does a title insurance policy protect against?",
+      "options": [
+        "A) Market fluctuations",
+        "B) Defects, liens, or encumbrances in the title",
+        "C) Property damage",
+        "D) Zoning changes"
+      ],
+      "correctOption": 1,
+      "explanation": "Title insurance ensures a clear and marketable title."
+    },
+    {
+      "id": 36,
+      "difficulty": "hard",
+      "questionText": "What is the standard method of proration for real estate taxes?",
+      "options": [
+        "A) Based on the seller's estimate",
+        "B) Divided equally between buyer and seller",
+        "C) Using the previous year’s tax bill as a reference",
+        "D) Calculated by the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "Parties typically use the previous year’s tax bill for proration."
+    },
+    {
+      "id": 37,
+      "difficulty": "hard",
+      "questionText": "What is required to clear a construction lien exception?",
+      "options": [
+        "A) A lien waiver from the seller",
+        "B) A gap endorsement purchased by the seller",
+        "C) A survey of the property",
+        "D) Proof of no outstanding taxes"
+      ],
+      "correctOption": 1,
+      "explanation": "The gap exception is cleared with a gap endorsement."
+    },
+    {
+      "id": 38,
+      "difficulty": "hard",
+      "questionText": "What must a firm do if it holds a promissory note related to a transaction?",
+      "options": [
+        "A) Deposit it in the trust account",
+        "B) Record it in the ledger but not include it in the balance",
+        "C) Include it in the monthly trial balance",
+        "D) Send it to the DSPS for approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are recorded in the ledger but not included in the running balance."
+    },
+    {
+      "id": 39,
+      "difficulty": "hard",
+      "questionText": "What action can a firm take if parties fail to agree on disbursing earnest money after 60 days?",
+      "options": [
+        "A) Disburse funds at the firm's discretion",
+        "B) Retain the funds indefinitely",
+        "C) File an interpleader action or seek an attorney’s opinion",
+        "D) Transfer funds to the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "After 60 days, firms may seek legal resolution or an attorney's written opinion."
+    },
+    {
+      "id": 40,
+      "difficulty": "hard",
+      "questionText": "What can a firm do with trust account records if switching to computerized bookkeeping?",
+      "options": [
+        "A) Retain paper records only for the past year",
+        "B) Ensure all entries are backed up daily on a separate medium",
+        "C) Submit records to the DSPS for review",
+        "D) Use manual systems alongside computerized methods"
+      ],
+      "correctOption": 1,
+      "explanation": "Computerized records must have daily backups to comply with regulations."
+    },
+    {
+      "id": 41,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before disbursing earnest money based on an attorney's opinion?",
+      "options": [
+        "A) Obtain DSPS approval",
+        "B) Notify all parties by certified mail 30 days in advance",
+        "C) Ensure the opinion favors the firm",
+        "D) Have the attorney represent one of the parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Parties must receive 30 days' notice before disbursement based on an attorney's opinion."
+    },
+    {
+      "id": 42,
+      "difficulty": "hard",
+      "questionText": "What type of funds are not considered client funds under Wis. Stat. § 452.13?",
+      "options": [
+        "A) Earnest money",
+        "B) Promissory notes",
+        "C) Security deposits for leases over one year",
+        "D) Down payments"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are not client funds as they are not liquid payments."
+    },
+    {
+      "id": 43,
+      "difficulty": "hard",
+      "questionText": "What information is required when notifying the DSPS of a new trust account?",
+      "options": [
+        "A) The firm owner’s name and license number",
+        "B) The account name, number, and depository institution",
+        "C) The anticipated annual balance",
+        "D) The firm’s total number of trust accounts"
+      ],
+      "correctOption": 1,
+      "explanation": "Notification must include detailed account information and institution details."
+    },
+    {
+      "id": 44,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle escrow agreements for after-closing obligations?",
+      "options": [
+        "A) Draft the agreement using a WB form",
+        "B) Refer the parties to an attorney",
+        "C) Hold the funds in the firm’s operational account",
+        "D) Use the standard REEB-approved after-closing escrow form"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin does not approve a specific form for after-closing escrow agreements."
+    },
+    {
+      "id": 45,
+      "difficulty": "hard",
+      "questionText": "What is required to remove the gap exception in a title insurance policy?",
+      "options": [
+        "A) A lien waiver from the seller",
+        "B) A gap endorsement purchased by the seller",
+        "C) A survey of the property",
+        "D) Proof of no outstanding taxes"
+      ],
+      "correctOption": 1,
+      "explanation": "The gap exception is cleared with a gap endorsement."
+    },
+    {
+      "id": 46,
+      "difficulty": "hard",
+      "questionText": "What must a firm do if it holds a promissory note related to a transaction?",
+      "options": [
+        "A) Deposit it in the trust account",
+        "B) Record it in the ledger but not include it in the balance",
+        "C) Include it in the monthly trial balance",
+        "D) Send it to the DSPS for approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are recorded in the ledger but not included in the running balance."
+    },
+    {
+      "id": 47,
+      "difficulty": "hard",
+      "questionText": "What action can a firm take if parties fail to agree on disbursing earnest money after 60 days?",
+      "options": [
+        "A) Disburse funds at the firm's discretion",
+        "B) Retain the funds indefinitely",
+        "C) File an interpleader action or seek an attorney’s opinion",
+        "D) Transfer funds to the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "After 60 days, firms may seek legal resolution or an attorney's written opinion."
+    },
+    {
+      "id": 48,
+      "difficulty": "hard",
+      "questionText": "What can a firm do with trust account records if switching to computerized bookkeeping?",
+      "options": [
+        "A) Retain paper records only for the past year",
+        "B) Ensure all entries are backed up daily on a separate medium",
+        "C) Submit records to the DSPS for review",
+        "D) Use manual systems alongside computerized methods"
+      ],
+      "correctOption": 1,
+      "explanation": "Computerized records must have daily backups to comply with regulations."
+    },
+    {
+      "id": 49,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before disbursing earnest money based on an attorney's opinion?",
+      "options": [
+        "A) Obtain DSPS approval",
+        "B) Notify all parties by certified mail 30 days in advance",
+        "C) Ensure the opinion favors the firm",
+        "D) Have the attorney represent one of the parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Parties must receive 30 days' notice before disbursement based on an attorney's opinion."
+    },
+    {
+      "id": 50,
+      "difficulty": "hard",
+      "questionText": "What type of funds are not considered client funds under Wis. Stat. § 452.13?",
+      "options": [
+        "A) Earnest money",
+        "B) Promissory notes",
+        "C) Security deposits for leases over one year",
+        "D) Down payments"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are not client funds as they are not liquid payments."
+    },
+    {
+      "id": 51,
+      "difficulty": "hard",
+      "questionText": "What information is required when notifying the DSPS of a new trust account?",
+      "options": [
+        "A) The firm owner’s name and license number",
+        "B) The account name, number, and depository institution",
+        "C) The anticipated annual balance",
+        "D) The firm’s total number of trust accounts"
+      ],
+      "correctOption": 1,
+      "explanation": "Notification must include detailed account information and institution details."
+    },
+    {
+      "id": 52,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle escrow agreements for after-closing obligations?",
+      "options": [
+        "A) Draft the agreement using a WB form",
+        "B) Refer the parties to an attorney",
+        "C) Hold the funds in the firm’s operational account",
+        "D) Use the standard REEB-approved after-closing escrow form"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin does not approve a specific form for after-closing escrow agreements."
+    },
+    {
+      "id": 53,
+      "difficulty": "hard",
+      "questionText": "What is required to remove the gap exception in a title insurance policy?",
+      "options": [
+        "A) A lien waiver from the seller",
+        "B) A gap endorsement purchased by the seller",
+        "C) A survey of the property",
+        "D) Proof of no outstanding taxes"
+      ],
+      "correctOption": 1,
+      "explanation": "The gap exception is cleared with a gap endorsement."
+    },
+    {
+      "id": 54,
+      "difficulty": "hard",
+      "questionText": "What must a firm do if it holds a promissory note related to a transaction?",
+      "options": [
+        "A) Deposit it in the trust account",
+        "B) Record it in the ledger but not include it in the balance",
+        "C) Include it in the monthly trial balance",
+        "D) Send it to the DSPS for approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are recorded in the ledger but not included in the running balance."
+    },
+    {
+      "id": 55,
+      "difficulty": "hard",
+      "questionText": "What action can a firm take if parties fail to agree on disbursing earnest money after 60 days?",
+      "options": [
+        "A) Disburse funds at the firm's discretion",
+        "B) Retain the funds indefinitely",
+        "C) File an interpleader action or seek an attorney’s opinion",
+        "D) Transfer funds to the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "After 60 days, firms may seek legal resolution or an attorney's written opinion."
+    },
+    {
+      "id": 56,
+      "difficulty": "hard",
+      "questionText": "What can a firm do with trust account records if switching to computerized bookkeeping?",
+      "options": [
+        "A) Retain paper records only for the past year",
+        "B) Ensure all entries are backed up daily on a separate medium",
+        "C) Submit records to the DSPS for review",
+        "D) Use manual systems alongside computerized methods"
+      ],
+      "correctOption": 1,
+      "explanation": "Computerized records must have daily backups to comply with regulations."
+    },
+    {
+      "id": 57,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before disbursing earnest money based on an attorney's opinion?",
+      "options": [
+        "A) Obtain DSPS approval",
+        "B) Notify all parties by certified mail 30 days in advance",
+        "C) Ensure the opinion favors the firm",
+        "D) Have the attorney represent one of the parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Parties must receive 30 days' notice before disbursement based on an attorney's opinion."
+    },
+    {
+      "id": 58,
+      "difficulty": "hard",
+      "questionText": "What type of funds are not considered client funds under Wis. Stat. § 452.13?",
+      "options": [
+        "A) Earnest money",
+        "B) Promissory notes",
+        "C) Security deposits for leases over one year",
+        "D) Down payments"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are not client funds as they are not liquid payments."
+    },
+    {
+      "id": 59,
+      "difficulty": "hard",
+      "questionText": "What information is required when notifying the DSPS of a new trust account?",
+      "options": [
+        "A) The firm owner’s name and license number",
+        "B) The account name, number, and depository institution",
+        "C) The anticipated annual balance",
+        "D) The firm’s total number of trust accounts"
+      ],
+      "correctOption": 1,
+      "explanation": "Notification must include detailed account information and institution details."
+    },
+    {
+      "id": 60,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle escrow agreements for after-closing obligations?",
+      "options": [
+        "A) Draft the agreement using a WB form",
+        "B) Refer the parties to an attorney",
+        "C) Hold the funds in the firm’s operational account",
+        "D) Use the standard REEB-approved after-closing escrow form"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin does not approve a specific form for after-closing escrow agreements."
+    }
+  ]
+}
