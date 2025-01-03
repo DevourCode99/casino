@@ -6,449 +6,544 @@
   <title>Real Estate Broker Quiz</title>
   <style>
     /* =======================
-       BASIC RESET & STYLES
+       BASIC RESET & BASE STYLES
        ======================= */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: sans-serif;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: Arial, sans-serif;
     }
 
     body {
-      background-color: #f9f9f9;
+      background-color: #f3f4f6;
       padding: 20px;
-    }
-
-    h1, h2, h3 {
-      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 900px;
       background: #fff;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
     }
 
     /* =======================
-       START MENU STYLES
+       FORM CONTROLS
        ======================= */
-    #start-menu h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .menu-block {
-      margin: 15px 0;
+    .form-group {
+      margin-bottom: 1rem;
     }
 
     label {
-      margin-right: 5px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
 
-    select, button {
-      padding: 6px 10px;
-      margin-right: 5px;
-      margin-bottom: 5px;
+    select, .radio-group {
+      width: 100%;
+      max-width: 300px;
+      padding: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .radio-group label {
+      margin: 0;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
     }
 
     .btn {
-      padding: 8px 15px;
-      margin: 5px 0;
-      background: #3b82f6;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #2563eb;
       color: #fff;
       border: none;
+      border-radius: 0.25rem;
       cursor: pointer;
-      border-radius: 3px;
-      transition: background 0.2s ease-in-out;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
     }
 
     .btn:hover {
-      background: #2563eb;
+      background-color: #1d4ed8;
     }
 
     /* =======================
-       QUIZ SECTION STYLES
+       QUIZ & QUESTION STYLES
        ======================= */
-    #quiz-section {
-      display: none; /* Hide by default, show when user starts a quiz */
+    #quiz-section, #result-section {
+      margin-top: 2rem;
+      display: none;
     }
 
     .question-container {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
     }
 
     .question-container h3 {
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
 
     .options-container {
-      margin-left: 20px;
+      margin-left: 1rem;
+    }
+
+    .options-container label {
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .feedback.correct {
+      color: green;
+    }
+    .feedback.incorrect {
+      color: red;
+    }
+
+    #submit-btn {
+      margin-top: 1rem;
     }
 
     /* =======================
-       RESULT SECTION STYLES
+       RESULT SECTION
        ======================= */
-    #result-screen {
-      display: none;
+    #result-section h2 {
+      margin-bottom: 1rem;
       text-align: center;
     }
-
-    #result-screen h2 {
-      margin-bottom: 10px;
+    #score-display {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
     }
-
+    #restart-btn {
+      display: block;
+      margin: 1rem auto 0 auto;
+    }
   </style>
 </head>
 <body>
+<div class="container">
+  <h1>Real Estate Broker Quiz</h1>
 
-  <div class="container">
+  <!-- START MENU -->
+  <div id="start-menu">
+    <!-- SELECT CHAPTER(S) -->
+    <div class="form-group">
+      <label for="chapter-select">Choose Chapter or All:</label><br>
+      <select id="chapter-select">
+        <option value="all">All Chapters</option>
+        <!-- Create options for chapters 1–12 -->
+        <option value="1">Chapter 1</option>
+        <option value="2">Chapter 2</option>
+        <option value="3">Chapter 3</option>
+        <option value="4">Chapter 4</option>
+        <option value="5">Chapter 5</option>
+        <option value="6">Chapter 6</option>
+        <option value="7">Chapter 7</option>
+        <option value="8">Chapter 8</option>
+        <option value="9">Chapter 9</option>
+        <option value="10">Chapter 10</option>
+        <option value="11">Chapter 11</option>
+        <option value="12">Chapter 12</option>
+      </select>
+    </div>
 
-    <!-- =============== START MENU =============== -->
-    <div id="start-menu">
-      <h1>Real Estate Broker Quiz</h1>
+    <!-- SELECT QUESTION COUNT -->
+    <div class="form-group">
+      <label for="question-count-select">Number of Questions:</label><br>
+      <select id="question-count-select">
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+        <option value="75">75</option>
+        <option value="90">90</option>
+        <option value="100">100</option>
+      </select>
+    </div>
 
-      <!-- Option 1: Timed Test (example) -->
-      <button class="btn" id="timed-test-btn">Take a Timed Test</button>
-      
-      <!-- Option 2: Select Questions by Chapter -->
-      <div class="menu-block">
-        <label for="chapter-select">Select Chapter (1-12): </label>
-        <select id="chapter-select">
-          <option value="">--Choose Chapter--</option>
-          <option value="1">Chapter 1</option>
-          <option value="2">Chapter 2</option>
-          <option value="3">Chapter 3</option>
-          <option value="4">Chapter 4</option>
-          <option value="5">Chapter 5</option>
-          <option value="6">Chapter 6</option>
-          <option value="7">Chapter 7</option>
-          <option value="8">Chapter 8</option>
-          <option value="9">Chapter 9</option>
-          <option value="10">Chapter 10</option>
-          <option value="11">Chapter 11</option>
-          <option value="12">Chapter 12</option>
-        </select>
-        
-        <label for="chapter-question-count">Questions: </label>
-        <select id="chapter-question-count">
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
-          <option value="85">85</option>
-          <option value="100">100</option>
-        </select>
-
-        <button class="btn" id="chapter-test-btn">Take Chapter Test</button>
-      </div>
-
-      <!-- Option 3: Questions from All Chapters -->
-      <div class="menu-block">
-        <label for="all-chapter-question-count">All Chapters - Questions: </label>
-        <select id="all-chapter-question-count">
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
-          <option value="85">85</option>
-          <option value="100">100</option>
-        </select>
-        <button class="btn" id="all-chapters-test-btn">All Chapters Test</button>
-      </div>
-
-      <!-- Option 4: Full Simulated Brokers Exam -->
-      <div class="menu-block">
-        <button class="btn" id="full-broker-exam-btn">Take Full Simulated Broker's Exam (3hr 15min)</button>
-      </div>
-
-      <!-- Option 5: Format Selection -->
-      <div class="menu-block">
-        <h3>Select Question Display Format:</h3>
-        <input type="radio" name="format" id="format-one-at-a-time" value="oneAtATime" checked />
-        <label for="format-one-at-a-time">One question at a time (immediate feedback)</label><br>
-
-        <input type="radio" name="format" id="format-act-style" value="actStyle" />
-        <label for="format-act-style">All questions laid out (like ACT test)</label><br>
-
-        <input type="radio" name="format" id="format-submit-end" value="submitEnd" />
-        <label for="format-submit-end">All questions, no answers until submitted</label>
+    <!-- DISPLAY FORMAT RADIO -->
+    <div class="form-group">
+      <label>Select Display Format:</label><br>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="format" value="allAtOnce" checked />
+          All at Once
+        </label>
+        <label>
+          <input type="radio" name="format" value="oneAtATime" />
+          One at a Time
+        </label>
       </div>
     </div>
-    <!-- =============== END START MENU =============== -->
 
+    <!-- START QUIZ BUTTON -->
+    <button class="btn" id="start-quiz-btn">Start Quiz</button>
+  </div>
+  <!-- END START MENU -->
 
-    <!-- =============== QUIZ SECTION =============== -->
-    <div id="quiz-section">
-      <h2 id="quiz-type-heading">Quiz In Progress</h2>
-      <div id="quiz-questions-container">
-        <!-- Questions will appear here dynamically -->
-      </div>
+  <!-- QUIZ SECTION -->
+  <div id="quiz-section">
+    <h2 id="quiz-title"></h2>
+    <div id="quiz-questions-container"></div>
 
-      <!-- Submit Quiz Button (only relevant for certain formats) -->
-      <button class="btn" id="submit-quiz-btn" style="display: none;">Submit Quiz</button>
-    </div>
-    <!-- =============== END QUIZ SECTION =============== -->
+    <!-- NEXT BUTTON (for 'oneAtATime' mode) -->
+    <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
 
-    <!-- =============== RESULT SECTION =============== -->
-    <div id="result-screen">
-      <h2>Quiz Results</h2>
-      <p id="score-display"></p>
-      <button class="btn" id="return-home-btn">Return to Start Menu</button>
-    </div>
-    <!-- =============== END RESULT SECTION =============== -->
-
+    <!-- SUBMIT BUTTON (for 'allAtOnce' mode) -->
+    <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
   </div>
 
-  <script>
-    /******************************************************
-     * GLOBAL VARIABLES / DOM ELEMENTS
-     ******************************************************/
-    const startMenu = document.getElementById("start-menu");
-    const quizSection = document.getElementById("quiz-section");
-    const resultScreen = document.getElementById("result-screen");
+  <!-- RESULT SECTION -->
+  <div id="result-section">
+    <h2>Quiz Results</h2>
+    <div id="score-display"></div>
+    <button class="btn" id="restart-btn">Restart</button>
+  </div>
+</div>
 
-    const quizTypeHeading = document.getElementById("quiz-type-heading");
-    const quizQuestionsContainer = document.getElementById("quiz-questions-container");
-    const submitQuizBtn = document.getElementById("submit-quiz-btn");
-    const scoreDisplay = document.getElementById("score-display");
+<script>
+/********************************************************************
+ * DOM ELEMENTS & GLOBAL STATE
+ ********************************************************************/
+const startMenu           = document.getElementById('start-menu');
+const quizSection         = document.getElementById('quiz-section');
+const resultSection       = document.getElementById('result-section');
+const quizTitle           = document.getElementById('quiz-title');
+const quizContainer       = document.getElementById('quiz-questions-container');
+const startQuizBtn        = document.getElementById('start-quiz-btn');
+const nextQuestionBtn     = document.getElementById('next-question-btn');
+const submitBtn           = document.getElementById('submit-btn');
+const scoreDisplay        = document.getElementById('score-display');
+const restartBtn          = document.getElementById('restart-btn');
 
-    // Buttons
-    const timedTestBtn = document.getElementById("timed-test-btn");
-    const chapterTestBtn = document.getElementById("chapter-test-btn");
-    const allChaptersTestBtn = document.getElementById("all-chapters-test-btn");
-    const fullBrokerExamBtn = document.getElementById("full-broker-exam-btn");
-    const returnHomeBtn = document.getElementById("return-home-btn");
+// Form Controls
+const chapterSelect       = document.getElementById('chapter-select');
+const questionCountSelect = document.getElementById('question-count-select');
+const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
 
-    // Selects
-    const chapterSelect = document.getElementById("chapter-select");
-    const chapterQuestionCount = document.getElementById("chapter-question-count");
-    const allChapterQuestionCount = document.getElementById("all-chapter-question-count");
+// Global Variables
+let currentQuestions      = []; // Full set of selected & shuffled questions
+let currentIndex          = 0;  // For "oneAtATime" mode
+let chosenFormat          = 'allAtOnce'; 
+let userAnswers           = []; // Track user answers if needed for grading
 
-    // Radio Format Selection
-    const formatRadioButtons = document.querySelectorAll('input[name="format"]');
+/********************************************************************
+ * EVENT LISTENERS
+ ********************************************************************/
+startQuizBtn.addEventListener('click', startQuiz);
+nextQuestionBtn.addEventListener('click', handleNextQuestion);
+submitBtn.addEventListener('click', handleSubmitQuiz);
+restartBtn.addEventListener('click', resetQuiz);
 
-    /******************************************************
-     * DEMO DATA: Each choice has 'text' + 'isCorrect'
-     ******************************************************/
-    const placeholderQuestions = [
-      {
-        question: "Which of the following is real property?",
-        choices: [
-          { text: "A free-standing refrigerator", isCorrect: false },
-          { text: "A built-in dishwasher",       isCorrect: true },
-          { text: "A tenant’s personal furniture", isCorrect: false },
-          { text: "An area rug",                  isCorrect: false }
-        ]
-      },
-      {
-        question: "What is the primary purpose of a deed?",
-        choices: [
-          { text: "To record the sale price", isCorrect: false },
-          { text: "To prove ownership",       isCorrect: false },
-          { text: "To transfer title",        isCorrect: true },
-          { text: "To pay property taxes",    isCorrect: false }
-        ]
-      }
-    ];
+/********************************************************************
+ * MAIN QUIZ LOGIC
+ ********************************************************************/
+/**
+ * 1. Determine if user wants "All" or a single chapter.
+ * 2. Fetch JSON(s), merge them if "all".
+ * 3. Shuffle and slice to desired question count.
+ * 4. Render depending on display format.
+ */
+async function startQuiz() {
+  // 1. Get user selection
+  const chapterValue = chapterSelect.value;       // e.g., "all" or "1" to "12"
+  const questionCount = parseInt(questionCountSelect.value, 10);
+  chosenFormat = getSelectedFormat();
 
-    /******************************************************
-     * UTILITY: Shuffle array in-place
-     * (Fisher-Yates Shuffle)
-     ******************************************************/
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
+  // 2. Fetch questions
+  const allFetchedQuestions = chapterValue === 'all'
+    ? await fetchAllChapters()
+    : await fetchSingleChapter(chapterValue);
+
+  // Shuffle the entire array, then slice to questionCount
+  shuffleArray(allFetchedQuestions);
+  currentQuestions = allFetchedQuestions.slice(0, questionCount);
+
+  // Reset for a new quiz
+  userAnswers  = Array(currentQuestions.length).fill(null);
+  currentIndex = 0;
+
+  // Show quiz section, hide start menu
+  startMenu.style.display   = 'none';
+  quizSection.style.display = 'block';
+  resultSection.style.display = 'none';
+
+  // Set title
+  quizTitle.textContent = (chapterValue === 'all')
+    ? `All Chapters - ${questionCount} Questions`
+    : `Chapter ${chapterValue} - ${questionCount} Questions`;
+
+  // 3. Render the first question or all questions
+  if (chosenFormat === 'oneAtATime') {
+    submitBtn.style.display       = 'none';
+    nextQuestionBtn.style.display = 'inline-block';
+    renderSingleQuestion(0);
+  } else {
+    // All at once
+    submitBtn.style.display       = 'inline-block';
+    nextQuestionBtn.style.display = 'none';
+    renderAllQuestions();
+  }
+}
+
+/**
+ * Fetch all 12 chapters from JSON, merge questions.
+ */
+async function fetchAllChapters() {
+  let merged = [];
+  // For demo, we assume 12 chapters
+  for (let i = 1; i <= 12; i++) {
+    const data = await fetchSingleChapter(i);
+    merged = merged.concat(data);
+  }
+  return merged;
+}
+
+/**
+ * Fetch a single chapter JSON, return questions array.
+ * Adjust the `fetch` path to match your GitHub location.
+ */
+async function fetchSingleChapter(chapterNumber) {
+  const url = `./data/chapter${chapterNumber}.json`; 
+  // Example: If it’s on GitHub, might look like:
+  // const url = `https://raw.githubusercontent.com/your-username/your-repo/main/data/chapter${chapterNumber}.json`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
+      return [];
     }
+    const jsonData = await response.json();
+    return jsonData.questions || [];
+  } catch (error) {
+    console.error("Error fetching chapter data:", error);
+    return [];
+  }
+}
 
-    /******************************************************
-     * EVENT LISTENERS
-     ******************************************************/
-    timedTestBtn.addEventListener("click", () => {
-      const selectedFormat = getSelectedFormat();
-      // Example: Timed test. We'll just load placeholder data:
-      startQuiz("Timed Test", placeholderQuestions, selectedFormat);
-    });
+/********************************************************************
+ * RENDERING FUNCTIONS
+ ********************************************************************/
+/**
+ * Render "oneAtATime" mode: Single Question
+ */
+function renderSingleQuestion(index) {
+  // Clear container
+  quizContainer.innerHTML = '';
 
-    chapterTestBtn.addEventListener("click", () => {
-      const selectedChapter = chapterSelect.value;
-      const questionCount = parseInt(chapterQuestionCount.value, 10);
-      const selectedFormat = getSelectedFormat();
+  const questionData = currentQuestions[index];
+  if (!questionData) return;
 
-      if (!selectedChapter) {
-        alert("Please select a chapter first.");
-        return;
-      }
+  // Create question block
+  const questionDiv = document.createElement('div');
+  questionDiv.classList.add('question-container');
 
-      // In real usage, you'd fetch from `data/chapterX.json`,
-      // randomize and pick 'questionCount' items,
-      // then shuffle answers in each question.
-      console.log(`Loading Chapter ${selectedChapter} with ${questionCount} questions in format: ${selectedFormat}`);
-      
-      startQuiz(`Chapter ${selectedChapter} Quiz`, placeholderQuestions, selectedFormat);
-    });
+  const header = document.createElement('h3');
+  header.textContent = `Question ${index+1}: ${questionData.questionText}`;
+  questionDiv.appendChild(header);
 
-    allChaptersTestBtn.addEventListener("click", () => {
-      const questionCount = parseInt(allChapterQuestionCount.value, 10);
-      const selectedFormat = getSelectedFormat();
+  // Options
+  const optionsDiv = document.createElement('div');
+  optionsDiv.classList.add('options-container');
 
-      // In real usage, you'd combine all chapter JSON, 
-      // pick random questions, then shuffle answers.
-      console.log(`Loading All Chapters with ${questionCount} questions, Format: ${selectedFormat}`);
-      
-      startQuiz("All Chapters Quiz", placeholderQuestions, selectedFormat);
-    });
+  questionData.options.forEach((optText, optIndex) => {
+    const label = document.createElement('label');
+    const radio = document.createElement('input');
+    radio.type  = 'radio';
+    radio.name  = `question${index}`;
+    radio.value = optIndex;
 
-    fullBrokerExamBtn.addEventListener("click", () => {
-      const selectedFormat = getSelectedFormat();
-      // The full exam is 3 hrs 15 min, 100 questions:
-      console.log("Loading Full Broker's Exam - 100 Q, 3hr15min");
-      
-      startQuiz("Full Broker's Exam", placeholderQuestions, selectedFormat);
-    });
+    // If previously answered, pre-check
+    if (userAnswers[index] === optIndex) radio.checked = true;
 
-    submitQuizBtn.addEventListener("click", handleSubmitQuiz);
-    returnHomeBtn.addEventListener("click", () => {
-      resultScreen.style.display = "none";
-      startMenu.style.display = "block";
-    });
-
-    /******************************************************
-     * QUIZ STARTING FUNCTION
-     ******************************************************/
-    function startQuiz(quizTitle, questionsArray, format) {
-      // Hide start menu, show quiz section
-      startMenu.style.display = "none";
-      quizSection.style.display = "block";
-      resultScreen.style.display = "none";
-
-      quizTypeHeading.textContent = quizTitle;
-      quizQuestionsContainer.innerHTML = "";
-
-      // Shuffle the answer choices for each question
-      const shuffledQuestions = questionsArray.map(q => {
-        // Clone the question
-        const newQuestion = {...q};
-        // Clone and shuffle choices
-        newQuestion.choices = [...q.choices];
-        shuffleArray(newQuestion.choices);
-        return newQuestion;
-      });
-
-      // Decide if we show SUBMIT button
-      // 'actStyle' or 'submitEnd' => show at the end
-      // 'oneAtATime' => immediate feedback
-      if (format === "actStyle" || format === "submitEnd") {
-        submitQuizBtn.style.display = "inline-block";
+    // Event listener to store user’s choice
+    radio.addEventListener('change', () => {
+      userAnswers[index] = optIndex;
+      // Immediate feedback if desired
+      if (optIndex === questionData.correctOption) {
+        showInstantFeedback(optionsDiv, true);
       } else {
-        submitQuizBtn.style.display = "none";
+        showInstantFeedback(optionsDiv, false);
       }
+    });
 
-      // For demonstration, we display all questions at once.
-      // If you want one-at-a-time, implement logic to show/hide each question sequentially.
-      shuffledQuestions.forEach((q, idx) => {
-        const questionDiv = document.createElement("div");
-        questionDiv.classList.add("question-container");
-        
-        const questionHeader = document.createElement("h3");
-        questionHeader.textContent = `Q${idx+1}: ${q.question}`;
-        questionDiv.appendChild(questionHeader);
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(" " + optText));
+    optionsDiv.appendChild(label);
+    optionsDiv.appendChild(document.createElement('br'));
+  });
 
-        const optionsDiv = document.createElement("div");
-        optionsDiv.classList.add("options-container");
+  questionDiv.appendChild(optionsDiv);
+  quizContainer.appendChild(questionDiv);
+}
 
-        q.choices.forEach((choiceObj, cIdx) => {
-          const label = document.createElement("label");
-          const radio = document.createElement("input");
-          radio.type = "radio";
-          radio.name = `question${idx}`;
-          radio.value = cIdx; // The user’s choice index
+/**
+ * Render "allAtOnce" mode
+ */
+function renderAllQuestions() {
+  quizContainer.innerHTML = '';
 
-          label.appendChild(radio);
-          const textNode = document.createTextNode(" " + choiceObj.text);
-          label.appendChild(textNode);
+  currentQuestions.forEach((qData, qIndex) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.classList.add('question-container');
 
-          optionsDiv.appendChild(label);
-          optionsDiv.appendChild(document.createElement("br"));
+    const header = document.createElement('h3');
+    header.textContent = `Q${qIndex+1}: ${qData.questionText}`;
+    questionDiv.appendChild(header);
 
-          // If format is "oneAtATime" or immediate feedback,
-          // we could add an event listener here to show if correct
-          // as soon as user picks an answer. (Optional)
-          if (format === "oneAtATime") {
-            radio.addEventListener("change", () => {
-              if (choiceObj.isCorrect) {
-                alert("Correct!");
-              } else {
-                alert("Incorrect!");
-              }
-            });
-          }
-        });
+    const optionsDiv = document.createElement('div');
+    optionsDiv.classList.add('options-container');
 
-        questionDiv.appendChild(optionsDiv);
-        quizQuestionsContainer.appendChild(questionDiv);
+    qData.options.forEach((optText, optIndex) => {
+      const label = document.createElement('label');
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = `question${qIndex}`;
+      radio.value = optIndex;
+
+      radio.addEventListener('change', () => {
+        userAnswers[qIndex] = optIndex;
       });
 
-      // Store shuffled questions in a global or local variable for SUBMIT usage
-      window.currentQuizQuestions = shuffledQuestions;
+      label.appendChild(radio);
+      label.appendChild(document.createTextNode(" " + optText));
+      optionsDiv.appendChild(label);
+      optionsDiv.appendChild(document.createElement('br'));
+    });
+
+    questionDiv.appendChild(optionsDiv);
+    quizContainer.appendChild(questionDiv);
+  });
+}
+
+/**
+ * Show instant feedback for "oneAtATime" format
+ */
+function showInstantFeedback(container, isCorrect) {
+  // Remove old feedback
+  const oldFeedback = container.querySelector('.feedback');
+  if (oldFeedback) oldFeedback.remove();
+
+  // Create new feedback
+  const feedbackEl = document.createElement('div');
+  feedbackEl.classList.add('feedback');
+  feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
+  feedbackEl.classList.add(isCorrect ? 'correct' : 'incorrect');
+  container.appendChild(feedbackEl);
+}
+
+/********************************************************************
+ * NAVIGATION / SUBMIT
+ ********************************************************************/
+/**
+ * 'Next Question' for oneAtATime
+ */
+function handleNextQuestion() {
+  currentIndex++;
+  if (currentIndex >= currentQuestions.length) {
+    // End of quiz => submit
+    handleSubmitQuiz();
+  } else {
+    renderSingleQuestion(currentIndex);
+  }
+}
+
+/**
+ * Evaluate answers and show results
+ */
+function handleSubmitQuiz() {
+  // Grade
+  let score = 0;
+  currentQuestions.forEach((question, qIndex) => {
+    const userChoice = userAnswers[qIndex];
+    if (userChoice === question.correctOption) {
+      score++;
     }
+  });
 
-    /******************************************************
-     * SUBMIT QUIZ FUNCTION
-     ******************************************************/
-    function handleSubmitQuiz() {
-      const questionsArray = window.currentQuizQuestions || [];
-      let score = 0;
+  const total = currentQuestions.length;
+  showResults(score, total);
+}
 
-      questionsArray.forEach((q, idx) => {
-        // Get the user's selected value
-        const radios = document.getElementsByName(`question${idx}`);
-        let userChoiceIndex = null;
-        for (const r of radios) {
-          if (r.checked) {
-            userChoiceIndex = parseInt(r.value, 10);
-            break;
-          }
-        }
-        // Check if that choice is correct
-        if (userChoiceIndex !== null && q.choices[userChoiceIndex].isCorrect) {
-          score++;
-        }
-      });
+/**
+ * Display the result and hide quiz
+ */
+function showResults(score, total) {
+  quizSection.style.display = 'none';
+  resultSection.style.display = 'block';
+  scoreDisplay.textContent = `You answered ${score} out of ${total} correctly.`;
+}
 
-      const total = questionsArray.length;
-      showResults(score, total);
+/**
+ * Restart: go back to Start Menu
+ */
+function resetQuiz() {
+  startMenu.style.display = 'block';
+  quizSection.style.display = 'none';
+  resultSection.style.display = 'none';
+  quizContainer.innerHTML = '';
+  userAnswers = [];
+  currentIndex = 0;
+}
+
+/********************************************************************
+ * UTILITIES
+ ********************************************************************/
+/**
+ * Get selected format from radio buttons
+ */
+function getSelectedFormat() {
+  let val = 'allAtOnce';
+  formatRadioButtons.forEach(rb => {
+    if (rb.checked) {
+      val = rb.value;
     }
+  });
+  return val;
+}
 
-    /******************************************************
-     * SHOW RESULTS
-     ******************************************************/
-    function showResults(score, total) {
-      quizSection.style.display = "none";
-      resultScreen.style.display = "block";
-      scoreDisplay.textContent = `You scored ${score} out of ${total}.`;
-    }
-
-    /******************************************************
-     * HELPER: GET SELECTED FORMAT
-     ******************************************************/
-    function getSelectedFormat() {
-      let formatValue;
-      formatRadioButtons.forEach((radio) => {
-        if (radio.checked) {
-          formatValue = radio.value;
-        }
-      });
-      return formatValue;
-    }
-  </script>
+/**
+ * Fisher-Yates shuffle in-place
+ */
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+</script>
 </body>
 </html>
