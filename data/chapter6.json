@@ -1,0 +1,369 @@
+{
+  "chapter": 5,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "questionText": "What is one role of the DSPS in handling complaints against licensees?",
+      "options": [
+        "A) Approve all agency contracts",
+        "B) Enforce professional standards and discipline violators",
+        "C) Set commission rates for licensees",
+        "D) Oversee private mediations"
+      ],
+      "correctOption": 1,
+      "explanation": "The DSPS enforces professional standards and disciplines violators to protect the public."
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "questionText": "What is the purpose of office policies in a real estate firm?",
+      "options": [
+        "A) To enforce commission rates",
+        "B) To outline standards for business practices and procedures",
+        "C) To handle arbitration between REALTORS®",
+        "D) To dictate state licensing exams"
+      ],
+      "correctOption": 1,
+      "explanation": "Office policies define business practices and ensure compliance with legal and ethical standards."
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "questionText": "What must a licensee do if they are not competent to handle a specific transaction?",
+      "options": [
+        "A) Refuse all transactions",
+        "B) Engage assistance from a competent party or refer the transaction",
+        "C) Attempt the transaction without assistance",
+        "D) Ignore the competency requirement"
+      ],
+      "correctOption": 1,
+      "explanation": "Competent practice requires either assistance or referral when outside a licensee’s competency."
+    },
+    {
+      "id": 4,
+      "difficulty": "easy",
+      "questionText": "What is mediation?",
+      "options": [
+        "A) A legally binding resolution process",
+        "B) A voluntary process involving a neutral third party to facilitate resolution",
+        "C) A direct negotiation without a third party",
+        "D) A court-ordered binding decision"
+      ],
+      "correctOption": 1,
+      "explanation": "Mediation is voluntary and involves a neutral mediator helping parties reach an agreement."
+    },
+    {
+      "id": 5,
+      "difficulty": "easy",
+      "questionText": "Who can a real estate licensee pay referral fees to?",
+      "options": [
+        "A) Unlicensed individuals",
+        "B) Wisconsin licensees or non-Wisconsin professionals lawfully engaged in real estate brokerage",
+        "C) Anyone who provides a lead",
+        "D) Only their clients"
+      ],
+      "correctOption": 1,
+      "explanation": "Referral fees can only be paid to licensed professionals or those lawfully engaged in real estate brokerage."
+    },
+    {
+      "id": 6,
+      "difficulty": "easy",
+      "questionText": "What is arbitration?",
+      "options": [
+        "A) A process where disputes are resolved by a neutral panel and decisions may be binding or nonbinding",
+        "B) A voluntary withdrawal from a dispute",
+        "C) A direct negotiation between parties without third-party involvement",
+        "D) A judicial hearing"
+      ],
+      "correctOption": 0,
+      "explanation": "Arbitration involves a neutral panel that resolves disputes, which can be binding or nonbinding."
+    },
+    {
+      "id": 7,
+      "difficulty": "easy",
+      "questionText": "What type of disputes are typically resolved through REALTOR® arbitration?",
+      "options": [
+        "A) Personal disputes",
+        "B) Contractual disputes between REALTORS®",
+        "C) Criminal complaints",
+        "D) Civil rights violations"
+      ],
+      "correctOption": 1,
+      "explanation": "REALTOR® arbitration is designed for resolving contractual disputes between REALTORS®."
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "questionText": "What is an ombudsman’s role in dispute resolution?",
+      "options": [
+        "A) To make legally binding decisions",
+        "B) To facilitate communication and resolve disputes informally",
+        "C) To represent one party in a legal proceeding",
+        "D) To enforce arbitration awards"
+      ],
+      "correctOption": 1,
+      "explanation": "Ombudsmen help facilitate communication and informal resolutions without making binding decisions."
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "questionText": "What is required for mediation to proceed?",
+      "options": [
+        "A) Agreement from only one party",
+        "B) Consent from all parties involved",
+        "C) A court order",
+        "D) A legally binding arbitration agreement"
+      ],
+      "correctOption": 1,
+      "explanation": "Mediation requires consent from all parties to proceed."
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "questionText": "What is one advantage of mediation over litigation?",
+      "options": [
+        "A) Decisions are always legally binding",
+        "B) It is less formal and more cost-effective",
+        "C) It always results in a win-lose outcome",
+        "D) It is mandatory for all disputes"
+      ],
+      "correctOption": 1,
+      "explanation": "Mediation is less formal, quicker, and more cost-effective compared to litigation."
+    },
+    {
+      "id": 11,
+      "difficulty": "medium",
+      "questionText": "What must a licensee include in a written incentive offer to a client or customer?",
+      "options": [
+        "A) A list of competitors",
+        "B) A clear and defined description of the incentive",
+        "C) A referral agreement with a third party",
+        "D) The client’s personal financial details"
+      ],
+      "correctOption": 1,
+      "explanation": "Incentives must be clearly defined and in writing to avoid disputes."
+    },
+    {
+      "id": 12,
+      "difficulty": "medium",
+      "questionText": "What is the main purpose of the DSPS complaint process?",
+      "options": [
+        "A) To punish licensees for minor infractions",
+        "B) To protect the public, rehabilitate credential holders, and deter future violations",
+        "C) To provide immediate compensation to complainants",
+        "D) To standardize commission rates"
+      ],
+      "correctOption": 1,
+      "explanation": "The DSPS complaint process aims to ensure public protection and improve professional standards."
+    },
+    {
+      "id": 13,
+      "difficulty": "medium",
+      "questionText": "What type of disputes are most often subject to REALTOR® arbitration?",
+      "options": [
+        "A) Employment disputes",
+        "B) Commission disputes between REALTORS®",
+        "C) Client complaints about marketing strategies",
+        "D) Zoning regulation disagreements"
+      ],
+      "correctOption": 1,
+      "explanation": "REALTOR® arbitration is commonly used for resolving commission disputes."
+    },
+    {
+      "id": 14,
+      "difficulty": "medium",
+      "questionText": "What is required for a licensee to engage in competent practice in a new area of real estate?",
+      "options": [
+        "A) Guesswork and online research",
+        "B) Assistance from a competent licensee or additional education",
+        "C) Refusal to practice in the area",
+        "D) DSPS-issued waiver of competence standards"
+      ],
+      "correctOption": 1,
+      "explanation": "A licensee must seek assistance or additional education to ensure competence."
+    },
+    {
+      "id": 15,
+      "difficulty": "medium",
+      "questionText": "Which of the following is NOT a step in the DSPS complaint process?",
+      "options": [
+        "A) Screening the complaint",
+        "B) Investigating the case",
+        "C) Publicly announcing all complaints",
+        "D) Holding an administrative hearing if necessary"
+      ],
+      "correctOption": 2,
+      "explanation": "Complaints are handled privately unless they proceed to public disciplinary action."
+    },
+    {
+      "id": 16,
+      "difficulty": "medium",
+      "questionText": "What is the role of a grievance committee in a REALTOR® ethics complaint?",
+      "options": [
+        "A) To impose penalties",
+        "B) To act as a grand jury and determine if a complaint warrants a hearing",
+        "C) To provide mandatory arbitration",
+        "D) To mediate disputes informally"
+      ],
+      "correctOption": 1,
+      "explanation": "The grievance committee reviews complaints to decide if they warrant a formal hearing."
+    },
+    {
+      "id": 17,
+      "difficulty": "medium",
+      "questionText": "What happens if mediation fails to resolve a dispute?",
+      "options": [
+        "A) The parties are bound by the mediator’s decision",
+        "B) The dispute proceeds to another resolution method, such as arbitration or litigation",
+        "C) The parties are fined by the DSPS",
+        "D) The mediator imposes a solution"
+      ],
+      "correctOption": 1,
+      "explanation": "Mediation is voluntary, and unresolved disputes can move to other resolution methods."
+    },
+    {
+      "id": 18,
+      "difficulty": "medium",
+      "questionText": "What is the primary difference between binding and nonbinding arbitration?",
+      "options": [
+        "A) Binding arbitration is faster",
+        "B) Binding arbitration decisions are legally enforceable, while nonbinding decisions are not",
+        "C) Nonbinding arbitration involves no neutral third party",
+        "D) Binding arbitration requires court approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Binding arbitration decisions are legally enforceable, unlike nonbinding ones."
+    },
+    {
+      "id": 19,
+      "difficulty": "medium",
+      "questionText": "What must a REALTOR® do to file a request for arbitration?",
+      "options": [
+        "A) Submit a written request to the DSPS",
+        "B) Provide proper documentation to the local REALTOR® Association",
+        "C) File a complaint with the local court",
+        "D) Obtain written consent from the other party"
+      ],
+      "correctOption": 1,
+      "explanation": "REALTOR®s submit arbitration requests to their local REALTOR® Association."
+    },
+    {
+      "id": 20,
+      "difficulty": "medium",
+      "questionText": "How does an ombudsman differ from an arbitrator?",
+      "options": [
+        "A) An ombudsman imposes decisions, while an arbitrator facilitates communication",
+        "B) An ombudsman facilitates communication, while an arbitrator imposes decisions",
+        "C) An ombudsman works for the DSPS, while an arbitrator works for a court",
+        "D) An ombudsman resolves disputes legally, while an arbitrator does not"
+      ],
+      "correctOption": 1,
+      "explanation": "Ombudsmen focus on facilitating communication, while arbitrators render decisions."
+    },
+    {
+      "id": 21,
+      "difficulty": "hard",
+      "questionText": "What distinguishes competency requirements for licensees under Wis. Admin. Code § REEB 24.03?",
+      "options": [
+        "A) Licensees must possess technical skills equivalent to third-party inspectors",
+        "B) Licensees must provide services within their competence or engage assistance",
+        "C) Licensees must have knowledge of all real estate laws",
+        "D) Licensees must be certified for arbitration"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must practice within their competence or seek assistance."
+    },
+    {
+      "id": 22,
+      "difficulty": "hard",
+      "questionText": "Under what circumstances can REALTORS® refuse to arbitrate a dispute?",
+      "options": [
+        "A) If the dispute is unrelated to real estate transactions",
+        "B) If the opposing party is not a REALTOR®",
+        "C) If the dispute involves commission rates",
+        "D) If the local association denies the request"
+      ],
+      "correctOption": 1,
+      "explanation": "REALTOR®s are not obligated to arbitrate disputes with non-REALTOR®s."
+    },
+    {
+      "id": 23,
+      "difficulty": "hard",
+      "questionText": "What factor does NOT impact the effectiveness of mediation as a dispute resolution tool?",
+      "options": [
+        "A) Voluntary participation by both parties",
+        "B) The mediator’s neutrality",
+        "C) Legally binding outcomes",
+        "D) The willingness of parties to communicate"
+      ],
+      "correctOption": 2,
+      "explanation": "Mediation outcomes are not legally binding unless agreed upon by the parties."
+    },
+    {
+      "id": 24,
+      "difficulty": "hard",
+      "questionText": "What legal statute governs arbitration agreements in real estate transactions in Wisconsin?",
+      "options": [
+        "A) Wis. Stat. § 452.01",
+        "B) Wis. Stat. § 788.015",
+        "C) Wis. Admin. Code § REEB 24.03",
+        "D) Wis. Stat. § 802.12"
+      ],
+      "correctOption": 1,
+      "explanation": "Wis. Stat. § 788.015 governs arbitration agreements in real estate transactions."
+    },
+    {
+      "id": 25,
+      "difficulty": "hard",
+      "questionText": "Which statement about REALTOR® mediation is true?",
+      "options": [
+        "A) Mediation decisions are enforceable in court",
+        "B) Mediation is required before arbitration for all REALTOR® disputes",
+        "C) Mediation can be abandoned at any time by either party",
+        "D) Mediation is only available for consumer complaints"
+      ],
+      "correctOption": 2,
+      "explanation": "Parties can abandon mediation at any time."
+    },
+    {
+      "id": 26,
+      "difficulty": "hard",
+      "questionText": "What must a licensee document when engaging assistance from a competent party?",
+      "options": [
+        "A) A DSPS approval form",
+        "B) The assisting party’s identity and contribution",
+        "C) A notarized agreement",
+        "D) The outcome of the transaction"
+      ],
+      "correctOption": 1,
+      "explanation": "Documentation includes the assisting party’s identity and their role in the transaction."
+    },
+    {
+      "id": 27,
+      "difficulty": "hard",
+      "questionText": "What determines whether a dispute is arbitrable under REALTOR® guidelines?",
+      "options": [
+        "A) The complexity of the dispute",
+        "B) Whether it involves a contractual disagreement between REALTORS®",
+        "C) The preference of the REALTOR® Association",
+        "D) Whether the parties have completed mediation first"
+      ],
+      "correctOption": 1,
+      "explanation": "Contractual disputes between REALTORS® are typically arbitrable."
+    },
+    {
+      "id": 28,
+      "difficulty": "hard",
+      "questionText": "Why must REALTORS® disclose arbitration agreements in agency contracts?",
+      "options": [
+        "A) To comply with DSPS regulations",
+        "B) To ensure clients understand their dispute resolution options",
+        "C) To prevent disputes from going to litigation",
+        "D) To reduce costs for clients"
+      ],
+      "correctOption": 1,
+      "explanation": "Disclosure ensures clients are aware of available dispute resolution methods."
+    }
+  ]
+}
