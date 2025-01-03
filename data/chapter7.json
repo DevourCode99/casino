@@ -1,369 +1,301 @@
 {
-  "chapter": 7,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is the primary purpose of business ethics in real estate?",
       "options": [
-        "A) To set commission rates",
-        "B) To guide licensees beyond the minimum legal standards",
-        "C) To enforce tax compliance",
-        "D) To dictate market conditions"
+        "To set commission rates",
+        "To guide licensees beyond the minimum legal standards",
+        "To enforce tax compliance",
+        "To dictate market conditions"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To guide licensees beyond the minimum legal standards",
       "explanation": "Business ethics guide licensees in making decisions that exceed minimum legal standards."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "What is required for offering party incentives to clients?",
       "options": [
-        "A) Verbal agreement only",
-        "B) Clearly defined and written terms",
-        "C) Approval from DSPS",
-        "D) Incentives must be non-monetary"
+        "Verbal agreement only",
+        "Clearly defined and written terms",
+        "Approval from DSPS",
+        "Incentives must be non-monetary"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Clearly defined and written terms",
       "explanation": "Incentives must be clearly defined and in writing to avoid misunderstandings."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "What must a licensee do when practicing outside their area of competence?",
       "options": [
-        "A) Proceed with minimal assistance",
-        "B) Refer the transaction or engage a competent party",
-        "C) Ignore competency requirements",
-        "D) Terminate their license"
+        "Proceed with minimal assistance",
+        "Refer the transaction or engage a competent party",
+        "Ignore competency requirements",
+        "Terminate their license"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Refer the transaction or engage a competent party",
       "explanation": "Licensees must refer the transaction or seek assistance when they lack competence."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
-      "questionText": "What is the role of the DSPS in handling complaints?",
-      "options": [
-        "A) To set property tax rates",
-        "B) To enforce professional standards and discipline violations",
-        "C) To handle all court cases",
-        "D) To regulate private contracts"
-      ],
-      "correctOption": 1,
-      "explanation": "The DSPS enforces professional standards and disciplines violators."
-    },
-    {
-      "id": 5,
-      "difficulty": "easy",
-      "questionText": "What type of disputes does REALTOR® arbitration typically handle?",
-      "options": [
-        "A) Employment disputes",
-        "B) Contractual disputes between REALTORS®",
-        "C) Disputes over zoning regulations",
-        "D) Consumer complaints about advertising"
-      ],
-      "correctOption": 1,
-      "explanation": "REALTOR® arbitration resolves contractual disputes between REALTORS®."
-    },
-    {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "What is mediation?",
       "options": [
-        "A) A formal court process",
-        "B) A voluntary negotiation facilitated by a neutral third party",
-        "C) A binding arbitration process",
-        "D) A method of setting commission rates"
+        "A formal court process",
+        "A voluntary negotiation facilitated by a neutral third party",
+        "A binding arbitration process",
+        "A method of setting commission rates"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A voluntary negotiation facilitated by a neutral third party",
       "explanation": "Mediation involves a neutral party helping disputants reach a voluntary agreement."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
+      "questionText": "Who can a real estate licensee pay referral fees to?",
+      "options": [
+        "Unlicensed individuals",
+        "Wisconsin licensees or non-Wisconsin professionals lawfully engaged in real estate brokerage",
+        "Anyone who provides a lead",
+        "Only their clients"
+      ],
+      "correctAnswer": "Wisconsin licensees or non-Wisconsin professionals lawfully engaged in real estate brokerage",
+      "explanation": "Referral fees can only be paid to licensed professionals or those lawfully engaged in real estate brokerage."
+    },
+    {
+      "questionText": "What is arbitration?",
+      "options": [
+        "A formal court process",
+        "A voluntary negotiation facilitated by a neutral third party",
+        "A process where disputes are resolved by a neutral panel and decisions may be binding or nonbinding",
+        "A method of setting commission rates"
+      ],
+      "correctAnswer": "A process where disputes are resolved by a neutral panel and decisions may be binding or nonbinding",
+      "explanation": "Arbitration involves a neutral panel that resolves disputes, which can be binding or nonbinding."
+    },
+    {
+      "questionText": "What type of disputes does REALTOR® arbitration typically handle?",
+      "options": [
+        "Employment disputes",
+        "Contractual disputes between REALTORS®",
+        "Disputes over zoning regulations",
+        "Consumer complaints about advertising"
+      ],
+      "correctAnswer": "Contractual disputes between REALTORS®",
+      "explanation": "REALTOR® arbitration resolves contractual disputes between REALTORS®."
+    },
+    {
       "questionText": "What is a grievance committee’s role in an ethics complaint?",
       "options": [
-        "A) To impose penalties",
-        "B) To determine if the complaint warrants a hearing",
-        "C) To mediate disputes",
-        "D) To set industry standards"
+        "To impose penalties",
+        "To determine if the complaint warrants a hearing",
+        "To mediate disputes",
+        "To set industry standards"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To determine if the complaint warrants a hearing",
       "explanation": "Grievance committees review complaints to decide if they should proceed to a hearing."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What can REALTORS® use ombudsman services for?",
       "options": [
-        "A) To impose binding decisions",
-        "B) To facilitate communication in disputes",
-        "C) To act as legal representatives",
-        "D) To enforce zoning regulations"
+        "To impose binding decisions",
+        "To facilitate communication in disputes",
+        "To act as legal representatives",
+        "To enforce zoning regulations"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To facilitate communication in disputes",
       "explanation": "Ombudsman services focus on communication and informal resolution."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "What is the effect of mediation on relationships between disputing parties?",
       "options": [
-        "A) It typically preserves relationships",
-        "B) It damages relationships permanently",
-        "C) It imposes legally binding decisions",
-        "D) It requires court intervention"
+        "It typically preserves relationships",
+        "It damages relationships permanently",
+        "It imposes legally binding decisions",
+        "It requires court intervention"
       ],
-      "correctOption": 0,
+      "correctAnswer": "It typically preserves relationships",
       "explanation": "Mediation is non-adversarial and aims to preserve relationships."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "What is a key characteristic of arbitration?",
       "options": [
-        "A) It always involves court judges",
-        "B) Decisions can be binding or nonbinding",
-        "C) It requires a written contract for disputes",
-        "D) It is only used for zoning disputes"
+        "It always involves court judges",
+        "Decisions can be binding or nonbinding",
+        "It requires a written contract for disputes",
+        "It is only used for zoning disputes"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Decisions can be binding or nonbinding",
       "explanation": "Arbitration can result in either binding or nonbinding decisions, depending on agreements."
     },
     {
-      "id": 11,
-      "difficulty": "medium",
       "questionText": "What is the primary purpose of Wis. Stat. § 452.19 regarding referral fees?",
       "options": [
-        "A) To allow unlicensed individuals to receive compensation",
-        "B) To restrict referral fees to licensed or lawfully engaged professionals",
-        "C) To regulate the use of electronic transactions",
-        "D) To prevent commission disputes"
+        "To allow unlicensed individuals to receive compensation",
+        "To restrict referral fees to licensed or lawfully engaged professionals",
+        "To regulate the use of electronic transactions",
+        "To prevent commission disputes"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To restrict referral fees to licensed or lawfully engaged professionals",
       "explanation": "Referral fees are restricted to licensed or lawfully engaged professionals."
     },
     {
-      "id": 12,
-      "difficulty": "medium",
       "questionText": "What must a licensee document when engaging assistance for competency?",
       "options": [
-        "A) DSPS approval",
-        "B) Identity and contribution of the assisting party",
-        "C) A notarized agreement",
-        "D) The value of the transaction"
+        "DSPS approval",
+        "Identity and contribution of the assisting party",
+        "A notarized agreement",
+        "The value of the transaction"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Identity and contribution of the assisting party",
       "explanation": "Licensees must document the identity and role of any assisting party."
     },
     {
-      "id": 13,
-      "difficulty": "medium",
       "questionText": "What is an advantage of mediation over arbitration?",
       "options": [
-        "A) Mediation decisions are legally binding",
-        "B) Mediation is less costly and preserves relationships better",
-        "C) Mediation requires court oversight",
-        "D) Mediation is faster but more expensive"
+        "Mediation decisions are legally binding",
+        "Mediation is less costly and preserves relationships better",
+        "Mediation requires court oversight",
+        "Mediation is faster but more expensive"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Mediation is less costly and preserves relationships better",
       "explanation": "Mediation is informal, less costly, and preserves relationships better."
     },
     {
-      "id": 14,
-      "difficulty": "medium",
       "questionText": "What is required to file a complaint with the DSPS?",
       "options": [
-        "A) Court approval",
-        "B) A formal written submission",
-        "C) A notarized affidavit",
-        "D) REALTOR® membership"
+        "Court approval",
+        "A formal written submission",
+        "A notarized affidavit",
+        "REALTOR® membership"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A formal written submission",
       "explanation": "Complaints must be submitted in writing through the DSPS process."
     },
     {
-      "id": 15,
-      "difficulty": "medium",
       "questionText": "What happens if a grievance committee finds merit in an arbitration request?",
       "options": [
-        "A) The case is closed",
-        "B) The request proceeds to a hearing",
-        "C) The licensee is automatically disciplined",
-        "D) The matter is referred to a court"
+        "The case is closed",
+        "The request proceeds to a hearing",
+        "The licensee is automatically disciplined",
+        "The matter is referred to a court"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The request proceeds to a hearing",
       "explanation": "If the grievance committee finds merit, the request proceeds to a hearing."
     },
     {
-      "id": 16,
-      "difficulty": "medium",
       "questionText": "What must a mediation settlement include to finalize the process?",
       "options": [
-        "A) Verbal agreement between parties",
-        "B) A written settlement agreement",
-        "C) Approval from DSPS",
-        "D) A court order"
+        "Verbal agreement between parties",
+        "A written settlement agreement",
+        "Approval from DSPS",
+        "A court order"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A written settlement agreement",
       "explanation": "Mediation settlements must be documented in writing to be finalized."
     },
     {
-      "id": 17,
-      "difficulty": "medium",
       "questionText": "Under what condition can licensees resolve disputes through arbitration?",
       "options": [
-        "A) Only if one party consents",
-        "B) If both parties agree to submit to arbitration",
-        "C) If the DSPS mandates arbitration",
-        "D) If the dispute involves nonbinding mediation"
+        "Only if one party consents",
+        "If both parties agree to submit to arbitration",
+        "If the DSPS mandates arbitration",
+        "If the dispute involves nonbinding mediation"
       ],
-      "correctOption": 1,
+      "correctAnswer": "If both parties agree to submit to arbitration",
       "explanation": "Arbitration requires mutual agreement to proceed."
     },
     {
-      "id": 18,
-      "difficulty": "medium",
       "questionText": "How does arbitration differ from civil litigation?",
       "options": [
-        "A) Arbitration is faster, less costly, and less formal",
-        "B) Arbitration is more expensive and time-consuming",
-        "C) Arbitration allows appeals in federal court",
-        "D) Arbitration decisions are public records"
+        "Arbitration is faster, less costly, and less formal",
+        "Arbitration is more expensive and time-consuming",
+        "Arbitration allows appeals in federal court",
+        "Arbitration decisions are public records"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Arbitration is faster, less costly, and less formal",
       "explanation": "Arbitration is designed to resolve disputes faster and at a lower cost than litigation."
     },
     {
-      "id": 19,
-      "difficulty": "medium",
       "questionText": "What must be disclosed in an arbitration agreement for a real estate transaction?",
       "options": [
-        "A) Parties’ addresses",
-        "B) Scope and terms of arbitrable disputes",
-        "C) Witnesses’ statements",
-        "D) Court jurisdiction details"
+        "Parties’ addresses",
+        "Scope and terms of arbitrable disputes",
+        "Witnesses’ statements",
+        "Court jurisdiction details"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Scope and terms of arbitrable disputes",
       "explanation": "Arbitration agreements should define the scope and terms of disputes subject to arbitration."
     },
     {
-      "id": 20,
-      "difficulty": "medium",
       "questionText": "What is a significant disadvantage of civil litigation compared to alternative dispute resolution methods?",
       "options": [
-        "A) It is faster but less effective",
-        "B) It is costly, time-consuming, and adversarial",
-        "C) It does not involve legal representation",
-        "D) It lacks enforceable outcomes"
+        "It is faster but less effective",
+        "It is costly, time-consuming, and adversarial",
+        "It does not involve legal representation",
+        "It lacks enforceable outcomes"
       ],
-      "correctOption": 1,
+      "correctAnswer": "It is costly, time-consuming, and adversarial",
       "explanation": "Civil litigation is expensive, lengthy, and often damages relationships."
     },
     {
-      "id": 21,
-      "difficulty": "hard",
       "questionText": "Under Wis. Admin. Code § REEB 24.03, what is a licensee's duty regarding fraud?",
       "options": [
-        "A) Ignore fraudulent behavior if not involved",
-        "B) Protect the public from fraud, misrepresentation, and unethical practices",
-        "C) Report all fraud to the DSPS immediately",
-        "D) Investigate fraud independently"
+        "Ignore fraudulent behavior if not involved",
+        "Protect the public from fraud, misrepresentation, and unethical practices",
+        "Report all fraud to the DSPS immediately",
+        "Investigate fraud independently"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Protect the public from fraud, misrepresentation, and unethical practices",
       "explanation": "Licensees must protect the public from fraud and unethical practices."
     },
     {
-      "id": 22,
-      "difficulty": "hard",
       "questionText": "What is the primary purpose of a stipulation agreement in the DSPS complaint process?",
       "options": [
-        "A) To escalate cases to court",
-        "B) To resolve cases without formal hearings",
-        "C) To impose immediate penalties",
-        "D) To gather evidence for further investigation"
+        "To escalate cases to court",
+        "To resolve cases without formal hearings",
+        "To impose immediate penalties",
+        "To gather evidence for further investigation"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To resolve cases without formal hearings",
       "explanation": "Stipulation agreements help resolve cases without formal proceedings."
     },
     {
-      "id": 23,
-      "difficulty": "hard",
       "questionText": "What differentiates nonbinding arbitration from binding arbitration?",
       "options": [
-        "A) Nonbinding arbitration does not involve evidence",
-        "B) Nonbinding arbitration results serve as negotiation bases only",
-        "C) Binding arbitration requires court involvement",
-        "D) Nonbinding arbitration is enforceable by law"
+        "Nonbinding arbitration does not involve evidence",
+        "Nonbinding arbitration results serve as negotiation bases only",
+        "Binding arbitration requires court involvement",
+        "Nonbinding arbitration is enforceable by law"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Nonbinding arbitration results serve as negotiation bases only",
       "explanation": "Nonbinding arbitration decisions are advisory and serve as negotiation tools."
     },
     {
-      "id": 24,
-      "difficulty": "hard",
-      "questionText": "What legal statute governs arbitration agreements in real estate transactions in Wisconsin?",
+      "questionText": "What must REALTORS® do when disputes involve both REALTORS® and non-REALTORS®?",
       "options": [
-        "A) Wis. Stat. § 452.01",
-        "B) Wis. Stat. § 788.015",
-        "C) Wis. Admin. Code § REEB 24.03",
-        "D) Wis. Stat. § 802.12"
+        "Arbitrate the dispute through REALTOR® boards",
+        "Allow non-REALTORS® to choose dispute resolution methods",
+        "Proceed directly to litigation",
+        "File complaints with DSPS"
       ],
-      "correctOption": 1,
-      "explanation": "Wis. Stat. § 788.015 governs arbitration agreements in real estate transactions."
+      "correctAnswer": "Allow non-REALTORS® to choose dispute resolution methods",
+      "explanation": "Non-REALTORS® are not bound to arbitration and can choose other methods."
     },
     {
-      "id": 25,
-      "difficulty": "hard",
-      "questionText": "Which statement about REALTOR® mediation is true?",
+      "questionText": "What must be disclosed in an arbitration agreement for a real estate transaction?",
       "options": [
-        "A) Mediation decisions are enforceable in court",
-        "B) Mediation is required before arbitration for all REALTOR® disputes",
-        "C) Mediation can be abandoned at any time by either party",
-        "D) Mediation is only available for consumer complaints"
+        "Parties’ addresses",
+        "Scope and terms of arbitrable disputes",
+        "Witnesses’ statements",
+        "Court jurisdiction details"
       ],
-      "correctOption": 2,
-      "explanation": "Parties can abandon mediation at any time."
+      "correctAnswer": "Scope and terms of arbitrable disputes",
+      "explanation": "Arbitration agreements should define the scope and terms of disputes subject to arbitration."
     },
     {
-      "id": 26,
-      "difficulty": "hard",
-      "questionText": "What must a licensee document when engaging assistance from a competent party?",
+      "questionText": "What is the role of the Real Estate Examining Board (REEB) in disciplinary cases?",
       "options": [
-        "A) A DSPS approval form",
-        "B) The assisting party’s identity and contribution",
-        "C) A notarized agreement",
-        "D) The outcome of the transaction"
+        "To conduct investigations",
+        "To impose discipline based on administrative hearing outcomes",
+        "To mediate between parties",
+        "To oversee REALTOR® associations"
       ],
-      "correctOption": 1,
-      "explanation": "Documentation includes the assisting party’s identity and their role in the transaction."
-    },
-    {
-      "id": 27,
-      "difficulty": "hard",
-      "questionText": "What determines whether a dispute is arbitrable under REALTOR® guidelines?",
-      "options": [
-        "A) The complexity of the dispute",
-        "B) Whether it involves a contractual disagreement between REALTORS®",
-        "C) The preference of the REALTOR® Association",
-        "D) Whether the parties have completed mediation first"
-      ],
-      "correctOption": 1,
-      "explanation": "Contractual disputes between REALTORS® are typically arbitrable."
-    },
-    {
-      "id": 28,
-      "difficulty": "hard",
-      "questionText": "Why must REALTORS® disclose arbitration agreements in agency contracts?",
-      "options": [
-        "A) To comply with DSPS regulations",
-        "B) To ensure clients understand their dispute resolution options",
-        "C) To prevent disputes from going to litigation",
-        "D) To reduce costs for clients"
-      ],
-      "correctOption": 1,
-      "explanation": "Disclosure ensures clients are aware of available dispute resolution methods."
+      "correctAnswer": "To impose discipline based on administrative hearing outcomes",
+      "explanation": "The REEB reviews decisions and imposes appropriate discipline."
     }
   ]
 }
