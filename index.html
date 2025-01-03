@@ -9,20 +9,30 @@
     /************************************************************
      * BASIC & GLOBAL STYLES
      ************************************************************/
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif; /* not Times New Roman */
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      font-family: Arial, sans-serif; /* <--- REPLACES TIMES NEW ROMAN */
       color: #333;
-      overflow-x: hidden;
+      overflow: hidden; /* Hide any scrollbars—since we vertically center */
+    }
+
+    /************************************************************
+     * FLEX CONTAINER TO CENTER VERTICALLY AND HORIZONTALLY
+     ************************************************************/
+    body {
+      display: flex;
+      justify-content: center;   /* Horizontal center */
+      align-items: center;       /* Vertical center */
     }
 
     .container {
       width: 100%;
       max-width: 900px;
-      margin: 2rem auto;
+      max-height: 90vh;    /* keep it from overflowing screen vertically */
       background: #fff;
       border-radius: 0.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -30,6 +40,12 @@
       opacity: 0; 
       transform: translateY(20px);
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* center contents vertically within container */
+      align-items: center;     /* center contents horizontally within container */
+      box-sizing: border-box;
+      overflow: auto; /* if content is too tall, allow scrolling within container */
     }
 
     @keyframes fadeInUp {
@@ -39,58 +55,31 @@
       }
     }
 
-    /* For "oneAtATime" mode, we center everything */
-    .centered-quiz {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    /************************************************************
+     * MENU (TOP RIGHT)
+     ************************************************************/
+    .top-right-menu {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      display: none; /* shown after user starts quiz */
     }
-
-    /* 2x2 answer grid */
-    .options-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: 1.5rem 0;
-      max-width: 600px; /* to keep it from stretching too wide */
-    }
-    .option-block {
-      background: #f9f9f9;
-      border: 1px solid #ccc;
+    .menu-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
       border-radius: 0.25rem;
-      padding: 1rem;
       cursor: pointer;
-      transition: background-color 0.2s;
-      text-align: center;
-    }
-    .option-block:hover {
-      background-color: #eee;
-    }
-
-    .question-container {
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 0.4s ease; /* fade up each question */
-    }
-
-    .feedback {
-      margin-top: 0.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
-    }
-    .feedback.correct {
-      color: green;
-    }
-    .feedback.incorrect {
-      color: red;
-    }
-    .explanation {
-      margin-top: 0.5rem;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #555;
+      margin-left: 0.5rem;
     }
 
-    /* FULLSCREEN BUTTON (BOTTOM RIGHT) */
+    /************************************************************
+     * FULLSCREEN BUTTON
+     ************************************************************/
     #fullscreen-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -112,27 +101,9 @@
       transform: scale(1.05);
     }
 
-    /* MENU (TOP RIGHT) */
-    .top-right-menu {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1000;
-      display: none; /* shown after user starts quiz */
-    }
-    .menu-btn {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 0.25rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-left: 0.5rem;
-    }
-
-    /* BASIC BUTTONS */
+    /************************************************************
+     * BUTTONS
+     ************************************************************/
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -145,6 +116,7 @@
       font-weight: 600;
       transition: background-color 0.2s ease, transform 0.2s ease;
       margin-top: 1rem;
+      text-align: center;
     }
     .btn:hover {
       background-color: #1d4ed8;
@@ -158,7 +130,9 @@
       background-color: #ddd;
     }
 
-    /* START MENU */
+    /************************************************************
+     * START MENU
+     ************************************************************/
     #start-menu h1 {
       text-align: center;
       margin-bottom: 1rem;
@@ -181,10 +155,91 @@
       align-items: center;
     }
 
-    /* RESULT SECTION */
+    /************************************************************
+     * QUIZ SECTION
+     ************************************************************/
+    #quiz-section {
+      width: 100%;
+      display: none;
+    }
+
+    .question-container {
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.4s ease; /* fade up each question */
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .remaining-count {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    /* 2x2 grid for the answers */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      justify-items: stretch;
+      width: 100%;
+    }
+
+    .option-block {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      text-align: center;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .option-block:hover {
+      background-color: #eee;
+    }
+    .option-block.correct {
+      background-color: #c8f7c5 !important; /* green highlight */
+      border-color: #0f9d58;
+    }
+    .option-block.wrong {
+      background-color: #f7c5c5 !important; /* red highlight */
+      border-color: #d93025;
+    }
+
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .feedback.correct {
+      color: green;
+    }
+    .feedback.incorrect {
+      color: red;
+    }
+
+    .explanation {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /************************************************************
+     * RESULT SECTION
+     ************************************************************/
+    #result-section {
+      width: 100%;
+      display: none;
+      text-align: center;
+    }
     #score-display {
       font-size: 1.2rem;
-      text-align: center;
       margin-bottom: 1rem;
       font-weight: bold;
     }
@@ -200,6 +255,7 @@
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
+  <!-- MAIN CONTAINER -->
   <div class="container" id="main-container">
 
     <!-- START MENU -->
@@ -253,24 +309,26 @@
       <!-- START QUIZ BUTTON -->
       <button class="btn" id="start-quiz-btn">Start Quiz</button>
     </div>
+    <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
-    <div id="quiz-section" style="display: none;">
+    <div id="quiz-section">
+      <!-- For one question at a time: show how many left to answer -->
+      <div class="remaining-count" id="remaining-count"></div>
+
       <div id="quiz-questions-container"></div>
 
-      <!-- NEXT BUTTON (only needed in certain scenarios) -->
       <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
-
-      <!-- SUBMIT BUTTON (All-at-once mode) -->
       <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
     </div>
 
     <!-- RESULT SECTION -->
-    <div id="result-section" style="display:none;">
+    <div id="result-section">
       <h2>Quiz Results</h2>
       <div id="score-display"></div>
       <button class="btn btn-secondary" id="restart-btn">Restart</button>
     </div>
+
   </div>
 
 <script>
@@ -291,6 +349,9 @@ const backToMenuBtn       = document.getElementById('back-to-menu-btn');
 const topRightMenu        = document.getElementById('top-right-menu');
 const fullscreenBtn       = document.getElementById('fullscreen-btn');
 
+// "Remaining" count
+const remainingCountEl    = document.getElementById('remaining-count');
+
 // Form Controls
 const chapterSelect       = document.getElementById('chapter-select');
 const questionCountSelect = document.getElementById('question-count-select');
@@ -299,10 +360,9 @@ const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
 /********************************************************************
  * QUIZ STATE
  ********************************************************************/
-let currentQuestions = [];  // For "allAtOnce" or to seed "oneAtATime"
-let questionQueue    = [];  // For "oneAtATime" we use this queue approach
-let userAnswers      = [];  // For "allAtOnce" only
-let currentIndex     = 0;   // For "oneAtATime" display
+let currentQuestions = [];  // Full set of chosen questions
+let questionQueue    = [];  // For "oneAtATime"
+let userAnswers      = [];  // For "allAtOnce"
 let chosenFormat     = 'allAtOnce'; 
 
 /********************************************************************
@@ -359,7 +419,7 @@ function updateQuestionCountOptions() {
 }
 
 /********************************************************************
- * MAIN START QUIZ LOGIC
+ * START QUIZ
  ********************************************************************/
 async function startQuiz() {
   // Show top-right menu
@@ -372,41 +432,38 @@ async function startQuiz() {
 
   chosenFormat = getSelectedFormat();
 
-  // For "allAtOnce," we'll just fill userAnswers at the end
-  userAnswers = [];
-
-  // If "oneAtATime," we use a queue for the question-by-question approach
-  questionQueue = [];
-
   // Possibly fetch the relevant JSON
   const chapterValue = chapterSelect.value;
   const questionCount = parseInt(questionCountSelect.value, 10);
 
-  const allFetched = (chapterValue === 'all')
-    ? await fetchAllChapters()
-    : await fetchSingleChapter(chapterValue);
+  let allFetched;
+  if (chapterValue === 'all') {
+    allFetched = await fetchAllChapters();
+  } else {
+    allFetched = await fetchSingleChapter(chapterValue);
+  }
 
-  // Shuffle entire question set, then pick the slice
   shuffleArray(allFetched);
   currentQuestions = allFetched.slice(0, questionCount);
-
-  // Also ensure each question's options are shuffled (for both modes).
+  // Also randomize each question's answers
   currentQuestions.forEach(q => shuffleArray(q.options));
 
   if (chosenFormat === 'allAtOnce') {
+    userAnswers = [];
     nextQuestionBtn.style.display = 'none';
-    submitBtn.style.display = 'inline-block';
+    submitBtn.style.display       = 'inline-block';
+
     renderAllAtOnceMode(currentQuestions);
   } else {
-    nextQuestionBtn.style.display = 'none'; 
-    submitBtn.style.display = 'none'; 
-    quizContainer.classList.add('centered-quiz'); 
+    // One at a time
+    nextQuestionBtn.style.display = 'none';
+    submitBtn.style.display       = 'none';
 
-    // For the new "must get all correct" approach:
-    // We'll copy currentQuestions into questionQueue 
+    // Copy to queue
     questionQueue = [...currentQuestions];
 
-    // Start with the first question
+    // Show initial "remaining" count
+    updateRemainingCount();
     showNextOneAtATimeQuestion();
   }
 }
@@ -424,7 +481,7 @@ async function fetchAllChapters() {
 }
 
 async function fetchSingleChapter(chapterNumber) {
-  const url = `./data/chapter${chapterNumber}.json`; 
+  const url = `./data/chapter${chapterNumber}.json`;
   // Adjust for GitHub raw link if needed
   try {
     const response = await fetch(url);
@@ -444,13 +501,10 @@ async function fetchSingleChapter(chapterNumber) {
  * ALL-AT-ONCE RENDER
  ********************************************************************/
 function renderAllAtOnceMode(questions) {
-  quizContainer.classList.remove('centered-quiz');
-
   quizContainer.innerHTML = '';
-  questions.forEach((qData, qIndex) => {
-    // Shuffle each question's options (already done, but let's be safe).
-    // shuffleArray(qData.options);
+  remainingCountEl.textContent = ''; // not used in allAtOnce
 
+  questions.forEach((qData, qIndex) => {
     const questionDiv = document.createElement('div');
     questionDiv.classList.add('question-container');
 
@@ -458,10 +512,8 @@ function renderAllAtOnceMode(questions) {
     header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
     questionDiv.appendChild(header);
 
-    // Create 4 radio inputs
+    // Just keep normal vertical arrangement for "allAtOnce"
     const optsDiv = document.createElement('div');
-    // Just keep normal vertical arrangement for "all at once"
-    // If you want the 2x2 style for allAtOnce too, you can re-use .options-grid
     optsDiv.style.margin = '1rem 0';
 
     qData.options.forEach((optText, optIdx) => {
@@ -489,13 +541,11 @@ function renderAllAtOnceMode(questions) {
 }
 
 /********************************************************************
- * ONE-AT-A-TIME LOGIC: MUST GET ALL CORRECT
- * If user is correct, remove from queue; if wrong, re-scramble & re-append
+ * ONE-AT-ONCE MODE: MUST GET ALL CORRECT, NO AUTO TRANSITION
  ********************************************************************/
 function showNextOneAtATimeQuestion() {
-  // If queue is empty => done => show results
+  // if no questions remain => user got them all correct
   if (questionQueue.length === 0) {
-    // They got them all correct
     handleSubmitOneAtATime();
     return;
   }
@@ -503,7 +553,6 @@ function showNextOneAtATimeQuestion() {
   quizContainer.innerHTML = '';
 
   const qData = questionQueue[0]; // front of the queue
-  // Create the question
   const questionDiv = document.createElement('div');
   questionDiv.classList.add('question-container');
 
@@ -511,54 +560,48 @@ function showNextOneAtATimeQuestion() {
   header.textContent = `Question: ${qData.questionText}`;
   questionDiv.appendChild(header);
 
-  // 2x2 grid of answer blocks
+  // 2x2 grid of answers
   const gridDiv = document.createElement('div');
   gridDiv.classList.add('options-grid');
 
-  // For each option, create a "rectangle" (div) or label
+  // Make sure answers are scrambled anew (just to be safe)
+  shuffleArray(qData.options);
+
   qData.options.forEach((optText, optIdx) => {
     const blockDiv = document.createElement('div');
     blockDiv.classList.add('option-block');
     blockDiv.textContent = optText;
 
-    // When user clicks, check correctness
     blockDiv.addEventListener('click', () => {
-      // Disable further clicks
+      // disable further clicks
       const siblings = gridDiv.querySelectorAll('.option-block');
       siblings.forEach(el => el.style.pointerEvents = 'none');
 
+      // check correctness
       const isCorrect = (optIdx === qData.correctOption);
       if (isCorrect) {
-        showFeedback(questionDiv, true, qData.explanation);
-
-        // remove the question from queue
-        questionQueue.shift();
-
-        // Show "Next Question" button
-        nextQuestionBtn.style.display = 'inline-block';
-        nextQuestionBtn.onclick = () => {
-          nextQuestionBtn.style.display = 'none';
-          showNextOneAtATimeQuestion();
-        };
+        blockDiv.classList.add('correct');
       } else {
-        // Wrong => re-scramble question => push to end
-        showFeedback(questionDiv, false, qData.explanation);
-
-        // We do a slight timeout to show feedback, then move on
-        setTimeout(() => {
-          // remove from front
-          questionQueue.shift();
-
-          // re-scramble its options
-          shuffleArray(qData.options);
-
-          // push it to the end
-          questionQueue.push(qData);
-
-          // automatically proceed to next question
-          showNextOneAtATimeQuestion();
-        }, 1500);
+        blockDiv.classList.add('wrong');
       }
+
+      // Show explanation + feedback
+      showFeedback(questionDiv, isCorrect, qData.explanation);
+
+      // Show next question button
+      nextQuestionBtn.style.display = 'inline-block';
+      nextQuestionBtn.onclick = () => {
+        nextQuestionBtn.style.display = 'none';
+        if (isCorrect) {
+          // remove from queue
+          questionQueue.shift();
+        } else {
+          // re-insert at end
+          questionQueue.push(questionQueue.shift());
+        }
+        updateRemainingCount();
+        showNextOneAtATimeQuestion();
+      };
     });
 
     gridDiv.appendChild(blockDiv);
@@ -568,7 +611,11 @@ function showNextOneAtATimeQuestion() {
   quizContainer.appendChild(questionDiv);
 }
 
-// Show final results after user eventually gets them all correct
+/** Update "Remaining: X" label */
+function updateRemainingCount() {
+  remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
+}
+
 function handleSubmitOneAtATime() {
   quizSection.style.display = 'none';
   resultSection.style.display = 'block';
@@ -576,20 +623,18 @@ function handleSubmitOneAtATime() {
 }
 
 /********************************************************************
- * NEXT QUESTION BUTTON (One at a Time)
+ * NEXT QUESTION BUTTON
  ********************************************************************/
 function handleNextQuestion() {
-  // Not used in the new forced-correct approach, but let's keep it if needed
+  // Not used in forced-correct flow anymore, but we keep the function for code consistency
 }
 
 /********************************************************************
- * SUBMIT BUTTON (All at Once)
+ * SUBMIT BUTTON (ALL-AT-ONCE)
  ********************************************************************/
 function handleSubmitQuiz() {
-  // Grade userAnswers vs. currentQuestions
   let score = 0;
   currentQuestions.forEach((q, i) => {
-    // userAnswers[i] might be undefined if user didn't pick anything
     if (userAnswers[i] === q.correctOption) {
       score++;
     }
@@ -601,7 +646,7 @@ function handleSubmitQuiz() {
 }
 
 /********************************************************************
- * SHOW FEEDBACK FOR ONE-AT-A-TIME
+ * FEEDBACK (ONE-AT-A-TIME)
  ********************************************************************/
 function showFeedback(parentDiv, isCorrect, explanation) {
   // Remove old feedback if any
@@ -613,7 +658,7 @@ function showFeedback(parentDiv, isCorrect, explanation) {
   feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
   parentDiv.appendChild(feedbackEl);
 
-  // Explanation (optional)
+  // Always show explanation
   if (explanation) {
     const explEl = document.createElement('div');
     explEl.classList.add('explanation');
@@ -623,11 +668,10 @@ function showFeedback(parentDiv, isCorrect, explanation) {
 }
 
 /********************************************************************
- * RESET & BACK TO MENU
+ * RESET QUIZ
  ********************************************************************/
 function resetQuiz() {
-  // Show start menu, hide quiz & results
-  startMenu.style.display = 'block';
+  startMenu.style.display   = 'block';
   quizSection.style.display = 'none';
   resultSection.style.display = 'none';
   topRightMenu.style.display = 'none';
@@ -636,11 +680,10 @@ function resetQuiz() {
   currentQuestions = [];
   questionQueue = [];
   userAnswers = [];
-  currentIndex = 0;
 }
 
 /********************************************************************
- * UTILS
+ * UTILITIES
  ********************************************************************/
 function getSelectedFormat() {
   let val = 'allAtOnce';
