@@ -1,317 +1,334 @@
 {
-  "chapter": 12,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is required for a property to qualify for a 1031 exchange?",
       "options": [
-        "A) It must be a personal residence.",
-        "B) It must be held for investment or business purposes.",
-        "C) It must be vacant land.",
-        "D) It must be a commercial property only."
+        "It must be a personal residence.",
+        "It must be held for investment or business purposes.",
+        "It must be vacant land.",
+        "It must be a commercial property only."
       ],
-      "correctOption": 1,
+      "correctAnswer": "It must be held for investment or business purposes.",
       "explanation": "1031 exchanges are limited to properties held for trade, business, or investment purposes."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "What document is used to transfer ownership of personal property?",
       "options": [
-        "A) Lease agreement",
-        "B) Bill of Sale",
-        "C) Warranty deed",
-        "D) Option agreement"
+        "Lease agreement",
+        "Bill of Sale",
+        "Warranty deed",
+        "Option agreement"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Bill of Sale",
       "explanation": "A Bill of Sale is the legal document used to transfer title to personal property."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "What is a short sale?",
       "options": [
-        "A) Selling property for a profit within a short timeframe.",
-        "B) Selling property for less than the total owed on it.",
-        "C) Selling property through an expedited auction.",
-        "D) Selling a property with no liens."
+        "Selling property for a profit within a short timeframe.",
+        "Selling property for less than the total owed on it.",
+        "Selling property through an expedited auction.",
+        "Selling a property with no liens."
       ],
-      "correctOption": 1,
+      "correctAnswer": "Selling property for less than the total owed on it.",
       "explanation": "In a short sale, the sale proceeds are insufficient to cover the liens and closing costs, requiring lender approval."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What is a lease with an option to purchase?",
       "options": [
-        "A) A simultaneous property exchange.",
-        "B) A rent-to-own arrangement.",
-        "C) A binding purchase agreement.",
-        "D) A tax-saving investment."
+        "A simultaneous property exchange.",
+        "A rent-to-own arrangement.",
+        "A binding purchase agreement.",
+        "A tax-saving investment."
       ],
-      "correctOption": 1,
+      "correctAnswer": "A rent-to-own arrangement.",
       "explanation": "This arrangement allows tenants to lease a property with the option to buy later."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "What is a lis pendens?",
       "options": [
-        "A) A judgment against unpaid debts.",
-        "B) A notice of a pending lawsuit.",
-        "C) A document to remove a lien.",
-        "D) A sheriff’s sale confirmation."
+        "A judgment against unpaid debts.",
+        "A notice of a pending lawsuit.",
+        "A document to remove a lien.",
+        "A sheriff’s sale confirmation."
       ],
-      "correctOption": 1,
+      "correctAnswer": "A notice of a pending lawsuit.",
       "explanation": "A lis pendens alerts third parties that a legal action is pending on a property."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "What is the primary purpose of the WB-25 Bill of Sale?",
       "options": [
-        "A) To transfer title to real property.",
-        "B) To transfer ownership of personal property.",
-        "C) To document financing terms.",
-        "D) To detail property disclosures."
+        "To transfer title to real property.",
+        "To transfer ownership of personal property.",
+        "To document financing terms.",
+        "To detail property disclosures."
       ],
-      "correctOption": 1,
+      "correctAnswer": "To transfer ownership of personal property.",
       "explanation": "The WB-25 Bill of Sale is specifically used to convey personal property."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What is a cooperative ownership arrangement?",
       "options": [
-        "A) Owning stock in a corporation that owns the building.",
-        "B) Directly owning a residential unit.",
-        "C) Sharing title to land among several owners.",
-        "D) Leasing property with an option to buy."
+        "Owning stock in a corporation that owns the building.",
+        "Directly owning a residential unit.",
+        "Sharing title to land among several owners.",
+        "Leasing property with an option to buy."
       ],
-      "correctOption": 0,
+      "correctAnswer": "Owning stock in a corporation that owns the building.",
       "explanation": "Cooperative ownership involves purchasing corporate stock, with the corporation owning the property."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What document initiates a foreclosure action?",
       "options": [
-        "A) Notice of Default",
-        "B) Summons and Complaint",
-        "C) Redemption notice",
-        "D) Sheriff's deed"
+        "Notice of Default",
+        "Summons and Complaint",
+        "Redemption notice",
+        "Sheriff's deed"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Summons and Complaint",
       "explanation": "A foreclosure begins with a summons and complaint filed in court."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "What is the minimum redemption period for strict foreclosure in Wisconsin?",
       "options": [
-        "A) Three business days",
-        "B) Seven working days",
-        "C) Ten calendar days",
-        "D) Thirty days"
+        "Three business days",
+        "Seven working days",
+        "Ten calendar days",
+        "Thirty days"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Seven working days",
       "explanation": "Wisconsin law mandates at least a seven-working-day redemption period for strict foreclosures."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "What type of agreement allows a buyer to acquire property gradually over time?",
       "options": [
-        "A) Warranty deed",
-        "B) Land contract",
-        "C) Option agreement",
-        "D) Foreclosure notice"
+        "Warranty deed",
+        "Land contract",
+        "Option agreement",
+        "Foreclosure notice"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Land contract",
       "explanation": "A land contract enables buyers to pay for property in installments while gaining equitable title."
     },
     {
-      "id": 11,
-      "difficulty": "medium",
       "questionText": "What type of exchange allows deferred property transfer?",
       "options": [
-        "A) Simultaneous exchange",
-        "B) Starker exchange",
-        "C) Conditional exchange",
-        "D) Cross-border exchange"
+        "Simultaneous exchange",
+        "Starker exchange",
+        "Conditional exchange",
+        "Cross-border exchange"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Starker exchange",
       "explanation": "A Starker exchange permits a delayed exchange of like-kind property under specific rules."
     },
     {
-      "id": 12,
-      "difficulty": "medium",
       "questionText": "What happens to a seller’s commission if the buyer defaults on a land contract?",
       "options": [
-        "A) It is waived.",
-        "B) It may be paid in installments.",
-        "C) It is fully refunded.",
-        "D) It is retained by the buyer."
+        "It is waived.",
+        "It may be paid in installments.",
+        "It is fully refunded.",
+        "It is retained by the buyer."
       ],
-      "correctOption": 1,
+      "correctAnswer": "It may be paid in installments.",
       "explanation": "The commission can be negotiated for installment payments tied to the buyer's payments."
     },
     {
-      "id": 13,
-      "difficulty": "medium",
       "questionText": "What is the role of a foreclosure redemption period?",
       "options": [
-        "A) To determine a deficiency judgment amount.",
-        "B) To allow the borrower time to repay the debt.",
-        "C) To confirm the sheriff's sale.",
-        "D) To finalize a property auction."
+        "To determine a deficiency judgment amount.",
+        "To allow the borrower time to repay the debt.",
+        "To confirm the sheriff's sale.",
+        "To finalize a property auction."
       ],
-      "correctOption": 1,
+      "correctAnswer": "To allow the borrower time to repay the debt.",
       "explanation": "The redemption period gives the borrower a chance to pay the debt and avoid foreclosure."
     },
     {
-      "id": 14,
-      "difficulty": "medium",
       "questionText": "What is the purpose of a WB-35 Simultaneous Exchange Agreement?",
       "options": [
-        "A) To transfer personal property.",
-        "B) To facilitate a like-kind property exchange.",
-        "C) To sell foreclosed property.",
-        "D) To confirm a sheriff’s sale."
+        "To transfer personal property.",
+        "To facilitate a like-kind property exchange.",
+        "To sell foreclosed property.",
+        "To confirm a sheriff’s sale."
       ],
-      "correctOption": 1,
+      "correctAnswer": "To facilitate a like-kind property exchange.",
       "explanation": "The WB-35 facilitates simultaneous property exchanges to comply with 1031 rules."
     },
     {
-      "id": 15,
-      "difficulty": "medium",
       "questionText": "How can a cooperative unit owner lose their lease?",
       "options": [
-        "A) By failing to sell stock",
-        "B) If the corporation defaults on the building’s mortgage",
-        "C) Through a sheriff's sale",
-        "D) By not paying personal utility bills"
+        "By failing to sell stock",
+        "If the corporation defaults on the building’s mortgage",
+        "Through a sheriff's sale",
+        "By not paying personal utility bills"
       ],
-      "correctOption": 1,
+      "correctAnswer": "If the corporation defaults on the building’s mortgage",
       "explanation": "A cooperative owner’s lease depends on the corporation maintaining financial stability."
     },
     {
-      "id": 16,
-      "difficulty": "medium",
       "questionText": "What is one key financial risk of a short sale?",
       "options": [
-        "A) Higher property taxes for the buyer",
-        "B) Forgiven debt being considered taxable income",
-        "C) Increased liability for lien holders",
-        "D) Greater commission fees for licensees"
+        "Higher property taxes for the buyer",
+        "Forgiven debt being considered taxable income",
+        "Increased liability for lien holders",
+        "Greater commission fees for licensees"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Forgiven debt being considered taxable income",
       "explanation": "The IRS may treat forgiven debt as taxable income, impacting the seller."
     },
     {
-      "id": 17,
-      "difficulty": "hard",
+      "questionText": "What happens during a quiet title action?",
+      "options": [
+        "A buyer secures equitable title.",
+        "A seller removes a land contract cloud on the title.",
+        "A lender records a lis pendens.",
+        "A lease agreement is finalized."
+      ],
+      "correctAnswer": "A seller removes a land contract cloud on the title.",
+      "explanation": "Quiet title actions resolve disputes over title to clear ownership claims."
+    },
+    {
+      "questionText": "What happens when a buyer exercises a lease option?",
+      "options": [
+        "The lease term is extended.",
+        "The property must be purchased per the option terms.",
+        "The seller retains all option fees.",
+        "The buyer forfeits the lease deposit."
+      ],
+      "correctAnswer": "The property must be purchased per the option terms.",
+      "explanation": "Exercising the option creates a binding purchase contract."
+    },
+    {
+      "questionText": "What kind of agreement combines a lease with a future purchase option?",
+      "options": [
+        "Lease with an option to purchase",
+        "Land contract",
+        "WB-25 Bill of Sale",
+        "Sheriff’s sale agreement"
+      ],
+      "correctAnswer": "Lease with an option to purchase",
+      "explanation": "This agreement provides a tenant the opportunity to buy the property during or after the lease term."
+    },
+    {
+      "questionText": "What clause in a land contract addresses unpaid purchase prices?",
+      "options": [
+        "Prepayment clause",
+        "Default grace period",
+        "Buyer’s creditworthiness clause",
+        "Seller’s rights clause"
+      ],
+      "correctAnswer": "Seller’s rights clause",
+      "explanation": "The seller’s rights clause outlines remedies for unpaid balances or buyer defaults."
+    },
+    {
       "questionText": "What distinguishes a strict foreclosure from a foreclosure by sale?",
       "options": [
-        "A) Strict foreclosure involves a sheriff’s sale, while foreclosure by sale does not.",
-        "B) Strict foreclosure waives deficiency judgments, while foreclosure by sale does not.",
-        "C) Strict foreclosure is for residential properties, while foreclosure by sale is for commercial properties.",
-        "D) Strict foreclosure allows redemption periods, while foreclosure by sale does not."
+        "Strict foreclosure involves a sheriff’s sale, while foreclosure by sale does not.",
+        "Strict foreclosure waives deficiency judgments, while foreclosure by sale does not.",
+        "Strict foreclosure is for residential properties, while foreclosure by sale is for commercial properties.",
+        "Strict foreclosure allows redemption periods, while foreclosure by sale does not."
       ],
-      "correctOption": 1,
+      "correctAnswer": "Strict foreclosure waives deficiency judgments, while foreclosure by sale does not.",
       "explanation": "Strict foreclosure waives deficiency judgments, allowing the lender to reclaim the property without a public sale."
     },
     {
-      "id": 18,
-      "difficulty": "hard",
       "questionText": "What is the minimum requirement for a property to qualify for a like-kind exchange under Section 1031?",
       "options": [
-        "A) The properties must have the same value.",
-        "B) The properties must be used for investment or business purposes.",
-        "C) The properties must be zoned identically.",
-        "D) The properties must be residential units."
+        "The properties must have the same value.",
+        "The properties must be used for investment or business purposes.",
+        "The properties must be zoned identically.",
+        "The properties must be residential units."
       ],
-      "correctOption": 1,
+      "correctAnswer": "The properties must be used for investment or business purposes.",
       "explanation": "Section 1031 exchanges are limited to properties held for trade, business, or investment purposes."
     },
     {
-      "id": 19,
-      "difficulty": "hard",
       "questionText": "What must a licensee do if a seller provides no condition report in a foreclosure transaction?",
       "options": [
-        "A) Advise the buyer to waive inspection contingencies.",
-        "B) Inform the buyer and assist in an independent inspection.",
-        "C) Draft a seller condition report on behalf of the seller.",
-        "D) Submit a lis pendens to the county register of deeds."
+        "Advise the buyer to waive inspection contingencies.",
+        "Inform the buyer and assist in an independent inspection.",
+        "Draft a seller condition report on behalf of the seller.",
+        "Submit a lis pendens to the county register of deeds."
       ],
-      "correctOption": 1,
+      "correctAnswer": "Inform the buyer and assist in an independent inspection.",
       "explanation": "Licensees must inform buyers of the lack of a condition report and recommend inspections to ensure buyer protection."
     },
     {
-      "id": 20,
-      "difficulty": "hard",
       "questionText": "What primary legal document governs the foreclosure process in Wisconsin?",
       "options": [
-        "A) Wis. Admin. Code REEB 24",
-        "B) Wis. Stat. Chapter 704",
-        "C) Wis. Stat. Chapter 846",
-        "D) Truth-in-Lending Act"
+        "Wis. Admin. Code REEB 24",
+        "Wis. Stat. Chapter 704",
+        "Wis. Stat. Chapter 846",
+        "Truth-in-Lending Act"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Wis. Stat. Chapter 846",
       "explanation": "Chapter 846 of the Wisconsin Statutes specifically outlines the foreclosure process and legal requirements."
     },
     {
-      "id": 21,
-      "difficulty": "hard",
       "questionText": "When is a bill of sale legally required in a transaction?",
       "options": [
-        "A) When real property is being sold.",
-        "B) When personal property is transferred as part of the sale.",
-        "C) When a lease agreement is being created.",
-        "D) When foreclosed properties are auctioned."
+        "When real property is being sold.",
+        "When personal property is transferred as part of the sale.",
+        "When a lease agreement is being created.",
+        "When foreclosed properties are auctioned."
       ],
-      "correctOption": 1,
+      "correctAnswer": "When personal property is transferred as part of the sale.",
       "explanation": "A bill of sale is necessary to transfer ownership of personal property included in a real estate or business transaction."
     },
     {
-      "id": 22,
-      "difficulty": "hard",
       "questionText": "What legal mechanism allows a seller to rescind a land contract and retain payments made by the buyer?",
       "options": [
-        "A) Foreclosure by sale",
-        "B) Voluntary termination",
-        "C) Strict foreclosure",
-        "D) Quiet title action"
+        "Foreclosure by sale",
+        "Voluntary termination",
+        "Strict foreclosure",
+        "Quiet title action"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Strict foreclosure",
       "explanation": "Strict foreclosure permits the seller to rescind the contract and retain all payments without a deficiency judgment."
     },
     {
-      "id": 23,
-      "difficulty": "hard",
       "questionText": "What action is required for a lender to foreclose on a cooperative unit owner?",
       "options": [
-        "A) File a lis pendens against the unit owner.",
-        "B) Foreclose on the corporation that holds the property.",
-        "C) Issue a personal judgment lien against the stockholder.",
-        "D) File a strict foreclosure action against the unit owner."
+        "File a lis pendens against the unit owner.",
+        "Foreclose on the corporation that holds the property.",
+        "Issue a personal judgment lien against the stockholder.",
+        "File a strict foreclosure action against the unit owner."
       ],
-      "correctOption": 1,
+      "correctAnswer": "Foreclose on the corporation that holds the property.",
       "explanation": "In a cooperative, the lender forecloses on the corporation that owns the building, as owners hold shares, not property."
     },
     {
-      "id": 24,
-      "difficulty": "hard",
       "questionText": "What IRS provision impacts sellers providing financing in more than five transactions per year?",
       "options": [
-        "A) SAFE Act requirements for mortgage loan originators",
-        "B) IRS section 179 tax deductions",
-        "C) TILA-RESPA disclosure mandates",
-        "D) Wisconsin Act 10 lending restrictions"
+        "SAFE Act requirements for mortgage loan originators",
+        "IRS section 179 tax deductions",
+        "TILA-RESPA disclosure mandates",
+        "Wisconsin Act 10 lending restrictions"
       ],
-      "correctOption": 0,
+      "correctAnswer": "SAFE Act requirements for mortgage loan originators",
       "explanation": "Sellers involved in more than five financing transactions per year may need to register as mortgage loan originators under the SAFE Act."
+    },
+    {
+      "questionText": "How does the IRS treat forgiven debt in a short sale for tax purposes?",
+      "options": [
+        "It is considered a non-taxable event.",
+        "It is taxed as capital gains.",
+        "It is treated as ordinary income.",
+        "It is automatically deductible as a loss."
+      ],
+      "correctAnswer": "It is treated as ordinary income.",
+      "explanation": "Forgiven debt is typically treated as ordinary income unless an exemption, such as insolvency, applies."
+    },
+    {
+      "questionText": "What happens if a property sold under a short sale fails to secure lender approval?",
+      "options": [
+        "The buyer assumes all liens on the property.",
+        "The seller may proceed with a foreclosure alternative.",
+        "The transaction cannot close, and the property remains unsold.",
+        "The lien holders must absorb the unpaid debt."
+      ],
+      "correctAnswer": "The transaction cannot close, and the property remains unsold.",
+      "explanation": "Without lender approval, the liens cannot be resolved, preventing the transaction from closing."
     }
   ]
 }
