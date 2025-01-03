@@ -1,786 +1,652 @@
 {
-  "chapter": 1,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is the primary purpose of a contract in real estate?",
       "options": [
-        "A) To define property dimensions",
-        "B) To establish a legally enforceable agreement",
-        "C) To list local property taxes",
-        "D) To set interest rates"
+        "To define property dimensions",
+        "To establish a legally enforceable agreement",
+        "To list local property taxes",
+        "To set interest rates"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To establish a legally enforceable agreement",
       "explanation": "Contracts establish obligations and rights that courts can enforce, which is the cornerstone of real estate transactions."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "What is required for a contract to be enforceable?",
       "options": [
-        "A) It must be verbal",
-        "B) It must be in writing and signed",
-        "C) It must include pictures of the property",
-        "D) It must be notarized"
+        "It must be verbal",
+        "It must be in writing and signed",
+        "It must include pictures of the property",
+        "It must be notarized"
       ],
-      "correctOption": 1,
+      "correctAnswer": "It must be in writing and signed",
       "explanation": "Wisconsin law requires real estate contracts to be in writing and signed to be enforceable."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "Who are the parties in a lease contract?",
       "options": [
-        "A) Lessor and lessee",
-        "B) Buyer and seller",
-        "C) Firm and client",
-        "D) Broker and tenant"
+        "Lessor and lessee",
+        "Buyer and seller",
+        "Firm and client",
+        "Broker and tenant"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Lessor and lessee",
       "explanation": "In lease agreements, the landlord (lessor) leases property to the tenant (lessee)."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What does \"time is of the essence\" mean in a contract?",
       "options": [
-        "A) Deadlines are flexible",
-        "B) Deadlines must be strictly adhered to",
-        "C) Deadlines can be negotiated later",
-        "D) Deadlines are suggested but not required"
+        "Deadlines are flexible",
+        "Deadlines must be strictly adhered to",
+        "Deadlines can be negotiated later",
+        "Deadlines are suggested but not required"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Deadlines must be strictly adhered to",
       "explanation": "When \"time is of the essence\" is stated, missing deadlines can lead to breaches."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "What type of document evidences a real estate transaction?",
       "options": [
-        "A) Receipt",
-        "B) Memorandum",
-        "C) Conveyance",
-        "D) Invoice"
+        "Receipt",
+        "Memorandum",
+        "Conveyance",
+        "Invoice"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Conveyance",
       "explanation": "Conveyances such as deeds or recorded leases are the evidence required for real estate transactions."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "Which of the following is NOT a common delivery method for real estate documents?",
       "options": [
-        "A) U.S. Mail",
-        "B) Fax",
-        "C) Telegram",
-        "D) Email"
+        "U.S. Mail",
+        "Fax",
+        "Telegram",
+        "Email"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Telegram",
       "explanation": "Telegrams are outdated and not a valid delivery method in modern transactions."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What is required for a homestead conveyance by a married person?",
       "options": [
-        "A) Only one spouse's signature",
-        "B) Signatures from both spouses",
-        "C) Verbal agreement",
-        "D) Attorney certification"
+        "Only one spouse's signature",
+        "Signatures from both spouses",
+        "Verbal agreement",
+        "Attorney certification"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Signatures from both spouses",
       "explanation": "Wisconsin law requires both spouses to sign for homestead conveyances."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What does the term \"meeting of the minds\" refer to in contract law?",
       "options": [
-        "A) Agreement on key terms",
-        "B) Exchange of earnest money",
-        "C) Setting deadlines",
-        "D) Signing the document"
+        "Agreement on key terms",
+        "Exchange of earnest money",
+        "Setting deadlines",
+        "Signing the document"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Agreement on key terms",
       "explanation": "A meeting of the minds ensures that both parties agree on essential terms."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "Who typically signs a deed to evidence a conveyance?",
       "options": [
-        "A) Grantee",
-        "B) Grantor",
-        "C) Broker",
-        "D) Both parties"
+        "Grantee",
+        "Grantor",
+        "Broker",
+        "Both parties"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Grantor",
       "explanation": "The grantor (seller) signs the deed to transfer ownership."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "What is earnest money?",
       "options": [
-        "A) A down payment",
-        "B) A promise to buy",
-        "C) A deposit to show intent",
-        "D) A loan payment"
+        "A down payment",
+        "A promise to buy",
+        "A deposit to show intent",
+        "A loan payment"
       ],
-      "correctOption": 2,
+      "correctAnswer": "A deposit to show intent",
       "explanation": "Earnest money is a deposit that shows a buyer's intention to follow through."
     },
     {
-      "id": 11,
-      "difficulty": "easy",
       "questionText": "What does consideration in a contract mean?",
       "options": [
-        "A) Mutual respect between parties",
-        "B) An exchange of something valuable",
-        "C) A written agreement",
-        "D) A legal signature"
+        "Mutual respect between parties",
+        "An exchange of something valuable",
+        "A written agreement",
+        "A legal signature"
       ],
-      "correctOption": 1,
+      "correctAnswer": "An exchange of something valuable",
       "explanation": "Consideration refers to something of value exchanged to form a binding agreement."
     },
     {
-      "id": 12,
-      "difficulty": "easy",
       "questionText": "Which of the following is an example of a conveyance?",
       "options": [
-        "A) Mortgage application",
-        "B) Deed transfer",
-        "C) Lease under one year",
-        "D) Verbal agreement"
+        "Mortgage application",
+        "Deed transfer",
+        "Lease under one year",
+        "Verbal agreement"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Deed transfer",
       "explanation": "A deed evidences the transfer of ownership, making it a conveyance."
     },
     {
-      "id": 13,
-      "difficulty": "easy",
       "questionText": "What happens if a buyer withdraws an offer before binding acceptance?",
       "options": [
-        "A) The seller can sue the buyer",
-        "B) The contract becomes void",
-        "C) The withdrawal is valid",
-        "D) The buyer forfeits earnest money"
+        "The seller can sue the buyer",
+        "The contract becomes void",
+        "The withdrawal is valid",
+        "The buyer forfeits earnest money"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The withdrawal is valid",
       "explanation": "Offers can be withdrawn before binding acceptance without penalty."
     },
     {
-      "id": 14,
-      "difficulty": "easy",
       "questionText": "What term describes the party selling a property in a transaction?",
       "options": [
-        "A) Grantee",
-        "B) Grantor",
-        "C) Lessee",
-        "D) Mortgagor"
+        "Grantee",
+        "Grantor",
+        "Lessee",
+        "Mortgagor"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Grantor",
       "explanation": "The grantor is the person transferring property ownership."
     },
     {
-      "id": 15,
-      "difficulty": "easy",
       "questionText": "Which law requires real estate contracts to be in writing?",
       "options": [
-        "A) Law of Conveyance",
-        "B) Statute of Frauds",
-        "C) Fair Housing Act",
-        "D) Uniform Commercial Code"
+        "Law of Conveyance",
+        "Statute of Frauds",
+        "Fair Housing Act",
+        "Uniform Commercial Code"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Statute of Frauds",
       "explanation": "The Statute of Frauds mandates written contracts for real estate transactions."
     },
     {
-      "id": 16,
-      "difficulty": "easy",
       "questionText": "What does \"specific performance\" mean as a legal remedy?",
       "options": [
-        "A) Financial compensation",
-        "B) Termination of the contract",
-        "C) Court enforcement of the contract",
-        "D) Negotiating new terms"
+        "Financial compensation",
+        "Termination of the contract",
+        "Court enforcement of the contract",
+        "Negotiating new terms"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Court enforcement of the contract",
       "explanation": "Specific performance compels a party to fulfill their contractual obligations."
     },
     {
-      "id": 17,
-      "difficulty": "easy",
       "questionText": "Who is responsible for ensuring a conveyance is delivered?",
       "options": [
-        "A) The buyer",
-        "B) The seller",
-        "C) The listing agent",
-        "D) The grantee"
+        "The buyer",
+        "The seller",
+        "The listing agent",
+        "The grantee"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The seller",
       "explanation": "Delivery of a deed is the grantor’s (seller’s) responsibility."
     },
     {
-      "id": 18,
-      "difficulty": "easy",
       "questionText": "What is the role of a supervising broker?",
       "options": [
-        "A) Drafting all contracts",
-        "B) Reviewing contracts for compliance",
-        "C) Appraising property value",
-        "D) Collecting earnest money"
+        "Drafting all contracts",
+        "Reviewing contracts for compliance",
+        "Appraising property value",
+        "Collecting earnest money"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Reviewing contracts for compliance",
       "explanation": "Supervising brokers oversee and ensure contract compliance."
     },
     {
-      "id": 19,
-      "difficulty": "easy",
       "questionText": "When does personal delivery occur?",
       "options": [
-        "A) When the document is emailed",
-        "B) When the document is faxed",
-        "C) When the recipient physically receives it",
-        "D) When the sender leaves it at the recipient’s address"
+        "When the document is emailed",
+        "When the document is faxed",
+        "When the recipient physically receives it",
+        "When the sender leaves it at the recipient’s address"
       ],
-      "correctOption": 2,
+      "correctAnswer": "When the recipient physically receives it",
       "explanation": "Personal delivery requires the recipient to have the document in hand."
     },
     {
-      "id": 20,
-      "difficulty": "easy",
-      "questionText": "What happens if time is NOT of the essence in a contract?",
-      "options": [
-        "A) Deadlines are rigid",
-        "B) Deadlines can be reasonably extended",
-        "C) Deadlines are eliminated",
-        "D) The contract becomes void"
-      ],
-      "correctOption": 1,
-      "explanation": "Without \"time is of the essence,\" deadlines are subject to reasonable flexibility."
-    },
-
-    {
-      "id": 21,
-      "difficulty": "medium",
       "questionText": "What must a contract identify to comply with Wis. Stat. § 706.02?",
       "options": [
-        "A) Parties, land, and interest conveyed",
-        "B) Buyer’s credit score",
-        "C) Seller’s employment history",
-        "D) Property’s market value"
+        "Parties, land, and interest conveyed",
+        "Buyer’s credit score",
+        "Seller’s employment history",
+        "Property’s market value"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Parties, land, and interest conveyed",
       "explanation": "Wisconsin law requires contracts to specify the parties, land, and interest conveyed."
     },
     {
-      "id": 22,
-      "difficulty": "medium",
       "questionText": "Which party is referred to as the \"lessee\" in a lease?",
       "options": [
-        "A) The landlord",
-        "B) The tenant",
-        "C) The property manager",
-        "D) The agent"
+        "The landlord",
+        "The tenant",
+        "The property manager",
+        "The agent"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The tenant",
       "explanation": "The tenant (lessee) is the party renting the property."
     },
     {
-      "id": 23,
-      "difficulty": "medium",
       "questionText": "What is a memorandum of lease used for?",
       "options": [
-        "A) To replace a lease in commercial transactions",
-        "B) To calculate property taxes",
-        "C) To determine earnest money amounts",
-        "D) To notarize a purchase agreement"
+        "To replace a lease in commercial transactions",
+        "To calculate property taxes",
+        "To determine earnest money amounts",
+        "To notarize a purchase agreement"
       ],
-      "correctOption": 0,
+      "correctAnswer": "To replace a lease in commercial transactions",
       "explanation": "Memorandums record the lease terms without disclosing full lease details."
     },
     {
-      "id": 24,
-      "difficulty": "medium",
       "questionText": "What must be delivered for binding acceptance to occur?",
       "options": [
-        "A) Earnest money check",
-        "B) A signed copy of the offer",
-        "C) Property keys",
-        "D) Deed"
+        "Earnest money check",
+        "A signed copy of the offer",
+        "Property keys",
+        "Deed"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A signed copy of the offer",
       "explanation": "A signed and delivered copy of the offer is required for binding acceptance."
     },
     {
-      "id": 25,
-      "difficulty": "medium",
       "questionText": "Which of the following could terminate a real estate contract by operation of law?",
       "options": [
-        "A) A seller’s failure to market property",
-        "B) A buyer not providing earnest money",
-        "C) Condemnation through eminent domain",
-        "D) The agent resigning"
+        "A seller’s failure to market property",
+        "A buyer not providing earnest money",
+        "Condemnation through eminent domain",
+        "The agent resigning"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Condemnation through eminent domain",
       "explanation": "Government action such as eminent domain can terminate contracts by law."
     },
     {
-      "id": 26,
-      "difficulty": "medium",
       "questionText": "How are \"business days\" typically defined in a real estate contract?",
       "options": [
-        "A) Monday through Friday, excluding holidays",
-        "B) All calendar days",
-        "C) Weekdays only, including holidays",
-        "D) Any day the agent is working"
+        "Monday through Friday, excluding holidays",
+        "All calendar days",
+        "Weekdays only, including holidays",
+        "Any day the agent is working"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Monday through Friday, excluding holidays",
       "explanation": "Business days usually exclude weekends and recognized holidays."
     },
     {
-      "id": 27,
-      "difficulty": "medium",
       "questionText": "What happens if a contingency is poorly drafted?",
       "options": [
-        "A) The contract is automatically void",
-        "B) Courts may not enforce the contingency",
-        "C) Parties must renegotiate",
-        "D) The broker is liable for losses"
+        "The contract is automatically void",
+        "Courts may not enforce the contingency",
+        "Parties must renegotiate",
+        "The broker is liable for losses"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Courts may not enforce the contingency",
       "explanation": "Poorly drafted contingencies may lack enforceable standards."
     },
     {
-      "id": 28,
-      "difficulty": "medium",
       "questionText": "What is the role of earnest money in a real estate transaction?",
       "options": [
-        "A) To cover the down payment",
-        "B) To show buyer’s serious intent",
-        "C) To reimburse the broker’s expenses",
-        "D) To act as the seller’s legal fee"
+        "To cover the down payment",
+        "To show buyer’s serious intent",
+        "To reimburse the broker’s expenses",
+        "To act as the seller’s legal fee"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To show buyer’s serious intent",
       "explanation": "Earnest money is a deposit showing the buyer’s commitment."
     },
     {
-      "id": 29,
-      "difficulty": "medium",
       "questionText": "What is the difference between a void and voidable contract?",
       "options": [
-        "A) A voidable contract can be rescinded",
-        "B) A void contract is legally binding",
-        "C) Voidable contracts must be notarized",
-        "D) Void contracts require renegotiation"
+        "A voidable contract can be rescinded",
+        "A void contract is legally binding",
+        "Voidable contracts must be notarized",
+        "Void contracts require renegotiation"
       ],
-      "correctOption": 0,
+      "correctAnswer": "A voidable contract can be rescinded",
       "explanation": "Voidable contracts are enforceable but can be rescinded by one party."
     },
     {
-      "id": 30,
-      "difficulty": "medium",
       "questionText": "Which is NOT a typical remedy for breach of contract?",
       "options": [
-        "A) Specific performance",
-        "B) Liquidated damages",
-        "C) Termination of the contract",
-        "D) Free legal representation"
+        "Specific performance",
+        "Liquidated damages",
+        "Termination of the contract",
+        "Free legal representation"
       ],
-      "correctOption": 3,
+      "correctAnswer": "Free legal representation",
       "explanation": "Legal representation is not a remedy included in contract disputes."
     },
     {
-      "id": 31,
-      "difficulty": "medium",
       "questionText": "What is a voidable contract?",
       "options": [
-        "A) A contract that can never be enforced",
-        "B) A contract enforceable by all parties",
-        "C) A contract that one party can void",
-        "D) A contract with no legal standing"
+        "A contract that can never be enforced",
+        "A contract enforceable by all parties",
+        "A contract that one party can void",
+        "A contract with no legal standing"
       ],
-      "correctOption": 2,
+      "correctAnswer": "A contract that one party can void",
       "explanation": "A voidable contract is valid but allows one party to rescind."
     },
     {
-      "id": 32,
-      "difficulty": "medium",
       "questionText": "When does binding acceptance occur?",
       "options": [
-        "A) When the offer is written",
-        "B) When the offer is delivered back to the buyer",
-        "C) When the seller reviews the offer",
-        "D) When earnest money is provided"
+        "When the offer is written",
+        "When the offer is delivered back to the buyer",
+        "When the seller reviews the offer",
+        "When earnest money is provided"
       ],
-      "correctOption": 1,
+      "correctAnswer": "When the offer is delivered back to the buyer",
       "explanation": "Binding acceptance requires the accepted offer to be delivered per the terms."
     },
     {
-      "id": 33,
-      "difficulty": "medium",
       "questionText": "Which party typically has signing authority for a corporation in real estate transactions?",
       "options": [
-        "A) Any employee",
-        "B) The CEO only",
-        "C) A designated officer",
-        "D) All board members"
+        "Any employee",
+        "The CEO only",
+        "A designated officer",
+        "All board members"
       ],
-      "correctOption": 2,
+      "correctAnswer": "A designated officer",
       "explanation": "A designated officer, unless stated otherwise, has the authority to sign."
     },
     {
-      "id": 34,
-      "difficulty": "medium",
       "questionText": "What is the minimum legal age to enter a binding contract in Wisconsin?",
       "options": [
-        "A) 16",
-        "B) 18",
-        "C) 21",
-        "D) 25"
+        "16",
+        "18",
+        "21",
+        "25"
       ],
-      "correctOption": 1,
+      "correctAnswer": "18",
       "explanation": "Parties must be 18 or older to have the legal capacity to contract."
     },
     {
-      "id": 35,
-      "difficulty": "medium",
       "questionText": "What is a common reason for rescission of a contract?",
       "options": [
-        "A) Mutual agreement between parties",
-        "B) Violation of administrative code",
-        "C) Miscommunication between brokers",
-        "D) Lack of earnest money"
+        "Mutual agreement between parties",
+        "Violation of administrative code",
+        "Miscommunication between brokers",
+        "Lack of earnest money"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Mutual agreement between parties",
       "explanation": "Rescission occurs when both parties agree to undo the contract."
     },
     {
-      "id": 36,
-      "difficulty": "medium",
       "questionText": "What is a key difference between digital and electronic signatures?",
       "options": [
-        "A) Digital signatures are handwritten",
-        "B) Digital signatures are encrypted",
-        "C) Electronic signatures require notarization",
-        "D) Electronic signatures use physical documents"
+        "Digital signatures are handwritten",
+        "Digital signatures are encrypted",
+        "Electronic signatures require notarization",
+        "Electronic signatures use physical documents"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Digital signatures are encrypted",
       "explanation": "Digital signatures involve encryption for authenticity, unlike electronic signatures."
     },
     {
-      "id": 37,
-      "difficulty": "medium",
       "questionText": "What is required for a real estate agent to terminate a listing agreement?",
       "options": [
-        "A) Verbal agreement",
-        "B) Supervising broker’s permission",
-        "C) Seller’s written consent only",
-        "D) Notification to the state board"
+        "Verbal agreement",
+        "Supervising broker’s permission",
+        "Seller’s written consent only",
+        "Notification to the state board"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Supervising broker’s permission",
       "explanation": "Agents need the supervising broker’s approval to terminate agreements."
     },
     {
-      "id": 38,
-      "difficulty": "medium",
       "questionText": "What happens if a contract lacks consideration?",
       "options": [
-        "A) It remains enforceable",
-        "B) It becomes void",
-        "C) It can be notarized to fix the issue",
-        "D) It is automatically binding"
+        "It remains enforceable",
+        "It becomes void",
+        "It can be notarized to fix the issue",
+        "It is automatically binding"
       ],
-      "correctOption": 1,
+      "correctAnswer": "It becomes void",
       "explanation": "Without consideration, there is no legally enforceable contract."
     },
     {
-      "id": 39,
-      "difficulty": "medium",
       "questionText": "When does fax delivery of a contract occur?",
       "options": [
-        "A) When the sender finishes dialing",
-        "B) When the recipient reads the fax",
-        "C) When the sender sends the document",
-        "D) When the fax is stored"
+        "When the sender finishes dialing",
+        "When the recipient reads the fax",
+        "When the sender sends the document",
+        "When the fax is stored"
       ],
-      "correctOption": 2,
+      "correctAnswer": "When the sender sends the document",
       "explanation": "Delivery is considered complete when the sender transmits the fax."
     },
     {
-      "id": 40,
-      "difficulty": "medium",
       "questionText": "What term describes a seller giving a buyer the right to purchase under specific terms?",
       "options": [
-        "A) Agency agreement",
-        "B) Option to purchase",
-        "C) Listing contract",
-        "D) Lease agreement"
+        "Agency agreement",
+        "Option to purchase",
+        "Listing contract",
+        "Lease agreement"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Option to purchase",
       "explanation": "An option to purchase provides the buyer with this specific right."
     },
-
     {
-      "id": 41,
-      "difficulty": "hard",
       "questionText": "What term describes the authority to sign on behalf of another in a real estate transaction?",
       "options": [
-        "A) Legal guardianship",
-        "B) Power of attorney",
-        "C) Conveyance agent",
-        "D) Contract broker"
+        "Legal guardianship",
+        "Power of attorney",
+        "Conveyance agent",
+        "Contract broker"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Power of attorney",
       "explanation": "Power of attorney grants legal authority to sign for someone else."
     },
     {
-      "id": 42,
-      "difficulty": "hard",
       "questionText": "When is a court likely to construe ambiguous terms against the drafter?",
       "options": [
-        "A) Always",
-        "B) Only in buyer-seller disputes",
-        "C) When the drafting party had more knowledge",
-        "D) When the court finds no other remedy"
+        "Always",
+        "Only in buyer-seller disputes",
+        "When the drafting party had more knowledge",
+        "When the court finds no other remedy"
       ],
-      "correctOption": 2,
+      "correctAnswer": "When the drafting party had more knowledge",
       "explanation": "Courts often hold drafters accountable when they are in a position of expertise."
     },
     {
-      "id": 43,
-      "difficulty": "hard",
       "questionText": "What is required under Wis. Admin. Code § REEB 24.08 for agreements?",
       "options": [
-        "A) Oral agreements are sufficient",
-        "B) All agreements must be in writing",
-        "C) Buyer agreements must include witness signatures",
-        "D) Agreements must be notarized"
+        "Oral agreements are sufficient",
+        "All agreements must be in writing",
+        "Buyer agreements must include witness signatures",
+        "Agreements must be notarized"
       ],
-      "correctOption": 1,
+      "correctAnswer": "All agreements must be in writing",
       "explanation": "Wisconsin requires real estate agreements to be in writing for enforceability."
     },
     {
-      "id": 44,
-      "difficulty": "hard",
       "questionText": "What happens if an offer is not delivered by the binding acceptance deadline?",
       "options": [
-        "A) The contract becomes voidable",
-        "B) The offer lapses",
-        "C) The seller must renegotiate",
-        "D) The buyer forfeits earnest money"
+        "The contract becomes voidable",
+        "The offer lapses",
+        "The seller must renegotiate",
+        "The buyer forfeits earnest money"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The offer lapses",
       "explanation": "Failing to meet the binding acceptance deadline nullifies the offer."
     },
     {
-      "id": 45,
-      "difficulty": "hard",
       "questionText": "Which of these is an example of a valid contingency?",
       "options": [
-        "A) \"The buyer may change the price later.\"",
-        "B) \"The offer is contingent on radon testing by July 10, 2025.\"",
-        "C) \"The buyer promises to purchase within 90 days.\"",
-        "D) \"The seller will consider higher offers after this one.\""
+        "\"The buyer may change the price later.\"",
+        "\"The offer is contingent on radon testing by July 10, 2025.\"",
+        "\"The buyer promises to purchase within 90 days.\"",
+        "\"The seller will consider higher offers after this one.\""
       ],
-      "correctOption": 1,
+      "correctAnswer": "\"The offer is contingent on radon testing by July 10, 2025.\"",
       "explanation": "A valid contingency specifies clear terms, deadlines, and performance measures."
     },
     {
-      "id": 46,
-      "difficulty": "hard",
       "questionText": "When does U.S. Mail delivery occur in a real estate transaction?",
       "options": [
-        "A) When the sender mails the document",
-        "B) When the recipient receives it",
-        "C) When the agent confirms delivery",
-        "D) When tracking shows it as \"delivered\""
+        "When the sender mails the document",
+        "When the recipient receives it",
+        "When the agent confirms delivery",
+        "When tracking shows it as \"delivered\""
       ],
-      "correctOption": 0,
+      "correctAnswer": "When the sender mails the document",
       "explanation": "Delivery is considered complete when the document is mailed and prepaid."
     },
     {
-      "id": 47,
-      "difficulty": "hard",
       "questionText": "What is the default method of delivery in Wisconsin offers to purchase?",
       "options": [
-        "A) Fax",
-        "B) Email",
-        "C) Personal delivery",
-        "D) Commercial carrier"
+        "Fax",
+        "Email",
+        "Personal delivery",
+        "Commercial carrier"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Personal delivery",
       "explanation": "Personal delivery is the default unless another method is selected."
     },
     {
-      "id": 48,
-      "difficulty": "hard",
       "questionText": "How can a seller legally terminate a listing agreement?",
       "options": [
-        "A) By refusing to show the property",
-        "B) By delivering written notice",
-        "C) By not responding to offers",
-        "D) By raising the property price"
+        "By refusing to show the property",
+        "By delivering written notice",
+        "By not responding to offers",
+        "By raising the property price"
       ],
-      "correctOption": 1,
+      "correctAnswer": "By delivering written notice",
       "explanation": "Written notice is typically required to terminate a listing agreement."
     },
     {
-      "id": 49,
-      "difficulty": "hard",
       "questionText": "What is the effect of \"time is of the essence\" on deadlines?",
       "options": [
-        "A) Deadlines are extended automatically",
-        "B) Missing a deadline constitutes a breach",
-        "C) Deadlines become negotiable",
-        "D) Deadlines are eliminated"
+        "Deadlines are extended automatically",
+        "Missing a deadline constitutes a breach",
+        "Deadlines become negotiable",
+        "Deadlines are eliminated"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Missing a deadline constitutes a breach",
       "explanation": "When \"time is of the essence,\" missing deadlines can breach the contract."
     },
     {
-      "id": 50,
-      "difficulty": "hard",
       "questionText": "Which statement about Wisconsin real estate contingencies is true?",
       "options": [
-        "A) They do not need deadlines.",
-        "B) Pre-printed contingencies eliminate all risks.",
-        "C) Poorly drafted contingencies can lead to lawsuits.",
-        "D) Contingencies automatically void the contract."
+        "They do not need deadlines.",
+        "Pre-printed contingencies eliminate all risks.",
+        "Poor drafting can lead to lawsuits.",
+        "Contingencies automatically void the contract."
       ],
-      "correctOption": 2,
+      "correctAnswer": "Poor drafting can lead to lawsuits.",
       "explanation": "Poorly drafted contingencies are a common cause of legal disputes in transactions."
     },
     {
-      "id": 51,
-      "difficulty": "hard",
       "questionText": "What is the purpose of Wis. Stat. § 706.02?",
       "options": [
-        "A) To regulate commission rates",
-        "B) To outline formal requisites of a conveyance",
-        "C) To specify earnest money requirements",
-        "D) To list delivery options"
+        "To regulate commission rates",
+        "To outline formal requisites of a conveyance",
+        "To specify earnest money requirements",
+        "To list delivery options"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To outline formal requisites of a conveyance",
       "explanation": "This statute defines the formal requisites for a valid conveyance in Wisconsin."
     },
     {
-      "id": 52,
-      "difficulty": "hard",
       "questionText": "Which of the following is NOT a valid form of property identification in a contract?",
       "options": [
-        "A) Street address",
-        "B) Legal description",
-        "C) Tax identification number",
-        "D) GPS coordinates"
+        "Street address",
+        "Legal description",
+        "Tax identification number",
+        "GPS coordinates"
       ],
-      "correctOption": 3,
+      "correctAnswer": "GPS coordinates",
       "explanation": "GPS coordinates are not standard or legally recognized property identifiers."
     },
     {
-      "id": 53,
-      "difficulty": "hard",
       "questionText": "Which document might replace a lease to be recorded for commercial property?",
       "options": [
-        "A) Memorandum of lease",
-        "B) Standard lease agreement",
-        "C) Purchase agreement",
-        "D) Commission document"
+        "Memorandum of lease",
+        "Standard lease agreement",
+        "Purchase agreement",
+        "Commission document"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Memorandum of lease",
       "explanation": "Memorandums of lease are often recorded to avoid disclosing lease details."
     },
     {
-      "id": 54,
-      "difficulty": "hard",
       "questionText": "What is the consequence of ambiguous drafting in a real estate contract?",
       "options": [
-        "A) Contract is enforceable as written",
-        "B) Court rules in favor of the drafter",
-        "C) Court interprets against the drafter",
-        "D) Contract is void by default"
+        "Contract is enforceable as written",
+        "Court rules in favor of the drafter",
+        "Court interprets against the drafter",
+        "Contract is void by default"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Court interprets against the drafter",
       "explanation": "Courts construe ambiguous terms against the drafter of the contract."
     },
     {
-      "id": 55,
-      "difficulty": "hard",
       "questionText": "What remedy is unavailable to a buyer if a seller defaults?",
       "options": [
-        "A) Specific performance",
-        "B) Terminate the offer",
-        "C) Sue for actual damages",
-        "D) Sue for commission reimbursement"
+        "Specific performance",
+        "Terminate the offer",
+        "Sue for actual damages",
+        "Sue for commission reimbursement"
       ],
-      "correctOption": 3,
+      "correctAnswer": "Sue for commission reimbursement",
       "explanation": "Buyers cannot claim commission reimbursement as it’s a seller obligation."
     },
     {
-      "id": 56,
-      "difficulty": "hard",
       "questionText": "How can a seller void a buyer’s financing contingency?",
       "options": [
-        "A) Refuse to sign the offer",
-        "B) Request a pre-approval letter after the deadline",
-        "C) Provide a different loan option",
-        "D) Counter the offer"
+        "Refuse to sign the offer",
+        "Request a pre-approval letter after the deadline",
+        "Provide a different loan option",
+        "Counter the offer"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Request a pre-approval letter after the deadline",
       "explanation": "Missing the pre-approval deadline allows the seller to void the contingency."
     },
     {
-      "id": 57,
-      "difficulty": "hard",
       "questionText": "When is electronic consent required for email delivery?",
       "options": [
-        "A) Always",
-        "B) Only for agent-to-agent communications",
-        "C) For consumer transactions",
-        "D) Never"
+        "Always",
+        "Only for agent-to-agent communications",
+        "For consumer transactions",
+        "Never"
       ],
-      "correctOption": 2,
+      "correctAnswer": "For consumer transactions",
       "explanation": "Consumer transactions require electronic consent per E-Sign and E-Commerce laws."
     },
     {
-      "id": 58,
-      "difficulty": "hard",
       "questionText": "What is the primary risk of using poorly drafted contingencies?",
       "options": [
-        "A) Loss of earnest money",
-        "B) Breach of fiduciary duty",
-        "C) Unenforceable contracts",
-        "D) Longer transaction timelines"
+        "Loss of earnest money",
+        "Breach of fiduciary duty",
+        "Unenforceable contracts",
+        "Longer transaction timelines"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Unenforceable contracts",
       "explanation": "Poorly drafted contingencies may lack enforceable standards."
     },
     {
-      "id": 59,
-      "difficulty": "hard",
       "questionText": "What is a valid reason for a firm to terminate a listing contract?",
       "options": [
-        "A) Seller’s discriminatory practices",
-        "B) Low market activity",
-        "C) High marketing costs",
-        "D) Seller’s failure to stage property"
+        "Seller’s discriminatory practices",
+        "Low market activity",
+        "High marketing costs",
+        "Seller’s failure to stage property"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Seller’s discriminatory practices",
       "explanation": "Discriminatory practices are illegal and justify contract termination."
     },
     {
-      "id": 60,
-      "difficulty": "hard",
       "questionText": "Under what circumstance is a contract considered void?",
       "options": [
-        "A) Missing a party’s signature",
-        "B) Disagreement on terms",
-        "C) Expired deadlines",
-        "D) Poor delivery methods"
+        "Missing a party’s signature",
+        "Disagreement on terms",
+        "Expired deadlines",
+        "Poor delivery methods"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Missing a party’s signature",
       "explanation": "A missing signature makes the contract technically defective and void."
     }
   ]
