@@ -1,317 +1,268 @@
 {
-  "chapter": 11,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is a conventional loan typically secured by?",
       "options": [
-        "A) The borrower’s car",
-        "B) The borrower’s credit card balance",
-        "C) The real estate being purchased",
-        "D) A co-signer’s credit score"
+        "The borrower’s car",
+        "The borrower’s credit card balance",
+        "The real estate being purchased",
+        "A co-signer’s credit score"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The real estate being purchased",
       "explanation": "Conventional loans are typically secured by the real estate being purchased."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "What type of insurance is often required if a borrower has less than 20% down payment on a conventional loan?",
       "options": [
-        "A) Homeowners insurance",
-        "B) Flood insurance",
-        "C) Private mortgage insurance (PMI)",
-        "D) Life insurance"
+        "Homeowners insurance",
+        "Flood insurance",
+        "Private mortgage insurance (PMI)",
+        "Life insurance"
       ],
-      "correctOption": 2,
-      "explanation": "Private mortgage insurance (PMI) is often required for conventional loans with less than 20% down payment."
+      "correctAnswer": "Private mortgage insurance (PMI)",
+      "explanation": "Private mortgage insurance (PMI) is often required for conventional loans with less than 20% down payment to protect the lender."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "At what age can a homeowner qualify for a reverse mortgage?",
       "options": [
-        "A) 55",
-        "B) 62",
-        "C) 65",
-        "D) 70"
+        "55",
+        "62",
+        "65",
+        "70"
       ],
-      "correctOption": 1,
-      "explanation": "Homeowners must be at least 62 years old to qualify for a reverse mortgage."
+      "correctAnswer": "62",
+      "explanation": "Homeowners aged 62 or older can qualify for a reverse mortgage."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What is the term for a lender's lien on a property that is removed when the borrower repays the loan?",
       "options": [
-        "A) Defeasance clause",
-        "B) Acceleration clause",
-        "C) Foreclosure",
-        "D) Satisfaction of mortgage"
+        "Defeasance clause",
+        "Acceleration clause",
+        "Foreclosure",
+        "Satisfaction of mortgage"
       ],
-      "correctOption": 3,
-      "explanation": "Satisfaction of mortgage refers to the removal of the lender's lien once the loan is fully repaid."
+      "correctAnswer": "Satisfaction of mortgage",
+      "explanation": "A satisfaction of mortgage is the term used when a lender's lien is removed after full repayment."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "Which government program insures loans for low-income rural residents?",
       "options": [
-        "A) FHA",
-        "B) VA",
-        "C) USDA Rural Development",
-        "D) TRID"
+        "FHA",
+        "VA",
+        "USDA Rural Development",
+        "TRID"
       ],
-      "correctOption": 2,
-      "explanation": "USDA Rural Development insures loans specifically for low-income rural residents."
+      "correctAnswer": "USDA Rural Development",
+      "explanation": "The USDA Rural Development program insures loans specifically for low-income rural residents."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "What is the main advantage of a fixed-rate mortgage?",
       "options": [
-        "A) Lower initial interest rate",
-        "B) Predictable payments over the loan term",
-        "C) Adjustable interest rates",
-        "D) No down payment required"
+        "Lower initial interest rate",
+        "Predictable payments over the loan term",
+        "Adjustable interest rates",
+        "No down payment required"
       ],
-      "correctOption": 1,
-      "explanation": "Fixed-rate mortgages offer predictable monthly payments throughout the loan term."
+      "correctAnswer": "Predictable payments over the loan term",
+      "explanation": "Fixed-rate mortgages offer predictable payments since the interest rate remains constant throughout the loan term."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What is the name of the form that details a loan's terms and costs and must be delivered before closing?",
       "options": [
-        "A) Loan Estimate",
-        "B) Closing Disclosure",
-        "C) Mortgage Agreement",
-        "D) Appraisal Summary"
+        "Loan Estimate",
+        "Closing Disclosure",
+        "Mortgage Agreement",
+        "Appraisal Summary"
       ],
-      "correctOption": 1,
-      "explanation": "The Closing Disclosure details the loan's terms and costs and must be provided before closing."
+      "correctAnswer": "Closing Disclosure",
+      "explanation": "The Closing Disclosure form outlines the final terms and costs of the loan and must be provided to the borrower before closing."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What is the main purpose of private mortgage insurance (PMI)?",
       "options": [
-        "A) Protects the lender in case the borrower defaults",
-        "B) Covers damages to the property",
-        "C) Pays the borrower’s mortgage in case of unemployment",
-        "D) Provides lower interest rates for buyers"
+        "Protects the lender in case the borrower defaults",
+        "Covers damages to the property",
+        "Pays the borrower’s mortgage in case of unemployment",
+        "Provides lower interest rates for buyers"
       ],
-      "correctOption": 0,
-      "explanation": "PMI protects the lender if the borrower defaults on the loan."
+      "correctAnswer": "Protects the lender in case the borrower defaults",
+      "explanation": "PMI protects the lender by covering potential losses if the borrower defaults on the loan."
     },
     {
-      "id": 9,
-      "difficulty": "medium",
       "questionText": "What is a land contract?",
       "options": [
-        "A) A buyer pays the seller in installments for the property",
-        "B) A short-term loan with a balloon payment",
-        "C) A mortgage backed by the government",
-        "D) A financing option exclusively for veterans"
+        "A buyer pays the seller in installments for the property",
+        "A short-term loan with a balloon payment",
+        "A mortgage backed by the government",
+        "A financing option exclusively for veterans"
       ],
-      "correctOption": 0,
-      "explanation": "A land contract is an agreement where the buyer pays the seller in installments for the property."
+      "correctAnswer": "A buyer pays the seller in installments for the property",
+      "explanation": "A land contract is an agreement where the buyer pays the seller in installments to purchase the property directly."
     },
     {
-      "id": 10,
-      "difficulty": "medium",
       "questionText": "What clause allows a lender to demand full repayment if a borrower defaults?",
       "options": [
-        "A) Defeasance clause",
-        "B) Prepayment penalty clause",
-        "C) Acceleration clause",
-        "D) Balloon clause"
+        "Defeasance clause",
+        "Prepayment penalty clause",
+        "Acceleration clause",
+        "Balloon clause"
       ],
-      "correctOption": 2,
-      "explanation": "The acceleration clause permits the lender to demand full repayment upon borrower default."
+      "correctAnswer": "Acceleration clause",
+      "explanation": "An acceleration clause permits the lender to demand immediate full repayment if the borrower defaults."
     },
     {
-      "id": 11,
-      "difficulty": "medium",
       "questionText": "What type of loan helps a buyer purchase a new home before selling their current home?",
       "options": [
-        "A) Reverse mortgage",
-        "B) Bridge loan",
-        "C) Balloon loan",
-        "D) USDA loan"
+        "Reverse mortgage",
+        "Bridge loan",
+        "Balloon loan",
+        "USDA loan"
       ],
-      "correctOption": 1,
-      "explanation": "A bridge loan provides temporary financing to purchase a new home before selling the current one."
+      "correctAnswer": "Bridge loan",
+      "explanation": "A bridge loan provides short-term financing to help buyers purchase a new home before selling their existing one."
     },
     {
-      "id": 12,
-      "difficulty": "medium",
       "questionText": "Which loan program does not require a down payment and is often used by veterans?",
       "options": [
-        "A) USDA Rural Development Loan",
-        "B) FHA Loan",
-        "C) VA Loan",
-        "D) Bridge Loan"
+        "USDA Rural Development Loan",
+        "FHA Loan",
+        "VA Loan",
+        "Bridge Loan"
       ],
-      "correctOption": 2,
-      "explanation": "VA Loans do not require a down payment and are available to eligible veterans."
+      "correctAnswer": "VA Loan",
+      "explanation": "VA Loans, backed by the Department of Veterans Affairs, often do not require a down payment and are available to eligible veterans."
     },
     {
-      "id": 13,
-      "difficulty": "medium",
       "questionText": "What is a purchase money mortgage?",
       "options": [
-        "A) A seller finances part of the purchase price for the buyer",
-        "B) A short-term loan secured by a second property",
-        "C) A government-backed loan for rural areas",
-        "D) A loan requiring no down payment"
+        "A seller finances part of the purchase price for the buyer",
+        "A short-term loan secured by a second property",
+        "A government-backed loan for rural areas",
+        "A loan requiring no down payment"
       ],
-      "correctOption": 0,
-      "explanation": "A purchase money mortgage is when the seller finances part of the property's purchase price."
+      "correctAnswer": "A seller finances part of the purchase price for the buyer",
+      "explanation": "A purchase money mortgage occurs when the seller provides financing to the buyer for part of the purchase price."
     },
     {
-      "id": 14,
-      "difficulty": "medium",
       "questionText": "How long is the redemption period for a strict foreclosure under Wisconsin law?",
       "options": [
-        "A) 3 days",
-        "B) 7 working days",
-        "C) 14 days",
-        "D) 30 days"
+        "3 days",
+        "7 working days",
+        "14 days",
+        "30 days"
       ],
-      "correctOption": 1,
-      "explanation": "Under Wisconsin law, the redemption period for strict foreclosure is 7 working days."
+      "correctAnswer": "7 working days",
+      "explanation": "Under Wisconsin law, the redemption period for a strict foreclosure is seven working days."
     },
     {
-      "id": 15,
-      "difficulty": "medium",
       "questionText": "What is one requirement for a USDA Rural Housing Guaranteed Loan?",
       "options": [
-        "A) The borrower must live in an urban area",
-        "B) The borrower must have income below 80% of the area median income",
-        "C) The borrower must be a first-time homebuyer",
-        "D) The borrower must not have access to adequate housing"
+        "The borrower must live in an urban area",
+        "The borrower must have income below 80% of the area median income",
+        "The borrower must be a first-time homebuyer",
+        "The borrower must not have access to adequate housing"
       ],
-      "correctOption": 3,
-      "explanation": "USDA Rural Housing Guaranteed Loans require that the borrower does not have access to adequate housing."
+      "correctAnswer": "The borrower must not have access to adequate housing",
+      "explanation": "USDA Rural Housing Guaranteed Loans require that the borrower does not have access to adequate housing in their area."
     },
     {
-      "id": 16,
-      "difficulty": "medium",
       "questionText": "What happens if a buyer defaults on a seller-provided mortgage?",
       "options": [
-        "A) The seller can foreclose on the buyer",
-        "B) The buyer automatically owns the property",
-        "C) The buyer must refinance the loan",
-        "D) The seller takes over the buyer’s other debts"
+        "The seller can foreclose on the buyer",
+        "The buyer automatically owns the property",
+        "The buyer must refinance the loan",
+        "The seller takes over the buyer’s other debts"
       ],
-      "correctOption": 0,
-      "explanation": "If a buyer defaults on a seller-provided mortgage, the seller can initiate foreclosure proceedings."
+      "correctAnswer": "The seller can foreclose on the buyer",
+      "explanation": "If a buyer defaults on a seller-provided mortgage, the seller has the right to foreclose on the property."
     },
     {
-      "id": 17,
-      "difficulty": "hard",
       "questionText": "What type of clause in a mortgage agreement removes a lender’s lien upon full repayment?",
       "options": [
-        "A) Defeasance clause",
-        "B) Acceleration clause",
-        "C) Due-on-sale clause",
-        "D) Prepayment clause"
+        "Defeasance clause",
+        "Acceleration clause",
+        "Due-on-sale clause",
+        "Prepayment clause"
       ],
-      "correctOption": 0,
-      "explanation": "A defeasance clause removes the lender’s lien once the loan is fully repaid."
+      "correctAnswer": "Defeasance clause",
+      "explanation": "A defeasance clause removes the lender’s lien once the borrower has fully repaid the loan."
     },
     {
-      "id": 18,
-      "difficulty": "hard",
       "questionText": "How does TRID affect loan disclosure timelines?",
       "options": [
-        "A) It eliminates the need for disclosures",
-        "B) It requires a Loan Estimate within 3 business days of application",
-        "C) It allows lenders to extend closing indefinitely",
-        "D) It replaces Closing Disclosures with Loan Agreements"
+        "It eliminates the need for disclosures",
+        "It requires a Loan Estimate within 3 business days of application",
+        "It allows lenders to extend closing indefinitely",
+        "It replaces Closing Disclosures with Loan Agreements"
       ],
-      "correctOption": 1,
-      "explanation": "TRID mandates that lenders provide a Loan Estimate within 3 business days of receiving the loan application."
+      "correctAnswer": "It requires a Loan Estimate within 3 business days of application",
+      "explanation": "TRID mandates that lenders provide a Loan Estimate within three business days of receiving a loan application."
     },
     {
-      "id": 19,
-      "difficulty": "hard",
       "questionText": "What key feature distinguishes a balloon loan?",
       "options": [
-        "A) It has no interest payments during the loan term",
-        "B) It includes a large final payment to satisfy the debt",
-        "C) It is exclusively for rural development",
-        "D) It is insured by the FHA"
+        "It has no interest payments during the loan term",
+        "It includes a large final payment to satisfy the debt",
+        "It is exclusively for rural development",
+        "It is insured by the FHA"
       ],
-      "correctOption": 1,
-      "explanation": "A balloon loan requires a substantial final payment, known as the balloon payment, to fully repay the loan."
+      "correctAnswer": "It includes a large final payment to satisfy the debt",
+      "explanation": "A balloon loan is characterized by a large final payment required to pay off the remaining debt."
     },
     {
-      "id": 20,
-      "difficulty": "hard",
       "questionText": "What is the primary use of a reverse mortgage?",
       "options": [
-        "A) Financing a first home",
-        "B) Accessing home equity for retirees",
-        "C) Buying a second property",
-        "D) Funding a home improvement loan"
+        "Financing a first home",
+        "Accessing home equity for retirees",
+        "Buying a second property",
+        "Funding a home improvement loan"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Accessing home equity for retirees",
       "explanation": "Reverse mortgages allow retirees to access the equity in their homes without making monthly payments."
     },
     {
-      "id": 21,
-      "difficulty": "hard",
       "questionText": "What legal action can a seller take if a buyer defaults on a land contract?",
       "options": [
-        "A) Voluntary termination or strict foreclosure",
-        "B) File for a property tax lien",
-        "C) Renegotiate the land contract interest rate",
-        "D) Force the buyer into bankruptcy"
+        "Voluntary termination or strict foreclosure",
+        "File for a property tax lien",
+        "Renegotiate the land contract interest rate",
+        "Force the buyer into bankruptcy"
       ],
-      "correctOption": 0,
-      "explanation": "Sellers can either voluntarily terminate the contract or pursue strict foreclosure if a buyer defaults."
+      "correctAnswer": "Voluntary termination or strict foreclosure",
+      "explanation": "Sellers can either voluntarily terminate the contract or pursue strict foreclosure if a buyer defaults on a land contract."
     },
     {
-      "id": 22,
-      "difficulty": "hard",
       "questionText": "What does a \"due on sale\" clause in a mortgage contract require?",
       "options": [
-        "A) The lender to refund prepayment penalties",
-        "B) The buyer to pay off the loan in full before transferring title",
-        "C) The borrower to refinance their mortgage every five years",
-        "D) The loan to convert to a balloon loan upon default"
+        "The lender to refund prepayment penalties",
+        "The buyer to pay off the loan in full before transferring title",
+        "The borrower to refinance their mortgage every five years",
+        "The loan to convert to a balloon loan upon default"
       ],
-      "correctOption": 1,
-      "explanation": "A \"due on sale\" clause requires the borrower to pay off the existing mortgage when the property is sold or transferred."
+      "correctAnswer": "The buyer to pay off the loan in full before transferring title",
+      "explanation": "A \"due on sale\" clause mandates that the loan be paid in full if the property is sold or transferred."
     },
     {
-      "id": 23,
-      "difficulty": "hard",
       "questionText": "What is one of the last-minute changes that can trigger a delay under TRID rules?",
       "options": [
-        "A) A minor adjustment to the loan's APR",
-        "B) A change in the loan program from fixed-rate to adjustable-rate",
-        "C) A modification of the property’s appraisal value",
-        "D) A change in the loan officer assigned to the case"
+        "A minor adjustment to the loan's APR",
+        "A change in the loan program from fixed-rate to adjustable-rate",
+        "A modification of the property’s appraisal value",
+        "A change in the loan officer assigned to the case"
       ],
-      "correctOption": 1,
-      "explanation": "Changing the loan program from fixed-rate to adjustable-rate is a significant modification that can trigger delays under TRID."
+      "correctAnswer": "A change in the loan program from fixed-rate to adjustable-rate",
+      "explanation": "Changing the loan program from fixed-rate to adjustable-rate is a significant modification that can trigger a delay under TRID rules."
     },
     {
-      "id": 24,
-      "difficulty": "hard",
       "questionText": "Which of the following defines the term “acceleration clause”?",
       "options": [
-        "A) A clause requiring the lender to waive certain fees",
-        "B) A clause allowing the lender to demand full loan repayment if the borrower defaults",
-        "C) A clause that decreases monthly payments as the loan term progresses",
-        "D) A clause mandating that borrowers refinance their loan every three years"
+        "A clause requiring the lender to waive certain fees",
+        "A clause allowing the lender to demand full loan repayment if the borrower defaults",
+        "A clause that decreases monthly payments as the loan term progresses",
+        "A clause mandating that borrowers refinance their loan every three years"
       ],
-      "correctOption": 1,
-      "explanation": "An acceleration clause allows the lender to demand full repayment of the loan if the borrower defaults."
+      "correctAnswer": "A clause allowing the lender to demand full loan repayment if the borrower defaults",
+      "explanation": "An acceleration clause permits the lender to demand immediate full repayment if the borrower defaults on the loan."
     }
   ]
 }
