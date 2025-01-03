@@ -1,785 +1,796 @@
 {
-  "chapter": 4,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is a licensee’s duty when a buyer asks about neighborhood demographics?",
       "options": [
-        "A) Provide general demographic data from public records",
-        "B) Offer a detailed analysis based on personal knowledge",
-        "C) Decline to answer and refer the buyer to public resources",
-        "D) Provide information only if the buyer is a client"
+        "Provide general demographic data from public records",
+        "Offer a detailed analysis based on personal knowledge",
+        "Decline to answer and refer the buyer to public resources",
+        "Provide information only if the buyer is a client"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Decline to answer and refer the buyer to public resources",
       "explanation": "Discussing neighborhood demographics can violate fair housing laws, so licensees must avoid providing such information directly."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "When must a licensee provide agency disclosure to a buyer-customer?",
       "options": [
-        "A) Before showing a property",
-        "B) At the time of closing",
-        "C) Prior to engaging in negotiations",
-        "D) After presenting an offer"
+        "Before showing a property",
+        "At the time of closing",
+        "Prior to engaging in negotiations",
+        "After presenting an offer"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Prior to engaging in negotiations",
       "explanation": "Agency disclosure must occur before engaging in negotiations to clarify the licensee’s role."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "What is required for a licensee to act as a subagent in a transaction?",
       "options": [
-        "A) Verbal consent from the buyer",
-        "B) Written consent from the client authorizing subagency",
-        "C) Approval from the listing firm only",
-        "D) No additional authorization is needed"
+        "Verbal consent from the buyer",
+        "Written consent from the client authorizing subagency",
+        "Approval from the listing firm only",
+        "No additional authorization is needed"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Written consent from the client authorizing subagency",
       "explanation": "Written consent from the client is required to authorize subagency."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What is considered a material adverse fact?",
       "options": [
-        "A) The size of a backyard",
-        "B) A latent structural defect",
-        "C) The age of the property",
-        "D) The property’s proximity to a highway"
+        "The size of a backyard",
+        "A latent structural defect",
+        "The age of the property",
+        "The property’s proximity to a highway"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A latent structural defect",
       "explanation": "A latent structural defect is a condition that significantly affects the property’s value or safety."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "What must a seller disclose under Wisconsin’s real estate disclosure requirements?",
       "options": [
-        "A) Only defects the seller finds during their inspection",
-        "B) Any known defects, even if the seller is exempt from completing the form",
-        "C) Details about the buyer’s credit history",
-        "D) Only defects discovered by third-party inspectors"
+        "Only defects the seller finds during their inspection",
+        "Any known defects, even if the seller is exempt from completing the form",
+        "Details about the buyer’s credit history",
+        "Only defects discovered by third-party inspectors"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Any known defects, even if the seller is exempt from completing the form",
       "explanation": "Sellers must disclose all known defects regardless of their exemption status."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "How should a licensee handle a request to disclose the terms of an accepted offer?",
       "options": [
-        "A) Share all offer details",
-        "B) Only disclose the accepted offer’s contingencies",
-        "C) Refuse to disclose any terms",
-        "D) Refer the request to the seller"
+        "Share all offer details",
+        "Only disclose the accepted offer’s contingencies",
+        "Refuse to disclose any terms",
+        "Refer the request to the seller"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Only disclose the accepted offer’s contingencies",
       "explanation": "Licensees can disclose that an offer is subject to contingencies but cannot disclose specific terms."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What must a licensee do if they discover an unregistered underground storage tank?",
       "options": [
-        "A) Register it immediately",
-        "B) Remove it at the seller’s expense",
-        "C) Notify the Department of Agriculture, Trade, and Consumer Protection",
-        "D) Ensure the seller registers it"
+        "Register it immediately",
+        "Remove it at the seller’s expense",
+        "Notify the Department of Agriculture, Trade, and Consumer Protection",
+        "Ensure the seller registers it"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Notify the Department of Agriculture, Trade, and Consumer Protection",
       "explanation": "The licensee must notify the appropriate authority to address the issue legally."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What is a licensee’s responsibility when a buyer asks about the fair market value of a property?",
       "options": [
-        "A) Provide a comparative market analysis",
-        "B) Offer a formal appraisal",
-        "C) Advise the buyer to consult an appraiser",
-        "D) Share the seller’s desired price"
+        "Provide a comparative market analysis",
+        "Offer a formal appraisal",
+        "Advise the buyer to consult an appraiser",
+        "Share the seller’s desired price"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Provide a comparative market analysis",
       "explanation": "Licensees can provide a comparative market analysis but not a formal appraisal."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "What does the term “stigmatized property” refer to?",
       "options": [
-        "A) A property with structural damage",
-        "B) A property located in a high-crime area",
-        "C) A property with a history of crime or unusual events",
-        "D) A property with unresolved zoning violations"
+        "A property with structural damage",
+        "A property located in a high-crime area",
+        "A property with a history of crime or unusual events",
+        "A property with unresolved zoning violations"
       ],
-      "correctOption": 2,
+      "correctAnswer": "A property with a history of crime or unusual events",
       "explanation": "Stigmatized properties are associated with events that may cause negative perceptions but do not affect structural integrity."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "When must a condominium seller provide disclosure documents?",
       "options": [
-        "A) Upon listing the property",
-        "B) 15 days before closing",
-        "C) 10 days after accepting an offer",
-        "D) At the time of offer acceptance"
+        "Upon listing the property",
+        "15 days before closing",
+        "10 days after accepting an offer",
+        "At the time of offer acceptance"
       ],
-      "correctOption": 2,
+      "correctAnswer": "10 days after accepting an offer",
       "explanation": "Condominium sellers must provide the documents within 10 days of accepting an offer."
     },
     {
-      "id": 11,
-      "difficulty": "easy",
       "questionText": "What is a licensee’s obligation regarding lead-based paint in a home built before 1978?",
       "options": [
-        "A) Inspect for lead paint",
-        "B) Provide the buyer with an EPA pamphlet",
-        "C) Ensure the seller remediates any lead paint",
-        "D) Offer testing services to the buyer"
+        "Inspect for lead paint",
+        "Provide the buyer with an EPA pamphlet",
+        "Ensure the seller remediates any lead paint",
+        "Offer testing services to the buyer"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Provide the buyer with an EPA pamphlet",
       "explanation": "Licensees must ensure buyers receive the EPA’s lead-based paint disclosure pamphlet."
     },
     {
-      "id": 12,
-      "difficulty": "easy",
       "questionText": "What does the term “multiple representation with designated agency” mean?",
       "options": [
-        "A) The firm represents only the buyer",
-        "B) The firm acts neutrally between clients",
-        "C) The firm assigns separate agents to represent each client’s interests",
-        "D) The firm uses subagents for both parties"
+        "The firm represents only the buyer",
+        "The firm acts neutrally between clients",
+        "The firm assigns separate agents to represent each client’s interests",
+        "The firm uses subagents for both parties"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The firm assigns separate agents to represent each client’s interests",
       "explanation": "Designated agency assigns separate agents to advocate for each client’s interests."
     },
     {
-      "id": 13,
-      "difficulty": "easy",
       "questionText": "What must a licensee disclose when acting as a principal in a transaction?",
       "options": [
-        "A) The property’s estimated value",
-        "B) Their license status",
-        "C) Their intended use for the property",
-        "D) Their compensation structure"
+        "The property’s estimated value",
+        "Their license status",
+        "Their intended use for the property",
+        "Their compensation structure"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Their license status",
       "explanation": "Licensees must disclose their license status and role as a principal early in the transaction."
     },
     {
-      "id": 14,
-      "difficulty": "easy",
       "questionText": "What is required for a buyer to waive the right to receive a real estate condition report?",
       "options": [
-        "A) Verbal agreement with the seller",
-        "B) Written waiver included in the offer",
-        "C) Closing on the property without a report",
-        "D) Buyer consent witnessed by a third party"
+        "Verbal agreement with the seller",
+        "Written waiver included in the offer",
+        "Closing on the property without a report",
+        "Buyer consent witnessed by a third party"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Written waiver included in the offer",
       "explanation": "Buyers must waive their right in writing to forego receiving a condition report."
     },
     {
-      "id": 15,
-      "difficulty": "easy",
       "questionText": "What is the penalty for violating fair housing laws in Wisconsin?",
       "options": [
-        "A) Loss of commission only",
-        "B) Criminal charges with mandatory prison time",
-        "C) License suspension, civil fines, and damages",
-        "D) Mandatory public apology"
+        "Loss of commission only",
+        "Criminal charges with mandatory prison time",
+        "License suspension, civil fines, and damages",
+        "Mandatory public apology"
       ],
-      "correctOption": 2,
+      "correctAnswer": "License suspension, civil fines, and damages",
       "explanation": "Violations can result in license suspension, civil fines, and damages."
     },
     {
-      "id": 16,
-      "difficulty": "easy",
       "questionText": "When can a seller sell a property “as-is”?",
       "options": [
-        "A) If the seller is unaware of any defects",
-        "B) If the buyer is prohibited from inspecting the property",
-        "C) If the seller discloses known defects and complies with disclosure laws",
-        "D) If the seller has lived in the property for over 10 years"
+        "If the seller is unaware of any defects",
+        "If the buyer is prohibited from inspecting the property",
+        "If the seller discloses known defects and complies with disclosure laws",
+        "If the seller has lived in the property for over 10 years"
       ],
-      "correctOption": 2,
+      "correctAnswer": "If the seller discloses known defects and complies with disclosure laws",
       "explanation": "Selling “as-is” requires compliance with disclosure obligations."
     },
     {
-      "id": 17,
-      "difficulty": "easy",
       "questionText": "What is the primary goal of advertising regulations for licensees?",
       "options": [
-        "A) Promote the licensee’s business",
-        "B) Attract specific demographics",
-        "C) Ensure truthfulness and compliance with fair housing laws",
-        "D) Exclude unwanted buyers"
+        "Promote the licensee’s business",
+        "Attract specific demographics",
+        "Ensure truthfulness and compliance with fair housing laws",
+        "Exclude unwanted buyers"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Ensure truthfulness and compliance with fair housing laws",
       "explanation": "Advertising must be truthful and not discriminatory."
     },
     {
-      "id": 18,
-      "difficulty": "easy",
       "questionText": "What must a licensee do if a buyer asks about local sex offenders?",
       "options": [
-        "A) Provide information directly from the licensee’s knowledge",
-        "B) Direct the buyer to the sex offender registry",
-        "C) Contact local law enforcement for details",
-        "D) Share neighborhood rumors"
+        "Provide information directly from the licensee’s knowledge",
+        "Direct the buyer to the sex offender registry",
+        "Contact local law enforcement for details",
+        "Share neighborhood rumors"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Direct the buyer to the sex offender registry",
       "explanation": "Licensees should provide access to the registry but not disclose additional information."
     },
     {
-      "id": 19,
-      "difficulty": "easy",
       "questionText": "When can a party waive the firm’s duty to negotiate?",
       "options": [
-        "A) If the buyer is a first-time homeowner",
-        "B) When all parties agree in writing",
-        "C) If the seller insists on a reduced commission",
-        "D) Only during pre-agency"
+        "If the buyer is a first-time homeowner",
+        "When all parties agree in writing",
+        "If the seller insists on a reduced commission",
+        "Only during pre-agency"
       ],
-      "correctOption": 1,
+      "correctAnswer": "When all parties agree in writing",
       "explanation": "Waivers must be agreed upon in writing."
     },
     {
-      "id": 20,
-      "difficulty": "easy",
       "questionText": "What must be included in a buyer agency agreement?",
       "options": [
-        "A) Description of the property",
-        "B) Terms of commission sharing",
-        "C) The licensee’s personal interests",
-        "D) Consent for limited subagency"
+        "Description of the property",
+        "Terms of commission sharing",
+        "The licensee’s personal interests",
+        "Consent for limited subagency"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Description of the property",
       "explanation": "The agreement must describe the property and other relevant terms."
     },
     {
-      "id": 21,
-      "difficulty": "medium",
       "questionText": "What is the purpose of pre-agency in Wisconsin real estate law?",
       "options": [
-        "A) To allow consumers to negotiate terms with a licensee before hiring them",
-        "B) To permit neutral discussions before an agency relationship is established",
-        "C) To enable buyers to preview properties without signing any agreements",
-        "D) To allow licensees to provide advice without legal obligations"
+        "To allow consumers to negotiate terms with a licensee before hiring them",
+        "To permit neutral discussions before an agency relationship is established",
+        "To enable buyers to preview properties without signing any agreements",
+        "To allow licensees to provide advice without legal obligations"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To permit neutral discussions before an agency relationship is established",
       "explanation": "Pre-agency allows neutral discussions about transactions before forming an agency relationship."
     },
     {
-      "id": 22,
-      "difficulty": "medium",
       "questionText": "Under Wisconsin law, when must a licensee provide the Disclosure to Customers form?",
       "options": [
-        "A) Before showing a property",
-        "B) Prior to writing an offer for a customer",
-        "C) After a buyer signs a buyer agency agreement",
-        "D) Only at the seller's request"
+        "Before showing a property",
+        "Prior to writing an offer for a customer",
+        "After a buyer signs a buyer agency agreement",
+        "Only at the seller's request"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Prior to writing an offer for a customer",
       "explanation": "The Disclosure to Customers form must be provided before engaging in negotiations."
     },
     {
-      "id": 23,
-      "difficulty": "medium",
       "questionText": "What is the key difference between multiple representation without designated agency and with designated agency?",
       "options": [
-        "A) One requires written consent from clients, and the other does not",
-        "B) One permits licensees to act neutrally, while the other assigns separate agents to clients",
-        "C) One applies only to buyers, and the other only to sellers",
-        "D) One involves subagency, and the other does not"
+        "One requires written consent from clients, and the other does not",
+        "One permits licensees to act neutrally, while the other assigns separate agents to clients",
+        "One applies only to buyers, and the other only to sellers",
+        "One involves subagency, and the other does not"
       ],
-      "correctOption": 1,
+      "correctAnswer": "One permits licensees to act neutrally, while the other assigns separate agents to clients",
       "explanation": "In designated agency, separate agents advocate for each client, while in non-designated, the firm remains neutral."
     },
     {
-      "id": 24,
-      "difficulty": "medium",
       "questionText": "How should a licensee handle a situation where a buyer asks for zoning advice?",
       "options": [
-        "A) Research zoning regulations and provide detailed answers",
-        "B) Refer the buyer to the local zoning board or an attorney",
-        "C) Consult the seller for more information",
-        "D) Provide a best guess based on past transactions"
+        "Research zoning regulations and provide detailed answers",
+        "Refer the buyer to the local zoning board or an attorney",
+        "Consult the seller for more information",
+        "Provide a best guess based on past transactions"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Refer the buyer to the local zoning board or an attorney",
       "explanation": "Zoning advice is outside a licensee’s scope; they should refer the buyer to the proper authority."
     },
     {
-      "id": 25,
-      "difficulty": "medium",
       "questionText": "What must a licensee do when confronted with a fact that might suggest a material adverse fact?",
       "options": [
-        "A) Disclose the fact immediately without further investigation",
-        "B) Consult their supervising broker or an attorney for guidance",
-        "C) Wait for the buyer to request more details",
-        "D) Ignore the fact unless it is requested in writing"
+        "Disclose the fact immediately without further investigation",
+        "Consult their supervising broker or an attorney for guidance",
+        "Wait for the buyer to request more details",
+        "Ignore the fact unless it is requested in writing"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Consult their supervising broker or an attorney for guidance",
       "explanation": "Uncertain situations should involve consultation with a supervising broker or legal expert."
     },
     {
-      "id": 26,
-      "difficulty": "medium",
       "questionText": "What is required for a seller to waive their obligation to provide a real estate condition report?",
       "options": [
-        "A) A verbal agreement between buyer and seller",
-        "B) A counter-offer from the seller that includes a waiver clause",
-        "C) Consent from the listing licensee",
-        "D) No additional requirements if the property is sold “as-is”"
+        "A verbal agreement between buyer and seller",
+        "A counter-offer from the seller that includes a waiver clause",
+        "Consent from the listing licensee",
+        "No additional requirements if the property is sold “as-is”"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A counter-offer from the seller that includes a waiver clause",
       "explanation": "The waiver must be documented in writing, often as part of a counter-offer."
     },
     {
-      "id": 27,
-      "difficulty": "medium",
       "questionText": "When does a seller’s disclosure obligation under Wisconsin law terminate?",
       "options": [
-        "A) When the buyer receives the real estate condition report",
-        "B) At closing",
-        "C) When the buyer waives the right to a condition report",
-        "D) When the buyer takes possession of the property"
+        "When the buyer receives the real estate condition report",
+        "At closing",
+        "When the buyer waives the right to a condition report",
+        "When the buyer takes possession of the property"
       ],
-      "correctOption": 1,
+      "correctAnswer": "At closing",
       "explanation": "The seller's disclosure obligation ends at closing."
     },
     {
-      "id": 28,
-      "difficulty": "medium",
       "questionText": "What does “observable material adverse facts” refer to in a licensee’s duty to inspect?",
       "options": [
-        "A) Issues that can only be detected by professional inspectors",
-        "B) Conditions visible during a reasonably competent and diligent inspection",
-        "C) Problems noted by previous homeowners",
-        "D) Facts discovered after the transaction closes"
+        "Issues that can only be detected by professional inspectors",
+        "Conditions visible during a reasonably competent and diligent inspection",
+        "Problems noted by previous homeowners",
+        "Facts discovered after the transaction closes"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Conditions visible during a reasonably competent and diligent inspection",
       "explanation": "A licensee is responsible for identifying observable conditions during inspection."
     },
     {
-      "id": 29,
-      "difficulty": "medium",
       "questionText": "What must be disclosed when selling a property with an underground storage tank?",
       "options": [
-        "A) The presence and condition of the tank",
-        "B) The tank’s registration history",
-        "C) The expected cost of removal",
-        "D) Nothing unless the tank is leaking"
+        "The presence and condition of the tank",
+        "The tank’s registration history",
+        "The expected cost of removal",
+        "Nothing unless the tank is leaking"
       ],
-      "correctOption": 0,
+      "correctAnswer": "The presence and condition of the tank",
       "explanation": "Licensees must disclose the presence of underground storage tanks."
     },
     {
-      "id": 30,
-      "difficulty": "medium",
       "questionText": "Which party is responsible for ensuring that lead-based paint disclosures are provided?",
       "options": [
-        "A) The buyer",
-        "B) The listing licensee",
-        "C) The seller",
-        "D) The seller’s attorney"
+        "The buyer",
+        "The listing licensee",
+        "The seller",
+        "The seller’s attorney"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The listing licensee",
       "explanation": "The listing licensee ensures compliance with lead-based paint disclosure requirements."
     },
     {
-      "id": 31,
-      "difficulty": "medium",
       "questionText": "What does a licensee need to include in an agency agreement?",
       "options": [
-        "A) The client’s employment details",
-        "B) A description of the property and compensation terms",
-        "C) A waiver of the client’s disclosure rights",
-        "D) A list of potential buyers or sellers"
+        "The client’s employment details",
+        "A description of the property and compensation terms",
+        "A waiver of the client’s disclosure rights",
+        "A list of potential buyers or sellers"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A description of the property and compensation terms",
       "explanation": "Agency agreements must describe the property and include compensation terms."
     },
     {
-      "id": 32,
-      "difficulty": "medium",
       "questionText": "What is required for a buyer to rescind an offer if the seller fails to provide a real estate condition report?",
       "options": [
-        "A) A verbal request to the seller",
-        "B) A written notice within two business days",
-        "C) Consultation with an attorney",
-        "D) No action is required; the offer is automatically void"
+        "A verbal request to the seller",
+        "A written notice within two business days",
+        "Consultation with an attorney",
+        "No action is required; the offer is automatically void"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A written notice within two business days",
       "explanation": "Buyers must provide written notice within two business days to rescind the offer."
     },
     {
-      "id": 33,
-      "difficulty": "medium",
-      "questionText": "What is the legal consequence of failing to inspect a property for observable material adverse facts?",
+      "questionText": "What is the legal consequence if a licensee fails to disclose a material adverse fact?",
       "options": [
-        "A) Loss of commission",
-        "B) Possible license revocation and fines",
-        "C) Immediate nullification of the transaction",
-        "D) Liability for all repair costs"
+        "Suspension of the licensee’s real estate license",
+        "Automatic termination of the transaction",
+        "Potential disciplinary action and fines",
+        "Revocation of the buyer’s agency agreement"
       ],
-      "correctOption": 1,
-      "explanation": "Failing to inspect as required can lead to fines and disciplinary action."
+      "correctAnswer": "Potential disciplinary action and fines",
+      "explanation": "Failure to disclose can result in fines and disciplinary action by the REEB."
     },
     {
-      "id": 34,
-      "difficulty": "medium",
-      "questionText": "In an “as-is” sale, what must the seller disclose under Wisconsin law?",
+      "questionText": "What should a licensee do if a seller refuses to complete a real estate condition report?",
       "options": [
-        "A) All known defects, including latent ones",
-        "B) Only defects requested by the buyer",
-        "C) Defects found during the licensee’s inspection",
-        "D) No disclosures are required in an “as-is” sale"
+        "Inform the seller they cannot list the property",
+        "Disclose the refusal to potential buyers in writing",
+        "Proceed with the listing without any disclosure",
+        "Include the refusal in the listing agreement"
       ],
-      "correctOption": 0,
-      "explanation": "Sellers must disclose all known defects, even in an “as-is” sale."
+      "correctAnswer": "Disclose the refusal to potential buyers in writing",
+      "explanation": "Licensees must disclose the seller's refusal to provide a condition report."
     },
     {
-      "id": 35,
-      "difficulty": "medium",
-      "questionText": "When may a licensee provide compensation to a party in a transaction without prior written consent?",
+      "questionText": "When is it acceptable for a licensee to recommend a third-party service provider?",
       "options": [
-        "A) If the compensation is nominal",
-        "B) If the compensation is part of a referral agreement",
-        "C) Never; prior written consent is always required",
-        "D) Only if the party agrees verbally"
+        "When the licensee receives a referral fee from the provider",
+        "Only when the buyer directly requests it",
+        "When the licensee discloses their financial interest in writing",
+        "At any time, as long as it benefits the client"
       ],
-      "correctOption": 2,
-      "explanation": "Written consent is always required before providing compensation."
+      "correctAnswer": "When the licensee discloses their financial interest in writing",
+      "explanation": "Licensees must disclose financial interests or referral fees when recommending services."
     },
     {
-      "id": 36,
-      "difficulty": "medium",
-      "questionText": "Under Wis. Stat. § 452.133(5), what advice can a licensee provide to a customer without an agency agreement?",
+      "questionText": "What is a key consideration when drafting a tie-in agreement involving a builder?",
       "options": [
-        "A) General legal advice on the transaction",
-        "B) Advice that does not conflict with the interests of another party in the transaction",
-        "C) Advice on financing options",
-        "D) Advice regarding property valuation"
+        "It must include a waiver of fair housing laws",
+        "The builder must have a bona fide interest in the property",
+        "It must be approved by the REEB",
+        "It can only apply to properties with planned developments"
       ],
-      "correctOption": 1,
-      "explanation": "Licensees may provide advice as long as it does not conflict with the interests of other parties."
+      "correctAnswer": "The builder must have a bona fide interest in the property",
+      "explanation": "Tie-in agreements are permissible if the builder has a bona fide interest in the property."
     },
     {
-      "id": 37,
-      "difficulty": "medium",
-      "questionText": "What distinguishes multiple representation with designated agency from other forms of agency relationships under Wis. Stat. § 452.134?",
+      "questionText": "What should a licensee disclose if they are representing their immediate family member in a transaction?",
       "options": [
-        "A) The firm represents only one client in the transaction",
-        "B) The firm assigns different agents to represent each client in the same transaction",
-        "C) The firm must remain neutral during negotiations",
-        "D) The firm acts as a subagent for another firm"
+        "The relationship only if asked",
+        "The relationship and obtain written consent from all parties",
+        "Only the terms of the transaction",
+        "Nothing, as long as the client is aware"
       ],
-      "correctOption": 1,
-      "explanation": "In designated agency, the firm assigns separate agents to represent each client."
+      "correctAnswer": "The relationship and obtain written consent from all parties",
+      "explanation": "Family representation requires disclosure and written consent from all parties."
     },
     {
-      "id": 38,
-      "difficulty": "medium",
-      "questionText": "When drafting an offer to purchase, what must a licensee avoid under Wis. Admin. Code § REEB 24.085?",
+      "questionText": "What is the penalty for false advertising in Wisconsin real estate?",
       "options": [
-        "A) Including provisions that conflict with fair housing laws",
-        "B) Using language that falsely portrays the buyer’s interest in the property",
-        "C) Omitting contingencies requested by the buyer",
-        "D) Relying on third-party disclosures"
+        "A maximum fine of $1,000",
+        "License suspension or revocation",
+        "A verbal warning from the REEB",
+        "Mandatory retraining in advertising standards"
       ],
-      "correctOption": 1,
-      "explanation": "Licensees must avoid drafting documents that falsely portray any party’s interest."
+      "correctAnswer": "License suspension or revocation",
+      "explanation": "False advertising can lead to license suspension or revocation."
     },
     {
-      "id": 39,
-      "difficulty": "medium",
-      "questionText": "How should a licensee proceed if a buyer requests information about a neighboring property’s zoning?",
+      "questionText": "What constitutes steering under fair housing laws?",
       "options": [
-        "A) Refer the buyer to the local zoning authority",
-        "B) Consult public records and provide a detailed report",
-        "C) Offer a general interpretation of zoning codes",
-        "D) Notify the seller of the inquiry"
+        "Directing buyers to areas based on their protected class status",
+        "Providing neighborhood safety information",
+        "Offering demographic data from public records",
+        "Avoiding certain neighborhoods due to pricing concerns"
       ],
-      "correctOption": 0,
-      "explanation": "Licensees should direct buyers to the appropriate zoning authority for accurate information."
+      "correctAnswer": "Directing buyers to areas based on their protected class status",
+      "explanation": "Steering violates fair housing laws by limiting choices based on protected class status."
     },
     {
-      "id": 40,
-      "difficulty": "medium",
-      "questionText": "What must a licensee disclose when assisting a buyer with a property subject to a right of first refusal?",
-      "options": [
-        "A) The terms of the right of first refusal",
-        "B) A written notice of the right of first refusal to all interested parties",
-        "C) The seller’s willingness to negotiate",
-        "D) The expected timeline for the refusal"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must disclose the existence of a right of first refusal in writing."
-    },
-    {
-      "id": 41,
-      "difficulty": "hard",
-      "questionText": "What must a licensee disclose under Wis. Stat. § 452.23 if they suspect a methamphetamine lab was present on a property?",
-      "options": [
-        "A) Only if the property’s condition suggests adverse facts",
-        "B) Always disclose the suspicion to all parties",
-        "C) Only disclose if confirmed by law enforcement",
-        "D) Disclose only to the buyer"
-      ],
-      "correctOption": 0,
-      "explanation": "Suspicions must be disclosed if they suggest a material adverse fact."
-    },
-    {
-      "id": 42,
-      "difficulty": "hard",
-      "questionText": "What is required for a firm to engage in subagency with another firm?",
-      "options": [
-        "A) A written agreement between the firms",
-        "B) Verbal authorization from both clients",
-        "C) Approval from the REEB",
-        "D) Consent from the seller-client only"
-      ],
-      "correctOption": 0,
-      "explanation": "Written agreements are necessary to establish subagency."
-    },
-    {
-      "id": 43,
-      "difficulty": "hard",
-      "questionText": "When can a buyer waive their right to receive condominium disclosure documents?",
-      "options": [
-        "A) When the seller is a developer",
-        "B) Through a written waiver included in the offer",
-        "C) At closing",
-        "D) If the property has fewer than four units"
-      ],
-      "correctOption": 1,
-      "explanation": "Buyers must waive the right in writing for it to be valid."
-    },
-    {
-      "id": 44,
-      "difficulty": "hard",
-      "questionText": "How should a licensee respond if a seller requests not to present offers below a certain price?",
-      "options": [
-        "A) Refuse the listing agreement",
-        "B) Honor the seller’s request if it is documented in the agency agreement",
-        "C) Present the offers but note the seller’s request",
-        "D) Notify the REEB of the seller’s restriction"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees can follow documented instructions in the agency agreement."
-    },
-    {
-      "id": 45,
-      "difficulty": "hard",
-      "questionText": "What is a licensee’s duty regarding disclosure of lead-based paint in pre-1978 homes?",
-      "options": [
-        "A) Require the seller to perform testing",
-        "B) Provide the EPA pamphlet to all buyers",
-        "C) Disclose the presence of lead paint only if it is visible",
-        "D) Perform lead testing before listing"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must provide the EPA pamphlet to buyers for pre-1978 homes."
-    },
-    {
-      "id": 46,
-      "difficulty": "hard",
-      "questionText": "What does a licensee need to include in an agency agreement?",
-      "options": [
-        "A) The client’s employment details",
-        "B) A description of the property and compensation terms",
-        "C) A waiver of the client’s disclosure rights",
-        "D) A list of potential buyers or sellers"
-      ],
-      "correctOption": 1,
-      "explanation": "Agency agreements must describe the property and include compensation terms."
-    },
-    {
-      "id": 47,
-      "difficulty": "hard",
-      "questionText": "What is required for a buyer to rescind an offer if the seller fails to provide a real estate condition report?",
-      "options": [
-        "A) A verbal request to the seller",
-        "B) A written notice within two business days",
-        "C) Consultation with an attorney",
-        "D) No action is required; the offer is automatically void"
-      ],
-      "correctOption": 1,
-      "explanation": "Buyers must provide written notice within two business days to rescind the offer."
-    },
-    {
-      "id": 48,
-      "difficulty": "hard",
-      "questionText": "What is the legal consequence of failing to inspect a property for observable material adverse facts?",
-      "options": [
-        "A) Loss of commission",
-        "B) Possible license revocation and fines",
-        "C) Immediate nullification of the transaction",
-        "D) Liability for all repair costs"
-      ],
-      "correctOption": 1,
-      "explanation": "Failing to inspect as required can lead to fines and disciplinary action."
-    },
-    {
-      "id": 49,
-      "difficulty": "hard",
-      "questionText": "In an “as-is” sale, what must the seller disclose under Wisconsin law?",
-      "options": [
-        "A) All known defects, including latent ones",
-        "B) Only defects requested by the buyer",
-        "C) Defects found during the licensee’s inspection",
-        "D) No disclosures are required in an “as-is” sale"
-      ],
-      "correctOption": 0,
-      "explanation": "Sellers must disclose all known defects, even in an “as-is” sale."
-    },
-    {
-      "id": 50,
-      "difficulty": "hard",
-      "questionText": "When may a licensee provide compensation to a party in a transaction without prior written consent?",
-      "options": [
-        "A) If the compensation is nominal",
-        "B) If the compensation is part of a referral agreement",
-        "C) Never; prior written consent is always required",
-        "D) Only if the party agrees verbally"
-      ],
-      "correctOption": 2,
-      "explanation": "Written consent is always required before providing compensation."
-    },
-    {
-      "id": 51,
-      "difficulty": "hard",
-      "questionText": "Under Wis. Stat. § 452.133(5), what advice can a licensee provide to a customer without an agency agreement?",
-      "options": [
-        "A) General legal advice on the transaction",
-        "B) Advice that does not conflict with the interests of another party in the transaction",
-        "C) Advice on financing options",
-        "D) Advice regarding property valuation"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees may provide advice as long as it does not conflict with the interests of other parties."
-    },
-    {
-      "id": 52,
-      "difficulty": "hard",
-      "questionText": "What distinguishes multiple representation with designated agency from other forms of agency relationships under Wis. Stat. § 452.134?",
-      "options": [
-        "A) The firm represents only one client in the transaction",
-        "B) The firm assigns different agents to represent each client in the same transaction",
-        "C) The firm must remain neutral during negotiations",
-        "D) The firm acts as a subagent for another firm"
-      ],
-      "correctOption": 1,
-      "explanation": "In designated agency, the firm assigns separate agents to represent each client."
-    },
-    {
-      "id": 53,
-      "difficulty": "hard",
-      "questionText": "When drafting an offer to purchase, what must a licensee avoid under Wis. Admin. Code § REEB 24.085?",
-      "options": [
-        "A) Including provisions that conflict with fair housing laws",
-        "B) Using language that falsely portrays the buyer’s interest in the property",
-        "C) Omitting contingencies requested by the buyer",
-        "D) Relying on third-party disclosures"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must avoid drafting documents that falsely portray any party’s interest."
-    },
-    {
-      "id": 54,
-      "difficulty": "hard",
-      "questionText": "How should a licensee proceed if a buyer requests information about a neighboring property’s zoning?",
-      "options": [
-        "A) Refer the buyer to the local zoning authority",
-        "B) Consult public records and provide a detailed report",
-        "C) Offer a general interpretation of zoning codes",
-        "D) Notify the seller of the inquiry"
-      ],
-      "correctOption": 0,
-      "explanation": "Licensees should direct buyers to the appropriate zoning authority for accurate information."
-    },
-    {
-      "id": 55,
-      "difficulty": "hard",
-      "questionText": "What must a licensee disclose when assisting a buyer with a property subject to a right of first refusal?",
-      "options": [
-        "A) The terms of the right of first refusal",
-        "B) A written notice of the right of first refusal to all interested parties",
-        "C) The seller’s willingness to negotiate",
-        "D) The expected timeline for the refusal"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must disclose the existence of a right of first refusal in writing."
-    },
-    {
-      "id": 56,
-      "difficulty": "hard",
-      "questionText": "What is the primary goal of Wis. Admin. Code § REEB 24.13 regarding the drafting of written proposals?",
-      "options": [
-        "A) To prevent favoritism towards certain buyers",
-        "B) To ensure all proposals are presented in a truthful and fair manner",
-        "C) To guarantee the use of standardized forms",
-        "D) To limit negotiation options for clients"
-      ],
-      "correctOption": 1,
-      "explanation": "Written proposals must be fair and truthful to protect all parties involved."
-    },
-    {
-      "id": 57,
-      "difficulty": "hard",
-      "questionText": "What legal implication does failing to inspect a property for observable material adverse facts carry?",
-      "options": [
-        "A) Loss of commission",
-        "B) Possible license revocation and fines",
-        "C) Immediate nullification of the transaction",
-        "D) Liability for all repair costs"
-      ],
-      "correctOption": 1,
-      "explanation": "Failing to inspect as required can lead to fines and disciplinary action."
-    },
-    {
-      "id": 58,
-      "difficulty": "hard",
-      "questionText": "What is the purpose of Wis. Admin. Code § REEB 24.13 regarding the drafting of written proposals?",
-      "options": [
-        "A) To prevent favoritism towards certain buyers",
-        "B) To ensure all proposals are presented in a truthful and fair manner",
-        "C) To guarantee the use of standardized forms",
-        "D) To limit negotiation options for clients"
-      ],
-      "correctOption": 1,
-      "explanation": "Written proposals must be fair and truthful to protect all parties involved."
-    },
-    {
-      "id": 59,
-      "difficulty": "hard",
-      "questionText": "What must a licensee disclose when selling a property with an underground storage tank?",
-      "options": [
-        "A) The presence and condition of the tank",
-        "B) The tank’s registration history",
-        "C) The expected cost of removal",
-        "D) Nothing unless the tank is leaking"
-      ],
-      "correctOption": 0,
-      "explanation": "Licensees must disclose the presence of underground storage tanks."
-    },
-    {
-      "id": 60,
-      "difficulty": "hard",
       "questionText": "What must a licensee do when using an unapproved form in a transaction?",
       "options": [
-        "A) Obtain the client’s verbal approval",
-        "B) Ensure the form complies with state statutes",
-        "C) Seek guidance from the local real estate board",
-        "D) Avoid using the form entirely"
+        "Obtain the client’s verbal approval",
+        "Ensure the form complies with state statutes",
+        "Seek guidance from the local real estate board",
+        "Avoid using the form entirely"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Ensure the form complies with state statutes",
       "explanation": "Licensees must ensure unapproved forms comply with Wisconsin law."
+    },
+    {
+      "questionText": "What is the primary limitation of using UCC forms in a transaction involving business personal property?",
+      "options": [
+        "They cannot be used without prior approval from the REEB",
+        "They must be filed with the Department of Financial Institutions",
+        "Only brokers can complete UCC forms, and competence must be ensured",
+        "They are restricted to transactions involving residential properties"
+      ],
+      "correctAnswer": "Only brokers can complete UCC forms, and competence must be ensured",
+      "explanation": "Only brokers can complete UCC forms, and they must be competent to do so or refer the task to an attorney."
+    },
+    {
+      "questionText": "What must be included in a property management agreement for it to be considered an approved form under Wisconsin law?",
+      "options": [
+        "A list of specific tenants",
+        "Provisions for leasing, managing, and marketing the property",
+        "A copy of the WB-37 Residential Listing Contract",
+        "A notarized statement from the landlord"
+      ],
+      "correctAnswer": "Provisions for leasing, managing, and marketing the property",
+      "explanation": "Approved property management agreements must include provisions for leasing, managing, and marketing the property."
+    },
+    {
+      "questionText": "What happens if a seller fails to provide a Real Estate Condition Report within the required timeframe?",
+      "options": [
+        "The buyer can terminate the contract within two business days of the missed deadline",
+        "The contract becomes void immediately",
+        "The seller must pay a penalty fee",
+        "The buyer must proceed with the transaction without the report"
+      ],
+      "correctAnswer": "The buyer can terminate the contract within two business days of the missed deadline",
+      "explanation": "The buyer has two business days to terminate the contract if the seller misses the deadline for providing the report."
+    },
+    {
+      "questionText": "Under what circumstances can a licensee draft an addendum without attorney involvement?",
+      "options": [
+        "When it modifies non-optional provisions",
+        "When it addresses only specific contingencies unique to a transaction",
+        "When it involves legal provisions like environmental liability waivers",
+        "When it rewrites the optional provisions of an approved form"
+      ],
+      "correctAnswer": "When it addresses only specific contingencies unique to a transaction",
+      "explanation": "Licensees can draft one-time use addenda to address specific transaction circumstances."
+    },
+    {
+      "questionText": "What must a broker consider before using another state’s form in a transaction?",
+      "options": [
+        "Whether the form complies with Wisconsin law",
+        "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+        "Whether the REEB has approved the form for interstate use",
+        "Whether the client has requested the form’s use"
+      ],
+      "correctAnswer": "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+      "explanation": "Brokers must ensure they are legally permitted and competent to use another state’s form."
+    },
+    {
+      "questionText": "What is a key consideration when using another state’s real estate forms?",
+      "options": [
+        "Ensuring the form is notarized",
+        "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+        "Verifying that the form aligns with Wisconsin statutes",
+        "Confirming it is a WB-approved form"
+      ],
+      "correctAnswer": "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+      "explanation": "Licensees must ensure competence and compliance with the laws of the other state."
+    },
+    {
+      "questionText": "What is a limitation of a licensee acting as a property manager?",
+      "options": [
+        "They cannot sign rental agreements",
+        "They must hold a real estate license if signing or negotiating leases",
+        "They are prohibited from marketing rental properties",
+        "They cannot perform maintenance tasks"
+      ],
+      "correctAnswer": "They must hold a real estate license if signing or negotiating leases",
+      "explanation": "Signing or negotiating leases requires a real estate license."
+    },
+    {
+      "questionText": "What must be included in a property management agreement?",
+      "options": [
+        "A complete listing of tenants",
+        "Provisions for leasing, marketing, and overall management",
+        "Standard addenda for residential properties",
+        "Pre-approval by the REEB"
+      ],
+      "correctAnswer": "Provisions for leasing, marketing, and overall management",
+      "explanation": "Property management agreements must include provisions for leasing, marketing, and management."
+    },
+    {
+      "questionText": "When must a licensee inspect a property and ask the seller about its condition?",
+      "options": [
+        "Before marketing the property",
+        "After an offer is accepted",
+        "Only if the property is commercial",
+        "When the buyer requests it"
+      ],
+      "correctAnswer": "Before marketing the property",
+      "explanation": "Licensees must inspect the property and ask the seller about its condition before marketing it."
+    },
+    {
+      "questionText": "What is required for a licensee to use a UCC form in a transaction?",
+      "options": [
+        "The form must be pre-approved by the REEB",
+        "The licensee must file the form with the Department of Safety and Professional Services",
+        "The licensee must be competent or refer the task to an attorney",
+        "The licensee must have experience with at least five prior UCC transactions"
+      ],
+      "correctAnswer": "The licensee must be competent or refer the task to an attorney",
+      "explanation": "UCC forms require competence or attorney involvement to ensure compliance."
+    },
+    {
+      "questionText": "What is the consequence of using a pre-prepared addendum that includes multiple-choice provisions?",
+      "options": [
+        "It must be reviewed and approved by an attorney",
+        "It violates Wisconsin law and cannot be used",
+        "It is valid if signed by both parties",
+        "It becomes optional for inclusion in the contract"
+      ],
+      "correctAnswer": "It violates Wisconsin law and cannot be used",
+      "explanation": "Pre-prepared addenda cannot include multiple-choice provisions."
+    },
+    {
+      "questionText": "What must a licensee do when presented with a seller-drafted listing contract?",
+      "options": [
+        "Refuse to use the contract",
+        "Ensure the contract complies with Wisconsin law and agency disclosures",
+        "Rewrite the contract to meet WB standards",
+        "Have it reviewed by the REEB before signing"
+      ],
+      "correctAnswer": "Ensure the contract complies with Wisconsin law and agency disclosures",
+      "explanation": "The licensee must ensure compliance with Wisconsin law and agency disclosure requirements."
+    },
+    {
+      "questionText": "What is the primary purpose of Wis. Stat. § 706.02(2) regarding addenda?",
+      "options": [
+        "To require all addenda to be signed by an attorney",
+        "To ensure addenda are properly incorporated into the transaction documents",
+        "To mandate that addenda replace optional provisions only",
+        "To allow addenda to stand alone as independent agreements"
+      ],
+      "correctAnswer": "To ensure addenda are properly incorporated into the transaction documents",
+      "explanation": "This statute ensures addenda are properly incorporated into transaction documents to document the agreement."
+    },
+    {
+      "questionText": "What is the primary role of the Real Estate Examining Board (REEB)?",
+      "options": [
+        "Enforcing ethical standards",
+        "Creating educational programs for licensees",
+        "Approving real estate forms and managing disciplinary actions",
+        "Mediating disputes between buyers and sellers"
+      ],
+      "correctAnswer": "Approving real estate forms and managing disciplinary actions",
+      "explanation": "The REEB oversees licensing, approves forms, and handles discipline for violations."
+    },
+    {
+      "questionText": "Which action violates Wisconsin real estate licensee regulations?",
+      "options": [
+        "Explaining form provisions",
+        "Drafting a new form for a unique transaction",
+        "Using an attorney-prepared addendum",
+        "Reproducing approved forms with permission"
+      ],
+      "correctAnswer": "Drafting a new form for a unique transaction",
+      "explanation": "Licensees cannot draft new forms; they must use approved or attorney-prepared forms."
+    },
+    {
+      "questionText": "What is required for a form modification to be valid?",
+      "options": [
+        "Approval from the REEB",
+        "Use of addenda or blank lines provided",
+        "Broker’s signature",
+        "A separate document outlining changes"
+      ],
+      "correctAnswer": "Use of addenda or blank lines provided",
+      "explanation": "Modifications must be made using addenda or blank lines within approved forms."
+    },
+    {
+      "questionText": "What is an example of \"material adverse fact\"?",
+      "options": [
+        "A property located near a noisy area",
+        "A minor cosmetic defect",
+        "Structural damage impacting safety",
+        "A seller’s personal dispute with neighbors"
+      ],
+      "correctAnswer": "Structural damage impacting safety",
+      "explanation": "Material adverse facts must affect the property’s value or safety."
+    },
+    {
+      "questionText": "What is the main purpose of the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "To finalize the terms of sale",
+        "To initiate the negotiation process",
+        "To present a buyer’s offer in a legally binding format",
+        "To outline a buyer’s preliminary interest"
+      ],
+      "correctAnswer": "To present a buyer’s offer in a legally binding format",
+      "explanation": "The WB-11 creates a legally binding offer once accepted."
+    },
+    {
+      "questionText": "What distinguishes a WB-46 Multiple Counter-Proposal from a WB-44 Counter-Offer?",
+      "options": [
+        "A WB-46 is binding upon delivery",
+        "A WB-46 allows negotiation with multiple buyers simultaneously",
+        "A WB-44 provides additional legal protections",
+        "A WB-44 cannot be modified after acceptance"
+      ],
+      "correctAnswer": "A WB-46 allows negotiation with multiple buyers simultaneously",
+      "explanation": "A WB-46 permits non-binding proposals to multiple buyers."
+    },
+    {
+      "questionText": "What happens if the seller misses the deadline to respond to an amendment?",
+      "options": [
+        "The amendment is automatically accepted",
+        "The original offer remains in effect",
+        "The buyer’s offer becomes null and void",
+        "The buyer is entitled to terminate the contract"
+      ],
+      "correctAnswer": "The original offer remains in effect",
+      "explanation": "If the seller does not agree, the terms of the original offer remain unchanged."
+    },
+    {
+      "questionText": "What must be included in a buyer’s inspection contingency notice of defects?",
+      "options": [
+        "A repair estimate",
+        "A copy of the inspection report",
+        "The buyer’s proposed remedy",
+        "A list of defects with no further documentation"
+      ],
+      "correctAnswer": "A copy of the inspection report",
+      "explanation": "The inspection report must accompany the notice of defects."
+    },
+    {
+      "questionText": "Under what condition does a WB-45 Cancellation Agreement and Mutual Release become effective?",
+      "options": [
+        "Once signed by the buyer",
+        "Once signed by both parties",
+        "Upon approval by the REEB",
+        "When filed with the title company"
+      ],
+      "correctAnswer": "Once signed by both parties",
+      "explanation": "Both parties must sign the agreement for it to be effective."
+    },
+    {
+      "questionText": "What is the consequence of delivering earnest money late?",
+      "options": [
+        "Automatic contract termination",
+        "A breach of contract",
+        "Seller’s option to terminate the contract",
+        "Requirement for buyer to pay penalties"
+      ],
+      "correctAnswer": "Seller’s option to terminate the contract",
+      "explanation": "Late delivery of earnest money gives the seller grounds to terminate the offer."
+    },
+    {
+      "questionText": "What is the impact of a protected buyer list on a new listing firm?",
+      "options": [
+        "It limits the new firm’s marketing options",
+        "It prevents the new firm from earning commission from protected buyers",
+        "It requires the new firm to cooperate with the previous firm",
+        "It ensures the seller is responsible for damages caused by non-delivery"
+      ],
+      "correctAnswer": "It prevents the new firm from earning commission from protected buyers",
+      "explanation": "Protected buyers are excluded from earning commissions for the new firm."
+    },
+    {
+      "questionText": "When is a seller required to disclose a property defect?",
+      "options": [
+        "If the buyer requests an inspection",
+        "If the defect is considered a material adverse fact",
+        "Only after the buyer’s earnest money is paid",
+        "Only when the defect impacts the property’s value"
+      ],
+      "correctAnswer": "If the defect is considered a material adverse fact",
+      "explanation": "Material adverse facts must always be disclosed."
+    },
+    {
+      "questionText": "What happens if a seller rejects a buyer’s notice of defects and the buyer granted no right to cure?",
+      "options": [
+        "The buyer forfeits earnest money",
+        "The offer becomes null and void",
+        "The buyer must revise the notice",
+        "The seller must accept the notice"
+      ],
+      "correctAnswer": "The offer becomes null and void",
+      "explanation": "Without the right to cure, the offer becomes void upon defect notice rejection."
+    },
+    {
+      "questionText": "What is the purpose of an addendum in a real estate transaction?",
+      "options": [
+        "To clarify agency relationships",
+        "To add or modify terms not covered in the main contract",
+        "To terminate a listing agreement",
+        "To summarize the primary contract terms"
+      ],
+      "correctAnswer": "To add or modify terms not covered in the main contract",
+      "explanation": "Addenda are used to add or modify terms."
+    },
+    {
+      "questionText": "What defines a protected property under a WB-36 Buyer Agency Agreement?",
+      "options": [
+        "A property visited by the buyer with their agent",
+        "A property previously viewed by any buyer",
+        "A property listed after the agreement is signed",
+        "A property for which the buyer submits an offer"
+      ],
+      "correctAnswer": "A property for which the buyer submits an offer",
+      "explanation": "Protected properties include those where offers were submitted during the agreement term."
+    },
+    {
+      "questionText": "Under what circumstance can a licensee legally line out a provision in an approved form?",
+      "options": [
+        "When it reflects the client’s instructions and remains legible",
+        "When the provision is outdated or irrelevant",
+        "Upon approval by the supervising broker",
+        "If the licensee believes the provision is unnecessary"
+      ],
+      "correctAnswer": "When it reflects the client’s instructions and remains legible",
+      "explanation": "Licensees can cross out provisions only when it reflects a client’s explicit instructions and the text remains legible."
+    },
+    {
+      "questionText": "What happens if a buyer delivers earnest money to the wrong party?",
+      "options": [
+        "The contract becomes void",
+        "The buyer forfeits the earnest money",
+        "The seller can terminate the contract",
+        "The transaction is delayed until proper payment is made"
+      ],
+      "correctAnswer": "The transaction is delayed until proper payment is made",
+      "explanation": "Incorrect delivery of earnest money must be rectified to proceed, potentially delaying the transaction."
+    },
+    {
+      "questionText": "What distinguishes a WB-40 Amendment from a WB-41 Notice in an inspection contingency?",
+      "options": [
+        "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+        "A WB-41 requires both parties’ agreement; a WB-40 does not",
+        "A WB-41 applies only to inspection contingencies; a WB-40 applies to all terms",
+        "A WB-40 terminates the contract if not accepted; a WB-41 does not"
+      ],
+      "correctAnswer": "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+      "explanation": "An amendment modifies terms, while a notice alerts the other party without changing the contract."
+    },
+    {
+      "questionText": "How does a buyer waive their financing contingency in the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "By verbal agreement with the seller",
+        "Through a WB-41 Notice delivered to the seller",
+        "By crossing out the financing contingency section",
+        "Through written notice accompanied by verification of funds"
+      ],
+      "correctAnswer": "Through written notice accompanied by verification of funds",
+      "explanation": "Waiving financing requires written notice and evidence of the buyer’s financial capability."
     }
   ]
 }
