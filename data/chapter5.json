@@ -1,0 +1,785 @@
+{
+  "chapter": 5,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "questionText": "What must a licensee disclose to another licensee in a transaction involving a one-to-four-family residential property?",
+      "options": [
+        "A) The licensee’s commission rate",
+        "B) The agency relationship with the buyer",
+        "C) The seller’s confidential information",
+        "D) The listing price"
+      ],
+      "correctOption": 1,
+      "explanation": "A buyer’s licensee must disclose the agency relationship with the buyer."
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "questionText": "When must a buyer’s licensee disclose their agency relationship in a residential transaction?",
+      "options": [
+        "A) Only during the showing",
+        "B) At the earliest of first contact, showing, or negotiation",
+        "C) After an offer is accepted",
+        "D) When the seller requests it"
+      ],
+      "correctOption": 1,
+      "explanation": "Disclosure must be made early to ensure clarity of roles."
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "questionText": "What document is used for a Wisconsin listing firm cooperating with an out-of-state licensee (OSL)?",
+      "options": [
+        "A) WB-36",
+        "B) WB-28",
+        "C) WB-11",
+        "D) WB-45"
+      ],
+      "correctOption": 1,
+      "explanation": "WB-28 is the cooperative agreement for a Wisconsin listing firm and an OSL."
+    },
+    {
+      "id": 4,
+      "difficulty": "easy",
+      "questionText": "What is required of an out-of-state licensee cooperating in Wisconsin?",
+      "options": [
+        "A) Hold earnest money",
+        "B) Comply with Wisconsin law",
+        "C) Negotiate directly with buyers",
+        "D) List properties in Wisconsin"
+      ],
+      "correctOption": 1,
+      "explanation": "OSLs must comply with Wisconsin law and cannot hold client funds or list properties."
+    },
+    {
+      "id": 5,
+      "difficulty": "easy",
+      "questionText": "What must a licensee do if the buyer’s agency status changes?",
+      "options": [
+        "A) Notify the seller or listing licensee",
+        "B) Do nothing",
+        "C) Cancel the transaction",
+        "D) Request approval from the seller"
+      ],
+      "correctOption": 0,
+      "explanation": "The licensee must notify relevant parties when the agency status changes."
+    },
+    {
+      "id": 6,
+      "difficulty": "easy",
+      "questionText": "What is a material adverse fact?",
+      "options": [
+        "A) A minor issue with a property",
+        "B) Information that would influence a party’s decision in the transaction",
+        "C) A positive feature of the property",
+        "D) Personal opinions about the property"
+      ],
+      "correctOption": 1,
+      "explanation": "Material adverse facts are significant issues that influence transaction decisions."
+    },
+    {
+      "id": 7,
+      "difficulty": "easy",
+      "questionText": "When must a licensee disclose a right of first refusal?",
+      "options": [
+        "A) After an offer is accepted",
+        "B) At closing",
+        "C) In writing, in a timely manner",
+        "D) Only if requested by the buyer"
+      ],
+      "correctOption": 2,
+      "explanation": "Disclosure must be timely and in writing to all parties seeking an interest."
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "questionText": "What is the purpose of the WB-36 Buyer Agency Agreement?",
+      "options": [
+        "A) To list a property for sale",
+        "B) To establish an agency relationship between a buyer and a firm",
+        "C) To transfer ownership of a property",
+        "D) To disclose material facts"
+      ],
+      "correctOption": 1,
+      "explanation": "The WB-36 creates an agency relationship between a buyer and a firm."
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "questionText": "What is prohibited under Wis. Admin. Code § REEB 24.07(7)?",
+      "options": [
+        "A) Exaggerating the value of a property",
+        "B) Giving false information about another licensee or property",
+        "C) Holding earnest money without consent",
+        "D) Disclosing agency relationships"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must not knowingly provide false information about others or properties."
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "questionText": "What must a licensee do when a material adverse fact is discovered?",
+      "options": [
+        "A) Ignore it",
+        "B) Disclose it to all parties in writing",
+        "C) Wait for the client’s permission",
+        "D) Remove it from the contract"
+      ],
+      "correctOption": 1,
+      "explanation": "Material adverse facts must be disclosed in writing and in a timely manner."
+    },
+    {
+      "id": 11,
+      "difficulty": "easy",
+      "questionText": "What does a listing firm provide when a WB listing contract expires?",
+      "options": [
+        "A) Protected buyer list",
+        "B) A refund of commission",
+        "C) A new listing contract",
+        "D) Seller’s disclosure forms"
+      ],
+      "correctOption": 0,
+      "explanation": "Protected buyers are listed to extend the listing agreement for those buyers."
+    },
+    {
+      "id": 12,
+      "difficulty": "easy",
+      "questionText": "Can a licensee submit a personal offer on a property listed by their firm if they know the terms of a pending offer?",
+      "options": [
+        "A) Yes, at any time",
+        "B) Only if the pending offer is rejected",
+        "C) No, this is prohibited",
+        "D) Only with seller approval"
+      ],
+      "correctOption": 2,
+      "explanation": "A licensee cannot submit a personal offer if they know the terms of a pending offer."
+    },
+    {
+      "id": 13,
+      "difficulty": "easy",
+      "questionText": "What must be done when a written proposal is rejected?",
+      "options": [
+        "A) Notify the other party verbally",
+        "B) Notify the other party in writing with the date and time",
+        "C) Destroy the proposal",
+        "D) Notify the other party only if they request it"
+      ],
+      "correctOption": 1,
+      "explanation": "The licensee must document the rejection in writing, including date and time."
+    },
+    {
+      "id": 14,
+      "difficulty": "easy",
+      "questionText": "What is steering in real estate?",
+      "options": [
+        "A) Advising clients on financing options",
+        "B) Showing properties only in certain areas based on a protected class",
+        "C) Encouraging buyers to submit multiple offers",
+        "D) Conducting property inspections"
+      ],
+      "correctOption": 1,
+      "explanation": "Steering is discriminatory and violates fair housing laws."
+    },
+    {
+      "id": 15,
+      "difficulty": "easy",
+      "questionText": "Who can hold client funds in Wisconsin real estate transactions?",
+      "options": [
+        "A) Out-of-state licensees",
+        "B) Wisconsin firms only",
+        "C) Any licensed individual",
+        "D) Attorneys only"
+      ],
+      "correctOption": 1,
+      "explanation": "Only Wisconsin firms can hold client funds like earnest money."
+    },
+    {
+      "id": 16,
+      "difficulty": "easy",
+      "questionText": "What does the term “protected buyer” mean?",
+      "options": [
+        "A) A buyer with pre-approved financing",
+        "B) A buyer identified under an expired listing who extends the listing contract",
+        "C) A buyer who purchases multiple properties",
+        "D) A buyer who waives contingencies"
+      ],
+      "correctOption": 1,
+      "explanation": "Protected buyers extend the listing contract after it expires for those specific buyers."
+    },
+    {
+      "id": 17,
+      "difficulty": "easy",
+      "questionText": "What is the primary purpose of a relocation company in a transaction?",
+      "options": [
+        "A) To negotiate directly with buyers",
+        "B) To assist with transfers related to employment moves",
+        "C) To replace the listing firm",
+        "D) To provide financial advice"
+      ],
+      "correctOption": 1,
+      "explanation": "Relocation companies assist with employment-related moves."
+    },
+    {
+      "id": 18,
+      "difficulty": "easy",
+      "questionText": "What is the primary requirement for a Wisconsin firm cooperating with an out-of-state licensee?",
+      "options": [
+        "A) A verbal agreement",
+        "B) A written cooperative agreement",
+        "C) Approval from the REEB",
+        "D) Holding the license in escrow"
+      ],
+      "correctOption": 1,
+      "explanation": "A written cooperative agreement is required for cooperation."
+    },
+    {
+      "id": 19,
+      "difficulty": "easy",
+      "questionText": "What is the consequence of knowingly giving false information about another licensee?",
+      "options": [
+        "A) The licensee may lose their license",
+        "B) The licensee is fined $5,000",
+        "C) The licensee is awarded a commission",
+        "D) The licensee is automatically suspended"
+      ],
+      "correctOption": 0,
+      "explanation": "Providing false information can result in disciplinary action, including license revocation."
+    },
+    {
+      "id": 20,
+      "difficulty": "easy",
+      "questionText": "What action is required if a licensee becomes aware of information suggesting a material adverse fact?",
+      "options": [
+        "A) Investigate the fact independently",
+        "B) Disclose it in writing and recommend further investigation",
+        "C) Wait for the client’s confirmation",
+        "D) Ignore the information"
+      ],
+      "correctOption": 1,
+      "explanation": "The licensee must disclose the information and recommend expert assistance if necessary."
+    },
+    {
+      "id": 21,
+      "difficulty": "medium",
+      "questionText": "When must a licensee disclose a buyer agency relationship to a seller or listing licensee?",
+      "options": [
+        "A) Only during negotiations",
+        "B) Only if requested by the seller",
+        "C) At the earliest of first contact, showing, or negotiation",
+        "D) After an offer is submitted"
+      ],
+      "correctOption": 2,
+      "explanation": "Disclosure ensures clarity of roles early in the transaction."
+    },
+    {
+      "id": 22,
+      "difficulty": "medium",
+      "questionText": "What is the purpose of a WB-29 Commercial Cooperative Agreement?",
+      "options": [
+        "A) To establish compensation for a Wisconsin listing firm",
+        "B) To cooperate with an out-of-state licensee on a commercial property",
+        "C) To provide buyer agency services",
+        "D) To transfer listing authority to another firm"
+      ],
+      "correctOption": 1,
+      "explanation": "The WB-29 is used for commercial transactions between Wisconsin firms and out-of-state licensees."
+    },
+    {
+      "id": 23,
+      "difficulty": "medium",
+      "questionText": "What must a licensee do if a seller has prohibited the disclosure of an accepted offer?",
+      "options": [
+        "A) Disclose it only to other licensees",
+        "B) Follow the seller’s instructions",
+        "C) Announce it at open houses",
+        "D) Automatically disclose it to all buyers"
+      ],
+      "correctOption": 1,
+      "explanation": "The licensee must follow the seller’s specific instructions regarding disclosure."
+    },
+    {
+      "id": 24,
+      "difficulty": "medium",
+      "questionText": "Under what circumstances can a licensee negotiate directly with a represented party?",
+      "options": [
+        "A) Only if the firm consents or the firm is unavailable",
+        "B) At any time",
+        "C) Only after the listing agreement ends",
+        "D) Only if the represented party requests it"
+      ],
+      "correctOption": 0,
+      "explanation": "Direct negotiation is permitted with the firm’s consent or under specific conditions, such as unavailability."
+    },
+    {
+      "id": 25,
+      "difficulty": "medium",
+      "questionText": "What is a material adverse fact?",
+      "options": [
+        "A) Any fact that complicates the transaction",
+        "B) A fact that significantly affects a party’s decision to proceed",
+        "C) A minor issue that does not require disclosure",
+        "D) A seller’s confidential information"
+      ],
+      "correctOption": 1,
+      "explanation": "Material adverse facts influence a party’s decision regarding the transaction."
+    },
+    {
+      "id": 26,
+      "difficulty": "medium",
+      "questionText": "What does a relocation company typically require from a cooperating firm?",
+      "options": [
+        "A) Exclusive right to list the property",
+        "B) A referral fee agreement",
+        "C) The use of only relocation company forms",
+        "D) A guarantee of buyer financing"
+      ],
+      "correctOption": 1,
+      "explanation": "Relocation companies often expect referral fees as part of the transaction."
+    },
+    {
+      "id": 27,
+      "difficulty": "medium",
+      "questionText": "What is prohibited under Wis. Admin. Code § REEB 24.13 regarding written proposals?",
+      "options": [
+        "A) Rejecting a proposal without consultation",
+        "B) Withholding a proposal pending action on another",
+        "C) Drafting proposals with contingencies",
+        "D) Presenting proposals to unrepresented parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must promptly present all written proposals to the relevant parties."
+    },
+    {
+      "id": 28,
+      "difficulty": "medium",
+      "questionText": "How can a licensee ensure compliance when assisting a buyer with a relocation company’s addendum?",
+      "options": [
+        "A) Fill out the addendum independently",
+        "B) Act only as a courier for the addendum",
+        "C) Modify the addendum as needed",
+        "D) Refuse to include the addendum"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees cannot modify or complete non-approved forms but can act as a courier."
+    },
+    {
+      "id": 29,
+      "difficulty": "medium",
+      "questionText": "What should a licensee do if a buyer contacts them directly during an open house?",
+      "options": [
+        "A) Ask the buyer if they are represented by another firm",
+        "B) Encourage the buyer to make an offer immediately",
+        "C) Proceed without verifying agency relationships",
+        "D) Refuse to work with the buyer"
+      ],
+      "correctOption": 0,
+      "explanation": "Professional courtesy and regulatory compliance require verifying representation."
+    },
+    {
+      "id": 30,
+      "difficulty": "medium",
+      "questionText": "What must a listing firm provide at the end of a WB listing contract to extend protections?",
+      "options": [
+        "A) A list of protected buyers",
+        "B) A new commission agreement",
+        "C) A property condition report",
+        "D) A signed addendum"
+      ],
+      "correctOption": 0,
+      "explanation": "Protected buyer provisions extend the listing for those buyers."
+    },
+    {
+      "id": 31,
+      "difficulty": "medium",
+      "questionText": "What is required for a Wisconsin firm to cooperate with an out-of-state licensee (OSL)?",
+      "options": [
+        "A) A signed WB-28 or WB-29 Cooperative Agreement",
+        "B) A verbal understanding between the firms",
+        "C) The OSL must hold escrow funds",
+        "D) An agreement to bypass Wisconsin law"
+      ],
+      "correctOption": 0,
+      "explanation": "Cooperative agreements are mandatory for Wisconsin firms and OSLs to work together."
+    },
+    {
+      "id": 32,
+      "difficulty": "medium",
+      "questionText": "What is an example of steering in real estate?",
+      "options": [
+        "A) Showing properties in multiple neighborhoods",
+        "B) Showing properties based on a buyer’s membership in a protected class",
+        "C) Referring buyers to a specific lender",
+        "D) Offering properties within the buyer’s budget"
+      ],
+      "correctOption": 1,
+      "explanation": "Steering involves limiting property options based on protected characteristics."
+    },
+    {
+      "id": 33,
+      "difficulty": "medium",
+      "questionText": "What is the significance of a “bump clause” in an accepted offer?",
+      "options": [
+        "A) It requires immediate acceptance of other offers",
+        "B) It allows a secondary offer to become primary under certain conditions",
+        "C) It invalidates the primary offer automatically",
+        "D) It eliminates the need for contingencies"
+      ],
+      "correctOption": 1,
+      "explanation": "A bump clause enables a secondary offer to take precedence if certain contingencies are met."
+    },
+    {
+      "id": 34,
+      "difficulty": "medium",
+      "questionText": "What is required of a licensee who learns of false information in a seller’s disclosure?",
+      "options": [
+        "A) Report it to the authorities immediately",
+        "B) Disclose it in writing to all parties in the transaction",
+        "C) Ignore the information if the seller insists",
+        "D) Cancel the transaction"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must disclose material adverse facts or false information to protect all parties."
+    },
+    {
+      "id": 35,
+      "difficulty": "medium",
+      "questionText": "What does the WB-36 Buyer Agency Agreement require a buyer to do regarding commission?",
+      "options": [
+        "A) Pay a commission only if the firm procures the property",
+        "B) Pay a commission regardless of the firm’s involvement in the transaction",
+        "C) Only pay commission if requested by the seller",
+        "D) Waive commission if the buyer acts independently"
+      ],
+      "correctOption": 1,
+      "explanation": "An unmodified WB-36 requires buyers to pay a firm’s commission even if the firm isn’t directly involved."
+    },
+    {
+      "id": 36,
+      "difficulty": "medium",
+      "questionText": "What must a licensee do when presenting written proposals?",
+      "options": [
+        "A) Inform the client only of the advantages of the proposal",
+        "B) Provide an unbiased and objective summary",
+        "C) Withhold unfavorable offers",
+        "D) Encourage rejection of low offers"
+      ],
+      "correctOption": 1,
+      "explanation": "Proposals must be presented objectively, including both advantages and disadvantages."
+    },
+    {
+      "id": 37,
+      "difficulty": "medium",
+      "questionText": "What happens if a relocation company verbally accepts an offer?",
+      "options": [
+        "A) The offer is legally binding",
+        "B) The buyer must waive all contingencies",
+        "C) The offer is not binding until signed and delivered",
+        "D) The relocation company is required to sign immediately"
+      ],
+      "correctOption": 2,
+      "explanation": "Wisconsin law requires offers to be in writing and delivered to be binding."
+    },
+    {
+      "id": 38,
+      "difficulty": "medium",
+      "questionText": "What must a licensee include when disclosing their role as a principal in a transaction?",
+      "options": [
+        "A) The intended purchase price",
+        "B) Their licensed status at the earliest contact",
+        "C) A waiver of agency duties",
+        "D) A new contract with the seller"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensed status and intent must be disclosed early to the other party."
+    },
+    {
+      "id": 39,
+      "difficulty": "medium",
+      "questionText": "What is the consequence of failing to disclose a right of first refusal?",
+      "options": [
+        "A) The transaction is invalid",
+        "B) Legal action against the licensee",
+        "C) No consequences unless the buyer complains",
+        "D) The property is automatically withdrawn from the market"
+      ],
+      "correctOption": 1,
+      "explanation": "Failing to disclose can lead to disciplinary or legal action against the licensee."
+    },
+    {
+      "id": 40,
+      "difficulty": "medium",
+      "questionText": "What is required when a firm offers compensation to cooperating firms?",
+      "options": [
+        "A) Seller approval",
+        "B) Buyer approval",
+        "C) A verbal agreement",
+        "D) Consent from the REEB"
+      ],
+      "correctOption": 0,
+      "explanation": "The seller must authorize compensation agreements in the listing contract."
+    },
+    {
+      "id": 41,
+      "difficulty": "hard",
+      "questionText": "What is the primary difference between the WB-28 and WB-29 Cooperative Agreements?",
+      "options": [
+        "A) WB-28 is for residential properties; WB-29 is for commercial properties",
+        "B) WB-28 requires earnest money deposits; WB-29 does not",
+        "C) WB-28 involves listed properties; WB-29 may involve unlisted properties",
+        "D) WB-28 covers rental transactions; WB-29 covers sales only"
+      ],
+      "correctOption": 2,
+      "explanation": "The WB-28 is for listed properties, while the WB-29 can involve unlisted commercial properties."
+    },
+    {
+      "id": 42,
+      "difficulty": "hard",
+      "questionText": "Under what conditions can a licensee act as a subagent without specific client consent?",
+      "options": [
+        "A) When the subagency benefits the client financially",
+        "B) When the principal firm agrees to the subagency",
+        "C) When the client’s agency agreement explicitly authorizes it",
+        "D) When the client is unavailable for direct consultation"
+      ],
+      "correctOption": 2,
+      "explanation": "Subagency must be explicitly authorized in the client’s agency agreement."
+    },
+    {
+      "id": 43,
+      "difficulty": "hard",
+      "questionText": "What is a critical risk in verbal negotiations with relocation companies?",
+      "options": [
+        "A) Miscommunication of accepted terms",
+        "B) Binding agreements without signatures",
+        "C) Delays in contingency fulfillment",
+        "D) Disputes over relocation company fees"
+      ],
+      "correctOption": 0,
+      "explanation": "Verbal agreements are not binding until properly documented, risking miscommunication."
+    },
+    {
+      "id": 44,
+      "difficulty": "hard",
+      "questionText": "When is a licensee required to disclose information suggesting the possibility of a material adverse fact?",
+      "options": [
+        "A) Only when explicitly asked by a party",
+        "B) Immediately upon discovery, in writing",
+        "C) After consulting with the supervising broker",
+        "D) When the seller approves the disclosure"
+      ],
+      "correctOption": 1,
+      "explanation": "Disclosure of potential material adverse facts must be timely and in writing."
+    },
+    {
+      "id": 45,
+      "difficulty": "hard",
+      "questionText": "How does a buyer agency agreement with an exclusive right to negotiate differ from standard buyer agency agreements?",
+      "options": [
+        "A) It prevents buyers from contacting other firms directly",
+        "B) It requires disclosure to the listing firm upon inquiry",
+        "C) It gives the buyer’s firm exclusive authority to negotiate on behalf of the buyer",
+        "D) It restricts the buyer’s access to open houses without firm consent"
+      ],
+      "correctOption": 2,
+      "explanation": "Exclusive right to negotiate grants the buyer’s firm exclusive authority in negotiations."
+    },
+    {
+      "id": 46,
+      "difficulty": "hard",
+      "questionText": "What must a listing licensee do when a seller’s condition report contains incorrect information?",
+      "options": [
+        "A) Correct it directly in the report",
+        "B) Disclose the information as a potential material adverse fact",
+        "C) File a complaint with the Department of Safety and Professional Services (DSPS)",
+        "D) Inform the buyer’s licensee but not the buyer"
+      ],
+      "correctOption": 1,
+      "explanation": "Incorrect information that suggests a material adverse fact must be disclosed."
+    },
+    {
+      "id": 47,
+      "difficulty": "hard",
+      "questionText": "What must a Wisconsin firm include in a cooperative agreement with an out-of-state licensee?",
+      "options": [
+        "A) A shared trust account for earnest money",
+        "B) Agreement to use Wisconsin law for dispute resolution",
+        "C) Reciprocal licensing terms",
+        "D) Exclusivity clauses for the OSL’s future transactions"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin law must govern disputes under cooperative agreements."
+    },
+    {
+      "id": 48,
+      "difficulty": "hard",
+      "questionText": "How should a licensee handle a material adverse fact disclosed after an offer is accepted?",
+      "options": [
+        "A) Include it as a contingency in the contract",
+        "B) Notify all parties immediately in writing",
+        "C) Consult with the seller before disclosing",
+        "D) Request an inspection to confirm the fact"
+      ],
+      "correctOption": 1,
+      "explanation": "Disclosure of material adverse facts must be timely and to all parties."
+    },
+    {
+      "id": 49,
+      "difficulty": "hard",
+      "questionText": "What are the risks of ignoring protected buyer provisions in a new listing agreement?",
+      "options": [
+        "A) The seller can cancel the new listing contract",
+        "B) The first firm retains commission rights for protected buyers",
+        "C) Legal action against the new firm for interference",
+        "D) The listing becomes invalid for all buyers"
+      ],
+      "correctOption": 1,
+      "explanation": "Protected buyer provisions ensure the first firm’s right to commission for those buyers."
+    },
+    {
+      "id": 50,
+      "difficulty": "hard",
+      "questionText": "What must a licensee disclose when selling a property with an underground storage tank?",
+      "options": [
+        "A) The presence and condition of the tank",
+        "B) The tank’s registration history",
+        "C) The expected cost of removal",
+        "D) Nothing unless the tank is leaking"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees must disclose the presence of underground storage tanks."
+    },
+    {
+      "id": 51,
+      "difficulty": "hard",
+      "questionText": "Under Wis. Stat. § 452.133(5), what advice can a licensee provide to a customer without an agency agreement?",
+      "options": [
+        "A) General legal advice on the transaction",
+        "B) Advice that does not conflict with the interests of another party in the transaction",
+        "C) Advice on financing options",
+        "D) Advice regarding property valuation"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees may provide advice as long as it does not conflict with the interests of other parties."
+    },
+    {
+      "id": 52,
+      "difficulty": "hard",
+      "questionText": "What distinguishes multiple representation with designated agency from other forms of agency relationships under Wis. Stat. § 452.134?",
+      "options": [
+        "A) The firm represents only one client in the transaction",
+        "B) The firm assigns different agents to represent each client in the same transaction",
+        "C) The firm must remain neutral during negotiations",
+        "D) The firm acts as a subagent for another firm"
+      ],
+      "correctOption": 1,
+      "explanation": "In designated agency, the firm assigns separate agents to represent each client."
+    },
+    {
+      "id": 53,
+      "difficulty": "hard",
+      "questionText": "When drafting an offer to purchase, what must a licensee avoid under Wis. Admin. Code § REEB 24.085?",
+      "options": [
+        "A) Including provisions that conflict with fair housing laws",
+        "B) Using language that falsely portrays the buyer’s interest in the property",
+        "C) Omitting contingencies requested by the buyer",
+        "D) Relying on third-party disclosures"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must avoid drafting documents that falsely portray any party’s interest."
+    },
+    {
+      "id": 54,
+      "difficulty": "hard",
+      "questionText": "How should a licensee proceed if a buyer requests information about a neighboring property’s zoning?",
+      "options": [
+        "A) Refer the buyer to the local zoning authority",
+        "B) Consult public records and provide a detailed report",
+        "C) Offer a general interpretation of zoning codes",
+        "D) Notify the seller of the inquiry"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees should direct buyers to the appropriate zoning authority for accurate information."
+    },
+    {
+      "id": 55,
+      "difficulty": "hard",
+      "questionText": "What must a licensee disclose when assisting a buyer with a property subject to a right of first refusal?",
+      "options": [
+        "A) The terms of the right of first refusal",
+        "B) A written notice of the right of first refusal to all interested parties",
+        "C) The seller’s willingness to negotiate",
+        "D) The expected timeline for the refusal"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must disclose the existence of a right of first refusal in writing."
+    },
+    {
+      "id": 56,
+      "difficulty": "hard",
+      "questionText": "What is the primary goal of Wis. Admin. Code § REEB 24.13 regarding the drafting of written proposals?",
+      "options": [
+        "A) To prevent favoritism towards certain buyers",
+        "B) To ensure all proposals are presented in a truthful and fair manner",
+        "C) To guarantee the use of standardized forms",
+        "D) To limit negotiation options for clients"
+      ],
+      "correctOption": 1,
+      "explanation": "Written proposals must be fair and truthful to protect all parties involved."
+    },
+    {
+      "id": 57,
+      "difficulty": "hard",
+      "questionText": "What legal implication does failing to inspect a property for observable material adverse facts carry?",
+      "options": [
+        "A) Loss of commission",
+        "B) Possible license revocation and fines",
+        "C) Immediate nullification of the transaction",
+        "D) Liability for all repair costs"
+      ],
+      "correctOption": 1,
+      "explanation": "Failing to inspect as required can lead to fines and disciplinary action."
+    },
+    {
+      "id": 58,
+      "difficulty": "hard",
+      "questionText": "What is the purpose of Wis. Admin. Code § REEB 24.13 regarding the drafting of written proposals?",
+      "options": [
+        "A) To prevent favoritism towards certain buyers",
+        "B) To ensure all proposals are presented in a truthful and fair manner",
+        "C) To guarantee the use of standardized forms",
+        "D) To limit negotiation options for clients"
+      ],
+      "correctOption": 1,
+      "explanation": "Written proposals must be fair and truthful to protect all parties involved."
+    },
+    {
+      "id": 59,
+      "difficulty": "hard",
+      "questionText": "What must a licensee disclose when selling a property with an underground storage tank?",
+      "options": [
+        "A) The presence and condition of the tank",
+        "B) The tank’s registration history",
+        "C) The expected cost of removal",
+        "D) Nothing unless the tank is leaking"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees must disclose the presence of underground storage tanks."
+    },
+    {
+      "id": 60,
+      "difficulty": "hard",
+      "questionText": "What must a licensee do when using an unapproved form in a transaction?",
+      "options": [
+        "A) Obtain the client’s verbal approval",
+        "B) Ensure the form complies with state statutes",
+        "C) Seek guidance from the local real estate board",
+        "D) Avoid using the form entirely"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must ensure unapproved forms comply with Wisconsin law."
+    }
+  ]
+}
