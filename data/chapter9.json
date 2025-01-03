@@ -1,0 +1,785 @@
+{
+  "chapter": 9,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "questionText": "What federal law prohibits employment discrimination based on protected classes?",
+      "options": [
+        "A) Fair Housing Act",
+        "B) Civil Rights Act of 1964",
+        "C) Equal Credit Opportunity Act",
+        "D) Real Estate Settlement Procedures Act"
+      ],
+      "correctOption": 1,
+      "explanation": "The Civil Rights Act of 1964 prohibits employment discrimination based on protected classes like race, sex, and religion."
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "questionText": "What agency enforces federal employment discrimination laws?",
+      "options": [
+        "A) DSPS",
+        "B) Equal Employment Opportunity Commission (EEOC)",
+        "C) Wisconsin Department of Workforce Development (DWD)",
+        "D) National Labor Relations Board (NLRB)"
+      ],
+      "correctOption": 1,
+      "explanation": "The EEOC investigates complaints and enforces federal employment discrimination law."
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "questionText": "What must a written independent contractor agreement for licensees include for federal tax purposes?",
+      "options": [
+        "A) A guarantee of hourly pay",
+        "B) A statement that the licensee will not be treated as an employee for tax purposes",
+        "C) A non-compete clause",
+        "D) A statement regarding commission-sharing percentages"
+      ],
+      "correctOption": 1,
+      "explanation": "Federal tax law requires this statement in written independent contractor agreements."
+    },
+    {
+      "id": 4,
+      "difficulty": "easy",
+      "questionText": "Which of the following is considered a protected class under Wisconsin law but not federal law?",
+      "options": [
+        "A) Race",
+        "B) Religion",
+        "C) Sexual orientation",
+        "D) Disability"
+      ],
+      "correctOption": 2,
+      "explanation": "Wisconsin law includes sexual orientation as a protected class."
+    },
+    {
+      "id": 5,
+      "difficulty": "easy",
+      "questionText": "What type of assistant may engage in real estate practice on behalf of a firm?",
+      "options": [
+        "A) Licensed personal assistant",
+        "B) Unlicensed personal assistant",
+        "C) Independent contractor assistant",
+        "D) General office assistant"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensed personal assistants can perform duties requiring a real estate license."
+    },
+    {
+      "id": 6,
+      "difficulty": "easy",
+      "questionText": "What type of compensation arrangement requires the licensee to pay a desk fee to the firm?",
+      "options": [
+        "A) Commission sharing",
+        "B) 100% commission",
+        "C) Salary",
+        "D) Profit sharing"
+      ],
+      "correctOption": 1,
+      "explanation": "In a 100% commission structure, agents pay a desk fee to cover overhead costs."
+    },
+    {
+      "id": 7,
+      "difficulty": "easy",
+      "questionText": "What is the required retention period for lead-based paint disclosure documents?",
+      "options": [
+        "A) Two years",
+        "B) Three years",
+        "C) Five years",
+        "D) Seven years"
+      ],
+      "correctOption": 1,
+      "explanation": "Federal law mandates a three-year retention period for these documents."
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "questionText": "What is the statute of limitations for bringing legal action against a real estate licensee in Wisconsin?",
+      "options": [
+        "A) One year",
+        "B) Two years",
+        "C) Three years",
+        "D) Five years"
+      ],
+      "correctOption": 1,
+      "explanation": "The statute of limitations for such actions is two years."
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "questionText": "What is the minimum age requirement to obtain a real estate license in Wisconsin?",
+      "options": [
+        "A) 16",
+        "B) 18",
+        "C) 21",
+        "D) 25"
+      ],
+      "correctOption": 1,
+      "explanation": "Applicants must be at least 18 years old."
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "questionText": "What is the biennial license renewal deadline for Wisconsin real estate licenses?",
+      "options": [
+        "A) December 14 of odd-numbered years",
+        "B) December 14 of even-numbered years",
+        "C) June 30 of odd-numbered years",
+        "D) June 30 of even-numbered years"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin licenses expire on December 14 of every even-numbered year."
+    },
+    {
+      "id": 11,
+      "difficulty": "easy",
+      "questionText": "Who must approve a broker's independent practice outside of the firm?",
+      "options": [
+        "A) DSPS",
+        "B) Local board of REALTORS®",
+        "C) The broker’s supervising firm",
+        "D) The firm’s clients"
+      ],
+      "correctOption": 2,
+      "explanation": "Written approval from the supervising firm is required."
+    },
+    {
+      "id": 12,
+      "difficulty": "easy",
+      "questionText": "What is a firm’s primary responsibility under Wis. Stat. § 452.132?",
+      "options": [
+        "A) Ensure compliance with advertising laws",
+        "B) Supervise the brokerage service activities of licensees",
+        "C) Determine commission-sharing arrangements",
+        "D) Set fair housing policies"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms are responsible for supervising licensee activities."
+    },
+    {
+      "id": 13,
+      "difficulty": "easy",
+      "questionText": "What document should a licensee provide to clients after signing an agency agreement?",
+      "options": [
+        "A) A copy of the firm’s policy manual",
+        "B) A copy of the signed agency agreement",
+        "C) A receipt for earnest money",
+        "D) A disclosure of closing costs"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees must provide signed copies of agency agreements promptly."
+    },
+    {
+      "id": 14,
+      "difficulty": "easy",
+      "questionText": "How long must Wisconsin real estate firms retain transaction documents?",
+      "options": [
+        "A) One year",
+        "B) Two years",
+        "C) Three years",
+        "D) Five years"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms must retain documents for at least two years."
+    },
+    {
+      "id": 15,
+      "difficulty": "easy",
+      "questionText": "What federal law requires reasonable accommodations for disabilities in public accommodations?",
+      "options": [
+        "A) Fair Housing Act",
+        "B) Americans with Disabilities Act (ADA)",
+        "C) Civil Rights Act of 1964",
+        "D) Equal Credit Opportunity Act"
+      ],
+      "correctOption": 1,
+      "explanation": "The ADA sets standards for accessibility in public accommodations."
+    },
+    {
+      "id": 16,
+      "difficulty": "medium",
+      "questionText": "What does the IRS require for a real estate agent to be classified as an independent contractor?",
+      "options": [
+        "A) The agent must earn at least 50% of income from commissions",
+        "B) The agent must have a written agreement stating independent contractor status for tax purposes",
+        "C) The agent must work under a desk fee arrangement",
+        "D) The agent must receive only bonuses"
+      ],
+      "correctOption": 1,
+      "explanation": "IRS regulations require a written agreement for independent contractor classification."
+    },
+    {
+      "id": 17,
+      "difficulty": "medium",
+      "questionText": "Which document establishes the firm’s procedures for handling transaction documents?",
+      "options": [
+        "A) Policy Manual",
+        "B) Listing Agreement",
+        "C) Agency Agreement",
+        "D) Code of Ethics"
+      ],
+      "correctOption": 0,
+      "explanation": "The policy manual outlines the firm’s procedures for handling documents and records."
+    },
+    {
+      "id": 18,
+      "difficulty": "medium",
+      "questionText": "What is the consequence for failing to renew a real estate license on time in Wisconsin?",
+      "options": [
+        "A) A suspension for six months",
+        "B) Prohibition from practicing real estate until renewal is complete",
+        "C) Immediate revocation of the license",
+        "D) A requirement to retake the licensing exam"
+      ],
+      "correctOption": 1,
+      "explanation": "A licensee cannot practice real estate until the license is renewed."
+    },
+    {
+      "id": 19,
+      "difficulty": "medium",
+      "questionText": "Under what condition can a salesperson begin working with a new firm?",
+      "options": [
+        "A) After submitting the DSPS notice of transfer",
+        "B) After receiving verbal permission from the previous firm",
+        "C) Only after the license is physically transferred",
+        "D) After signing a new agency agreement"
+      ],
+      "correctOption": 0,
+      "explanation": "The salesperson must notify the DSPS of the transfer and pay the required fee."
+    },
+    {
+      "id": 20,
+      "difficulty": "medium",
+      "questionText": "What is the retention period for trust account records?",
+      "options": [
+        "A) Two years",
+        "B) Three years",
+        "C) Five years",
+        "D) Ten years"
+      ],
+      "correctOption": 0,
+      "explanation": "Trust account records must be kept for at least two years from the date of the transaction’s closure."
+    },
+    {
+      "id": 21,
+      "difficulty": "medium",
+      "questionText": "How should a firm handle architectural barriers under the ADA if removal is not feasible?",
+      "options": [
+        "A) Ignore the barriers",
+        "B) Use alternative methods to provide access",
+        "C) Apply for an exemption from compliance",
+        "D) Limit services to accessible areas only"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms must offer alternative methods, such as meeting clients in accessible locations, if barrier removal is not readily achievable."
+    },
+    {
+      "id": 22,
+      "difficulty": "medium",
+      "questionText": "What must a supervising broker review before closing a transaction?",
+      "options": [
+        "A) Trust account balances only",
+        "B) All transaction documents and trust account records",
+        "C) Only the agency agreements",
+        "D) The buyer’s financial statements"
+      ],
+      "correctOption": 1,
+      "explanation": "Supervising brokers must review transaction documents and trust account records for accuracy and compliance."
+    },
+    {
+      "id": 23,
+      "difficulty": "medium",
+      "questionText": "What distinguishes a licensed personal assistant from an unlicensed assistant?",
+      "options": [
+        "A) Licensed assistants can engage in real estate practice",
+        "B) Licensed assistants must work for multiple agents",
+        "C) Licensed assistants can only perform clerical duties",
+        "D) Licensed assistants are not subject to firm supervision"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensed personal assistants are permitted to engage in activities requiring a real estate license."
+    },
+    {
+      "id": 24,
+      "difficulty": "medium",
+      "questionText": "What is the two-year statute of limitations for legal action against licensees based on?",
+      "options": [
+        "A) The closing date or termination of an agency agreement",
+        "B) The first client meeting",
+        "C) The date the licensee became licensed",
+        "D) The date the licensee was notified of the issue"
+      ],
+      "correctOption": 0,
+      "explanation": "The statute begins at the earlier of the closing or agency agreement termination."
+    },
+    {
+      "id": 25,
+      "difficulty": "medium",
+      "questionText": "What must a firm do before hiring an unlicensed personal assistant?",
+      "options": [
+        "A) File a notification with the DSPS",
+        "B) Sign an agreement with the hiring licensee",
+        "C) Ensure the assistant takes continuing education",
+        "D) Obtain approval from the local board of REALTORS®"
+      ],
+      "correctOption": 1,
+      "explanation": "The firm must sign an agreement with the hiring licensee outlining duties and supervision."
+    },
+    {
+      "id": 26,
+      "difficulty": "medium",
+      "questionText": "What is the penalty for failing to notify the DSPS of a name or address change within 30 days?",
+      "options": [
+        "A) Suspension of the license",
+        "B) Fine and warning",
+        "C) Revocation of the license",
+        "D) Increased renewal fees"
+      ],
+      "correctOption": 0,
+      "explanation": "Failure to notify the DSPS can lead to license suspension."
+    },
+    {
+      "id": 27,
+      "difficulty": "medium",
+      "questionText": "How is commission-sharing typically calculated?",
+      "options": [
+        "A) As a flat rate per transaction",
+        "B) As a percentage of the firm’s commission",
+        "C) Based on hours worked",
+        "D) Based on client reviews"
+      ],
+      "correctOption": 1,
+      "explanation": "Commission-sharing is a percentage of the firm’s total commission for a transaction."
+    },
+    {
+      "id": 28,
+      "difficulty": "medium",
+      "questionText": "What must a broker include in a transition plan for trust accounts?",
+      "options": [
+        "A) Account balances only",
+        "B) A list of authorized signatories and record locations",
+        "C) Client addresses",
+        "D) Instructions for closing the accounts immediately"
+      ],
+      "correctOption": 1,
+      "explanation": "Transition plans should detail authorized signatories, account locations, and record access."
+    },
+    {
+      "id": 29,
+      "difficulty": "medium",
+      "questionText": "Who enforces Wisconsin’s employment discrimination laws?",
+      "options": [
+        "A) EEOC",
+        "B) DSPS",
+        "C) Department of Workforce Development (DWD)",
+        "D) Attorney General"
+      ],
+      "correctOption": 2,
+      "explanation": "The DWD investigates and enforces state employment discrimination laws."
+    },
+    {
+      "id": 30,
+      "difficulty": "medium",
+      "questionText": "What must a firm’s supervising broker ensure for every associated licensee?",
+      "options": [
+        "A) Access to a local real estate association",
+        "B) Proper licensing and compliance with rules",
+        "C) Payment of licensing fees by the firm",
+        "D) Use of independent contractor agreements only"
+      ],
+      "correctOption": 1,
+      "explanation": "Supervising brokers must ensure that all associated licensees are properly licensed and compliant."
+    },
+    {
+      "id": 31,
+      "difficulty": "hard",
+      "questionText": "When does a firm’s liability for misrepresentation by a subagent apply?",
+      "options": [
+        "A) Only if the firm directly participated in the misrepresentation",
+        "B) If the firm knew or should have known about the misrepresentation",
+        "C) Always, regardless of the firm’s knowledge",
+        "D) Never, as subagents are fully independent"
+      ],
+      "correctOption": 1,
+      "explanation": "A firm is liable for a subagent’s misrepresentation only if it knew or should have known about it."
+    },
+    {
+      "id": 32,
+      "difficulty": "hard",
+      "questionText": "What element distinguishes strict responsibility misrepresentation from other types?",
+      "options": [
+        "A) Intent to deceive",
+        "B) Negligence in verifying facts",
+        "C) Public policy favoring the buyer over the licensee",
+        "D) The licensee’s lack of economic interest in the transaction"
+      ],
+      "correctOption": 2,
+      "explanation": "Strict responsibility prioritizes public policy by holding the firm liable even if the licensee acted innocently."
+    },
+    {
+      "id": 33,
+      "difficulty": "hard",
+      "questionText": "How must a supervising broker communicate document errors to a licensee?",
+      "options": [
+        "A) Verbally and without documentation",
+        "B) By directly informing the client",
+        "C) Through formal communication with the licensee",
+        "D) Via DSPS reporting channels"
+      ],
+      "correctOption": 2,
+      "explanation": "The supervising broker must formally communicate errors to the licensee for corrective action."
+    },
+    {
+      "id": 34,
+      "difficulty": "hard",
+      "questionText": "What does a Wisconsin licensee need to do after a criminal conviction?",
+      "options": [
+        "A) Submit a copy of the judgment and details to the DSPS within 48 hours",
+        "B) Notify their firm and clients immediately",
+        "C) Wait until the next license renewal period to report",
+        "D) Request an exemption from the DSPS"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees must report convictions promptly to the DSPS."
+    },
+    {
+      "id": 35,
+      "difficulty": "hard",
+      "questionText": "How can a firm demonstrate compliance with ADA accessibility requirements?",
+      "options": [
+        "A) Provide only online services",
+        "B) Offer alternative methods to accommodate clients",
+        "C) Conduct annual DSPS inspections",
+        "D) Request ADA certification from the EEOC"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms must offer alternative methods if removing barriers is not feasible."
+    },
+    {
+      "id": 36,
+      "difficulty": "hard",
+      "questionText": "What must a licensee do when terminating association with a firm?",
+      "options": [
+        "A) Notify the DSPS using Form 766 within 10 days",
+        "B) Wait for the firm to report the termination",
+        "C) Submit a signed affidavit to the supervising broker",
+        "D) Immediately cease all real estate activities"
+      ],
+      "correctOption": 0,
+      "explanation": "The licensee must notify the DSPS within 10 days."
+    },
+    {
+      "id": 37,
+      "difficulty": "hard",
+      "questionText": "What happens to a firm’s licensees if the firm’s license is revoked?",
+      "options": [
+        "A) They must stop providing brokerage services immediately",
+        "B) They can continue under independent practice agreements",
+        "C) They automatically transfer to another firm",
+        "D) They are only affected if involved in the violation"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees must cease services if the firm’s license is revoked."
+    },
+    {
+      "id": 38,
+      "difficulty": "hard",
+      "questionText": "What is required to alter a path of travel under ADA guidelines?",
+      "options": [
+        "A) Full compliance with all accessibility standards",
+        "B) Proportional alterations if costs exceed 20% of the project",
+        "C) A court order mandating changes",
+        "D) No action unless specifically requested"
+      ],
+      "correctOption": 1,
+      "explanation": "Path alterations must be proportional to the project’s cost if full compliance is infeasible."
+    },
+    {
+      "id": 39,
+      "difficulty": "hard",
+      "questionText": "What is the penalty for a firm failing to review transaction documents before closing?",
+      "options": [
+        "A) Suspension of the supervising broker’s license",
+        "B) Liability for errors and potential DSPS disciplinary action",
+        "C) Automatic revocation of the firm’s license",
+        "D) Inability to collect commissions from the transaction"
+      ],
+      "correctOption": 1,
+      "explanation": "Failing to review documents can result in liability and DSPS action."
+    },
+    {
+      "id": 40,
+      "difficulty": "hard",
+      "questionText": "What must be included in an independent contractor agreement?",
+      "options": [
+        "A) A specific end date for the agreement",
+        "B) A statement clarifying non-employee tax status",
+        "C) A guarantee of health insurance coverage",
+        "D) A clause requiring hourly time tracking"
+      ],
+      "correctOption": 1,
+      "explanation": "Agreements must clarify non-employee status for tax purposes."
+    },
+    {
+      "id": 41,
+      "difficulty": "hard",
+      "questionText": "What should a transition plan include for pending transactions?",
+      "options": [
+        "A) Contact information for all involved parties",
+        "B) Specific instructions for handling ongoing obligations",
+        "C) A schedule for client notifications",
+        "D) Termination dates for contracts"
+      ],
+      "correctOption": 1,
+      "explanation": "Pending transactions must be addressed to avoid harm to clients."
+    },
+    {
+      "id": 42,
+      "difficulty": "hard",
+      "questionText": "What legal doctrine is modified by Wis. Stat. § 452.139?",
+      "options": [
+        "A) Negligence per se",
+        "B) Respondeat superior",
+        "C) Strict liability",
+        "D) Misrepresentation"
+      ],
+      "correctOption": 1,
+      "explanation": "This statute modifies respondeat superior in real estate transactions."
+    },
+    {
+      "id": 43,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle client complaints about external service providers?",
+      "options": [
+        "A) Guarantee the service provider’s work",
+        "B) Refer clients to a neutral resolution service",
+        "C) Clarify that the firm does not guarantee third-party services",
+        "D) Replace the service provider at the firm’s expense"
+      ],
+      "correctOption": 2,
+      "explanation": "Firms must clarify that clients are responsible for verifying third-party services."
+    },
+    {
+      "id": 44,
+      "difficulty": "hard",
+      "questionText": "What is the primary function of Schedule B-1 in a title insurance commitment?",
+      "options": [
+        "A) Outline title insurance coverage limits",
+        "B) List requirements for closing",
+        "C) Identify exceptions to coverage",
+        "D) Provide a legal description of the property"
+      ],
+      "correctOption": 1,
+      "explanation": "Schedule B-1 lists all requirements the parties must satisfy before closing."
+    },
+    {
+      "id": 45,
+      "difficulty": "hard",
+      "questionText": "What is the legal requirement for firms offering accessibility services under the ADA?",
+      "options": [
+        "A) Full barrier removal within five years",
+        "B) Reasonable efforts to provide accessible services",
+        "C) Automatic installation of ramps in all locations",
+        "D) No specific requirements apply to firms"
+      ],
+      "correctOption": 1,
+      "explanation": "Firms must make reasonable efforts to provide access under the ADA."
+    },
+    {
+      "id": 46,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before closing a trust account?",
+      "options": [
+        "A) Notify the DSPS within 15 days",
+        "B) Ensure all funds are disbursed or transferred",
+        "C) Submit a final audit to the DSPS",
+        "D) Obtain written approval from all clients"
+      ],
+      "correctOption": 1,
+      "explanation": "A trust account cannot be closed until all funds are disbursed or transferred."
+    },
+    {
+      "id": 47,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle trust account funds from a rejected offer?",
+      "options": [
+        "A) Retain the funds until further instructions",
+        "B) Deposit them in a temporary holding account",
+        "C) Return them to the payer or forward them to the payee within one business day",
+        "D) Transfer them to the firm’s operational account"
+      ],
+      "correctOption": 2,
+      "explanation": "Funds from a rejected offer must be returned or forwarded promptly."
+    },
+    {
+      "id": 48,
+      "difficulty": "hard",
+      "questionText": "What is the required action if a firm receives a non-depositable item as earnest money?",
+      "options": [
+        "A) Hold it in the firm’s safe until the transaction closes",
+        "B) Deposit it in a separate non-depositable account",
+        "C) Return it to the buyer or direct them to an escrow agent",
+        "D) Convert it to a check and deposit in the trust account"
+      ],
+      "correctOption": 2,
+      "explanation": "Firms cannot hold non-depositable items; parties must handle them separately."
+    },
+    {
+      "id": 49,
+      "difficulty": "hard",
+      "questionText": "What must be included in the ledger for each transaction?",
+      "options": [
+        "A) The supervising broker’s signature",
+        "B) A running balance, transaction details, and party names",
+        "C) Monthly reconciliations",
+        "D) The DSPS certification number for the trust account"
+      ],
+      "correctOption": 1,
+      "explanation": "Ledgers must detail receipts, disbursements, and balances for each transaction."
+    },
+    {
+      "id": 50,
+      "difficulty": "hard",
+      "questionText": "What does a title insurance policy protect against?",
+      "options": [
+        "A) Market fluctuations",
+        "B) Defects, liens, or encumbrances in the title",
+        "C) Property damage",
+        "D) Zoning changes"
+      ],
+      "correctOption": 1,
+      "explanation": "Title insurance ensures a clear and marketable title."
+    },
+    {
+      "id": 51,
+      "difficulty": "hard",
+      "questionText": "What is the standard method of proration for real estate taxes?",
+      "options": [
+        "A) Based on the seller's estimate",
+        "B) Divided equally between buyer and seller",
+        "C) Using the previous year’s tax bill as a reference",
+        "D) Calculated by the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "Parties typically use the previous year’s tax bill for proration."
+    },
+    {
+      "id": 52,
+      "difficulty": "hard",
+      "questionText": "What is required to clear a construction lien exception?",
+      "options": [
+        "A) A lien waiver from the seller",
+        "B) A gap endorsement purchased by the seller",
+        "C) A survey of the property",
+        "D) Proof of no outstanding taxes"
+      ],
+      "correctOption": 1,
+      "explanation": "The gap exception is cleared with a gap endorsement."
+    },
+    {
+      "id": 53,
+      "difficulty": "hard",
+      "questionText": "What must a firm do if it holds a promissory note related to a transaction?",
+      "options": [
+        "A) Deposit it in the trust account",
+        "B) Record it in the ledger but not include it in the balance",
+        "C) Include it in the monthly trial balance",
+        "D) Send it to the DSPS for approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are recorded in the ledger but not included in the running balance."
+    },
+    {
+      "id": 54,
+      "difficulty": "hard",
+      "questionText": "What action can a firm take if parties fail to agree on disbursing earnest money after 60 days?",
+      "options": [
+        "A) Disburse funds at the firm's discretion",
+        "B) Retain the funds indefinitely",
+        "C) File an interpleader action or seek an attorney’s opinion",
+        "D) Transfer funds to the DSPS"
+      ],
+      "correctOption": 2,
+      "explanation": "After 60 days, firms may seek legal resolution or an attorney's written opinion."
+    },
+    {
+      "id": 55,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before disbursing earnest money based on an attorney's opinion?",
+      "options": [
+        "A) Obtain DSPS approval",
+        "B) Notify all parties by certified mail 30 days in advance",
+        "C) Ensure the opinion favors the firm",
+        "D) Have the attorney represent one of the parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Parties must receive 30 days' notice before disbursement based on an attorney's opinion."
+    },
+    {
+      "id": 56,
+      "difficulty": "hard",
+      "questionText": "What can a firm do with trust account records if switching to computerized bookkeeping?",
+      "options": [
+        "A) Retain paper records only for the past year",
+        "B) Ensure all entries are backed up daily on a separate medium",
+        "C) Submit records to the DSPS for review",
+        "D) Use manual systems alongside computerized methods"
+      ],
+      "correctOption": 1,
+      "explanation": "Computerized records must have daily backups to comply with regulations."
+    },
+    {
+      "id": 57,
+      "difficulty": "hard",
+      "questionText": "What must a firm do before disbursing earnest money based on an attorney's opinion?",
+      "options": [
+        "A) Obtain DSPS approval",
+        "B) Notify all parties by certified mail 30 days in advance",
+        "C) Ensure the opinion favors the firm",
+        "D) Have the attorney represent one of the parties"
+      ],
+      "correctOption": 1,
+      "explanation": "Parties must receive 30 days' notice before disbursement based on an attorney's opinion."
+    },
+    {
+      "id": 58,
+      "difficulty": "hard",
+      "questionText": "What type of funds are not considered client funds under Wis. Stat. § 452.13?",
+      "options": [
+        "A) Earnest money",
+        "B) Promissory notes",
+        "C) Security deposits for leases over one year",
+        "D) Down payments"
+      ],
+      "correctOption": 1,
+      "explanation": "Promissory notes are not client funds as they are not liquid payments."
+    },
+    {
+      "id": 59,
+      "difficulty": "hard",
+      "questionText": "What information is required when notifying the DSPS of a new trust account?",
+      "options": [
+        "A) The firm owner’s name and license number",
+        "B) The account name, number, and depository institution",
+        "C) The anticipated annual balance",
+        "D) The firm’s total number of trust accounts"
+      ],
+      "correctOption": 1,
+      "explanation": "Notification must include detailed account information and institution details."
+    },
+    {
+      "id": 60,
+      "difficulty": "hard",
+      "questionText": "How should a firm handle escrow agreements for after-closing obligations?",
+      "options": [
+        "A) Draft the agreement using a WB form",
+        "B) Refer the parties to an attorney",
+        "C) Hold the funds in the firm’s operational account",
+        "D) Use the standard REEB-approved after-closing escrow form"
+      ],
+      "correctOption": 1,
+      "explanation": "Wisconsin does not approve a specific form for after-closing escrow agreements."
+    }
+  ]
+}
