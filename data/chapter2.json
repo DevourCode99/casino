@@ -1,0 +1,785 @@
+{
+  "chapter": 2,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "questionText": "What is a valid reason for a seller to terminate an agency agreement?",
+      "options": [
+        "A) Lack of trust in the agent",
+        "B) Agent’s unethical behavior",
+        "C) Unfavorable market conditions",
+        "D) Agent’s refusal to lower fees"
+      ],
+      "correctOption": 1,
+      "explanation": "Ethical violations justify terminating an agency agreement."
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "questionText": "When is a listing firm entitled to a commission?",
+      "options": [
+        "A) When marketing efforts are initiated",
+        "B) When an offer is accepted",
+        "C) When a transaction closes",
+        "D) When a ready, willing, and able buyer is found"
+      ],
+      "correctOption": 3,
+      "explanation": "A firm earns commission upon finding a buyer who meets the seller's terms."
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "questionText": "What constitutes a breach of a listing contract?",
+      "options": [
+        "A) Seller declines all offers",
+        "B) Seller fails to disclose a defect",
+        "C) Seller uses another firm during the contract period",
+        "D) Seller delays showings due to personal reasons"
+      ],
+      "correctOption": 2,
+      "explanation": "Engaging another firm during the contract breaches exclusivity."
+    },
+    {
+      "id": 4,
+      "difficulty": "easy",
+      "questionText": "What must a licensee disclose to all parties in a transaction?",
+      "options": [
+        "A) Seller’s reason for selling",
+        "B) Personal opinions about property value",
+        "C) Material adverse facts about the property",
+        "D) Previous owner’s contact information"
+      ],
+      "correctOption": 2,
+      "explanation": "Licensees are required to disclose material adverse facts."
+    },
+    {
+      "id": 5,
+      "difficulty": "easy",
+      "questionText": "What does “time is of the essence” in a contract mean?",
+      "options": [
+        "A) Deadlines are flexible",
+        "B) Deadlines must be strictly met",
+        "C) Delays are permissible with notice",
+        "D) Parties must negotiate new deadlines"
+      ],
+      "correctOption": 1,
+      "explanation": "Time is of the essence means all deadlines are firm and binding."
+    },
+    {
+      "id": 6,
+      "difficulty": "easy",
+      "questionText": "Under what condition is earnest money refundable?",
+      "options": [
+        "A) Buyer changes their mind",
+        "B) Seller delays closing",
+        "C) Contract is terminated per contingency terms",
+        "D) Buyer’s financing falls through without notice"
+      ],
+      "correctOption": 2,
+      "explanation": "Earnest money is refundable if contingencies are not met."
+    },
+    {
+      "id": 7,
+      "difficulty": "easy",
+      "questionText": "When is a counter-offer valid?",
+      "options": [
+        "A) Once drafted by the seller",
+        "B) After being reviewed by a broker",
+        "C) When signed and delivered to the initiating party",
+        "D) Upon verbal agreement"
+      ],
+      "correctOption": 2,
+      "explanation": "A counter-offer must be signed and delivered to be valid."
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "questionText": "What is required for a buyer to waive a financing contingency?",
+      "options": [
+        "A) Seller’s approval",
+        "B) Written notice to the seller",
+        "C) Verification of funds",
+        "D) Loan pre-approval"
+      ],
+      "correctOption": 1,
+      "explanation": "Waiving contingencies requires written notice."
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "questionText": "What is a seller’s obligation under the “Seller Cooperation with Marketing Efforts” clause?",
+      "options": [
+        "A) To ensure the property is staged",
+        "B) To provide access to necessary documents",
+        "C) To host open houses",
+        "D) To accept all reasonable offers"
+      ],
+      "correctOption": 1,
+      "explanation": "Sellers must provide necessary documents for marketing and transaction."
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "questionText": "When can a firm hold earnest money?",
+      "options": [
+        "A) If authorized in the listing contract",
+        "B) If requested by the buyer",
+        "C) Only with a separate escrow agreement",
+        "D) Upon receipt of the signed offer"
+      ],
+      "correctOption": 0,
+      "explanation": "Holding earnest money must be authorized in the contract."
+    },
+    {
+      "id": 11,
+      "difficulty": "easy",
+      "questionText": "What is the purpose of a WB-44 Amendment to Offer to Purchase?",
+      "options": [
+        "A) To notify the other party of a defect",
+        "B) To propose changes to an accepted offer",
+        "C) To counter an offer",
+        "D) To terminate a contract"
+      ],
+      "correctOption": 1,
+      "explanation": "Amendments modify terms of an accepted offer."
+    },
+    {
+      "id": 12,
+      "difficulty": "easy",
+      "questionText": "What happens if a licensee provides legal advice to a client?",
+      "options": [
+        "A) It strengthens the client relationship",
+        "B) It fulfills their duty as a professional",
+        "C) It violates Wisconsin administrative code",
+        "D) It ensures proper contract interpretation"
+      ],
+      "correctOption": 2,
+      "explanation": "Licensees are prohibited from providing legal advice."
+    },
+    {
+      "id": 13,
+      "difficulty": "easy",
+      "questionText": "What must a licensee do when modifying an approved form?",
+      "options": [
+        "A) Use blank lines provided or an addendum",
+        "B) Cross out provisions without concern for legibility",
+        "C) Use handwritten changes exclusively",
+        "D) Recreate the form to accommodate new terms"
+      ],
+      "correctOption": 0,
+      "explanation": "Modifications must use the blank lines or an addendum."
+    },
+    {
+      "id": 14,
+      "difficulty": "easy",
+      "questionText": "When is a WB-45 Cancellation Agreement and Mutual Release appropriate?",
+      "options": [
+        "A) To counter a buyer’s offer",
+        "B) To amend contract terms",
+        "C) To terminate a contract and release claims",
+        "D) To notify of an issue with earnest money"
+      ],
+      "correctOption": 2,
+      "explanation": "It cancels contracts and releases claims."
+    },
+    {
+      "id": 15,
+      "difficulty": "easy",
+      "questionText": "What is the effect of a buyer’s failure to meet an inspection deadline?",
+      "options": [
+        "A) The seller must renegotiate terms",
+        "B) The buyer waives the inspection contingency",
+        "C) The contract automatically terminates",
+        "D) The seller can cure defects"
+      ],
+      "correctOption": 1,
+      "explanation": "Missing deadlines results in waiving contingencies."
+    },
+    {
+      "id": 16,
+      "difficulty": "easy",
+      "questionText": "How can a seller terminate a buyer’s financing contingency?",
+      "options": [
+        "A) By rejecting the offer",
+        "B) By delivering a notice of termination after a missed deadline",
+        "C) By denying access to the property",
+        "D) By issuing a counter-offer"
+      ],
+      "correctOption": 1,
+      "explanation": "Missing financing contingency deadlines allows termination."
+    },
+    {
+      "id": 17,
+      "difficulty": "easy",
+      "questionText": "What is a broker’s duty under the “Buyer's Financial Capability” clause?",
+      "options": [
+        "A) Confirm buyer’s credit score",
+        "B) Evaluate buyer’s financial statements",
+        "C) Verify buyer’s loan commitment",
+        "D) Ensure proper documentation is submitted"
+      ],
+      "correctOption": 3,
+      "explanation": "Brokers ensure proper documentation but don’t evaluate finances."
+    },
+    {
+      "id": 18,
+      "difficulty": "easy",
+      "questionText": "What happens if a property is damaged after acceptance but before closing?",
+      "options": [
+        "A) The buyer must proceed without adjustments",
+        "B) The seller repairs damage if it’s ≤5% of purchase price",
+        "C) The contract is immediately void",
+        "D) The buyer is entitled to full compensation"
+      ],
+      "correctOption": 1,
+      "explanation": "The seller repairs damage up to 5% of the purchase price."
+    },
+    {
+      "id": 19,
+      "difficulty": "easy",
+      "questionText": "When can a listing firm claim a commission for a protected buyer?",
+      "options": [
+        "A) If the buyer contacts the seller after the listing expires",
+        "B) If the protected buyer views the property",
+        "C) If the buyer enters into a contract during the protection period",
+        "D) If the seller refuses to relist with the same firm"
+      ],
+      "correctOption": 2,
+      "explanation": "Protected buyers result in commission if a contract occurs during protection."
+    },
+    {
+      "id": 20,
+      "difficulty": "easy",
+      "questionText": "What is the purpose of a WB-41 Notice Relating to Offer to Purchase?",
+      "options": [
+        "A) To notify of a change in terms",
+        "B) To provide required notices like defect disclosure",
+        "C) To renegotiate the offer",
+        "D) To request an amendment"
+      ],
+      "correctOption": 1,
+      "explanation": "WB-41 is for required notifications without changing terms."
+    },
+    {
+      "id": 21,
+      "difficulty": "medium",
+      "questionText": "What is the primary role of the Real Estate Examining Board (REEB)?",
+      "options": [
+        "A) Enforcing ethical standards",
+        "B) Creating educational programs for licensees",
+        "C) Approving real estate forms and managing disciplinary actions",
+        "D) Mediating disputes between buyers and sellers"
+      ],
+      "correctOption": 2,
+      "explanation": "The REEB oversees licensing, approves forms, and handles discipline for violations."
+    },
+    {
+      "id": 22,
+      "difficulty": "medium",
+      "questionText": "Which action violates Wisconsin real estate licensee regulations?",
+      "options": [
+        "A) Explaining form provisions",
+        "B) Drafting a new form for a unique transaction",
+        "C) Using an attorney-prepared addendum",
+        "D) Reproducing approved forms with permission"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees cannot draft new forms; they must use approved or attorney-prepared forms."
+    },
+    {
+      "id": 23,
+      "difficulty": "medium",
+      "questionText": "What is required for a form modification to be valid?",
+      "options": [
+        "A) Approval from the REEB",
+        "B) Use of addenda or blank lines provided",
+        "C) Broker’s signature",
+        "D) A separate document outlining changes"
+      ],
+      "correctOption": 1,
+      "explanation": "Modifications must be made using addenda or blank lines within approved forms."
+    },
+    {
+      "id": 24,
+      "difficulty": "medium",
+      "questionText": "What is an example of \"material adverse fact\"?",
+      "options": [
+        "A) A property located near a noisy area",
+        "B) A minor cosmetic defect",
+        "C) Structural damage impacting safety",
+        "D) A seller’s personal dispute with neighbors"
+      ],
+      "correctOption": 2,
+      "explanation": "Material adverse facts must affect the property’s value or safety."
+    },
+    {
+      "id": 25,
+      "difficulty": "medium",
+      "questionText": "What is the main purpose of the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "A) To finalize the terms of sale",
+        "B) To initiate the negotiation process",
+        "C) To present a buyer’s offer in a legally binding format",
+        "D) To outline a buyer’s preliminary interest"
+      ],
+      "correctOption": 2,
+      "explanation": "The WB-11 creates a legally binding offer once accepted."
+    },
+    {
+      "id": 26,
+      "difficulty": "medium",
+      "questionText": "What distinguishes a WB-46 Multiple Counter-Proposal from a WB-44 Counter-Offer?",
+      "options": [
+        "A) A WB-46 is binding upon delivery",
+        "B) A WB-46 allows negotiation with multiple buyers simultaneously",
+        "C) A WB-44 provides additional legal protections",
+        "D) A WB-44 cannot be modified after acceptance"
+      ],
+      "correctOption": 1,
+      "explanation": "A WB-46 permits non-binding proposals to multiple buyers."
+    },
+    {
+      "id": 27,
+      "difficulty": "medium",
+      "questionText": "What happens if the seller misses the deadline to respond to an amendment?",
+      "options": [
+        "A) The amendment is automatically accepted",
+        "B) The original offer remains in effect",
+        "C) The buyer’s offer becomes null and void",
+        "D) The buyer is entitled to terminate the contract"
+      ],
+      "correctOption": 1,
+      "explanation": "If the seller does not agree, the terms of the original offer remain unchanged."
+    },
+    {
+      "id": 28,
+      "difficulty": "medium",
+      "questionText": "What must be included in a buyer’s inspection contingency notice of defects?",
+      "options": [
+        "A) A repair estimate",
+        "B) A copy of the inspection report",
+        "C) The buyer’s proposed remedy",
+        "D) A list of defects with no further documentation"
+      ],
+      "correctOption": 1,
+      "explanation": "The inspection report must accompany the notice of defects."
+    },
+    {
+      "id": 29,
+      "difficulty": "medium",
+      "questionText": "Under what condition does a WB-45 Cancellation Agreement and Mutual Release become effective?",
+      "options": [
+        "A) Once signed by the buyer",
+        "B) Once signed by both parties",
+        "C) Upon approval by the REEB",
+        "D) When filed with the title company"
+      ],
+      "correctOption": 1,
+      "explanation": "Both parties must sign the agreement for it to be effective."
+    },
+    {
+      "id": 30,
+      "difficulty": "medium",
+      "questionText": "What is the consequence of delivering earnest money late?",
+      "options": [
+        "A) Automatic contract termination",
+        "B) A breach of contract",
+        "C) Seller’s option to terminate the contract",
+        "D) Requirement for buyer to pay penalties"
+      ],
+      "correctOption": 2,
+      "explanation": "Late delivery of earnest money gives the seller grounds to terminate the offer."
+    },
+    {
+      "id": 31,
+      "difficulty": "medium",
+      "questionText": "What is the impact of a protected buyer list on a new listing firm?",
+      "options": [
+        "A) It limits the new firm’s marketing options",
+        "B) It prevents the new firm from earning commission from protected buyers",
+        "C) It requires the new firm to cooperate with the previous firm",
+        "D) It ensures the seller is responsible for damages caused by non-delivery"
+      ],
+      "correctOption": 1,
+      "explanation": "Protected buyers are excluded from earning commissions for the new firm."
+    },
+    {
+      "id": 32,
+      "difficulty": "medium",
+      "questionText": "When is a seller required to disclose a property defect?",
+      "options": [
+        "A) If the buyer requests an inspection",
+        "B) If the defect is considered a material adverse fact",
+        "C) Only after the buyer’s earnest money is paid",
+        "D) Only when the defect impacts the property’s value"
+      ],
+      "correctOption": 1,
+      "explanation": "Material adverse facts must always be disclosed."
+    },
+    {
+      "id": 33,
+      "difficulty": "medium",
+      "questionText": "What happens if a seller rejects a buyer’s notice of defects and the buyer granted no right to cure?",
+      "options": [
+        "A) The buyer forfeits earnest money",
+        "B) The offer becomes null and void",
+        "C) The buyer must revise the notice",
+        "D) The seller must accept the notice"
+      ],
+      "correctOption": 1,
+      "explanation": "Without the right to cure, the offer becomes void upon defect notice rejection."
+    },
+    {
+      "id": 34,
+      "difficulty": "medium",
+      "questionText": "What is the purpose of an addendum in a real estate transaction?",
+      "options": [
+        "A) To clarify agency relationships",
+        "B) To add or modify terms not covered in the main contract",
+        "C) To terminate a listing agreement",
+        "D) To summarize the primary contract terms"
+      ],
+      "correctOption": 1,
+      "explanation": "Addenda are used to add or modify terms."
+    },
+    {
+      "id": 35,
+      "difficulty": "medium",
+      "questionText": "What defines a protected property under a WB-36 Buyer Agency Agreement?",
+      "options": [
+        "A) A property visited by the buyer with their agent",
+        "B) A property previously viewed by any buyer",
+        "C) A property listed after the agreement is signed",
+        "D) A property for which the buyer submits an offer"
+      ],
+      "correctOption": 3,
+      "explanation": "Protected properties include those where offers were submitted during the agreement term."
+    },
+    {
+      "id": 36,
+      "difficulty": "medium",
+      "questionText": "What must a firm ensure when reproducing an approved form?",
+      "options": [
+        "A) The firm’s name is prominently displayed",
+        "B) The layout and text match the board-approved format",
+        "C) Blank spaces are removed to avoid confusion",
+        "D) Custom provisions are included in the form"
+      ],
+      "correctOption": 1,
+      "explanation": "The format must match the approved version to remain valid."
+    },
+    {
+      "id": 37,
+      "difficulty": "medium",
+      "questionText": "What happens if a buyer fails to deliver a loan commitment by the deadline in the financing contingency?",
+      "options": [
+        "A) The seller can terminate the offer with written notice",
+        "B) The buyer automatically waives the contingency",
+        "C) The contract becomes null and void",
+        "D) The transaction continues without financing"
+      ],
+      "correctOption": 0,
+      "explanation": "The seller can terminate if the buyer fails to meet the deadline."
+    },
+    {
+      "id": 38,
+      "difficulty": "medium",
+      "questionText": "What does “actual receipt” mean in the delivery of notices?",
+      "options": [
+        "A) Delivery by email or mail",
+        "B) Physical possession of the document by the recipient",
+        "C) Acknowledgement of receipt by the sender",
+        "D) Notification that the document was sent"
+      ],
+      "correctOption": 1,
+      "explanation": "Actual receipt requires the recipient to have the document physically."
+    },
+    {
+      "id": 39,
+      "difficulty": "medium",
+      "questionText": "What is required for a seller to finance a buyer’s purchase?",
+      "options": [
+        "A) A written notice within 10 days of loan unavailability",
+        "B) Approval from the buyer’s lender",
+        "C) A revised WB-11 Offer to Purchase",
+        "D) Verification of the seller’s financial capability"
+      ],
+      "correctOption": 0,
+      "explanation": "Sellers must provide notice within 10 days of the buyer’s loan unavailability."
+    },
+    {
+      "id": 40,
+      "difficulty": "medium",
+      "questionText": "What is the legal effect of a WB-41 Notice Relating to Offer to Purchase?",
+      "options": [
+        "A) It changes contract terms upon delivery",
+        "B) It notifies the other party of a specific event or decision",
+        "C) It acts as an amendment to the contract",
+        "D) It terminates the contract if signed by both parties"
+      ],
+      "correctOption": 1,
+      "explanation": "The WB-41 is used for notifications, not contract modifications."
+    },
+    {
+      "id": 41,
+      "difficulty": "hard",
+      "questionText": "Under what conditions can the Real Estate Examining Board (REEB) revoke a license?",
+      "options": [
+        "A) Repeated failure to disclose material adverse facts",
+        "B) Failure to renew the license by the expiration date",
+        "C) Disputes with clients over commission",
+        "D) Using an unapproved form with client consent"
+      ],
+      "correctOption": 0,
+      "explanation": "Failure to disclose material adverse facts constitutes a serious violation warranting disciplinary action, including license revocation."
+    },
+    {
+      "id": 42,
+      "difficulty": "hard",
+      "questionText": "How does the Wisconsin Supreme Court’s decision in the Dinger case impact licensees?",
+      "options": [
+        "A) It limits their ability to draft contracts entirely",
+        "B) It permits limited legal practice through the use of approved forms",
+        "C) It mandates additional legal training for all licensees",
+        "D) It prohibits licensees from modifying approved forms"
+      ],
+      "correctOption": 1,
+      "explanation": "The Dinger case upheld licensees’ limited ability to practice law by completing approved forms."
+    },
+    {
+      "id": 43,
+      "difficulty": "hard",
+      "questionText": "What must a licensee ensure when using an attorney-prepared addendum?",
+      "options": [
+        "A) The attorney’s name is identified on the addendum",
+        "B) The addendum is submitted for board approval",
+        "C) The addendum is integrated into the approved form by rewriting terms",
+        "D) The licensee edits the addendum to match client instructions"
+      ],
+      "correctOption": 0,
+      "explanation": "Attorney-prepared addenda must include the attorney’s name for legal compliance."
+    },
+    {
+      "id": 44,
+      "difficulty": "hard",
+      "questionText": "What is the primary purpose of the “Protected Buyer” clause in the WB-1 Residential Listing Contract?",
+      "options": [
+        "A) To secure the seller’s ability to negotiate directly with buyers",
+        "B) To allow the listing firm to earn commission after contract expiration",
+        "C) To exclude certain buyers from being considered under the agreement",
+        "D) To automatically extend the listing contract for one year"
+      ],
+      "correctOption": 1,
+      "explanation": "Protected buyers ensure a listing firm can earn commission for buyers introduced during the contract period."
+    },
+    {
+      "id": 45,
+      "difficulty": "hard",
+      "questionText": "When can a licensee modify an exclusive right-to-sell listing contract into an exclusive agency agreement?",
+      "options": [
+        "A) By mutual agreement with the buyer",
+        "B) Only with the seller’s attorney’s approval",
+        "C) By altering the WB-1 form and specifying terms",
+        "D) Through an addendum drafted by the listing firm"
+      ],
+      "correctOption": 2,
+      "explanation": "Modifications to create an exclusive agency listing must be made directly on the WB-1 form."
+    },
+    {
+      "id": 46,
+      "difficulty": "hard",
+      "questionText": "What is the purpose of the WB-36 Buyer Agency Agreement's exclusion of properties?",
+      "options": [
+        "A) To clarify that certain properties will not trigger commission",
+        "B) To allow the buyer to negotiate directly with sellers",
+        "C) To ensure the buyer’s agent is not involved in certain transactions",
+        "D) To give the listing firm exclusive rights to specific properties"
+      ],
+      "correctOption": 0,
+      "explanation": "Excluded properties are specified to avoid commission disputes and clarify agency relationships."
+    },
+    {
+      "id": 47,
+      "difficulty": "hard",
+      "questionText": "Under what circumstance can a licensee legally line out a provision in an approved form?",
+      "options": [
+        "A) When it reflects the client’s instructions and remains legible",
+        "B) When the provision is outdated or irrelevant",
+        "C) Upon approval by the supervising broker",
+        "D) If the licensee believes the provision is unnecessary"
+      ],
+      "correctOption": 0,
+      "explanation": "Licensees can cross out provisions only when it reflects a client’s explicit instructions and the text remains legible."
+    },
+    {
+      "id": 48,
+      "difficulty": "hard",
+      "questionText": "What happens if a buyer delivers earnest money to the wrong party?",
+      "options": [
+        "A) The contract becomes void",
+        "B) The buyer forfeits the earnest money",
+        "C) The seller can terminate the contract",
+        "D) The transaction is delayed until proper payment is made"
+      ],
+      "correctOption": 3,
+      "explanation": "Incorrect delivery of earnest money must be rectified to proceed, potentially delaying the transaction."
+    },
+    {
+      "id": 49,
+      "difficulty": "hard",
+      "questionText": "What distinguishes a WB-40 Amendment from a WB-41 Notice in an inspection contingency?",
+      "options": [
+        "A) A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+        "B) A WB-41 requires both parties’ agreement; a WB-40 does not",
+        "C) A WB-41 applies only to inspection contingencies; a WB-40 applies to all terms",
+        "D) A WB-40 terminates the contract if not accepted; a WB-41 does not"
+      ],
+      "correctOption": 0,
+      "explanation": "An amendment modifies terms, while a notice alerts the other party without changing the contract."
+    },
+    {
+      "id": 50,
+      "difficulty": "hard",
+      "questionText": "How does a buyer waive their financing contingency in the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "A) By verbal agreement with the seller",
+        "B) Through a WB-41 Notice delivered to the seller",
+        "C) By crossing out the financing contingency section",
+        "D) Through written notice accompanied by verification of funds"
+      ],
+      "correctOption": 3,
+      "explanation": "Waiving financing requires written notice and evidence of the buyer’s financial capability."
+    },
+    {
+      "id": 51,
+      "difficulty": "hard",
+      "questionText": "What is required for a listing firm to earn commission when a protected buyer purchases the property?",
+      "options": [
+        "A) The protected buyer must submit a new offer after the listing expires",
+        "B) The seller must accept the offer within one year of contract expiration",
+        "C) The seller must provide the protected buyer list to the new listing firm",
+        "D) The protected buyer must have viewed the property with the seller’s agent"
+      ],
+      "correctOption": 1,
+      "explanation": "Protected buyers ensure commission if they purchase within the one-year protection period."
+    },
+    {
+      "id": 52,
+      "difficulty": "hard",
+      "questionText": "What legal standard governs the calculation of prorations at closing?",
+      "options": [
+        "A) The seller’s estimate of current property taxes",
+        "B) The previous year’s tax bill unless otherwise stated",
+        "C) A mutually agreed percentage of the purchase price",
+        "D) The buyer’s financial institution’s calculation"
+      ],
+      "correctOption": 1,
+      "explanation": "Prorations default to the previous year’s tax bill unless specified otherwise."
+    },
+    {
+      "id": 53,
+      "difficulty": "hard",
+      "questionText": "When does a WB-46 Multiple Counter-Proposal become a binding contract?",
+      "options": [
+        "A) When signed by all potential buyers",
+        "B) Upon acceptance by one buyer and notification to the seller",
+        "C) When the seller selects and signs the most favorable offer",
+        "D) Upon delivery to the first buyer who signs the proposal"
+      ],
+      "correctOption": 2,
+      "explanation": "A WB-46 becomes binding only when the seller selects and accepts an offer."
+    },
+    {
+      "id": 54,
+      "difficulty": "hard",
+      "questionText": "What must a buyer do if their financing is unavailable by the deadline?",
+      "options": [
+        "A) Deliver a loan rejection notice and terminate the offer",
+        "B) Seek alternative financing within 30 days",
+        "C) Notify the seller and revise the purchase price",
+        "D) Request an extension from the seller in writing"
+      ],
+      "correctOption": 0,
+      "explanation": "The buyer must deliver a loan rejection notice and terminate or renegotiate the offer."
+    },
+    {
+      "id": 55,
+      "difficulty": "hard",
+      "questionText": "What is the seller’s obligation under the WB-1 Listing Contract regarding adverse facts?",
+      "options": [
+        "A) To disclose only upon buyer inquiry",
+        "B) To provide written notice before accepting an offer",
+        "C) To disclose material adverse facts in writing at any time",
+        "D) To rely on the licensee to determine necessary disclosures"
+      ],
+      "correctOption": 2,
+      "explanation": "Sellers must disclose material adverse facts in writing to all parties."
+    },
+    {
+      "id": 56,
+      "difficulty": "hard",
+      "questionText": "When is a counter-offer considered rejected?",
+      "options": [
+        "A) Upon verbal notification from the other party",
+        "B) If the other party does not sign and return it by the deadline",
+        "C) When the other party makes a new offer",
+        "D) When the counter-offer is withdrawn in writing"
+      ],
+      "correctOption": 1,
+      "explanation": "A counter-offer is rejected if not signed and returned by the specified deadline."
+    },
+    {
+      "id": 57,
+      "difficulty": "hard",
+      "questionText": "What defines a “defect” in a WB-11 Residential Offer to Purchase?",
+      "options": [
+        "A) Any issue requiring professional repair",
+        "B) A condition that substantially affects property safety or value",
+        "C) A material adverse fact that is not disclosed",
+        "D) Any damage exceeding 5% of the purchase price"
+      ],
+      "correctOption": 1,
+      "explanation": "Defects are conditions affecting the property’s safety, value, or habitability."
+    },
+    {
+      "id": 58,
+      "difficulty": "hard",
+      "questionText": "What must the seller provide for leased properties at closing?",
+      "options": [
+        "A) Copies of all leases signed within the last year",
+        "B) Tenant contact information and lease summaries",
+        "C) All security deposits and prepaid rents",
+        "D) Written notice of lease termination"
+      ],
+      "correctOption": 2,
+      "explanation": "Security deposits and prepaid rents must be transferred to the buyer at closing."
+    },
+    {
+      "id": 59,
+      "difficulty": "hard",
+      "questionText": "How can a seller mitigate risk from wire fraud in real estate transactions?",
+      "options": [
+        "A) Use personal email accounts for all communications",
+        "B) Provide detailed wiring instructions to the buyer",
+        "C) Avoid electronic fund transfers entirely",
+        "D) Use secure communication channels for wire instructions"
+      ],
+      "correctOption": 3,
+      "explanation": "Secure channels reduce the risk of wire fraud in transactions."
+    },
+    {
+      "id": 60,
+      "difficulty": "hard",
+      "questionText": "What action constitutes an unauthorized practice of law for a real estate licensee?",
+      "options": [
+        "A) Explaining the purpose of a form",
+        "B) Advising on the legal effect of a contract clause",
+        "C) Delivering an attorney-prepared addendum",
+        "D) Filling in blanks on an approved form"
+      ],
+      "correctOption": 1,
+      "explanation": "Licensees cannot advise on the legal implications of contract terms."
+    }
+  ]
+}
