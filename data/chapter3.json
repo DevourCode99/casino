@@ -1,785 +1,1093 @@
 {
-  "chapter": 3,
   "questions": [
     {
-      "id": 1,
-      "difficulty": "easy",
       "questionText": "What is required for a seller to complete when selling a residential property with one to four dwelling units?",
       "options": [
-        "A) Real Estate Condition Report",
-        "B) Rental Agreement",
-        "C) Agency Disclosure Form",
-        "D) Uniform Commercial Code (UCC) Form"
+        "Real Estate Condition Report",
+        "Rental Agreement",
+        "Agency Disclosure Form",
+        "Uniform Commercial Code (UCC) Form"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Real Estate Condition Report",
       "explanation": "Sellers of residential properties with one to four units must complete a Real Estate Condition Report under Wisconsin law."
     },
     {
-      "id": 2,
-      "difficulty": "easy",
       "questionText": "Who must draft an addendum that modifies non-optional provisions of an approved form?",
       "options": [
-        "A) The licensee",
-        "B) The buyer",
-        "C) An attorney",
-        "D) The broker"
+        "The licensee",
+        "The buyer",
+        "An attorney",
+        "The broker"
       ],
-      "correctOption": 2,
+      "correctAnswer": "An attorney",
       "explanation": "Only an attorney can draft an addendum that changes non-optional provisions of an approved form."
     },
     {
-      "id": 3,
-      "difficulty": "easy",
       "questionText": "What must a licensee provide to a customer before negotiations begin?",
       "options": [
-        "A) Disclosure to Customers Form",
-        "B) Real Estate Condition Report",
-        "C) Listing Contract",
-        "D) Rental Agreement"
+        "Disclosure to Customers Form",
+        "Real Estate Condition Report",
+        "Listing Contract",
+        "Rental Agreement"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Disclosure to Customers Form",
       "explanation": "Wisconsin law requires agency disclosure to a customer before negotiations start."
     },
     {
-      "id": 4,
-      "difficulty": "easy",
       "questionText": "What is the WB-37 Residential Listing Contract used for?",
       "options": [
-        "A) Selling commercial property",
-        "B) Leasing residential property",
-        "C) Leasing vacant land",
-        "D) Managing a property"
+        "Selling commercial property",
+        "Leasing residential property",
+        "Leasing vacant land",
+        "Managing a property"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Leasing residential property",
       "explanation": "The WB-37 is used for listing residential property for lease."
     },
     {
-      "id": 5,
-      "difficulty": "easy",
       "questionText": "Who can use State Bar forms for real estate transactions?",
       "options": [
-        "A) Licensed salespersons and brokers",
-        "B) Only licensed brokers",
-        "C) All real estate licensees",
-        "D) Property owners"
+        "Licensed salespersons and brokers",
+        "Only licensed brokers",
+        "All real estate licensees",
+        "Property owners"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Only licensed brokers",
       "explanation": "Only licensed brokers can use State Bar forms."
     },
     {
-      "id": 6,
-      "difficulty": "easy",
       "questionText": "When must agency disclosure be provided to a client?",
       "options": [
-        "A) Before or at the time of entering into an agency agreement",
-        "B) After signing the purchase agreement",
-        "C) At the time of property closing",
-        "D) During the first property showing"
+        "Before or at the time of entering into an agency agreement",
+        "After signing the purchase agreement",
+        "At the time of property closing",
+        "During the first property showing"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Before or at the time of entering into an agency agreement",
       "explanation": "Agency disclosure must occur before or at the time of entering into an agency agreement."
     },
     {
-      "id": 7,
-      "difficulty": "easy",
       "questionText": "What should a licensee do if presented with a form not approved by the state?",
       "options": [
-        "A) Draft missing sections of the form",
-        "B) Refer the form to their broker for review",
-        "C) Follow all state laws and ensure no important protections are missing",
-        "D) Refuse to use the form"
+        "Draft missing sections of the form",
+        "Refer the form to their broker for review",
+        "Follow all state laws and ensure no important protections are missing",
+        "Refuse to use the form"
       ],
-      "correctOption": 2,
+      "correctAnswer": "Follow all state laws and ensure no important protections are missing",
       "explanation": "Licensees must ensure compliance with Wisconsin law and confirm important protections are present."
     },
     {
-      "id": 8,
-      "difficulty": "easy",
       "questionText": "What is an example of a pre-prepared addendum?",
       "options": [
-        "A) A custom contingency for asbestos testing",
-        "B) A firm’s standard well-testing addendum",
-        "C) A unique personal property list",
-        "D) A handwritten amendment by the buyer"
+        "A custom contingency for asbestos testing",
+        "A firm’s standard well-testing addendum",
+        "A unique personal property list",
+        "A handwritten amendment by the buyer"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A firm’s standard well-testing addendum",
       "explanation": "Pre-prepared addenda are standard forms used to address common contingencies like well-testing."
     },
     {
-      "id": 9,
-      "difficulty": "easy",
       "questionText": "What must a seller of vacant land complete?",
       "options": [
-        "A) A vacant land disclosure report",
-        "B) A Real Estate Condition Report",
-        "C) An Agency Disclosure Form",
-        "D) A Uniform Commercial Code (UCC) Form"
+        "A vacant land disclosure report",
+        "A Real Estate Condition Report",
+        "An Agency Disclosure Form",
+        "A Uniform Commercial Code (UCC) Form"
       ],
-      "correctOption": 0,
+      "correctAnswer": "A vacant land disclosure report",
       "explanation": "Sellers of vacant land are required to complete a vacant land disclosure report."
     },
     {
-      "id": 10,
-      "difficulty": "easy",
       "questionText": "What is the purpose of a Disclosure to Clients form?",
       "options": [
-        "A) To provide agency disclosure to clients",
-        "B) To outline the seller’s property condition",
-        "C) To specify buyer financing terms",
-        "D) To list personal property included in the sale"
+        "To provide agency disclosure to clients",
+        "To outline the seller’s property condition",
+        "To specify buyer financing terms",
+        "To list personal property included in the sale"
       ],
-      "correctOption": 0,
+      "correctAnswer": "To provide agency disclosure to clients",
       "explanation": "The Disclosure to Clients form ensures compliance with agency disclosure requirements for clients."
     },
     {
-      "id": 11,
-      "difficulty": "easy",
       "questionText": "What must a licensee do before listing a property?",
       "options": [
-        "A) Inspect the property and ask the seller about its condition",
-        "B) Obtain a full inspection report from a third-party inspector",
-        "C) Confirm the buyer’s financial capability",
-        "D) Provide an earnest money agreement"
+        "Inspect the property and ask the seller about its condition",
+        "Obtain a full inspection report from a third-party inspector",
+        "Confirm the buyer’s financial capability",
+        "Provide an earnest money agreement"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Inspect the property and ask the seller about its condition",
       "explanation": "Licensees are required to inspect the property and inquire about its condition."
     },
     {
-      "id": 12,
-      "difficulty": "easy",
       "questionText": "Who drafts a property management agreement?",
       "options": [
-        "A) The landlord",
-        "B) A broker, landlord, or attorney",
-        "C) The supervising broker only",
-        "D) A real estate salesperson"
+        "The landlord",
+        "A broker, landlord, or attorney",
+        "The supervising broker only",
+        "A real estate salesperson"
       ],
-      "correctOption": 1,
+      "correctAnswer": "A broker, landlord, or attorney",
       "explanation": "A property management agreement can be drafted by a broker, landlord, or attorney."
     },
     {
-      "id": 13,
-      "difficulty": "easy",
       "questionText": "What must be included in a pre-prepared addendum?",
       "options": [
-        "A) Optional and multiple-choice provisions",
-        "B) Only provisions related to blanks or optional sections of approved forms",
-        "C) A complete rewrite of the approved form",
-        "D) Buyer’s handwritten notes"
+        "Optional and multiple-choice provisions",
+        "Only provisions related to blanks or optional sections of approved forms",
+        "A complete rewrite of the approved form",
+        "Buyer’s handwritten notes"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Only provisions related to blanks or optional sections of approved forms",
       "explanation": "Pre-prepared addenda must relate to blanks or optional sections in approved forms."
     },
     {
-      "id": 14,
-      "difficulty": "easy",
       "questionText": "Who is responsible for ensuring the use of proper forms in a firm?",
       "options": [
-        "A) The seller",
-        "B) The broker",
-        "C) The buyer",
-        "D) The state agency"
+        "The seller",
+        "The broker",
+        "The buyer",
+        "The state agency"
       ],
-      "correctOption": 1,
+      "correctAnswer": "The broker",
       "explanation": "The broker ensures that licensees in the firm comply with form usage rules."
     },
     {
-      "id": 15,
-      "difficulty": "easy",
       "questionText": "What must a licensee do to properly incorporate an addendum into a contract?",
       "options": [
-        "A) Attach it physically and reference it in the contract",
-        "B) Only attach it to the contract",
-        "C) Obtain verbal agreement from all parties",
-        "D) Include it without referencing it in the contract"
+        "Attach it physically and reference it in the contract",
+        "Only attach it to the contract",
+        "Obtain verbal agreement from all parties",
+        "Include it without referencing it in the contract"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Attach it physically and reference it in the contract",
       "explanation": "Addenda must be attached and explicitly referenced in the contract."
     },
     {
-      "id": 16,
-      "difficulty": "easy",
       "questionText": "What is the primary limitation on salespersons using State Bar forms?",
       "options": [
-        "A) Salespersons cannot use State Bar forms at all",
-        "B) Salespersons can only use forms for commercial transactions",
-        "C) Salespersons must obtain prior approval from their broker",
-        "D) Salespersons must co-sign with an attorney"
+        "Salespersons cannot use State Bar forms at all",
+        "Salespersons can only use forms for commercial transactions",
+        "Salespersons must obtain prior approval from their broker",
+        "Salespersons must co-sign with an attorney"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Salespersons cannot use State Bar forms at all",
       "explanation": "State Bar forms can only be used by licensed brokers."
     },
     {
-      "id": 17,
-      "difficulty": "easy",
       "questionText": "What is the purpose of a firm’s contingency manual?",
       "options": [
-        "A) To draft additional forms",
-        "B) To provide guidelines for using transaction documents",
-        "C) To train clients on legal requirements",
-        "D) To serve as a substitute for attorney advice"
+        "To draft additional forms",
+        "To provide guidelines for using transaction documents",
+        "To train clients on legal requirements",
+        "To serve as a substitute for attorney advice"
       ],
-      "correctOption": 1,
-      "explanation": "Contingency manuals guide licensees in using transaction documents and ensuring compliance."
+      "correctAnswer": "To provide guidelines for using transaction documents",
+      "explanation": "A contingency manual guides licensees in using transaction documents and ensuring compliance."
     },
     {
-      "id": 18,
-      "difficulty": "easy",
-      "questionText": "What document is used when renting a residential property in Wisconsin?",
+      "questionText": "What must a licensee do when presented with a form not approved by the state?",
       "options": [
-        "A) WB-37 Residential Listing Contract",
-        "B) Uniform Commercial Code Form",
-        "C) Disclosure to Clients Form",
-        "D) Approved rental agreement"
+        "Draft missing sections of the form",
+        "Refer the form to their broker for review",
+        "Follow all state laws and ensure no important protections are missing",
+        "Refuse to use the form"
       ],
-      "correctOption": 0,
-      "explanation": "The WB-37 is used to list residential properties for rent."
+      "correctAnswer": "Follow all state laws and ensure no important protections are missing",
+      "explanation": "Licensees must ensure compliance with Wisconsin law and confirm important protections are present."
     },
     {
-      "id": 19,
-      "difficulty": "easy",
-      "questionText": "When is it necessary for a licensee to consult an attorney?",
-      "options": [
-        "A) When drafting standard forms for a transaction",
-        "B) When creating complex provisions like environmental liability waivers",
-        "C) When conducting property inspections",
-        "D) When completing a Real Estate Condition Report"
-      ],
-      "correctOption": 1,
-      "explanation": "Attorneys should draft complex provisions such as environmental liability waivers."
-    },
-    {
-      "id": 20,
-      "difficulty": "easy",
-      "questionText": "What must a broker verify before using another state’s form?",
-      "options": [
-        "A) That the broker’s license is valid in the other state",
-        "B) That they are competent to use the form and follow the other state’s laws",
-        "C) That the form is pre-approved by their supervising broker",
-        "D) That the form is simplified for Wisconsin use"
-      ],
-      "correctOption": 1,
-      "explanation": "Brokers must ensure competence and compliance with the other state’s laws before using its forms."
-    },
-    {
-      "id": 21,
-      "difficulty": "medium",
-      "questionText": "What is the primary limitation when using a form without a WB identification number?",
-      "options": [
-        "A) Licensees can only sign the form but cannot fill in blanks or draft provisions",
-        "B) Licensees can use the form as they wish",
-        "C) The form must be rewritten to meet WB standards",
-        "D) The form is automatically invalid"
-      ],
-      "correctOption": 0,
-      "explanation": "Licensees are restricted to signing such forms and cannot modify or fill in blanks."
-    },
-    {
-      "id": 22,
-      "difficulty": "medium",
-      "questionText": "What must a licensee do when using an unapproved listing contract?",
-      "options": [
-        "A) Rewrite the form to include necessary provisions",
-        "B) Ensure compliance with Wisconsin law and agency disclosure obligations",
-        "C) Submit the form for REEB approval before use",
-        "D) Only use it with residential properties"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must follow Wisconsin law and ensure agency disclosures are provided."
-    },
-    {
-      "id": 23,
-      "difficulty": "medium",
-      "questionText": "What is the purpose of a Disclosure to Customers form?",
-      "options": [
-        "A) To clarify legal obligations of the broker",
-        "B) To comply with mandatory agency disclosure laws for customers",
-        "C) To summarize the listing contract terms",
-        "D) To document buyer financing"
-      ],
-      "correctOption": 1,
-      "explanation": "This form ensures compliance with agency disclosure requirements for customers."
-    },
-    {
-      "id": 24,
-      "difficulty": "medium",
-      "questionText": "Who is required to complete a vacant land disclosure report?",
-      "options": [
-        "A) All sellers",
-        "B) Sellers of vacant land",
-        "C) Sellers of commercial property",
-        "D) Only brokers"
-      ],
-      "correctOption": 1,
-      "explanation": "Sellers of vacant land must complete a vacant land disclosure report."
-    },
-    {
-      "id": 25,
-      "difficulty": "medium",
-      "questionText": "What is required for an addendum to alter a non-optional provision of an approved form?",
-      "options": [
-        "A) Approval by the REEB",
-        "B) Drafting by an attorney identified on the addendum",
-        "C) Inclusion of multiple-choice options",
-        "D) Signature from all parties before incorporation"
-      ],
-      "correctOption": 1,
-      "explanation": "Non-optional provisions can only be altered by an attorney-drafted addendum."
-    },
-    {
-      "id": 26,
-      "difficulty": "medium",
-      "questionText": "What must a licensee confirm when incorporating an addendum into an approved form?",
-      "options": [
-        "A) That it is signed by all parties before delivery",
-        "B) That it is referenced in the approved form and properly related to it",
-        "C) That it includes optional and fill-in provisions",
-        "D) That it is rewritten to match approved forms’ formatting"
-      ],
-      "correctOption": 1,
-      "explanation": "Proper incorporation requires referencing and relating the addendum to the approved form."
-    },
-    {
-      "id": 27,
-      "difficulty": "medium",
-      "questionText": "When must a seller provide a Real Estate Condition Report to a buyer?",
-      "options": [
-        "A) Before listing the property",
-        "B) Within 10 days of accepting an offer",
-        "C) At the time of closing",
-        "D) Before property showings"
-      ],
-      "correctOption": 1,
-      "explanation": "Wisconsin law requires sellers to provide the report within 10 days of offer acceptance."
-    },
-    {
-      "id": 28,
-      "difficulty": "medium",
       "questionText": "What is the role of the broker in using State Bar forms?",
       "options": [
-        "A) To approve salesperson use of the forms",
-        "B) To ensure the broker is competent in completing the forms",
-        "C) To rewrite the forms to align with WB standards",
-        "D) To draft provisions for the forms"
+        "To approve salesperson use of the forms",
+        "To ensure the broker is competent in completing the forms",
+        "To rewrite the forms to align with WB standards",
+        "To draft provisions for the forms"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To ensure the broker is competent in completing the forms",
       "explanation": "Brokers must be competent to use State Bar forms appropriately."
     },
     {
-      "id": 29,
-      "difficulty": "medium",
-      "questionText": "What is a limitation of a licensee acting as a property manager?",
-      "options": [
-        "A) They cannot sign rental agreements",
-        "B) They must hold a real estate license if signing or negotiating leases",
-        "C) They are prohibited from marketing rental properties",
-        "D) They cannot perform maintenance tasks"
-      ],
-      "correctOption": 1,
-      "explanation": "Signing or negotiating leases requires a real estate license."
-    },
-    {
-      "id": 30,
-      "difficulty": "medium",
-      "questionText": "What must be included in a property management agreement?",
-      "options": [
-        "A) A complete listing of tenants",
-        "B) Provisions for leasing, marketing, and overall management",
-        "C) Standard addenda for residential properties",
-        "D) Pre-approval by the REEB"
-      ],
-      "correctOption": 1,
-      "explanation": "Property management agreements must include provisions for leasing, marketing, and management."
-    },
-    {
-      "id": 31,
-      "difficulty": "medium",
-      "questionText": "What is a key consideration when using another state’s real estate forms?",
-      "options": [
-        "A) Ensuring the form is notarized",
-        "B) Determining if the licensee is competent and permitted to use the form under that state’s laws",
-        "C) Verifying that the form aligns with Wisconsin statutes",
-        "D) Confirming it is a WB-approved form"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must ensure competence and compliance with the laws of the other state before using its forms."
-    },
-    {
-      "id": 32,
-      "difficulty": "medium",
-      "questionText": "What is the purpose of a firm’s contingency manual?",
-      "options": [
-        "A) To outline rules for resolving disputes",
-        "B) To provide guidelines for using other transaction documents",
-        "C) To replace attorney-drafted provisions",
-        "D) To train customers on transaction processes"
-      ],
-      "correctOption": 1,
-      "explanation": "Contingency manuals guide licensees in proper use of documents and compliance."
-    },
-    {
-      "id": 33,
-      "difficulty": "medium",
-      "questionText": "When should a licensee recommend consulting an attorney for drafting provisions?",
-      "options": [
-        "A) When the licensee is unsure about filling in blanks",
-        "B) For complex legal provisions like rights of first refusal or environmental waivers",
-        "C) When the form includes blanks for personal property listings",
-        "D) For writing standard contingencies"
-      ],
-      "correctOption": 1,
-      "explanation": "Complex legal provisions should always be drafted by an attorney."
-    },
-    {
-      "id": 34,
-      "difficulty": "medium",
-      "questionText": "What must a licensee do when using pre-prepared addenda?",
-      "options": [
-        "A) Include blanks and fill-in provisions",
-        "B) Ensure the addenda are incorporated by reference into an approved form",
-        "C) Reformat the addenda to match approved forms",
-        "D) Deliver addenda without referencing them in the contract"
-      ],
-      "correctOption": 1,
-      "explanation": "Proper incorporation requires referencing the addenda in the approved form."
-    },
-    {
-      "id": 35,
-      "difficulty": "medium",
-      "questionText": "What is a broker’s responsibility regarding UCC forms?",
-      "options": [
-        "A) To rewrite UCC forms to align with WB standards",
-        "B) To ensure competence or refer parties to an attorney",
-        "C) To confirm all licensees in the firm can use UCC forms",
-        "D) To file UCC forms with the Wisconsin Real Estate Board"
-      ],
-      "correctOption": 1,
-      "explanation": "Brokers must be competent to use UCC forms or refer parties to an attorney."
-    },
-    {
-      "id": 36,
-      "difficulty": "medium",
-      "questionText": "What is a risk of using an unapproved listing contract?",
-      "options": [
-        "A) It might not include protections like rights to protected buyers",
-        "B) The contract becomes automatically void",
-        "C) It cannot include agency disclosure",
-        "D) It can only be used for commercial properties"
-      ],
-      "correctOption": 0,
-      "explanation": "Unapproved contracts often lack important protections like those for protected buyers."
-    },
-    {
-      "id": 37,
-      "difficulty": "medium",
-      "questionText": "Who can draft provisions for pre-prepared addenda?",
-      "options": [
-        "A) The licensee or broker only",
-        "B) A broker or attorney",
-        "C) Any party involved in the transaction",
-        "D) The supervising broker exclusively"
-      ],
-      "correctOption": 1,
-      "explanation": "Pre-prepared addenda must be drafted by a broker or attorney."
-    },
-    {
-      "id": 38,
-      "difficulty": "medium",
-      "questionText": "What distinguishes a property management agreement from a rental listing contract?",
-      "options": [
-        "A) It is only used for residential properties",
-        "B) It includes additional management and maintenance duties",
-        "C) It is a standardized WB-approved form",
-        "D) It excludes provisions for collecting rent"
-      ],
-      "correctOption": 1,
-      "explanation": "Property management agreements include broader duties than rental listing contracts."
-    },
-    {
-      "id": 39,
-      "difficulty": "medium",
-      "questionText": "When must agency disclosure to a customer occur?",
-      "options": [
-        "A) At the time of writing an offer",
-        "B) Before the start of negotiations",
-        "C) At the time of closing",
-        "D) During property showings"
-      ],
-      "correctOption": 1,
-      "explanation": "Agency disclosure must occur before negotiations begin."
-    },
-    {
-      "id": 40,
-      "difficulty": "medium",
-      "questionText": "What must a licensee confirm before using an attorney-prepared addendum?",
-      "options": [
-        "A) That the attorney’s name is identified on the addendum",
-        "B) That the addendum is pre-approved by the REEB",
-        "C) That the addendum modifies an optional provision only",
-        "D) That the addendum includes fill-in provisions"
-      ],
-      "correctOption": 0,
-      "explanation": "Attorney-prepared addenda must include the attorney’s name for legal compliance."
-    },
-    {
-      "id": 41,
-      "difficulty": "hard",
-      "questionText": "What is the primary limitation of using UCC forms in a transaction involving business personal property?",
-      "options": [
-        "A) They cannot be used without prior approval from the REEB",
-        "B) They must be filed with the Department of Financial Institutions",
-        "C) Only brokers can complete UCC forms, and competence must be ensured",
-        "D) They are restricted to transactions involving residential properties"
-      ],
-      "correctOption": 2,
-      "explanation": "Only brokers can complete UCC forms, and they must be competent to do so or refer the task to an attorney."
-    },
-    {
-      "id": 42,
-      "difficulty": "hard",
-      "questionText": "What must be included in a property management agreement for it to be considered an approved form under Wisconsin law?",
-      "options": [
-        "A) A list of specific tenants",
-        "B) Provisions for leasing, managing, and marketing the property",
-        "C) A copy of the WB-37 Residential Listing Contract",
-        "D) A notarized statement from the landlord"
-      ],
-      "correctOption": 1,
-      "explanation": "Approved property management agreements must include provisions for leasing, managing, and marketing the property."
-    },
-    {
-      "id": 43,
-      "difficulty": "hard",
-      "questionText": "What happens if a seller fails to provide a Real Estate Condition Report within the required timeframe?",
-      "options": [
-        "A) The buyer can terminate the contract within two business days of the missed deadline",
-        "B) The contract becomes void immediately",
-        "C) The seller must pay a penalty fee",
-        "D) The buyer must proceed with the transaction without the report"
-      ],
-      "correctOption": 0,
-      "explanation": "The buyer has two business days to terminate the contract if the seller misses the deadline for providing the report."
-    },
-    {
-      "id": 44,
-      "difficulty": "hard",
-      "questionText": "Under what circumstances can a licensee draft an addendum without attorney involvement?",
-      "options": [
-        "A) If it modifies non-optional provisions",
-        "B) If it addresses only specific contingencies unique to a transaction",
-        "C) If it involves legal provisions like environmental waivers",
-        "D) If it rewrites the optional provisions of an approved form"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees can draft one-time use addenda to address specific transaction circumstances."
-    },
-    {
-      "id": 45,
-      "difficulty": "hard",
-      "questionText": "What must a broker consider before using another state’s form in a transaction?",
-      "options": [
-        "A) Whether the form complies with Wisconsin law",
-        "B) Whether the broker is legally permitted and competent to use the form",
-        "C) Whether the REEB has approved the form for interstate use",
-        "D) Whether the client has requested the form’s use"
-      ],
-      "correctOption": 1,
-      "explanation": "Brokers must ensure they are legally permitted and competent to use another state’s form."
-    },
-    {
-      "id": 46,
-      "difficulty": "hard",
       "questionText": "What is a risk associated with using an unapproved listing contract for a bank-owned property?",
       "options": [
-        "A) The contract may not comply with Wisconsin agency disclosure laws",
-        "B) The contract cannot be enforced in court",
-        "C) The contract automatically voids upon signing",
-        "D) The contract does not allow for negotiations"
+        "The contract may not comply with Wisconsin agency disclosure laws",
+        "The contract cannot be enforced in court",
+        "The contract automatically voids upon signing",
+        "The contract does not allow for negotiations"
       ],
-      "correctOption": 0,
+      "correctAnswer": "The contract may not comply with Wisconsin agency disclosure laws",
       "explanation": "Unapproved listing contracts may not meet Wisconsin’s agency disclosure requirements."
     },
     {
-      "id": 47,
-      "difficulty": "hard",
-      "questionText": "When should an attorney draft provisions instead of a licensee?",
-      "options": [
-        "A) When drafting simple contingencies for a transaction",
-        "B) When dealing with complex legal concepts like rights of first refusal or environmental waivers",
-        "C) When the form includes blanks for personal property listings",
-        "D) When the parties request changes to optional provisions"
-      ],
-      "correctOption": 1,
-      "explanation": "Complex legal provisions should always be drafted by an attorney."
-    },
-    {
-      "id": 48,
-      "difficulty": "hard",
-      "questionText": "What is required for a pre-prepared addendum to alter non-optional provisions of an approved form?",
-      "options": [
-        "A) It must be signed by both parties before incorporation",
-        "B) It must be drafted by an attorney and include no blanks or optional provisions",
-        "C) It must be reviewed by the REEB before use",
-        "D) It must be attached physically to the approved form"
-      ],
-      "correctOption": 1,
-      "explanation": "Non-optional provisions can only be altered by an attorney-drafted addendum with no blanks or optional provisions."
-    },
-    {
-      "id": 49,
-      "difficulty": "hard",
-      "questionText": "What must a licensee ensure when using State Bar forms?",
-      "options": [
-        "A) That the forms are not altered in any way",
-        "B) That the licensee has sufficient experience to competently use the forms",
-        "C) That the forms are used only for residential transactions",
-        "D) That the forms are signed by all parties within 24 hours"
-      ],
-      "correctOption": 1,
-      "explanation": "Licensees must be competent to use State Bar forms, as these are complex legal documents."
-    },
-    {
-      "id": 50,
-      "difficulty": "hard",
-      "questionText": "What is the purpose of incorporating an addendum by reference in an approved form?",
-      "options": [
-        "A) To make the addendum optional for the parties",
-        "B) To formally include the addendum as part of the contract",
-        "C) To ensure the addendum is signed by both parties",
-        "D) To simplify the language of the contract"
-      ],
-      "correctOption": 1,
-      "explanation": "Referencing an addendum formally incorporates it into the contract terms."
-    },
-    {
-      "id": 51,
-      "difficulty": "hard",
-      "questionText": "What is the primary consideration when using a form without WB identification?",
-      "options": [
-        "A) The form must comply with Wisconsin law and include mandatory disclosures",
-        "B) The form is invalid for use in any transaction",
-        "C) The form must be reviewed by the broker",
-        "D) The form can only be used for commercial transactions"
-      ],
-      "correctOption": 0,
-      "explanation": "Non-WB forms must comply with Wisconsin law and include mandatory disclosures."
-    },
-    {
-      "id": 52,
-      "difficulty": "hard",
-      "questionText": "What happens if a licensee modifies a pre-prepared addendum?",
-      "options": [
-        "A) The addendum becomes void",
-        "B) The licensee must have the modifications approved by an attorney",
-        "C) The modifications must be referenced and made legible",
-        "D) The addendum no longer complies with Wisconsin law"
-      ],
-      "correctOption": 3,
-      "explanation": "Modifying pre-prepared addenda without proper authorization violates Wisconsin regulations."
-    },
-    {
-      "id": 53,
-      "difficulty": "hard",
       "questionText": "Who can use contractual forms for transactions in other states?",
       "options": [
-        "A) Any licensed broker in Wisconsin",
-        "B) Only brokers legally allowed to use such forms in the other state",
-        "C) Salespersons with broker approval",
-        "D) Attorneys acting on behalf of the client"
+        "Any licensed broker in Wisconsin",
+        "Only brokers legally allowed to use such forms in the other state",
+        "Salespersons with broker approval",
+        "Attorneys acting on behalf of the client"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Only brokers legally allowed to use such forms in the other state",
       "explanation": "Brokers must comply with the other state’s laws to use its forms."
     },
     {
-      "id": 54,
-      "difficulty": "hard",
-      "questionText": "What is a primary risk of relying solely on standard addenda provided by a firm?",
+      "questionText": "What is the primary risk of using poorly drafted contingencies?",
       "options": [
-        "A) They might not cover all unique circumstances of a transaction",
-        "B) They require prior approval from the REEB",
-        "C) They cannot include optional provisions",
-        "D) They automatically void the transaction"
+        "Loss of earnest money",
+        "Breach of fiduciary duty",
+        "Unenforceable contracts",
+        "Longer transaction timelines"
       ],
-      "correctOption": 0,
-      "explanation": "Standard addenda might not address specific transaction needs."
+      "correctAnswer": "Unenforceable contracts",
+      "explanation": "Poorly drafted contingencies may lack enforceable standards."
     },
     {
-      "id": 55,
-      "difficulty": "hard",
-      "questionText": "What distinguishes a WB-37 Listing Contract from a property management agreement?",
+      "questionText": "What must a licensee confirm before using an attorney-prepared addendum?",
       "options": [
-        "A) The WB-37 includes leasing and property maintenance duties",
-        "B) The WB-37 focuses solely on advertising and finding tenants",
-        "C) Property management agreements are pre-approved by the REEB",
-        "D) The WB-37 is not suitable for residential properties"
+        "That the attorney’s name is identified on the addendum",
+        "That the addendum is pre-approved by the REEB",
+        "That the addendum modifies an optional provision only",
+        "That the addendum includes fill-in provisions"
       ],
-      "correctOption": 1,
-      "explanation": "The WB-37 is focused on finding tenants, not comprehensive property management."
+      "correctAnswer": "That the attorney’s name is identified on the addendum",
+      "explanation": "Attorney-prepared addenda must include the attorney’s name for legal compliance."
     },
     {
-      "id": 56,
-      "difficulty": "hard",
+      "questionText": "How can a seller mitigate risk from wire fraud in real estate transactions?",
+      "options": [
+        "Use personal email accounts for all communications",
+        "Provide detailed wiring instructions to the buyer",
+        "Avoid electronic fund transfers entirely",
+        "Use secure communication channels for wire instructions"
+      ],
+      "correctAnswer": "Use secure communication channels for wire instructions",
+      "explanation": "Secure channels reduce the risk of wire fraud in transactions."
+    },
+    {
+      "questionText": "What action constitutes an unauthorized practice of law for a real estate licensee?",
+      "options": [
+        "Explaining the purpose of a form",
+        "Advising on the legal effect of a contract clause",
+        "Delivering an attorney-prepared addendum",
+        "Filling in blanks on an approved form"
+      ],
+      "correctAnswer": "Advising on the legal effect of a contract clause",
+      "explanation": "Licensees cannot advise on the legal implications of contract terms."
+    },
+    {
+      "questionText": "What is the primary limitation of using UCC forms in a transaction involving business personal property?",
+      "options": [
+        "They cannot be used without prior approval from the REEB",
+        "They must be filed with the Department of Financial Institutions",
+        "Only brokers can complete UCC forms, and competence must be ensured",
+        "They are restricted to transactions involving residential properties"
+      ],
+      "correctAnswer": "Only brokers can complete UCC forms, and competence must be ensured",
+      "explanation": "Only brokers can complete UCC forms, and they must be competent to do so or refer the task to an attorney."
+    },
+    {
+      "questionText": "What must be included in a property management agreement for it to be considered an approved form under Wisconsin law?",
+      "options": [
+        "A list of specific tenants",
+        "Provisions for leasing, managing, and marketing the property",
+        "A copy of the WB-37 Residential Listing Contract",
+        "A notarized statement from the landlord"
+      ],
+      "correctAnswer": "Provisions for leasing, managing, and marketing the property",
+      "explanation": "Approved property management agreements must include provisions for leasing, managing, and marketing the property."
+    },
+    {
+      "questionText": "What happens if a seller fails to provide a Real Estate Condition Report within the required timeframe?",
+      "options": [
+        "The buyer can terminate the contract within two business days of the missed deadline",
+        "The contract becomes void immediately",
+        "The seller must pay a penalty fee",
+        "The buyer must proceed with the transaction without the report"
+      ],
+      "correctAnswer": "The buyer can terminate the contract within two business days of the missed deadline",
+      "explanation": "The buyer has two business days to terminate the contract if the seller misses the deadline for providing the report."
+    },
+    {
+      "questionText": "Under what circumstances can a licensee draft an addendum without attorney involvement?",
+      "options": [
+        "When it modifies non-optional provisions",
+        "When it addresses only specific contingencies unique to a transaction",
+        "When it involves legal provisions like environmental liability waivers",
+        "When it rewrites the optional provisions of an approved form"
+      ],
+      "correctAnswer": "When it addresses only specific contingencies unique to a transaction",
+      "explanation": "Licensees can draft one-time use addenda to address specific transaction circumstances."
+    },
+    {
+      "questionText": "What must a broker consider before using another state’s form in a transaction?",
+      "options": [
+        "Whether the form complies with Wisconsin law",
+        "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+        "Whether the REEB has approved the form for interstate use",
+        "Whether the client has requested the form’s use"
+      ],
+      "correctAnswer": "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+      "explanation": "Brokers must ensure they are legally permitted and competent to use another state’s form."
+    },
+    {
+      "questionText": "What is a key consideration when using another state’s real estate forms?",
+      "options": [
+        "Ensuring the form is notarized",
+        "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+        "Verifying that the form aligns with Wisconsin statutes",
+        "Confirming it is a WB-approved form"
+      ],
+      "correctAnswer": "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+      "explanation": "Licensees must ensure competence and compliance with the laws of the other state."
+    },
+    {
+      "questionText": "What is a limitation of a licensee acting as a property manager?",
+      "options": [
+        "They cannot sign rental agreements",
+        "They must hold a real estate license if signing or negotiating leases",
+        "They are prohibited from marketing rental properties",
+        "They cannot perform maintenance tasks"
+      ],
+      "correctAnswer": "They must hold a real estate license if signing or negotiating leases",
+      "explanation": "Signing or negotiating leases requires a real estate license."
+    },
+    {
+      "questionText": "What must be included in a property management agreement?",
+      "options": [
+        "A complete listing of tenants",
+        "Provisions for leasing, marketing, and overall management",
+        "Standard addenda for residential properties",
+        "Pre-approval by the REEB"
+      ],
+      "correctAnswer": "Provisions for leasing, marketing, and overall management",
+      "explanation": "Property management agreements must include provisions for leasing, marketing, and management."
+    },
+    {
       "questionText": "When must a licensee inspect a property and ask the seller about its condition?",
       "options": [
-        "A) Before marketing the property",
-        "B) After an offer is accepted",
-        "C) Only if the property is commercial",
-        "D) When the buyer requests it"
+        "Before marketing the property",
+        "After an offer is accepted",
+        "Only if the property is commercial",
+        "When the buyer requests it"
       ],
-      "correctOption": 0,
+      "correctAnswer": "Before marketing the property",
       "explanation": "Licensees must inspect the property and ask the seller about its condition before marketing it."
     },
     {
-      "id": 57,
-      "difficulty": "hard",
       "questionText": "What is required for a licensee to use a UCC form in a transaction?",
       "options": [
-        "A) The form must be pre-approved by the REEB",
-        "B) The licensee must file the form with the Department of Safety and Professional Services",
-        "C) The licensee must be competent or refer the task to an attorney",
-        "D) The licensee must have experience with at least five prior UCC transactions"
+        "The form must be pre-approved by the REEB",
+        "The licensee must file the form with the Department of Safety and Professional Services",
+        "The licensee must be competent or refer the task to an attorney",
+        "The licensee must have experience with at least five prior UCC transactions"
       ],
-      "correctOption": 2,
+      "correctAnswer": "The licensee must be competent or refer the task to an attorney",
       "explanation": "UCC forms require competence or attorney involvement to ensure compliance."
     },
     {
-      "id": 58,
-      "difficulty": "hard",
       "questionText": "What is the consequence of using a pre-prepared addendum that includes multiple-choice provisions?",
       "options": [
-        "A) It must be reviewed and approved by an attorney",
-        "B) It violates Wisconsin law and cannot be used",
-        "C) It is valid if signed by both parties",
-        "D) It becomes optional for inclusion in the contract"
+        "It must be reviewed and approved by an attorney",
+        "It violates Wisconsin law and cannot be used",
+        "It is valid if signed by both parties",
+        "It becomes optional for inclusion in the contract"
       ],
-      "correctOption": 1,
+      "correctAnswer": "It violates Wisconsin law and cannot be used",
       "explanation": "Pre-prepared addenda cannot include multiple-choice provisions."
     },
     {
-      "id": 59,
-      "difficulty": "hard",
       "questionText": "What must a licensee do when presented with a seller-drafted listing contract?",
       "options": [
-        "A) Refuse to use the contract",
-        "B) Ensure the contract complies with Wisconsin law and agency disclosures",
-        "C) Rewrite the contract to meet WB standards",
-        "D) Have it reviewed by the REEB before signing"
+        "Refuse to use the contract",
+        "Ensure the contract complies with Wisconsin law and agency disclosures",
+        "Rewrite the contract to meet WB standards",
+        "Have it reviewed by the REEB before signing"
       ],
-      "correctOption": 1,
+      "correctAnswer": "Ensure the contract complies with Wisconsin law and agency disclosures",
       "explanation": "The licensee must ensure compliance with Wisconsin law and agency disclosure requirements."
     },
     {
-      "id": 60,
-      "difficulty": "hard",
       "questionText": "What is the primary purpose of Wis. Stat. § 706.02(2) regarding addenda?",
       "options": [
-        "A) To require all addenda to be signed by an attorney",
-        "B) To ensure addenda are properly incorporated into the transaction documents",
-        "C) To mandate that addenda replace optional provisions only",
-        "D) To allow addenda to stand alone as independent agreements"
+        "To require all addenda to be signed by an attorney",
+        "To ensure addenda are properly incorporated into the transaction documents",
+        "To mandate that addenda replace optional provisions only",
+        "To allow addenda to stand alone as independent agreements"
       ],
-      "correctOption": 1,
+      "correctAnswer": "To ensure addenda are properly incorporated into the transaction documents",
       "explanation": "This statute ensures addenda are properly incorporated into transaction documents to document the agreement."
+    },
+    {
+      "questionText": "What is the primary role of the Real Estate Examining Board (REEB)?",
+      "options": [
+        "Enforcing ethical standards",
+        "Creating educational programs for licensees",
+        "Approving real estate forms and managing disciplinary actions",
+        "Mediating disputes between buyers and sellers"
+      ],
+      "correctAnswer": "Approving real estate forms and managing disciplinary actions",
+      "explanation": "The REEB oversees licensing, approves forms, and handles discipline for violations."
+    },
+    {
+      "questionText": "Which action violates Wisconsin real estate licensee regulations?",
+      "options": [
+        "Explaining form provisions",
+        "Drafting a new form for a unique transaction",
+        "Using an attorney-prepared addendum",
+        "Reproducing approved forms with permission"
+      ],
+      "correctAnswer": "Drafting a new form for a unique transaction",
+      "explanation": "Licensees cannot draft new forms; they must use approved or attorney-prepared forms."
+    },
+    {
+      "questionText": "What is required for a form modification to be valid?",
+      "options": [
+        "Approval from the REEB",
+        "Use of addenda or blank lines provided",
+        "Broker’s signature",
+        "A separate document outlining changes"
+      ],
+      "correctAnswer": "Use of addenda or blank lines provided",
+      "explanation": "Modifications must be made using addenda or blank lines within approved forms."
+    },
+    {
+      "questionText": "What is an example of \"material adverse fact\"?",
+      "options": [
+        "A property located near a noisy area",
+        "A minor cosmetic defect",
+        "Structural damage impacting safety",
+        "A seller’s personal dispute with neighbors"
+      ],
+      "correctAnswer": "Structural damage impacting safety",
+      "explanation": "Material adverse facts must affect the property’s value or safety."
+    },
+    {
+      "questionText": "What is the main purpose of the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "To finalize the terms of sale",
+        "To initiate the negotiation process",
+        "To present a buyer’s offer in a legally binding format",
+        "To outline a buyer’s preliminary interest"
+      ],
+      "correctAnswer": "To present a buyer’s offer in a legally binding format",
+      "explanation": "The WB-11 creates a legally binding offer once accepted."
+    },
+    {
+      "questionText": "What distinguishes a WB-46 Multiple Counter-Proposal from a WB-44 Counter-Offer?",
+      "options": [
+        "A WB-46 is binding upon delivery",
+        "A WB-46 allows negotiation with multiple buyers simultaneously",
+        "A WB-44 provides additional legal protections",
+        "A WB-44 cannot be modified after acceptance"
+      ],
+      "correctAnswer": "A WB-46 allows negotiation with multiple buyers simultaneously",
+      "explanation": "A WB-46 permits non-binding proposals to multiple buyers."
+    },
+    {
+      "questionText": "What happens if the seller misses the deadline to respond to an amendment?",
+      "options": [
+        "The amendment is automatically accepted",
+        "The original offer remains in effect",
+        "The buyer’s offer becomes null and void",
+        "The buyer is entitled to terminate the contract"
+      ],
+      "correctAnswer": "The original offer remains in effect",
+      "explanation": "If the seller does not agree, the terms of the original offer remain unchanged."
+    },
+    {
+      "questionText": "What must be included in a buyer’s inspection contingency notice of defects?",
+      "options": [
+        "A repair estimate",
+        "A copy of the inspection report",
+        "The buyer’s proposed remedy",
+        "A list of defects with no further documentation"
+      ],
+      "correctAnswer": "A copy of the inspection report",
+      "explanation": "The inspection report must accompany the notice of defects."
+    },
+    {
+      "questionText": "Under what condition does a WB-45 Cancellation Agreement and Mutual Release become effective?",
+      "options": [
+        "Once signed by the buyer",
+        "Once signed by both parties",
+        "Upon approval by the REEB",
+        "When filed with the title company"
+      ],
+      "correctAnswer": "Once signed by both parties",
+      "explanation": "Both parties must sign the agreement for it to be effective."
+    },
+    {
+      "questionText": "What is the consequence of delivering earnest money late?",
+      "options": [
+        "Automatic contract termination",
+        "A breach of contract",
+        "Seller’s option to terminate the contract",
+        "Requirement for buyer to pay penalties"
+      ],
+      "correctAnswer": "Seller’s option to terminate the contract",
+      "explanation": "Late delivery of earnest money gives the seller grounds to terminate the offer."
+    },
+    {
+      "questionText": "What is the impact of a protected buyer list on a new listing firm?",
+      "options": [
+        "It limits the new firm’s marketing options",
+        "It prevents the new firm from earning commission from protected buyers",
+        "It requires the new firm to cooperate with the previous firm",
+        "It ensures the seller is responsible for damages caused by non-delivery"
+      ],
+      "correctAnswer": "It prevents the new firm from earning commission from protected buyers",
+      "explanation": "Protected buyers are excluded from earning commissions for the new firm."
+    },
+    {
+      "questionText": "When is a seller required to disclose a property defect?",
+      "options": [
+        "If the buyer requests an inspection",
+        "If the defect is considered a material adverse fact",
+        "Only after the buyer’s earnest money is paid",
+        "Only when the defect impacts the property’s value"
+      ],
+      "correctAnswer": "If the defect is considered a material adverse fact",
+      "explanation": "Material adverse facts must always be disclosed."
+    },
+    {
+      "questionText": "What happens if a seller rejects a buyer’s notice of defects and the buyer granted no right to cure?",
+      "options": [
+        "The buyer forfeits earnest money",
+        "The offer becomes null and void",
+        "The buyer must revise the notice",
+        "The seller must accept the notice"
+      ],
+      "correctAnswer": "The offer becomes null and void",
+      "explanation": "Without the right to cure, the offer becomes void upon defect notice rejection."
+    },
+    {
+      "questionText": "What is the purpose of an addendum in a real estate transaction?",
+      "options": [
+        "To clarify agency relationships",
+        "To add or modify terms not covered in the main contract",
+        "To terminate a listing agreement",
+        "To summarize the primary contract terms"
+      ],
+      "correctAnswer": "To add or modify terms not covered in the main contract",
+      "explanation": "Addenda are used to add or modify terms."
+    },
+    {
+      "questionText": "What defines a protected property under a WB-36 Buyer Agency Agreement?",
+      "options": [
+        "A property visited by the buyer with their agent",
+        "A property previously viewed by any buyer",
+        "A property listed after the agreement is signed",
+        "A property for which the buyer submits an offer"
+      ],
+      "correctAnswer": "A property for which the buyer submits an offer",
+      "explanation": "Protected properties include those where offers were submitted during the agreement term."
+    },
+    {
+      "questionText": "Under what circumstance can a licensee legally line out a provision in an approved form?",
+      "options": [
+        "When it reflects the client’s instructions and remains legible",
+        "When the provision is outdated or irrelevant",
+        "Upon approval by the supervising broker",
+        "If the licensee believes the provision is unnecessary"
+      ],
+      "correctAnswer": "When it reflects the client’s instructions and remains legible",
+      "explanation": "Licensees can cross out provisions only when it reflects a client’s explicit instructions and the text remains legible."
+    },
+    {
+      "questionText": "What happens if a buyer delivers earnest money to the wrong party?",
+      "options": [
+        "The contract becomes void",
+        "The buyer forfeits the earnest money",
+        "The seller can terminate the contract",
+        "The transaction is delayed until proper payment is made"
+      ],
+      "correctAnswer": "The transaction is delayed until proper payment is made",
+      "explanation": "Incorrect delivery of earnest money must be rectified to proceed, potentially delaying the transaction."
+    },
+    {
+      "questionText": "What distinguishes a WB-40 Amendment from a WB-41 Notice in an inspection contingency?",
+      "options": [
+        "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+        "A WB-41 requires both parties’ agreement; a WB-40 does not",
+        "A WB-41 applies only to inspection contingencies; a WB-40 applies to all terms",
+        "A WB-40 terminates the contract if not accepted; a WB-41 does not"
+      ],
+      "correctAnswer": "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+      "explanation": "An amendment modifies terms, while a notice alerts the other party without changing the contract."
+    },
+    {
+      "questionText": "How does a buyer waive their financing contingency in the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "By verbal agreement with the seller",
+        "Through a WB-41 Notice delivered to the seller",
+        "By crossing out the financing contingency section",
+        "Through written notice accompanied by verification of funds"
+      ],
+      "correctAnswer": "Through written notice accompanied by verification of funds",
+      "explanation": "Waiving financing requires written notice and evidence of the buyer’s financial capability."
+    },
+    {
+      "questionText": "What is required for a listing firm to earn commission when a protected buyer purchases the property?",
+      "options": [
+        "The protected buyer must submit a new offer after the listing expires",
+        "The seller must accept the offer within one year of contract expiration",
+        "The seller must provide the protected buyer list to the new listing firm",
+        "The protected buyer must have viewed the property with the seller’s agent"
+      ],
+      "correctAnswer": "The seller must accept the offer within one year of contract expiration",
+      "explanation": "Protected buyers ensure commission if they purchase within the one-year protection period."
+    },
+    {
+      "questionText": "What legal standard governs the calculation of prorations at closing?",
+      "options": [
+        "The seller’s estimate of current property taxes",
+        "The previous year’s tax bill unless otherwise stated",
+        "A mutually agreed percentage of the purchase price",
+        "The buyer’s financial institution’s calculation"
+      ],
+      "correctAnswer": "The previous year’s tax bill unless otherwise stated",
+      "explanation": "Prorations default to the previous year’s tax bill unless specified otherwise."
+    },
+    {
+      "questionText": "When does a WB-46 Multiple Counter-Proposal become a binding contract?",
+      "options": [
+        "When signed by all potential buyers",
+        "Upon acceptance by one buyer and notification to the seller",
+        "When the seller selects and signs the most favorable offer",
+        "Upon delivery to the first buyer who signs the proposal"
+      ],
+      "correctAnswer": "When the seller selects and signs the most favorable offer",
+      "explanation": "A WB-46 becomes binding only when the seller selects and accepts an offer."
+    },
+    {
+      "questionText": "What must a buyer do if their financing is unavailable by the deadline?",
+      "options": [
+        "Deliver a loan rejection notice and terminate the offer",
+        "Seek alternative financing within 30 days",
+        "Notify the seller and revise the purchase price",
+        "Request an extension from the seller in writing"
+      ],
+      "correctAnswer": "Deliver a loan rejection notice and terminate the offer",
+      "explanation": "The buyer must deliver a loan rejection notice and terminate or renegotiate the offer."
+    },
+    {
+      "questionText": "What is the seller’s obligation under the WB-1 Listing Contract regarding adverse facts?",
+      "options": [
+        "To disclose only upon buyer inquiry",
+        "To provide written notice before accepting an offer",
+        "To disclose material adverse facts in writing at any time",
+        "To rely on the licensee to determine necessary disclosures"
+      ],
+      "correctAnswer": "To disclose material adverse facts in writing at any time",
+      "explanation": "Sellers must disclose material adverse facts in writing to all parties."
+    },
+    {
+      "questionText": "When is a counter-offer considered rejected?",
+      "options": [
+        "Upon verbal notification from the other party",
+        "If the other party does not sign and return it by the deadline",
+        "When the other party makes a new offer",
+        "When the counter-offer is withdrawn in writing"
+      ],
+      "correctAnswer": "If the other party does not sign and return it by the deadline",
+      "explanation": "A counter-offer is rejected if not signed and returned by the specified deadline."
+    },
+    {
+      "questionText": "What defines a “defect” in a WB-11 Residential Offer to Purchase?",
+      "options": [
+        "Any issue requiring professional repair",
+        "A condition that substantially affects property safety or value",
+        "A material adverse fact that is not disclosed",
+        "Any damage exceeding 5% of the purchase price"
+      ],
+      "correctAnswer": "A condition that substantially affects property safety or value",
+      "explanation": "Defects are conditions affecting the property’s safety, value, or habitability."
+    },
+    {
+      "questionText": "What must the seller provide for leased properties at closing?",
+      "options": [
+        "Copies of all leases signed within the last year",
+        "Tenant contact information and lease summaries",
+        "All security deposits and prepaid rents",
+        "Written notice of lease termination"
+      ],
+      "correctAnswer": "All security deposits and prepaid rents",
+      "explanation": "Security deposits and prepaid rents must be transferred to the buyer at closing."
+    },
+    {
+      "questionText": "How can a seller mitigate risk from wire fraud in real estate transactions?",
+      "options": [
+        "Use personal email accounts for all communications",
+        "Provide detailed wiring instructions to the buyer",
+        "Avoid electronic fund transfers entirely",
+        "Use secure communication channels for wire instructions"
+      ],
+      "correctAnswer": "Use secure communication channels for wire instructions",
+      "explanation": "Secure channels reduce the risk of wire fraud in transactions."
+    },
+    {
+      "questionText": "What action constitutes an unauthorized practice of law for a real estate licensee?",
+      "options": [
+        "Explaining the purpose of a form",
+        "Advising on the legal effect of a contract clause",
+        "Delivering an attorney-prepared addendum",
+        "Filling in blanks on an approved form"
+      ],
+      "correctAnswer": "Advising on the legal effect of a contract clause",
+      "explanation": "Licensees cannot advise on the legal implications of contract terms."
+    },
+    {
+      "questionText": "What is the primary limitation of using UCC forms in a transaction involving business personal property?",
+      "options": [
+        "They cannot be used without prior approval from the REEB",
+        "They must be filed with the Department of Financial Institutions",
+        "Only brokers can complete UCC forms, and competence must be ensured",
+        "They are restricted to transactions involving residential properties"
+      ],
+      "correctAnswer": "Only brokers can complete UCC forms, and competence must be ensured",
+      "explanation": "Only brokers can complete UCC forms, and they must be competent to do so or refer the task to an attorney."
+    },
+    {
+      "questionText": "What must be included in a property management agreement for it to be considered an approved form under Wisconsin law?",
+      "options": [
+        "A list of specific tenants",
+        "Provisions for leasing, managing, and marketing the property",
+        "A copy of the WB-37 Residential Listing Contract",
+        "A notarized statement from the landlord"
+      ],
+      "correctAnswer": "Provisions for leasing, managing, and marketing the property",
+      "explanation": "Approved property management agreements must include provisions for leasing, managing, and marketing the property."
+    },
+    {
+      "questionText": "What happens if a seller fails to provide a Real Estate Condition Report within the required timeframe?",
+      "options": [
+        "The buyer can terminate the contract within two business days of the missed deadline",
+        "The contract becomes void immediately",
+        "The seller must pay a penalty fee",
+        "The buyer must proceed with the transaction without the report"
+      ],
+      "correctAnswer": "The buyer can terminate the contract within two business days of the missed deadline",
+      "explanation": "The buyer has two business days to terminate the contract if the seller misses the deadline for providing the report."
+    },
+    {
+      "questionText": "Under what circumstances can a licensee draft an addendum without attorney involvement?",
+      "options": [
+        "When it modifies non-optional provisions",
+        "When it addresses only specific contingencies unique to a transaction",
+        "When it involves legal provisions like environmental liability waivers",
+        "When it rewrites the optional provisions of an approved form"
+      ],
+      "correctAnswer": "When it addresses only specific contingencies unique to a transaction",
+      "explanation": "Licensees can draft one-time use addenda to address specific transaction circumstances."
+    },
+    {
+      "questionText": "What must a broker consider before using another state’s form in a transaction?",
+      "options": [
+        "Whether the form complies with Wisconsin law",
+        "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+        "Whether the REEB has approved the form for interstate use",
+        "Whether the client has requested the form’s use"
+      ],
+      "correctAnswer": "Whether the broker is legally permitted and competent to use the form under that state’s laws",
+      "explanation": "Brokers must ensure they are legally permitted and competent to use another state’s form."
+    },
+    {
+      "questionText": "What is a key consideration when using another state’s real estate forms?",
+      "options": [
+        "Ensuring the form is notarized",
+        "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+        "Verifying that the form aligns with Wisconsin statutes",
+        "Confirming it is a WB-approved form"
+      ],
+      "correctAnswer": "Determining if the licensee is competent and permitted to use the form under that state’s laws",
+      "explanation": "Licensees must ensure competence and compliance with the laws of the other state."
+    },
+    {
+      "questionText": "What is a limitation of a licensee acting as a property manager?",
+      "options": [
+        "They cannot sign rental agreements",
+        "They must hold a real estate license if signing or negotiating leases",
+        "They are prohibited from marketing rental properties",
+        "They cannot perform maintenance tasks"
+      ],
+      "correctAnswer": "They must hold a real estate license if signing or negotiating leases",
+      "explanation": "Signing or negotiating leases requires a real estate license."
+    },
+    {
+      "questionText": "What must be included in a property management agreement?",
+      "options": [
+        "A complete listing of tenants",
+        "Provisions for leasing, marketing, and overall management",
+        "Standard addenda for residential properties",
+        "Pre-approval by the REEB"
+      ],
+      "correctAnswer": "Provisions for leasing, marketing, and overall management",
+      "explanation": "Property management agreements must include provisions for leasing, marketing, and management."
+    },
+    {
+      "questionText": "When must a licensee inspect a property and ask the seller about its condition?",
+      "options": [
+        "Before marketing the property",
+        "After an offer is accepted",
+        "Only if the property is commercial",
+        "When the buyer requests it"
+      ],
+      "correctAnswer": "Before marketing the property",
+      "explanation": "Licensees must inspect the property and ask the seller about its condition before marketing it."
+    },
+    {
+      "questionText": "What is required for a licensee to use a UCC form in a transaction?",
+      "options": [
+        "The form must be pre-approved by the REEB",
+        "The licensee must file the form with the Department of Safety and Professional Services",
+        "The licensee must be competent or refer the task to an attorney",
+        "The licensee must have experience with at least five prior UCC transactions"
+      ],
+      "correctAnswer": "The licensee must be competent or refer the task to an attorney",
+      "explanation": "UCC forms require competence or attorney involvement to ensure compliance."
+    },
+    {
+      "questionText": "What is the consequence of using a pre-prepared addendum that includes multiple-choice provisions?",
+      "options": [
+        "It must be reviewed and approved by an attorney",
+        "It violates Wisconsin law and cannot be used",
+        "It is valid if signed by both parties",
+        "It becomes optional for inclusion in the contract"
+      ],
+      "correctAnswer": "It violates Wisconsin law and cannot be used",
+      "explanation": "Pre-prepared addenda cannot include multiple-choice provisions."
+    },
+    {
+      "questionText": "What must a licensee do when presented with a seller-drafted listing contract?",
+      "options": [
+        "Refuse to use the contract",
+        "Ensure the contract complies with Wisconsin law and agency disclosures",
+        "Rewrite the contract to meet WB standards",
+        "Have it reviewed by the REEB before signing"
+      ],
+      "correctAnswer": "Ensure the contract complies with Wisconsin law and agency disclosures",
+      "explanation": "The licensee must ensure compliance with Wisconsin law and agency disclosure requirements."
+    },
+    {
+      "questionText": "What is the primary purpose of Wis. Stat. § 706.02(2) regarding addenda?",
+      "options": [
+        "To require all addenda to be signed by an attorney",
+        "To ensure addenda are properly incorporated into the transaction documents",
+        "To mandate that addenda replace optional provisions only",
+        "To allow addenda to stand alone as independent agreements"
+      ],
+      "correctAnswer": "To ensure addenda are properly incorporated into the transaction documents",
+      "explanation": "This statute ensures addenda are properly incorporated into transaction documents to document the agreement."
+    },
+    {
+      "questionText": "What is the primary role of the Real Estate Examining Board (REEB)?",
+      "options": [
+        "Enforcing ethical standards",
+        "Creating educational programs for licensees",
+        "Approving real estate forms and managing disciplinary actions",
+        "Mediating disputes between buyers and sellers"
+      ],
+      "correctAnswer": "Approving real estate forms and managing disciplinary actions",
+      "explanation": "The REEB oversees licensing, approves forms, and handles discipline for violations."
+    },
+    {
+      "questionText": "Which action violates Wisconsin real estate licensee regulations?",
+      "options": [
+        "Explaining form provisions",
+        "Drafting a new form for a unique transaction",
+        "Using an attorney-prepared addendum",
+        "Reproducing approved forms with permission"
+      ],
+      "correctAnswer": "Drafting a new form for a unique transaction",
+      "explanation": "Licensees cannot draft new forms; they must use approved or attorney-prepared forms."
+    },
+    {
+      "questionText": "What is required for a form modification to be valid?",
+      "options": [
+        "Approval from the REEB",
+        "Use of addenda or blank lines provided",
+        "Broker’s signature",
+        "A separate document outlining changes"
+      ],
+      "correctAnswer": "Use of addenda or blank lines provided",
+      "explanation": "Modifications must be made using addenda or blank lines within approved forms."
+    },
+    {
+      "questionText": "What is an example of \"material adverse fact\"?",
+      "options": [
+        "A property located near a noisy area",
+        "A minor cosmetic defect",
+        "Structural damage impacting safety",
+        "A seller’s personal dispute with neighbors"
+      ],
+      "correctAnswer": "Structural damage impacting safety",
+      "explanation": "Material adverse facts must affect the property’s value or safety."
+    },
+    {
+      "questionText": "What is the main purpose of the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "To finalize the terms of sale",
+        "To initiate the negotiation process",
+        "To present a buyer’s offer in a legally binding format",
+        "To outline a buyer’s preliminary interest"
+      ],
+      "correctAnswer": "To present a buyer’s offer in a legally binding format",
+      "explanation": "The WB-11 creates a legally binding offer once accepted."
+    },
+    {
+      "questionText": "What distinguishes a WB-46 Multiple Counter-Proposal from a WB-44 Counter-Offer?",
+      "options": [
+        "A WB-46 is binding upon delivery",
+        "A WB-46 allows negotiation with multiple buyers simultaneously",
+        "A WB-44 provides additional legal protections",
+        "A WB-44 cannot be modified after acceptance"
+      ],
+      "correctAnswer": "A WB-46 allows negotiation with multiple buyers simultaneously",
+      "explanation": "A WB-46 permits non-binding proposals to multiple buyers."
+    },
+    {
+      "questionText": "What happens if the seller misses the deadline to respond to an amendment?",
+      "options": [
+        "The amendment is automatically accepted",
+        "The original offer remains in effect",
+        "The buyer’s offer becomes null and void",
+        "The buyer is entitled to terminate the contract"
+      ],
+      "correctAnswer": "The original offer remains in effect",
+      "explanation": "If the seller does not agree, the terms of the original offer remain unchanged."
+    },
+    {
+      "questionText": "What must be included in a buyer’s inspection contingency notice of defects?",
+      "options": [
+        "A repair estimate",
+        "A copy of the inspection report",
+        "The buyer’s proposed remedy",
+        "A list of defects with no further documentation"
+      ],
+      "correctAnswer": "A copy of the inspection report",
+      "explanation": "The inspection report must accompany the notice of defects."
+    },
+    {
+      "questionText": "Under what condition does a WB-45 Cancellation Agreement and Mutual Release become effective?",
+      "options": [
+        "Once signed by the buyer",
+        "Once signed by both parties",
+        "Upon approval by the REEB",
+        "When filed with the title company"
+      ],
+      "correctAnswer": "Once signed by both parties",
+      "explanation": "Both parties must sign the agreement for it to be effective."
+    },
+    {
+      "questionText": "What is the consequence of delivering earnest money late?",
+      "options": [
+        "Automatic contract termination",
+        "A breach of contract",
+        "Seller’s option to terminate the contract",
+        "Requirement for buyer to pay penalties"
+      ],
+      "correctAnswer": "Seller’s option to terminate the contract",
+      "explanation": "Late delivery of earnest money gives the seller grounds to terminate the offer."
+    },
+    {
+      "questionText": "What is the impact of a protected buyer list on a new listing firm?",
+      "options": [
+        "It limits the new firm’s marketing options",
+        "It prevents the new firm from earning commission from protected buyers",
+        "It requires the new firm to cooperate with the previous firm",
+        "It ensures the seller is responsible for damages caused by non-delivery"
+      ],
+      "correctAnswer": "It prevents the new firm from earning commission from protected buyers",
+      "explanation": "Protected buyers are excluded from earning commissions for the new firm."
+    },
+    {
+      "questionText": "When is a seller required to disclose a property defect?",
+      "options": [
+        "If the buyer requests an inspection",
+        "If the defect is considered a material adverse fact",
+        "Only after the buyer’s earnest money is paid",
+        "Only when the defect impacts the property’s value"
+      ],
+      "correctAnswer": "If the defect is considered a material adverse fact",
+      "explanation": "Material adverse facts must always be disclosed."
+    },
+    {
+      "questionText": "What happens if a seller rejects a buyer’s notice of defects and the buyer granted no right to cure?",
+      "options": [
+        "The buyer forfeits earnest money",
+        "The offer becomes null and void",
+        "The buyer must revise the notice",
+        "The seller must accept the notice"
+      ],
+      "correctAnswer": "The offer becomes null and void",
+      "explanation": "Without the right to cure, the offer becomes void upon defect notice rejection."
+    },
+    {
+      "questionText": "What is the purpose of an addendum in a real estate transaction?",
+      "options": [
+        "To clarify agency relationships",
+        "To add or modify terms not covered in the main contract",
+        "To terminate a listing agreement",
+        "To summarize the primary contract terms"
+      ],
+      "correctAnswer": "To add or modify terms not covered in the main contract",
+      "explanation": "Addenda are used to add or modify terms."
+    },
+    {
+      "questionText": "What defines a protected property under a WB-36 Buyer Agency Agreement?",
+      "options": [
+        "A property visited by the buyer with their agent",
+        "A property previously viewed by any buyer",
+        "A property listed after the agreement is signed",
+        "A property for which the buyer submits an offer"
+      ],
+      "correctAnswer": "A property for which the buyer submits an offer",
+      "explanation": "Protected properties include those where offers were submitted during the agreement term."
+    },
+    {
+      "questionText": "Under what circumstance can a licensee legally line out a provision in an approved form?",
+      "options": [
+        "When it reflects the client’s instructions and remains legible",
+        "When the provision is outdated or irrelevant",
+        "Upon approval by the supervising broker",
+        "If the licensee believes the provision is unnecessary"
+      ],
+      "correctAnswer": "When it reflects the client’s instructions and remains legible",
+      "explanation": "Licensees can cross out provisions only when it reflects a client’s explicit instructions and the text remains legible."
+    },
+    {
+      "questionText": "What happens if a buyer delivers earnest money to the wrong party?",
+      "options": [
+        "The contract becomes void",
+        "The buyer forfeits the earnest money",
+        "The seller can terminate the contract",
+        "The transaction is delayed until proper payment is made"
+      ],
+      "correctAnswer": "The transaction is delayed until proper payment is made",
+      "explanation": "Incorrect delivery of earnest money must be rectified to proceed, potentially delaying the transaction."
+    },
+    {
+      "questionText": "What distinguishes a WB-40 Amendment from a WB-41 Notice in an inspection contingency?",
+      "options": [
+        "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+        "A WB-41 requires both parties’ agreement; a WB-40 does not",
+        "A WB-41 applies only to inspection contingencies; a WB-40 applies to all terms",
+        "A WB-40 terminates the contract if not accepted; a WB-41 does not"
+      ],
+      "correctAnswer": "A WB-40 changes the contract terms; a WB-41 simply notifies of an event",
+      "explanation": "An amendment modifies terms, while a notice alerts the other party without changing the contract."
+    },
+    {
+      "questionText": "How does a buyer waive their financing contingency in the WB-11 Residential Offer to Purchase?",
+      "options": [
+        "By verbal agreement with the seller",
+        "Through a WB-41 Notice delivered to the seller",
+        "By crossing out the financing contingency section",
+        "Through written notice accompanied by verification of funds"
+      ],
+      "correctAnswer": "Through written notice accompanied by verification of funds",
+      "explanation": "Waiving financing requires written notice and evidence of the buyer’s financial capability."
     }
   ]
 }
