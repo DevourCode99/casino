@@ -443,16 +443,23 @@ async function startQuiz() {
     allFetched = await fetchSingleChapter(chapterValue);
   }
 
+  // Randomize entire question set
   shuffleArray(allFetched);
+
+  // Slice to user's chosen question count
   currentQuestions = allFetched.slice(0, questionCount);
-  // Also randomize each question's answers
-  currentQuestions.forEach(q => shuffleArray(q.options));
+
+  // Shuffle each question's options, THEN set the correct option index
+  currentQuestions.forEach(q => {
+    shuffleArray(q.options);
+    // ******* The key fix: match correctAnswer to its new index *******
+    q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
+  });
 
   if (chosenFormat === 'allAtOnce') {
     userAnswers = [];
     nextQuestionBtn.style.display = 'none';
     submitBtn.style.display       = 'inline-block';
-
     renderAllAtOnceMode(currentQuestions);
   } else {
     // One at a time
@@ -482,7 +489,6 @@ async function fetchAllChapters() {
 
 async function fetchSingleChapter(chapterNumber) {
   const url = `./data/chapter${chapterNumber}.json`;
-  // Adjust for GitHub raw link if needed
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -564,8 +570,11 @@ function showNextOneAtATimeQuestion() {
   const gridDiv = document.createElement('div');
   gridDiv.classList.add('options-grid');
 
-  // Make sure answers are scrambled anew (just to be safe)
+  // (Re)shuffle to ensure answers are scrambled each time displayed
   shuffleArray(qData.options);
+
+  // After re-shuffle, figure out the correct index again
+  qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
   qData.options.forEach((optText, optIdx) => {
     const blockDiv = document.createElement('div');
@@ -635,6 +644,7 @@ function handleNextQuestion() {
 function handleSubmitQuiz() {
   let score = 0;
   currentQuestions.forEach((q, i) => {
+    // Compare user's chosen index with q.correctOption
     if (userAnswers[i] === q.correctOption) {
       score++;
     }
