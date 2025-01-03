@@ -2,608 +2,453 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Real Estate Contract Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real Estate Broker Quiz</title>
   <style>
+    /* =======================
+       BASIC RESET & STYLES
+       ======================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background-color: #f9f9f9;
+      padding: 20px;
     }
-    header {
-      background: #4682B4;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
     }
-    .quiz-container {
+
+    .container {
       max-width: 800px;
-      margin: 2rem auto;
+      margin: 0 auto;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      overflow: hidden;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
     }
-    .question {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .question h2 {
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-    .choices {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .choices li {
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      cursor: pointer;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      transition: background 0.3s;
-    }
-    .choices li:hover {
-      background: #f2f2f2;
-    }
-    .choices li.correct {
-      background: #c8ffc8 !important;
-      border-color: #4CAF50;
-    }
-    .choices li.wrong {
-      background: #ffc8c8 !important;
-      border-color: #f44336;
-    }
-    .feedback {
-      margin-top: 1rem;
-      font-style: italic;
-    }
-    .btn-container {
+
+    /* =======================
+       START MENU STYLES
+       ======================= */
+    #start-menu h1 {
       text-align: center;
-      padding: 1rem;
+      margin-bottom: 20px;
     }
-    button {
-      background: #4682B4;
-      color: white;
-      padding: 0.8rem 1.5rem;
+
+    .menu-block {
+      margin: 15px 0;
+    }
+
+    label {
+      margin-right: 5px;
+    }
+
+    select, button {
+      padding: 6px 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    .btn {
+      padding: 8px 15px;
+      margin: 5px 0;
+      background: #3b82f6;
+      color: #fff;
       border: none;
-      border-radius: 4px;
       cursor: pointer;
-      margin: 0.5rem;
-      font-size: 1rem;
+      border-radius: 3px;
+      transition: background 0.2s ease-in-out;
     }
-    button:hover {
-      background: #356189;
+
+    .btn:hover {
+      background: #2563eb;
     }
-    #reviewSection {
+
+    /* =======================
+       QUIZ SECTION STYLES
+       ======================= */
+    #quiz-section {
+      display: none; /* Hide by default, show when user starts a quiz */
+    }
+
+    .question-container {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .question-container h3 {
+      margin-bottom: 8px;
+    }
+
+    .options-container {
+      margin-left: 20px;
+    }
+
+    /* =======================
+       RESULT SECTION STYLES
+       ======================= */
+    #result-screen {
       display: none;
-      margin: 2rem auto;
-      max-width: 800px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    #reviewSection h2 {
       text-align: center;
-      padding-top: 1rem;
     }
-    .review-item {
-      border-bottom: 1px solid #eee;
-      padding: 1rem;
+
+    #result-screen h2 {
+      margin-bottom: 10px;
     }
-    .review-item h3 {
-      margin-bottom: 0.4rem;
-    }
-    .review-item p {
-      margin: 0.2rem 0;
-    }
-    /* Fullscreen button styling */
-    #fullscreenBtn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: #333;
-      border: none;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #fullscreenBtn:hover {
-      background-color: #555;
-    }
+
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Real Estate Contract Quiz</h1>
-</header>
+  <div class="container">
 
-<button id="fullscreenBtn">Enable Fullscreen</button>
+    <!-- =============== START MENU =============== -->
+    <div id="start-menu">
+      <h1>Real Estate Broker Quiz</h1>
 
-<div class="quiz-container" id="quizContainer"></div>
+      <!-- Option 1: Timed Test (example) -->
+      <button class="btn" id="timed-test-btn">Take a Timed Test</button>
+      
+      <!-- Option 2: Select Questions by Chapter -->
+      <div class="menu-block">
+        <label for="chapter-select">Select Chapter (1-12): </label>
+        <select id="chapter-select">
+          <option value="">--Choose Chapter--</option>
+          <option value="1">Chapter 1</option>
+          <option value="2">Chapter 2</option>
+          <option value="3">Chapter 3</option>
+          <option value="4">Chapter 4</option>
+          <option value="5">Chapter 5</option>
+          <option value="6">Chapter 6</option>
+          <option value="7">Chapter 7</option>
+          <option value="8">Chapter 8</option>
+          <option value="9">Chapter 9</option>
+          <option value="10">Chapter 10</option>
+          <option value="11">Chapter 11</option>
+          <option value="12">Chapter 12</option>
+        </select>
+        
+        <label for="chapter-question-count">Questions: </label>
+        <select id="chapter-question-count">
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+          <option value="85">85</option>
+          <option value="100">100</option>
+        </select>
 
-<div class="btn-container">
-  <button id="submitQuiz">Submit Quiz</button>
-</div>
+        <button class="btn" id="chapter-test-btn">Take Chapter Test</button>
+      </div>
 
-<div id="reviewSection">
-  <h2>Review Your Answers</h2>
-  <div id="reviewContainer"></div>
-</div>
+      <!-- Option 3: Questions from All Chapters -->
+      <div class="menu-block">
+        <label for="all-chapter-question-count">All Chapters - Questions: </label>
+        <select id="all-chapter-question-count">
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+          <option value="85">85</option>
+          <option value="100">100</option>
+        </select>
+        <button class="btn" id="all-chapters-test-btn">All Chapters Test</button>
+      </div>
 
-<script>
-  /************************************************
-   * QUIZ DATA
-   ***********************************************/
-  const quizData = [
-    {
-      question: "Question 1: What is the primary purpose of a contract in real estate?",
-      choices: [
-        "A) To define property dimensions",
-        "B) To establish a legally enforceable agreement",
-        "C) To list local property taxes",
-        "D) To set interest rates"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Contracts establish obligations and rights that courts can enforce, which is the cornerstone of real estate transactions."
-    },
-    {
-      question: "Question 2: What is required for a contract to be enforceable?",
-      choices: [
-        "A) It must be verbal",
-        "B) It must be in writing and signed",
-        "C) It must include pictures of the property",
-        "D) It must be notarized"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Wisconsin law requires real estate contracts to be in writing and signed to be enforceable."
-    },
-    {
-      question: "Question 3: Who are the parties in a lease contract?",
-      choices: [
-        "A) Lessor and lessee",
-        "B) Buyer and seller",
-        "C) Firm and client",
-        "D) Broker and tenant"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "In lease agreements, the landlord (lessor) leases property to the tenant (lessee)."
-    },
-    {
-      question: "Question 4: What does 'time is of the essence' mean in a contract?",
-      choices: [
-        "A) Deadlines are flexible",
-        "B) Deadlines must be strictly adhered to",
-        "C) Deadlines can be negotiated later",
-        "D) Deadlines are suggested but not required"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "When 'time is of the essence' is stated, missing deadlines can lead to breaches."
-    },
-    {
-      question: "Question 5: What type of document evidences a real estate transaction?",
-      choices: [
-        "A) Receipt",
-        "B) Memorandum",
-        "C) Conveyance",
-        "D) Invoice"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Conveyances such as deeds or recorded leases are the evidence required for real estate transactions."
-    },
-    {
-      question: "Question 6: Which of the following is NOT a common delivery method for real estate documents?",
-      choices: [
-        "A) U.S. Mail",
-        "B) Fax",
-        "C) Telegram",
-        "D) Email"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Telegrams are outdated and not a valid delivery method in modern transactions."
-    },
-    {
-      question: "Question 7: What is required for a homestead conveyance by a married person?",
-      choices: [
-        "A) Only one spouse's signature",
-        "B) Signatures from both spouses",
-        "C) Verbal agreement",
-        "D) Attorney certification"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Wisconsin law requires both spouses to sign for homestead conveyances."
-    },
-    {
-      question: "Question 8: What does the term 'meeting of the minds' refer to in contract law?",
-      choices: [
-        "A) Agreement on key terms",
-        "B) Exchange of earnest money",
-        "C) Setting deadlines",
-        "D) Signing the document"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "A meeting of the minds ensures that both parties agree on essential terms."
-    },
-    {
-      question: "Question 9: Who typically signs a deed to evidence a conveyance?",
-      choices: [
-        "A) Grantee",
-        "B) Grantor",
-        "C) Broker",
-        "D) Both parties"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "The grantor (seller) signs the deed to transfer ownership."
-    },
-    {
-      question: "Question 10: What is earnest money?",
-      choices: [
-        "A) A down payment",
-        "B) A promise to buy",
-        "C) A deposit to show intent",
-        "D) A loan payment"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Earnest money is a deposit that shows a buyer's intention to follow through."
-    },
-    // Medium Questions
-    {
-      question: "Question 11: What is a voidable contract?",
-      choices: [
-        "A) A contract that can never be enforced",
-        "B) A contract enforceable by all parties",
-        "C) A contract that one party can void",
-        "D) A contract with no legal standing"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "A voidable contract is valid but allows one party to rescind."
-    },
-    {
-      question: "Question 12: When does binding acceptance occur?",
-      choices: [
-        "A) When the offer is written",
-        "B) When the offer is delivered back to the buyer",
-        "C) When the seller reviews the offer",
-        "D) When earnest money is provided"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Binding acceptance requires the accepted offer to be delivered per the terms."
-    },
-    {
-      question: "Question 13: Which party typically has signing authority for a corporation in real estate transactions?",
-      choices: [
-        "A) Any employee",
-        "B) The CEO only",
-        "C) A designated officer",
-        "D) All board members"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "A designated officer, unless stated otherwise, has the authority to sign."
-    },
-    {
-      question: "Question 14: What is the minimum legal age to enter a binding contract in Wisconsin?",
-      choices: [
-        "A) 16",
-        "B) 18",
-        "C) 21",
-        "D) 25"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Parties must be 18 or older to have the legal capacity to contract."
-    },
-    {
-      question: "Question 15: What is a common reason for rescission of a contract?",
-      choices: [
-        "A) Mutual agreement between parties",
-        "B) Violation of administrative code",
-        "C) Miscommunication between brokers",
-        "D) Lack of earnest money"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "Rescission occurs when both parties agree to undo the contract."
-    },
-    {
-      question: "Question 16: What is a key difference between digital and electronic signatures?",
-      choices: [
-        "A) Digital signatures are handwritten",
-        "B) Digital signatures are encrypted",
-        "C) Electronic signatures require notarization",
-        "D) Electronic signatures use physical documents"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Digital signatures involve encryption for authenticity, unlike electronic signatures."
-    },
-    {
-      question: "Question 17: What is required for a real estate agent to terminate a listing agreement?",
-      choices: [
-        "A) Verbal agreement",
-        "B) Supervising broker’s permission",
-        "C) Seller’s written consent only",
-        "D) Notification to the state board"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Agents need the supervising broker’s approval to terminate agreements."
-    },
-    {
-      question: "Question 18: What happens if a contract lacks consideration?",
-      choices: [
-        "A) It remains enforceable",
-        "B) It becomes void",
-        "C) It can be notarized to fix the issue",
-        "D) It is automatically binding"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Without consideration, there is no legally enforceable contract."
-    },
-    {
-      question: "Question 19: When does fax delivery of a contract occur?",
-      choices: [
-        "A) When the sender finishes dialing",
-        "B) When the recipient reads the fax",
-        "C) When the sender sends the document",
-        "D) When the fax is stored"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Delivery is considered complete when the sender transmits the fax."
-    },
-    {
-      question: "Question 20: What term describes a seller giving a buyer the right to purchase under specific terms?",
-      choices: [
-        "A) Agency agreement",
-        "B) Option to purchase",
-        "C) Listing contract",
-        "D) Lease agreement"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "An option to purchase provides the buyer with this specific right."
-    },
-    // Hard Questions
-    {
-      question: "Question 21: What is the purpose of Wis. Stat. § 706.02?",
-      choices: [
-        "A) To regulate commission rates",
-        "B) To outline formal requisites of a conveyance",
-        "C) To specify earnest money requirements",
-        "D) To list delivery options"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "This statute defines the formal requisites for a valid conveyance in Wisconsin."
-    },
-    {
-      question: "Question 22: Which of the following is NOT a valid form of property identification in a contract?",
-      choices: [
-        "A) Street address",
-        "B) Legal description",
-        "C) Tax identification number",
-        "D) GPS coordinates"
-      ],
-      correctAnswerIndex: 3,
-      explanation: "GPS coordinates are not standard or legally recognized property identifiers."
-    },
-    {
-      question: "Question 23: Which document might replace a lease to be recorded for commercial property?",
-      choices: [
-        "A) Memorandum of lease",
-        "B) Standard lease agreement",
-        "C) Purchase agreement",
-        "D) Commission document"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "Memorandums of lease are often recorded to avoid disclosing lease details."
-    },
-    {
-      question: "Question 24: What is the consequence of ambiguous drafting in a real estate contract?",
-      choices: [
-        "A) Contract is enforceable as written",
-        "B) Court rules in favor of the drafter",
-        "C) Court interprets against the drafter",
-        "D) Contract is void by default"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Courts construe ambiguous terms against the drafter of the contract."
-    },
-    {
-      question: "Question 25: What remedy is unavailable to a buyer if a seller defaults?",
-      choices: [
-        "A) Specific performance",
-        "B) Terminate the offer",
-        "C) Sue for actual damages",
-        "D) Sue for commission reimbursement"
-      ],
-      correctAnswerIndex: 3,
-      explanation: "Buyers cannot claim commission reimbursement as it’s a seller obligation."
-    },
-    {
-      question: "Question 26: How can a seller void a buyer’s financing contingency?",
-      choices: [
-        "A) Refuse to sign the offer",
-        "B) Request a pre-approval letter after the deadline",
-        "C) Provide a different loan option",
-        "D) Counter the offer"
-      ],
-      correctAnswerIndex: 1,
-      explanation: "Missing the pre-approval deadline allows the seller to void the contingency."
-    },
-    {
-      question: "Question 27: When is electronic consent required for email delivery?",
-      choices: [
-        "A) Always",
-        "B) Only for agent-to-agent communications",
-        "C) For consumer transactions",
-        "D) Never"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Consumer transactions require electronic consent per E-Sign and E-Commerce laws."
-    },
-    {
-      question: "Question 28: What is the primary risk of using poorly drafted contingencies?",
-      choices: [
-        "A) Loss of earnest money",
-        "B) Breach of fiduciary duty",
-        "C) Unenforceable contracts",
-        "D) Longer transaction timelines"
-      ],
-      correctAnswerIndex: 2,
-      explanation: "Poorly drafted contingencies may lack enforceable standards."
-    },
-    {
-      question: "Question 29: What is a valid reason for a firm to terminate a listing contract?",
-      choices: [
-        "A) Seller’s discriminatory practices",
-        "B) Low market activity",
-        "C) High marketing costs",
-        "D) Seller’s failure to stage property"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "Discriminatory practices are illegal and justify contract termination."
-    },
-    {
-      question: "Question 30: Under what circumstance is a contract considered void?",
-      choices: [
-        "A) Missing a party’s signature",
-        "B) Disagreement on terms",
-        "C) Expired deadlines",
-        "D) Poor delivery methods"
-      ],
-      correctAnswerIndex: 0,
-      explanation: "A missing signature makes the contract technically defective and void."
-    },
-  ];
+      <!-- Option 4: Full Simulated Brokers Exam -->
+      <div class="menu-block">
+        <button class="btn" id="full-broker-exam-btn">Take Full Simulated Broker's Exam (3hr 15min)</button>
+      </div>
 
-  /************************************************
-   * GLOBAL VARIABLES
-   ***********************************************/
-  let userAnswers = new Array(quizData.length).fill(null);
+      <!-- Option 5: Format Selection -->
+      <div class="menu-block">
+        <h3>Select Question Display Format:</h3>
+        <input type="radio" name="format" id="format-one-at-a-time" value="oneAtATime" checked />
+        <label for="format-one-at-a-time">One question at a time (immediate feedback)</label><br>
 
-  /************************************************
-   * DYNAMIC QUIZ CREATION
-   ***********************************************/
-  const quizContainer = document.getElementById("quizContainer");
+        <input type="radio" name="format" id="format-act-style" value="actStyle" />
+        <label for="format-act-style">All questions laid out (like ACT test)</label><br>
 
-  quizData.forEach((item, index) => {
-    // Create question block
-    const questionDiv = document.createElement("div");
-    questionDiv.classList.add("question");
+        <input type="radio" name="format" id="format-submit-end" value="submitEnd" />
+        <label for="format-submit-end">All questions, no answers until submitted</label>
+      </div>
+    </div>
+    <!-- =============== END START MENU =============== -->
 
-    const questionTitle = document.createElement("h2");
-    questionTitle.textContent = item.question;
-    questionDiv.appendChild(questionTitle);
 
-    // Create choices list
-    const choicesList = document.createElement("ul");
-    choicesList.classList.add("choices");
+    <!-- =============== QUIZ SECTION =============== -->
+    <div id="quiz-section">
+      <h2 id="quiz-type-heading">Quiz In Progress</h2>
+      <div id="quiz-questions-container">
+        <!-- Questions will appear here dynamically -->
+      </div>
 
-    item.choices.forEach((choice, choiceIndex) => {
-      const choiceItem = document.createElement("li");
-      choiceItem.textContent = choice;
-      choiceItem.addEventListener("click", () => {
-        // Record user answer
-        userAnswers[index] = choiceIndex;
+      <!-- Submit Quiz Button (only relevant for certain formats) -->
+      <button class="btn" id="submit-quiz-btn" style="display: none;">Submit Quiz</button>
+    </div>
+    <!-- =============== END QUIZ SECTION =============== -->
 
-        // Remove any existing correct/wrong classes
-        Array.from(choicesList.children).forEach((child) => {
-          child.classList.remove("correct", "wrong");
+    <!-- =============== RESULT SECTION =============== -->
+    <div id="result-screen">
+      <h2>Quiz Results</h2>
+      <p id="score-display"></p>
+      <button class="btn" id="return-home-btn">Return to Start Menu</button>
+    </div>
+    <!-- =============== END RESULT SECTION =============== -->
+
+  </div>
+
+  <script>
+    /******************************************************
+     * GLOBAL VARIABLES / DOM ELEMENTS
+     ******************************************************/
+    const startMenu = document.getElementById("start-menu");
+    const quizSection = document.getElementById("quiz-section");
+    const resultScreen = document.getElementById("result-screen");
+
+    const quizTypeHeading = document.getElementById("quiz-type-heading");
+    const quizQuestionsContainer = document.getElementById("quiz-questions-container");
+    const submitQuizBtn = document.getElementById("submit-quiz-btn");
+    const scoreDisplay = document.getElementById("score-display");
+
+    // Buttons
+    const timedTestBtn = document.getElementById("timed-test-btn");
+    const chapterTestBtn = document.getElementById("chapter-test-btn");
+    const allChaptersTestBtn = document.getElementById("all-chapters-test-btn");
+    const fullBrokerExamBtn = document.getElementById("full-broker-exam-btn");
+    const returnHomeBtn = document.getElementById("return-home-btn");
+
+    // Selects
+    const chapterSelect = document.getElementById("chapter-select");
+    const chapterQuestionCount = document.getElementById("chapter-question-count");
+    const allChapterQuestionCount = document.getElementById("all-chapter-question-count");
+
+    // Radio Format Selection
+    const formatRadioButtons = document.querySelectorAll('input[name="format"]');
+
+    /******************************************************
+     * DEMO DATA: Each choice has 'text' + 'isCorrect'
+     ******************************************************/
+    const placeholderQuestions = [
+      {
+        question: "Which of the following is real property?",
+        choices: [
+          { text: "A free-standing refrigerator", isCorrect: false },
+          { text: "A built-in dishwasher",       isCorrect: true },
+          { text: "A tenant’s personal furniture", isCorrect: false },
+          { text: "An area rug",                  isCorrect: false }
+        ]
+      },
+      {
+        question: "What is the primary purpose of a deed?",
+        choices: [
+          { text: "To record the sale price", isCorrect: false },
+          { text: "To prove ownership",       isCorrect: false },
+          { text: "To transfer title",        isCorrect: true },
+          { text: "To pay property taxes",    isCorrect: false }
+        ]
+      }
+    ];
+
+    /******************************************************
+     * UTILITY: Shuffle array in-place
+     * (Fisher-Yates Shuffle)
+     ******************************************************/
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    /******************************************************
+     * EVENT LISTENERS
+     ******************************************************/
+    timedTestBtn.addEventListener("click", () => {
+      const selectedFormat = getSelectedFormat();
+      // Example: Timed test. We'll just load placeholder data:
+      startQuiz("Timed Test", placeholderQuestions, selectedFormat);
+    });
+
+    chapterTestBtn.addEventListener("click", () => {
+      const selectedChapter = chapterSelect.value;
+      const questionCount = parseInt(chapterQuestionCount.value, 10);
+      const selectedFormat = getSelectedFormat();
+
+      if (!selectedChapter) {
+        alert("Please select a chapter first.");
+        return;
+      }
+
+      // In real usage, you'd fetch from `data/chapterX.json`,
+      // randomize and pick 'questionCount' items,
+      // then shuffle answers in each question.
+      console.log(`Loading Chapter ${selectedChapter} with ${questionCount} questions in format: ${selectedFormat}`);
+      
+      startQuiz(`Chapter ${selectedChapter} Quiz`, placeholderQuestions, selectedFormat);
+    });
+
+    allChaptersTestBtn.addEventListener("click", () => {
+      const questionCount = parseInt(allChapterQuestionCount.value, 10);
+      const selectedFormat = getSelectedFormat();
+
+      // In real usage, you'd combine all chapter JSON, 
+      // pick random questions, then shuffle answers.
+      console.log(`Loading All Chapters with ${questionCount} questions, Format: ${selectedFormat}`);
+      
+      startQuiz("All Chapters Quiz", placeholderQuestions, selectedFormat);
+    });
+
+    fullBrokerExamBtn.addEventListener("click", () => {
+      const selectedFormat = getSelectedFormat();
+      // The full exam is 3 hrs 15 min, 100 questions:
+      console.log("Loading Full Broker's Exam - 100 Q, 3hr15min");
+      
+      startQuiz("Full Broker's Exam", placeholderQuestions, selectedFormat);
+    });
+
+    submitQuizBtn.addEventListener("click", handleSubmitQuiz);
+    returnHomeBtn.addEventListener("click", () => {
+      resultScreen.style.display = "none";
+      startMenu.style.display = "block";
+    });
+
+    /******************************************************
+     * QUIZ STARTING FUNCTION
+     ******************************************************/
+    function startQuiz(quizTitle, questionsArray, format) {
+      // Hide start menu, show quiz section
+      startMenu.style.display = "none";
+      quizSection.style.display = "block";
+      resultScreen.style.display = "none";
+
+      quizTypeHeading.textContent = quizTitle;
+      quizQuestionsContainer.innerHTML = "";
+
+      // Shuffle the answer choices for each question
+      const shuffledQuestions = questionsArray.map(q => {
+        // Clone the question
+        const newQuestion = {...q};
+        // Clone and shuffle choices
+        newQuestion.choices = [...q.choices];
+        shuffleArray(newQuestion.choices);
+        return newQuestion;
+      });
+
+      // Decide if we show SUBMIT button
+      // 'actStyle' or 'submitEnd' => show at the end
+      // 'oneAtATime' => immediate feedback
+      if (format === "actStyle" || format === "submitEnd") {
+        submitQuizBtn.style.display = "inline-block";
+      } else {
+        submitQuizBtn.style.display = "none";
+      }
+
+      // For demonstration, we display all questions at once.
+      // If you want one-at-a-time, implement logic to show/hide each question sequentially.
+      shuffledQuestions.forEach((q, idx) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question-container");
+        
+        const questionHeader = document.createElement("h3");
+        questionHeader.textContent = `Q${idx+1}: ${q.question}`;
+        questionDiv.appendChild(questionHeader);
+
+        const optionsDiv = document.createElement("div");
+        optionsDiv.classList.add("options-container");
+
+        q.choices.forEach((choiceObj, cIdx) => {
+          const label = document.createElement("label");
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = `question${idx}`;
+          radio.value = cIdx; // The user’s choice index
+
+          label.appendChild(radio);
+          const textNode = document.createTextNode(" " + choiceObj.text);
+          label.appendChild(textNode);
+
+          optionsDiv.appendChild(label);
+          optionsDiv.appendChild(document.createElement("br"));
+
+          // If format is "oneAtATime" or immediate feedback,
+          // we could add an event listener here to show if correct
+          // as soon as user picks an answer. (Optional)
+          if (format === "oneAtATime") {
+            radio.addEventListener("change", () => {
+              if (choiceObj.isCorrect) {
+                alert("Correct!");
+              } else {
+                alert("Incorrect!");
+              }
+            });
+          }
         });
 
-        // Highlight the chosen answer
-        if (choiceIndex === item.correctAnswerIndex) {
-          choiceItem.classList.add("correct");
-        } else {
-          choiceItem.classList.add("wrong");
+        questionDiv.appendChild(optionsDiv);
+        quizQuestionsContainer.appendChild(questionDiv);
+      });
+
+      // Store shuffled questions in a global or local variable for SUBMIT usage
+      window.currentQuizQuestions = shuffledQuestions;
+    }
+
+    /******************************************************
+     * SUBMIT QUIZ FUNCTION
+     ******************************************************/
+    function handleSubmitQuiz() {
+      const questionsArray = window.currentQuizQuestions || [];
+      let score = 0;
+
+      questionsArray.forEach((q, idx) => {
+        // Get the user's selected value
+        const radios = document.getElementsByName(`question${idx}`);
+        let userChoiceIndex = null;
+        for (const r of radios) {
+          if (r.checked) {
+            userChoiceIndex = parseInt(r.value, 10);
+            break;
+          }
         }
-        // Show explanation
-        showFeedback(feedbackDiv, choiceIndex === item.correctAnswerIndex, item.explanation);
+        // Check if that choice is correct
+        if (userChoiceIndex !== null && q.choices[userChoiceIndex].isCorrect) {
+          score++;
+        }
       });
-      choicesList.appendChild(choiceItem);
-    });
 
-    questionDiv.appendChild(choicesList);
-
-    // Feedback section
-    const feedbackDiv = document.createElement("div");
-    feedbackDiv.classList.add("feedback");
-    questionDiv.appendChild(feedbackDiv);
-
-    quizContainer.appendChild(questionDiv);
-  });
-
-  /************************************************
-   * FEEDBACK FUNCTION
-   ***********************************************/
-  function showFeedback(feedbackDiv, isCorrect, explanation) {
-    feedbackDiv.style.display = "block";
-    if (isCorrect) {
-      feedbackDiv.textContent = "Correct! " + explanation;
-      feedbackDiv.style.color = "#4CAF50";
-    } else {
-      feedbackDiv.textContent = "Incorrect. " + explanation;
-      feedbackDiv.style.color = "#f44336";
+      const total = questionsArray.length;
+      showResults(score, total);
     }
-  }
 
-  /************************************************
-   * SUBMIT QUIZ FUNCTION
-   ***********************************************/
-  const submitBtn = document.getElementById("submitQuiz");
-  const reviewSection = document.getElementById("reviewSection");
-  const reviewContainer = document.getElementById("reviewContainer");
+    /******************************************************
+     * SHOW RESULTS
+     ******************************************************/
+    function showResults(score, total) {
+      quizSection.style.display = "none";
+      resultScreen.style.display = "block";
+      scoreDisplay.textContent = `You scored ${score} out of ${total}.`;
+    }
 
-  submitBtn.addEventListener("click", () => {
-    // Show review section
-    reviewSection.style.display = "block";
-    reviewContainer.innerHTML = "";
-
-    // Populate review
-    quizData.forEach((item, index) => {
-      const reviewItem = document.createElement("div");
-      reviewItem.classList.add("review-item");
-
-      const questionHeader = document.createElement("h3");
-      questionHeader.textContent = item.question;
-      reviewItem.appendChild(questionHeader);
-
-      const userAnswer = userAnswers[index] !== null ? userAnswers[index] : -1;
-      const userAnswerText = document.createElement("p");
-      userAnswerText.innerHTML = "<strong>Your answer:</strong> " + 
-        (userAnswer >= 0 ? item.choices[userAnswer] : "No answer given");
-      reviewItem.appendChild(userAnswerText);
-
-      const correctAnswerText = document.createElement("p");
-      correctAnswerText.innerHTML = "<strong>Correct answer:</strong> " + item.choices[item.correctAnswerIndex];
-      reviewItem.appendChild(correctAnswerText);
-
-      const explanationText = document.createElement("p");
-      explanationText.innerHTML = "<em>" + item.explanation + "</em>";
-      reviewItem.appendChild(explanationText);
-
-      reviewContainer.appendChild(reviewItem);
-    });
-
-    // Scroll to review section
-    reviewSection.scrollIntoView({ behavior: "smooth" });
-  });
-
-  /************************************************
-   * FULLSCREEN TOGGLE
-   ***********************************************/
-  const fullscreenBtn = document.getElementById("fullscreenBtn");
-  fullscreenBtn.addEventListener("click", toggleFullScreen);
-
-  function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch((err) => {
-        console.log(err.message);
+    /******************************************************
+     * HELPER: GET SELECTED FORMAT
+     ******************************************************/
+    function getSelectedFormat() {
+      let formatValue;
+      formatRadioButtons.forEach((radio) => {
+        if (radio.checked) {
+          formatValue = radio.value;
+        }
       });
-      fullscreenBtn.textContent = "Exit Fullscreen";
-    } else {
-      document.exitFullscreen();
-      fullscreenBtn.textContent = "Enable Fullscreen";
+      return formatValue;
     }
-  }
-</script>
+  </script>
 </body>
 </html>
