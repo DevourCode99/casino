@@ -415,6 +415,13 @@
         bottom: 1rem;
         right: 1rem;
       }
+      .question-container {
+        padding: 1rem;
+      }
+      .option-block {
+        font-size: 0.95rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -665,16 +672,18 @@
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // Randomize entire question set
+      // Remove duplicates to ensure more variety
+      allFetched = removeDuplicateQuestions(allFetched);
+
+      // Thoroughly randomize entire question set
       shuffleArray(allFetched);
 
       // Slice to user's chosen question count
       currentQuestions = allFetched.slice(0, questionCount);
 
-      // Shuffle each question's options, THEN set the correct option index
+      // Shuffle each question's options, THEN set the correctOption index
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
-        // match correctAnswer to its new index
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
       });
 
@@ -741,6 +750,20 @@
     }
 
     /********************************************************************
+     * REMOVE DUPLICATE QUESTIONS (by questionText)
+     ********************************************************************/
+    function removeDuplicateQuestions(questionArray) {
+      const seen = new Set();
+      return questionArray.filter(q => {
+        if (!seen.has(q.questionText)) {
+          seen.add(q.questionText);
+          return true;
+        }
+        return false;
+      });
+    }
+
+    /********************************************************************
      * ALL-AT-ONCE RENDER
      ********************************************************************/
     function renderAllAtOnceMode(questions) {
@@ -784,9 +807,8 @@
      * ONE-AT-A-TIME MODE
      ********************************************************************/
     function showNextOneAtATimeQuestion() {
-      // if no questions remain => user got them all correct
+      // If no questions remain => user got them all correct
       if (questionQueue.length === 0) {
-        // Submit scenario
         handleSubmitOneAtATime();
         return;
       }
@@ -805,10 +827,10 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // (Re)shuffle to ensure answers are scrambled each time displayed
+      // Thoroughly reshuffle so each display is random
       shuffleArray(qData.options);
 
-      // After re-shuffle, figure out the correct index again
+      // After re-shuffle, figure out the new correct index again
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
       qData.options.forEach((optText, optIdx) => {
@@ -817,11 +839,11 @@
         blockDiv.textContent = optText;
 
         blockDiv.addEventListener('click', () => {
-          // disable further clicks
+          // Disable further clicks
           const siblings = gridDiv.querySelectorAll('.option-block');
           siblings.forEach(el => el.style.pointerEvents = 'none');
 
-          // check correctness
+          // Check correctness
           const isCorrect = (optIdx === qData.correctOption);
           if (isCorrect) {
             blockDiv.classList.add('correct');
@@ -837,10 +859,10 @@
           nextQuestionBtn.onclick = () => {
             nextQuestionBtn.style.display = 'none';
             if (isCorrect) {
-              // remove from queue
+              // Remove from queue
               questionQueue.shift();
             } else {
-              // re-insert at end
+              // Put this question at the end of the queue
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -877,7 +899,6 @@
     function handleSubmitQuiz() {
       let score = 0;
       currentQuestions.forEach((q, i) => {
-        // Compare user's chosen index with q.correctOption
         if (userAnswers[i] === q.correctOption) {
           score++;
         }
