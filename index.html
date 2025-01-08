@@ -750,6 +750,9 @@
       const selectedChapter = chapterSelect.value;
       const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
 
+      // keep track of old selection
+      const oldSelection = questionCountSelect.value;
+
       questionCountSelect.innerHTML = '';
       questionOptions.forEach(num => {
         const opt = document.createElement('option');
@@ -757,7 +760,14 @@
         opt.textContent = num;
         questionCountSelect.appendChild(opt);
       });
-      questionCountSelect.selectedIndex = 0;
+
+      // if old selection is still valid, keep it
+      if (questionOptions.includes(parseInt(oldSelection, 10))) {
+        questionCountSelect.value = oldSelection;
+      } else {
+        // default to first in the new set
+        questionCountSelect.value = questionOptions[0];
+      }
     }
 
     /********************************************************************
@@ -1004,7 +1014,7 @@
      * NEXT QUESTION BUTTON
      ********************************************************************/
     function handleNextQuestion() {
-      // Not used in forced-correct flow but kept for reference
+      // Not used in forced-correct flow, but here for reference
     }
 
     /********************************************************************
@@ -1291,9 +1301,11 @@
     }
 
     function getRandomColor() {
-      const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
-                      '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
-                      '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+      const colors = [
+        '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+        '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
+        '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'
+      ];
       return colors[Math.floor(Math.random() * colors.length)];
     }
   </script>
