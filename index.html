@@ -141,6 +141,60 @@
     }
 
     /* =========================================
+       BOTTOM-LEFT MENU (NEW FEATURE)
+    ========================================== */
+    #bottom-left-menu {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 999;
+    }
+    #menu-toggle-btn {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #menu-toggle-btn:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.05);
+    }
+    /* Slide-out panel */
+    #side-panel {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      width: 200px;
+      background: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      padding: 1rem;
+      transform: translateX(-110%);
+      transition: transform 0.3s ease;
+      z-index: 998;
+    }
+    body.dark-mode #side-panel {
+      background: #2d3748;
+      color: var(--dark-text);
+    }
+    #side-panel.open {
+      transform: translateX(0);
+    }
+    #side-panel button {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* =========================================
        BUTTONS
     ========================================== */
     .btn {
@@ -397,6 +451,18 @@
       margin: 0.25rem 0;
     }
 
+    /* Hide confetti canvas by default (we toggle it in JS) */
+    #confetti-canvas {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      z-index: 2000;
+    }
+
     /* =========================================
        RESPONSIVE MEDIA QUERIES
     ========================================== */
@@ -415,6 +481,10 @@
         bottom: 1rem;
         right: 1rem;
       }
+      #menu-toggle-btn {
+        bottom: 1rem;
+        left: 1rem;
+      }
       .question-container {
         padding: 1rem;
       }
@@ -422,10 +492,16 @@
         font-size: 0.95rem;
         padding: 1rem;
       }
+      #side-panel {
+        width: 160px;
+      }
     }
   </style>
 </head>
 <body class="light-mode">
+
+  <!-- CANVAS FOR CONFETTI -->
+  <canvas id="confetti-canvas"></canvas>
 
   <!-- TOP RIGHT MENU (visible after quiz starts) -->
   <div class="top-right-menu" id="top-right-menu" style="display: none;">
@@ -435,6 +511,16 @@
 
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+
+  <!-- BOTTOM LEFT MENU (HAMBURGER + SLIDE-OUT) -->
+  <div id="bottom-left-menu">
+    <button id="menu-toggle-btn" title="Open Menu">☰</button>
+    <div id="side-panel">
+      <button class="btn btn-warning" id="reset-timer-btn">Reset Timer</button>
+      <button class="btn btn-secondary" id="toggle-high-scores-btn">Show/Hide Scores</button>
+      <button class="btn" id="celebrate-btn">Celebrate!</button>
+    </div>
+  </div>
 
   <!-- MAIN CONTAINER -->
   <div class="container" id="main-container">
@@ -572,6 +658,21 @@
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
+    // Bottom-left menu
+    const bottomLeftMenu      = document.getElementById('bottom-left-menu');
+    const sidePanel           = document.getElementById('side-panel');
+    const menuToggleBtn       = document.getElementById('menu-toggle-btn');
+    const resetTimerBtn       = document.getElementById('reset-timer-btn');
+    const toggleHighScoresBtn = document.getElementById('toggle-high-scores-btn');
+    const celebrateBtn        = document.getElementById('celebrate-btn');
+
+    // Confetti
+    const confettiCanvas      = document.getElementById('confetti-canvas');
+    const confettiCtx         = confettiCanvas.getContext('2d');
+    let confettiParticles     = [];
+    let confettiActive        = false;
+    let confettiAnimationFrame;
+
     /********************************************************************
      * QUIZ STATE
      ********************************************************************/
@@ -626,8 +727,21 @@
     // Timer pause/resume
     pauseTimerBtn.addEventListener('click', toggleTimer);
 
+    // Bottom-left menu
+    menuToggleBtn.addEventListener('click', toggleSidePanel);
+    resetTimerBtn.addEventListener('click', resetTimer);
+    toggleHighScoresBtn.addEventListener('click', () => {
+      highScoreSection.style.display =
+        (highScoreSection.style.display === 'none' || highScoreSection.style.display === '')
+        ? 'block' : 'none';
+    });
+    celebrateBtn.addEventListener('click', startConfetti);
+
     // On load, initialize question-count for default selection
     window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
+
+    // Handle window resizing for confetti canvas
+    window.addEventListener('resize', resizeConfettiCanvas);
 
     /********************************************************************
      * DYNAMIC QUESTION COUNT DROPDOWN
@@ -734,11 +848,11 @@
 
     async function fetchSingleChapter(chapterNumber) {
       // Example: fetch from /data/chapterX.json
-      const url = `./data/chapter${chapterNumber}.json`;
+      const url = \`./data/chapter\${chapterNumber}.json\`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
-          console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
+          console.warn(\`Failed to fetch chapter \${chapterNumber}. Using empty array.\`);
           return [];
         }
         const jsonData = await response.json();
@@ -774,7 +888,7 @@
         questionDiv.classList.add('question-container');
 
         const header = document.createElement('h3');
-        header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
+        header.textContent = \`Q\${qIndex + 1}: \${qData.questionText}\`;
         questionDiv.appendChild(header);
 
         // vertical arrangement
@@ -786,7 +900,7 @@
 
           const radio = document.createElement('input');
           radio.type = 'radio';
-          radio.name = `question${qIndex}`;
+          radio.name = \`question\${qIndex}\`;
           radio.value = optIdx;
 
           radio.addEventListener('change', () => {
@@ -820,7 +934,7 @@
       questionDiv.classList.add('question-container');
 
       const header = document.createElement('h3');
-      header.textContent = `Question: ${qData.questionText}`;
+      header.textContent = \`Question: \${qData.questionText}\`;
       questionDiv.appendChild(header);
 
       // 2x2 grid of answers
@@ -882,7 +996,7 @@
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-      scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
+      scoreDisplay.textContent = \`You eventually got them all correct! Time taken: \${formatTime(timeElapsed)}.\`;
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
     }
 
@@ -908,8 +1022,7 @@
       resultSection.style.display = 'block';
       stopTimer();
 
-      scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.
-      Time taken: ${formatTime(timeElapsed)}.`;
+      scoreDisplay.textContent = \`You answered \${score} out of \${currentQuestions.length} correctly.\\nTime taken: \${formatTime(timeElapsed)}.\`;
 
       displayHighScores(score, currentQuestions.length, chapterSelect.value);
     }
@@ -958,6 +1071,9 @@
       timeElapsed = 0;
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
+
+      // Hide side panel if open
+      sidePanel.classList.remove('open');
     }
 
     /********************************************************************
@@ -984,7 +1100,7 @@
     function toggleFullScreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(err => {
-          alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+          alert(\`Error attempting to enable fullscreen mode: \${err.message}\`);
         });
       } else {
         document.exitFullscreen();
@@ -1006,12 +1122,12 @@
     /* Progress Bar */
     function updateProgressBar(completedQuestions) {
       const percentage = (completedQuestions / totalQuestions) * 100;
-      progressFill.style.width = `${percentage}%`;
+      progressFill.style.width = \`\${percentage}%\`;
     }
 
     /* Remaining Count */
     function updateRemainingCount() {
-      remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
+      remainingCountEl.textContent = \`Remaining: \${questionQueue.length} question(s)\`;
     }
 
     /********************************************************************
@@ -1022,7 +1138,7 @@
       isTimerRunning = true;
       timerInterval = setInterval(() => {
         timeElapsed++;
-        timerEl.textContent = `Time: ${formatTime(timeElapsed)}`;
+        timerEl.textContent = \`Time: \${formatTime(timeElapsed)}\`;
       }, 1000);
     }
 
@@ -1046,7 +1162,16 @@
       const secs = seconds % 60;
       const mm = mins < 10 ? '0'+mins : mins;
       const ss = secs < 10 ? '0'+secs : secs;
-      return `${mm}:${ss}`;
+      return \`\${mm}:\${ss}\`;
+    }
+
+    function resetTimer() {
+      stopTimer();
+      timeElapsed = 0;
+      timerEl.textContent = 'Time: 00:00';
+      if (timerToggle.checked) {
+        startTimer();
+      }
     }
 
     /********************************************************************
@@ -1057,7 +1182,7 @@
       highScoreSection.style.display = 'block';
 
       // Generate a key for local storage, e.g. "chapter_all" or "chapter_5"
-      const key = `chapter_${chapter}`;
+      const key = \`chapter_\${chapter}\`;
 
       // Retrieve existing best score
       const stored = localStorage.getItem(key);
@@ -1082,12 +1207,94 @@
 
       // If we have a high score record, show it
       if (updatedBest) {
-        highScoreList.innerHTML = `
-          <li><strong>Chapter:</strong> ${chapter}</li>
-          <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
-          <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
-        `;
+        highScoreList.innerHTML = \`
+          <li><strong>Chapter:</strong> \${chapter}</li>
+          <li><strong>Best Score:</strong> \${updatedBest.score} / \${updatedBest.total}</li>
+          <li><strong>Best Time:</strong> \${formatTime(updatedBest.time)}</li>
+        \`;
       }
+    }
+
+    /********************************************************************
+     * SIDE PANEL TOGGLE
+     ********************************************************************/
+    function toggleSidePanel() {
+      sidePanel.classList.toggle('open');
+    }
+
+    /********************************************************************
+     * CONFETTI LOGIC
+     ********************************************************************/
+    function startConfetti() {
+      if (confettiActive) return;
+
+      resizeConfettiCanvas();
+      confettiCanvas.style.display = 'block';
+      confettiActive = true;
+      generateConfetti();
+      renderConfetti();
+      
+      // Stop confetti after 3 seconds
+      setTimeout(stopConfetti, 3000);
+    }
+
+    function stopConfetti() {
+      confettiActive = false;
+      confettiCanvas.style.display = 'none';
+      cancelAnimationFrame(confettiAnimationFrame);
+      confettiParticles = [];
+    }
+
+    function resizeConfettiCanvas() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+
+    function generateConfetti() {
+      const numParticles = 100;
+      confettiParticles = [];
+
+      for (let i = 0; i < numParticles; i++) {
+        confettiParticles.push({
+          x: Math.random() * confettiCanvas.width,
+          y: Math.random() * confettiCanvas.height,
+          r: Math.floor(Math.random() * 6) + 4,
+          color: getRandomColor(),
+          speedX: (Math.random() * 2) - 1,
+          speedY: Math.random() + 1
+        });
+      }
+    }
+
+    function renderConfetti() {
+      confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+      confettiParticles.forEach(p => {
+        confettiCtx.beginPath();
+        confettiCtx.arc(p.x, p.y, p.r, 0, 2 * Math.PI, false);
+        confettiCtx.fillStyle = p.color;
+        confettiCtx.fill();
+
+        // Update positions
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        // Wrap around the edges
+        if (p.x < 0) p.x = confettiCanvas.width;
+        if (p.x > confettiCanvas.width) p.x = 0;
+        if (p.y > confettiCanvas.height) p.y = 0;
+      });
+
+      if (confettiActive) {
+        confettiAnimationFrame = requestAnimationFrame(renderConfetti);
+      }
+    }
+
+    function getRandomColor() {
+      const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+                      '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
+                      '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+      return colors[Math.floor(Math.random() * colors.length)];
     }
   </script>
 </body>
