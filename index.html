@@ -540,15 +540,6 @@
           <option value="1">Chapter 1</option>
           <option value="2">Chapter 2</option>
           <option value="3">Chapter 3</option>
-          <option value="4">Chapter 4</option>
-          <option value="5">Chapter 5</option>
-          <option value="6">Chapter 6</option>
-          <option value="7">Chapter 7</option>
-          <option value="8">Chapter 8</option>
-          <option value="9">Chapter 9</option>
-          <option value="10">Chapter 10</option>
-          <option value="11">Chapter 11</option>
-          <option value="12">Chapter 12</option>
         </select>
       </div>
 
@@ -640,7 +631,6 @@
 
     // "Remaining" count & progress bar
     const remainingCountEl    = document.getElementById('remaining-count');
-    const progressBar         = document.getElementById('progress-bar');
     const progressFill        = document.getElementById('progress-fill');
 
     // Timer-related
@@ -688,23 +678,75 @@
     let isTimerRunning   = false;
 
     /********************************************************************
-     * CHAPTER -> QUESTION COUNT MAP
-     * (Adjust these as appropriate for your chapters/data)
+     * HARDCODED QUESTION DATA (so no fetch is needed!)
+     * Feel free to add more questions. The structure must match:
+     * { questionText, options, correctAnswer, explanation(optional) }
+     ********************************************************************/
+    const CHAPTER_1_QUESTIONS = [
+      {
+        questionText: "What is 2+2?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: "4",
+        explanation: "Basic arithmetic."
+      },
+      {
+        questionText: "Capital of France?",
+        options: ["Paris", "London", "Berlin", "Rome"],
+        correctAnswer: "Paris",
+        explanation: "Paris is well-known as the capital of France."
+      }
+    ];
+
+    const CHAPTER_2_QUESTIONS = [
+      {
+        questionText: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Venus"],
+        correctAnswer: "Mars",
+        explanation: "Mars is often called the Red Planet."
+      },
+      {
+        questionText: "Largest ocean on Earth?",
+        options: ["Pacific", "Atlantic", "Indian", "Arctic"],
+        correctAnswer: "Pacific",
+        explanation: "The Pacific is the largest and deepest ocean."
+      },
+      {
+        questionText: "What is the chemical symbol for Gold?",
+        options: ["Au", "Ag", "Pt", "Pb"],
+        correctAnswer: "Au",
+        explanation: "From the Latin 'Aurum'."
+      }
+    ];
+
+    const CHAPTER_3_QUESTIONS = [
+      {
+        questionText: "Which continent is the Sahara Desert located on?",
+        options: ["Africa", "Asia", "Australia", "South America"],
+        correctAnswer: "Africa"
+      },
+      {
+        questionText: "Which gas do plants absorb from the atmosphere?",
+        options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+        correctAnswer: "Carbon Dioxide"
+      }
+    ];
+
+    // Combine all for the 'all' selection
+    const ALL_CHAPTERS_QUESTIONS = [
+      ...CHAPTER_1_QUESTIONS,
+      ...CHAPTER_2_QUESTIONS,
+      ...CHAPTER_3_QUESTIONS
+    ];
+
+    /********************************************************************
+     * CHAPTER -> QUESTION COUNT OPTIONS
+     * This drives the # of questions in the dropdown.
      ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
-      all:    [15, 30, 45, 60, 75, 90, 100],
-      1:      [10, 20, 35, 50, 60],
-      2:      [10, 20, 35, 50, 60],
-      3:      [10, 20, 35, 50, 60],
-      4:      [10, 20, 35, 50, 60],
-      5:      [10, 20, 35, 50, 60],
-      6:      [6, 14, 20, 28],
-      7:      [6, 14, 20, 28],
-      8:      [10, 20, 35, 50, 60],
-      9:      [10, 20, 35, 50, 60],
-      10:     [10, 20, 35, 45],
-      11:     [6, 12, 18, 24],
-      12:     [6, 12, 18, 24],
+      all: [2, 3, 4, 5, 6, 7],   // up to the total # you have
+      1:   [1, 2],              // Chapter 1 has 2 questions
+      2:   [1, 2, 3],           // Chapter 2 has 3 questions
+      3:   [1, 2]               // Chapter 3 has 2 questions
     };
 
     /********************************************************************
@@ -748,18 +790,10 @@
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selectedChapter = chapterSelect.value;
-      const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
+      const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [1];
 
       // Clear out the current <select> options
       questionCountSelect.innerHTML = '';
-
-      // Optionally, you can add a "Please choose" placeholder:
-      // const placeholder = document.createElement('option');
-      // placeholder.value = '';
-      // placeholder.disabled = true;
-      // placeholder.selected = true;
-      // placeholder.textContent = 'Select a question count';
-      // questionCountSelect.appendChild(placeholder);
 
       // Populate with the valid choices
       questionOptions.forEach(num => {
@@ -768,15 +802,12 @@
         opt.textContent = num;
         questionCountSelect.appendChild(opt);
       });
-
-      // You could set a default if you like, e.g. the first one:
-      // questionCountSelect.value = questionOptions[0];
     }
 
     /********************************************************************
      * START QUIZ
      ********************************************************************/
-    async function startQuiz() {
+    function startQuiz() {
       // Show top-right menu
       topRightMenu.style.display = 'flex';
 
@@ -787,22 +818,23 @@
 
       chosenFormat = getSelectedFormat();
 
-      // Possibly fetch the relevant JSON
+      // Figure out which chapter is selected
       const chapterValue = chapterSelect.value;
       const questionCount = parseInt(questionCountSelect.value, 10);
       totalQuestions = questionCount;
 
-      let allFetched;
+      let allFetched = []; // purely local now
       if (chapterValue === 'all') {
-        allFetched = await fetchAllChapters();
-      } else {
-        allFetched = await fetchSingleChapter(chapterValue);
+        allFetched = ALL_CHAPTERS_QUESTIONS.slice();
+      } else if (chapterValue === '1') {
+        allFetched = CHAPTER_1_QUESTIONS.slice();
+      } else if (chapterValue === '2') {
+        allFetched = CHAPTER_2_QUESTIONS.slice();
+      } else if (chapterValue === '3') {
+        allFetched = CHAPTER_3_QUESTIONS.slice();
       }
 
-      // Remove duplicates to ensure more variety
-      allFetched = removeDuplicateQuestions(allFetched);
-
-      // Thoroughly randomize entire question set
+      // Shuffle the entire question set
       shuffleArray(allFetched);
 
       // Slice to user's chosen question count
@@ -825,69 +857,21 @@
         timerContainer.style.display = 'none';
       }
 
+      // Render depending on the format
       if (chosenFormat === 'allAtOnce') {
         userAnswers = [];
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'inline-block';
         renderAllAtOnceMode(currentQuestions);
-        // No "remaining" in allAtOnce mode
         remainingCountEl.textContent = '';
       } else {
         // One at a time
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'none';
-
-        // Copy to queue
         questionQueue = [...currentQuestions];
-
-        // Show initial "remaining" count
         updateRemainingCount();
         showNextOneAtATimeQuestion();
       }
-    }
-
-    /********************************************************************
-     * FETCH HELPERS
-     * (Replace fetch paths with your own data endpoints)
-     ********************************************************************/
-    async function fetchAllChapters() {
-      let merged = [];
-      for (let i = 1; i <= 12; i++) {
-        const data = await fetchSingleChapter(i);
-        merged = merged.concat(data);
-      }
-      return merged;
-    }
-
-    async function fetchSingleChapter(chapterNumber) {
-      // Example: fetch from /data/chapterX.json
-      const url = \`./data/chapter\${chapterNumber}.json\`;
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          console.warn(\`Failed to fetch chapter \${chapterNumber}. Using empty array.\`);
-          return [];
-        }
-        const jsonData = await response.json();
-        return jsonData.questions || [];
-      } catch (error) {
-        console.error("Error fetching chapter data:", error);
-        return [];
-      }
-    }
-
-    /********************************************************************
-     * REMOVE DUPLICATE QUESTIONS (by questionText)
-     ********************************************************************/
-    function removeDuplicateQuestions(questionArray) {
-      const seen = new Set();
-      return questionArray.filter(q => {
-        if (!seen.has(q.questionText)) {
-          seen.add(q.questionText);
-          return true;
-        }
-        return false;
-      });
     }
 
     /********************************************************************
@@ -895,7 +879,6 @@
      ********************************************************************/
     function renderAllAtOnceMode(questions) {
       quizContainer.innerHTML = '';
-
       questions.forEach((qData, qIndex) => {
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
@@ -934,12 +917,10 @@
      * ONE-AT-A-TIME MODE
      ********************************************************************/
     function showNextOneAtATimeQuestion() {
-      // If no questions remain => user got them all correct
       if (questionQueue.length === 0) {
         handleSubmitOneAtATime();
         return;
       }
-
       quizContainer.innerHTML = '';
 
       const qData = questionQueue[0]; // front of the queue
@@ -954,10 +935,8 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // Thoroughly reshuffle so each display is random
+      // Re-shuffle the options
       shuffleArray(qData.options);
-
-      // After re-shuffle, figure out the new correct index again
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
       qData.options.forEach((optText, optIdx) => {
@@ -1014,13 +993,6 @@
     }
 
     /********************************************************************
-     * NEXT QUESTION BUTTON
-     ********************************************************************/
-    function handleNextQuestion() {
-      // Not used in forced-correct flow, but left here for reference
-    }
-
-    /********************************************************************
      * SUBMIT BUTTON (ALL-AT-ONCE)
      ********************************************************************/
     function handleSubmitQuiz() {
@@ -1030,11 +1002,9 @@
           score++;
         }
       });
-
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-
       scoreDisplay.textContent = \`You answered \${score} out of \${currentQuestions.length} correctly.\nTime taken: \${formatTime(timeElapsed)}.\`;
 
       displayHighScores(score, currentQuestions.length, chapterSelect.value);
@@ -1053,7 +1023,7 @@
       feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
       parentDiv.appendChild(feedbackEl);
 
-      // Always show explanation
+      // Optional explanation
       if (explanation) {
         const explEl = document.createElement('div');
         explEl.classList.add('explanation');
@@ -1191,34 +1161,22 @@
      * HIGH SCORES USING LOCAL STORAGE
      ********************************************************************/
     function displayHighScores(score, total, chapter) {
-      // Show the high score section
       highScoreSection.style.display = 'block';
-
-      // Generate a key for local storage, e.g. "chapter_all" or "chapter_5"
       const key = \`chapter_\${chapter}\`;
 
-      // Retrieve existing best score
       const stored = localStorage.getItem(key);
       const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
 
       const newTime = timeElapsed;
-
-      // If user beats the previous record or if no record exists
-      // Score priority, if tie in score => time priority
+      // Score priority, if tie => time priority
       if (score > bestScore.score ||
           (score === bestScore.score && newTime < bestScore.time)) {
-        const newRecord = {
-          score: score,
-          total: total,
-          time: newTime
-        };
+        const newRecord = { score: score, total: total, time: newTime };
         localStorage.setItem(key, JSON.stringify(newRecord));
       }
 
-      // Now read the updated best score from storage
       const updatedBest = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
 
-      // If we have a high score record, show it
       if (updatedBest) {
         highScoreList.innerHTML = \`
           <li><strong>Chapter:</strong> \${chapter}</li>
@@ -1240,15 +1198,12 @@
      ********************************************************************/
     function startConfetti() {
       if (confettiActive) return;
-
       resizeConfettiCanvas();
       confettiCanvas.style.display = 'block';
       confettiActive = true;
       generateConfetti();
       renderConfetti();
-      
-      // Stop confetti after 3 seconds
-      setTimeout(stopConfetti, 3000);
+      setTimeout(stopConfetti, 3000); // Stop after 3 seconds
     }
 
     function stopConfetti() {
@@ -1266,7 +1221,6 @@
     function generateConfetti() {
       const numParticles = 100;
       confettiParticles = [];
-
       for (let i = 0; i < numParticles; i++) {
         confettiParticles.push({
           x: Math.random() * confettiCanvas.width,
@@ -1281,7 +1235,6 @@
 
     function renderConfetti() {
       confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-
       confettiParticles.forEach(p => {
         confettiCtx.beginPath();
         confettiCtx.arc(p.x, p.y, p.r, 0, 2 * Math.PI, false);
@@ -1291,8 +1244,7 @@
         // Update positions
         p.x += p.speedX;
         p.y += p.speedY;
-
-        // Wrap around the edges
+        // Wrap around edges
         if (p.x < 0) p.x = confettiCanvas.width;
         if (p.x > confettiCanvas.width) p.x = 0;
         if (p.y > confettiCanvas.height) p.y = 0;
