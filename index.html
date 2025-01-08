@@ -750,10 +750,18 @@
       const selectedChapter = chapterSelect.value;
       const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
 
-      // keep track of old selection
-      const oldSelection = questionCountSelect.value;
-
+      // Clear out the current <select> options
       questionCountSelect.innerHTML = '';
+
+      // Optionally, you can add a "Please choose" placeholder:
+      // const placeholder = document.createElement('option');
+      // placeholder.value = '';
+      // placeholder.disabled = true;
+      // placeholder.selected = true;
+      // placeholder.textContent = 'Select a question count';
+      // questionCountSelect.appendChild(placeholder);
+
+      // Populate with the valid choices
       questionOptions.forEach(num => {
         const opt = document.createElement('option');
         opt.value = num;
@@ -761,13 +769,8 @@
         questionCountSelect.appendChild(opt);
       });
 
-      // if old selection is still valid, keep it
-      if (questionOptions.includes(parseInt(oldSelection, 10))) {
-        questionCountSelect.value = oldSelection;
-      } else {
-        // default to first in the new set
-        questionCountSelect.value = questionOptions[0];
-      }
+      // You could set a default if you like, e.g. the first one:
+      // questionCountSelect.value = questionOptions[0];
     }
 
     /********************************************************************
@@ -1014,7 +1017,7 @@
      * NEXT QUESTION BUTTON
      ********************************************************************/
     function handleNextQuestion() {
-      // Not used in forced-correct flow, but here for reference
+      // Not used in forced-correct flow, but left here for reference
     }
 
     /********************************************************************
@@ -1032,7 +1035,7 @@
       resultSection.style.display = 'block';
       stopTimer();
 
-      scoreDisplay.textContent = \`You answered \${score} out of \${currentQuestions.length} correctly.\\nTime taken: \${formatTime(timeElapsed)}.\`;
+      scoreDisplay.textContent = \`You answered \${score} out of \${currentQuestions.length} correctly.\nTime taken: \${formatTime(timeElapsed)}.\`;
 
       displayHighScores(score, currentQuestions.length, chapterSelect.value);
     }
