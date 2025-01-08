@@ -3,152 +3,452 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Real Estate Broker Quiz</title>
+  <title>Real Estate Broker Quiz - Revamped</title>
 
   <style>
+    /* =========================================
+       CSS VARIABLES & GLOBAL STYLES
+    ========================================== */
     :root {
       --primary-color: #2563eb;
       --primary-hover: #1d4ed8;
       --secondary-color: #4a5568;
-      --dark-bg: #2d3748;
       --light-bg: #f7f9fc;
+      --dark-bg: #2d3748;
       --light-text: #333;
       --dark-text: #f1f1f1;
       --success-color: #0f9d58;
       --error-color: #d93025;
+      --warning-color: #faad14;
     }
 
-    body {
-      margin: 0; padding: 0;
-      font-family: sans-serif;
-      transition: background 0.3s, color 0.3s;
-    }
+    /* The body color and text color will swap in dark mode */
     body.light-mode {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: var(--light-text);
     }
+
     body.dark-mode {
       background: var(--dark-bg);
       color: var(--dark-text);
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      transition: background 0.3s ease, color 0.3s ease;
+      overflow-x: hidden; /* only allow vertical scrolling */
+      display: flex;
+      justify-content: center;
+    }
+
     .container {
-      max-width: 800px; width: 100%;
-      margin: 2rem auto; padding: 1.5rem;
-      background: #fff; border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: background-color 0.3s;
+      width: 100%;
+      max-width: 900px;
+      margin: 2rem 1rem;
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
     }
+
+    /* Dark mode container override */
     body.dark-mode .container {
-      background: #1a202c;
+      background-color: #1a202c;
+      color: var(--dark-text);
     }
 
-    h1, h2 {
-      text-align: center; margin-bottom: 1rem;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    h1 { margin-top: 0; }
 
+    /* =========================================
+       TOP-RIGHT MENU & DARK MODE TOGGLE
+    ========================================== */
     .top-right-menu {
-      position: fixed; top: 1rem; right: 1rem;
-      display: flex; gap: 0.5rem;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .menu-btn {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .menu-btn:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.03);
+    }
+
+    #dark-mode-toggle {
+      background: var(--secondary-color);
+    }
+
+    /* =========================================
+       FULLSCREEN BUTTON
+    ========================================== */
+    #fullscreen-btn {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
       z-index: 999;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    button {
-      padding: 0.5rem 1rem; border: none; border-radius: 4px;
-      cursor: pointer; background: var(--primary-color); color: #fff;
-      transition: background 0.2s, transform 0.2s;
+    #fullscreen-btn:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.05);
     }
-    button:hover {
-      background: var(--primary-hover); transform: scale(1.03);
+
+    /* =========================================
+       BUTTONS
+    ========================================== */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      margin-top: 1rem;
+      text-align: center;
     }
+    .btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
     .btn-secondary {
-      background: #ccc; color: #000;
+      background-color: #eee;
+      color: #444;
+    }
+    .btn-secondary:hover {
+      background-color: #ddd;
     }
 
-    .form-group { text-align: center; margin-bottom: 1rem; }
-    select {
-      padding: 0.5rem; margin: 0.5rem 0;
-      border-radius: 4px; border: 1px solid #ccc;
+    /* For the “Pause Timer” button (optional) */
+    .btn-warning {
+      background-color: var(--warning-color);
+      color: #333;
+    }
+    .btn-warning:hover {
+      filter: brightness(1.1);
     }
 
-    #quiz-section, #result-section {
+    /* =========================================
+       START MENU
+    ========================================== */
+    #start-menu h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    #start-menu p {
+      text-align: center;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 1.25rem auto;
+      line-height: 1.4;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+    select, .radio-group {
+      width: 100%;
+      max-width: 300px;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      outline: none;
+    }
+    .radio-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Dark mode overrides for form elements */
+    body.dark-mode select,
+    body.dark-mode .radio-group {
+      background: #2a2a2a;
+      color: #fff;
+      border-color: #444;
+    }
+
+    /* =========================================
+       QUIZ SECTION
+    ========================================== */
+    #quiz-section {
+      width: 100%;
       display: none;
+      position: relative;
     }
+
     .question-container {
       margin-bottom: 1.5rem;
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto 2rem auto;
+      animation: fadeInUp 0.4s ease;
       background: var(--light-bg);
-      padding: 1rem; border-radius: 6px;
-      transition: background-color 0.2s;
+      padding: 1.5rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
     }
     body.dark-mode .question-container {
-      background: #2d3748; color: var(--dark-text);
+      background: #2d3748;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+      color: var(--dark-text);
     }
+
+    .question-container h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem; margin-top: 1rem;
+      gap: 1rem;
+      justify-items: stretch;
+      width: 100%;
+      margin-top: 1rem;
     }
+
     .option-block {
-      background: #f9f9f9; padding: 1rem;
-      border: 1px solid #ccc; border-radius: 4px;
-      cursor: pointer; text-align: center;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+      text-align: center;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
     }
     .option-block:hover {
-      background: #eee; transform: scale(1.02);
+      background-color: #eee;
+      transform: scale(1.02);
     }
     .option-block.correct {
-      background: #c8f7c5; border-color: var(--success-color);
+      background-color: #c8f7c5 !important; /* green highlight */
+      border-color: var(--success-color);
     }
     .option-block.wrong {
-      background: #f7c5c5; border-color: var(--error-color);
+      background-color: #f7c5c5 !important; /* red highlight */
+      border-color: var(--error-color);
     }
 
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .feedback.correct {
+      color: var(--success-color);
+    }
+    .feedback.incorrect {
+      color: var(--error-color);
+    }
+    .explanation {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    body.dark-mode .explanation {
+      color: #ddd;
+    }
+
+    /* For the default "All-At-Once" mode radio lists */
+    .vertical-radio-list label {
+      display: block;
+      margin: 0.25rem 0;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       QUIZ UTILITIES: PROGRESS BAR & REMAINING
+    ========================================== */
+    .remaining-count {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
     .progress-bar {
-      width: 100%; height: 10px; background: #ddd;
-      border-radius: 5px; overflow: hidden; margin-bottom: 1rem;
+      width: 100%;
+      max-width: 600px;
+      height: 10px;
+      background: #ddd;
+      border-radius: 5px;
+      margin: 0.5rem auto 1.5rem auto;
+      overflow: hidden;
     }
     .progress-fill {
-      width: 0%; height: 100%;
-      background: var(--primary-color); transition: width 0.3s;
+      height: 100%;
+      width: 0%;
+      background: var(--primary-color);
+      border-radius: 5px;
+      transition: width 0.4s ease;
     }
 
-    .remaining-count, #timer {
-      text-align: center; margin: 0.5rem 0;
+    /* =========================================
+       TIMER & PAUSE/RESUME
+    ========================================== */
+    #timer-container {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    #timer {
+      font-size: 1.2rem;
+    }
+
+    /* =========================================
+       RESULT SECTION
+    ========================================== */
+    #result-section {
+      width: 100%;
+      display: none;
+      text-align: center;
+    }
+    #score-display {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
       font-weight: bold;
     }
-    #timer-container { display: none; text-align: center; }
 
-    .vertical-radio-list label {
-      display: block; margin: 0.4rem 0;
+    /* High score area */
+    #high-score-section {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    #high-score-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem auto;
+      text-align: left;
+      max-width: 300px;
+    }
+    #high-score-list li {
+      margin: 0.25rem 0;
     }
 
+    /* =========================================
+       RESPONSIVE MEDIA QUERIES
+    ========================================== */
     @media (max-width: 768px) {
       .options-grid {
         grid-template-columns: 1fr;
       }
+      .menu-btn {
+        font-size: 0.8rem;
+      }
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      #fullscreen-btn {
+        bottom: 1rem;
+        right: 1rem;
+      }
+      .question-container {
+        padding: 1rem;
+      }
+      .option-block {
+        font-size: 0.95rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
-
 <body class="light-mode">
 
-  <!-- TOP-RIGHT MENU -->
-  <div class="top-right-menu">
-    <button id="dark-mode-toggle">Dark/Light</button>
-    <button id="back-to-menu-btn" class="btn-secondary">Back to Main</button>
+  <!-- TOP RIGHT MENU (visible after quiz starts) -->
+  <div class="top-right-menu" id="top-right-menu" style="display: none;">
+    <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
+    <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
   </div>
 
-  <div class="container">
+  <!-- FULLSCREEN BUTTON -->
+  <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container" id="main-container">
 
     <!-- START MENU -->
     <div id="start-menu">
-      <h1>Real Estate Broker Quiz</h1>
-      <p style="text-align:center;">
-        Select a chapter or “All Chapters,” choose how many questions you’d like, pick a display format, and optionally enable a timer.
+      <h1>Real Estate Broker Quiz - Revamped</h1>
+      <p>
+        Welcome! Select a chapter or “All Chapters,” choose how many questions you’d like, pick a display format, and optionally set a timer. Good luck!
       </p>
 
+      <!-- SELECT CHAPTER(S) -->
       <div class="form-group">
-        <label for="chapter-select">Chapter:</label><br>
+        <label for="chapter-select">Choose Chapter or All:</label><br>
         <select id="chapter-select">
           <option value="all">All Chapters</option>
           <option value="1">Chapter 1</option>
@@ -166,101 +466,118 @@
         </select>
       </div>
 
+      <!-- SELECT QUESTION COUNT -->
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label><br>
         <select id="question-count-select"></select>
       </div>
 
+      <!-- DISPLAY FORMAT RADIO -->
       <div class="form-group">
-        <label>Display Format:</label><br>
-        <div>
-          <label><input type="radio" name="format" value="allAtOnce" checked> All At Once</label>
-          <label><input type="radio" name="format" value="oneAtATime"> One At A Time</label>
+        <label>Select Display Format:</label><br>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="format" value="allAtOnce" checked />
+            All at Once
+          </label>
+          <label>
+            <input type="radio" name="format" value="oneAtATime" />
+            One at a Time
+          </label>
         </div>
       </div>
 
+      <!-- TIMER OPTION -->
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
-        <input type="checkbox" id="timer-toggle">
+        <input type="checkbox" id="timer-toggle" />
       </div>
 
-      <div style="text-align:center;">
-        <button id="start-quiz-btn">Start Quiz</button>
-      </div>
+      <!-- START QUIZ BUTTON -->
+      <button class="btn" id="start-quiz-btn">Start Quiz</button>
     </div>
     <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
     <div id="quiz-section">
-      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <!-- PROGRESS BAR -->
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <!-- For one question at a time: show how many left to answer -->
       <div class="remaining-count" id="remaining-count"></div>
 
-      <div id="timer-container">
+      <!-- Timer container (optional) -->
+      <div id="timer-container" style="display:none;">
         <div id="timer">Time: 00:00</div>
-        <button id="pause-timer-btn">Pause</button>
+        <button class="btn btn-warning" id="pause-timer-btn">Pause</button>
       </div>
 
       <div id="quiz-questions-container"></div>
 
-      <div style="text-align:center; margin-top:1rem;">
-        <button id="next-question-btn" style="display:none;">Next Question</button>
-        <button id="submit-btn" style="display:none;">Submit Quiz</button>
-      </div>
+      <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
+      <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
     </div>
-    <!-- END QUIZ SECTION -->
 
     <!-- RESULT SECTION -->
     <div id="result-section">
-      <h2>Results</h2>
-      <div id="score-display" style="font-weight:bold; margin-bottom:1rem;"></div>
-      <div style="text-align:center;">
-        <button id="restart-btn" class="btn-secondary">Restart</button>
+      <h2>Quiz Results</h2>
+      <div id="score-display"></div>
+      <div id="high-score-section" style="display:none;">
+        <h3>High Scores</h3>
+        <ul id="high-score-list"></ul>
       </div>
+      <button class="btn btn-secondary" id="restart-btn">Restart</button>
     </div>
-    <!-- END RESULT SECTION -->
 
-  </div> <!-- end .container -->
-
+  </div><!-- end .container -->
 
   <script>
-    /************************************************************
+    /********************************************************************
      * DOM ELEMENTS
-     ************************************************************/
+     ********************************************************************/
+    const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
     const quizSection         = document.getElementById('quiz-section');
     const resultSection       = document.getElementById('result-section');
     const quizContainer       = document.getElementById('quiz-questions-container');
-
-    const chapterSelect       = document.getElementById('chapter-select');
-    const questionCountSelect = document.getElementById('question-count-select');
-    const formatRadios        = document.querySelectorAll('input[name="format"]');
-    const timerToggle         = document.getElementById('timer-toggle');
-
     const startQuizBtn        = document.getElementById('start-quiz-btn');
     const nextQuestionBtn     = document.getElementById('next-question-btn');
     const submitBtn           = document.getElementById('submit-btn');
+    const scoreDisplay        = document.getElementById('score-display');
     const restartBtn          = document.getElementById('restart-btn');
     const backToMenuBtn       = document.getElementById('back-to-menu-btn');
+    const topRightMenu        = document.getElementById('top-right-menu');
+    const fullscreenBtn       = document.getElementById('fullscreen-btn');
+    const darkModeToggle      = document.getElementById('dark-mode-toggle');
 
-    // Timer DOM
+    // "Remaining" count & progress bar
+    const remainingCountEl    = document.getElementById('remaining-count');
+    const progressBar         = document.getElementById('progress-bar');
+    const progressFill        = document.getElementById('progress-fill');
+
+    // Timer-related
+    const timerToggle         = document.getElementById('timer-toggle');
     const timerContainer      = document.getElementById('timer-container');
     const timerEl             = document.getElementById('timer');
     const pauseTimerBtn       = document.getElementById('pause-timer-btn');
 
-    // Progress & remaining
-    const progressFill        = document.getElementById('progress-fill');
-    const remainingCountEl    = document.getElementById('remaining-count');
-    const scoreDisplay        = document.getElementById('score-display');
+    // Form Controls
+    const chapterSelect       = document.getElementById('chapter-select');
+    const questionCountSelect = document.getElementById('question-count-select');
+    const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
 
-    // Dark mode
-    const darkModeToggle      = document.getElementById('dark-mode-toggle');
+    // High Score elements
+    const highScoreSection    = document.getElementById('high-score-section');
+    const highScoreList       = document.getElementById('high-score-list');
 
-    /************************************************************
+    /********************************************************************
      * QUIZ STATE
-     ************************************************************/
-    let currentQuestions = [];
-    let questionQueue    = [];
-    let userAnswers      = [];
+     ********************************************************************/
+    let currentQuestions = [];  // Full set of chosen questions
+    let questionQueue    = [];  // For "oneAtATime"
+    let userAnswers      = [];  // For "allAtOnce"
     let chosenFormat     = 'allAtOnce';
     let totalQuestions   = 0;
 
@@ -269,254 +586,316 @@
     let timeElapsed      = 0;
     let isTimerRunning   = false;
 
-    /************************************************************
+    /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
-     * Adjust to match how many questions each chapter JSON has.
-     ************************************************************/
+     * (Adjust these as appropriate for your chapters/data)
+     ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
-      all: [5, 10, 15, 20],  // pick whichever sizes you like
-      1:  [3, 5, 8],
-      2:  [3, 5, 8],
-      3:  [3, 5, 8],
-      4:  [3, 5, 8],
-      5:  [3, 5, 8],
-      6:  [3, 5, 8],
-      7:  [3, 5, 8],
-      8:  [3, 5, 8],
-      9:  [3, 5, 8],
-      10: [3, 5, 8],
-      11: [3, 5, 8],
-      12: [3, 5, 8],
+      all:    [15, 30, 45, 60, 75, 90, 100],
+      1:      [10, 20, 35, 50, 60],
+      2:      [10, 20, 35, 50, 60],
+      3:      [10, 20, 35, 50, 60],
+      4:      [10, 20, 35, 50, 60],
+      5:      [10, 20, 35, 50, 60],
+      6:      [6, 14, 20, 28],
+      7:      [6, 14, 20, 28],
+      8:      [10, 20, 35, 50, 60],
+      9:      [10, 20, 35, 50, 60],
+      10:     [10, 20, 35, 45],
+      11:     [6, 12, 18, 24],
+      12:     [6, 12, 18, 24],
     };
 
-    /************************************************************
+    /********************************************************************
      * EVENT LISTENERS
-     ************************************************************/
-    document.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
-    chapterSelect.addEventListener('change', updateQuestionCountOptions);
-
+     ********************************************************************/
     startQuizBtn.addEventListener('click', startQuiz);
-    nextQuestionBtn.addEventListener('click', () => {}); // we override it dynamically
-
-    submitBtn.addEventListener('click', handleSubmitQuiz);
-
     restartBtn.addEventListener('click', resetQuiz);
     backToMenuBtn.addEventListener('click', resetQuiz);
+    chapterSelect.addEventListener('change', updateQuestionCountOptions);
 
-    pauseTimerBtn.addEventListener('click', toggleTimer);
+    nextQuestionBtn.addEventListener('click', handleNextQuestion);
+    submitBtn.addEventListener('click', handleSubmitQuiz);
 
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener('click', toggleFullScreen);
+
+    // Dark/Light mode toggle
     darkModeToggle.addEventListener('click', toggleDarkMode);
 
-    /************************************************************
-     * DYNAMIC QUESTION COUNT
-     ************************************************************/
+    // Timer pause/resume
+    pauseTimerBtn.addEventListener('click', toggleTimer);
+
+    // On load, initialize question-count for default selection
+    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
+
+    /********************************************************************
+     * DYNAMIC QUESTION COUNT DROPDOWN
+     ********************************************************************/
     function updateQuestionCountOptions() {
       const selectedChapter = chapterSelect.value;
-      const options = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [5];
+      const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
+
       questionCountSelect.innerHTML = '';
-      options.forEach(num => {
+      questionOptions.forEach(num => {
         const opt = document.createElement('option');
         opt.value = num;
         opt.textContent = num;
         questionCountSelect.appendChild(opt);
       });
+      questionCountSelect.selectedIndex = 0;
     }
 
-    /************************************************************
+    /********************************************************************
      * START QUIZ
-     ************************************************************/
+     ********************************************************************/
     async function startQuiz() {
+      // Show top-right menu
+      topRightMenu.style.display = 'flex';
+
+      // Hide start menu, show quiz
       startMenu.style.display   = 'none';
       quizSection.style.display = 'block';
       resultSection.style.display = 'none';
 
-      chosenFormat = [...formatRadios].find(r => r.checked).value;
+      chosenFormat = getSelectedFormat();
 
+      // Possibly fetch the relevant JSON
       const chapterValue = chapterSelect.value;
-      totalQuestions     = parseInt(questionCountSelect.value, 10);
+      const questionCount = parseInt(questionCountSelect.value, 10);
+      totalQuestions = questionCount;
 
-      // Fetch the relevant questions
-      let allFetched = [];
+      let allFetched;
       if (chapterValue === 'all') {
-        // Fetch all 12 chapters and merge them
-        for (let i = 1; i <= 12; i++) {
-          const data = await fetchChapter(i);
-          allFetched = [...allFetched, ...data];
-        }
+        allFetched = await fetchAllChapters();
       } else {
-        allFetched = await fetchChapter(chapterValue);
+        allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // Thoroughly shuffle
-      shuffleArray(allFetched);
-      // Slice down to user’s chosen count
-      currentQuestions = allFetched.slice(0, totalQuestions);
+      // Remove duplicates to ensure more variety
+      allFetched = removeDuplicateQuestions(allFetched);
 
-      // For each question, shuffle the options & update correct index
+      // Thoroughly randomize entire question set
+      shuffleArray(allFetched);
+
+      // Slice to user's chosen question count
+      currentQuestions = allFetched.slice(0, questionCount);
+
+      // Shuffle each question's options, THEN set the correctOption index
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
-        q.correctOption = q.options.indexOf(q.correctAnswer);
+        q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
       });
 
-      // Initialize progress bar & timer
+      // Initialize progress bar to 0
       updateProgressBar(0);
+
+      // Check if timer is enabled
       if (timerToggle.checked) {
-        timerContainer.style.display = 'block';
+        timerContainer.style.display = 'flex';
         startTimer();
       } else {
         timerContainer.style.display = 'none';
       }
 
-      // Render
       if (chosenFormat === 'allAtOnce') {
         userAnswers = [];
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'inline-block';
-        renderAllAtOnce(currentQuestions);
-        remainingCountEl.textContent  = '';
+        renderAllAtOnceMode(currentQuestions);
+        // No "remaining" in allAtOnce mode
+        remainingCountEl.textContent = '';
       } else {
         // One at a time
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'none';
+
+        // Copy to queue
         questionQueue = [...currentQuestions];
+
+        // Show initial "remaining" count
         updateRemainingCount();
-        showNextOneAtATime();
+        showNextOneAtATimeQuestion();
       }
     }
 
-    /************************************************************
-     * FETCH FROM JSON (in assets/ folder)
-     ************************************************************/
-    async function fetchChapter(chapterNum) {
-      const url = `assets/chapter${chapterNum}.json`;
+    /********************************************************************
+     * FETCH HELPERS
+     * (Replace fetch paths with your own data endpoints)
+     ********************************************************************/
+    async function fetchAllChapters() {
+      let merged = [];
+      for (let i = 1; i <= 12; i++) {
+        const data = await fetchSingleChapter(i);
+        merged = merged.concat(data);
+      }
+      return merged;
+    }
+
+    async function fetchSingleChapter(chapterNumber) {
+      // Example: fetch from /data/chapterX.json
+      const url = `./data/chapter${chapterNumber}.json`;
       try {
-        const resp = await fetch(url);
-        if (!resp.ok) {
-          console.warn(`Failed to load ${url}.`);
+        const response = await fetch(url);
+        if (!response.ok) {
+          console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
           return [];
         }
-        const jsonData = await resp.json();
+        const jsonData = await response.json();
         return jsonData.questions || [];
-      } catch (err) {
-        console.error(`Error fetching ${url}`, err);
+      } catch (error) {
+        console.error("Error fetching chapter data:", error);
         return [];
       }
     }
 
-    /************************************************************
+    /********************************************************************
+     * REMOVE DUPLICATE QUESTIONS (by questionText)
+     ********************************************************************/
+    function removeDuplicateQuestions(questionArray) {
+      const seen = new Set();
+      return questionArray.filter(q => {
+        if (!seen.has(q.questionText)) {
+          seen.add(q.questionText);
+          return true;
+        }
+        return false;
+      });
+    }
+
+    /********************************************************************
      * ALL-AT-ONCE RENDER
-     ************************************************************/
-    function renderAllAtOnce(questions) {
+     ********************************************************************/
+    function renderAllAtOnceMode(questions) {
       quizContainer.innerHTML = '';
-      questions.forEach((q, idx) => {
+
+      questions.forEach((qData, qIndex) => {
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
 
-        const h3 = document.createElement('h3');
-        h3.textContent = `Q${idx+1}: ${q.questionText}`;
-        questionDiv.appendChild(h3);
+        const header = document.createElement('h3');
+        header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
+        questionDiv.appendChild(header);
 
-        const optsWrapper = document.createElement('div');
-        optsWrapper.classList.add('vertical-radio-list');
+        // vertical arrangement
+        const optsDiv = document.createElement('div');
+        optsDiv.classList.add('vertical-radio-list');
 
-        q.options.forEach((optText, optIdx) => {
+        qData.options.forEach((optText, optIdx) => {
           const label = document.createElement('label');
+
           const radio = document.createElement('input');
           radio.type = 'radio';
-          radio.name = `q${idx}`;
+          radio.name = `question${qIndex}`;
           radio.value = optIdx;
+
           radio.addEventListener('change', () => {
-            userAnswers[idx] = optIdx;
+            userAnswers[qIndex] = optIdx;
           });
 
           label.appendChild(radio);
-          label.appendChild(document.createTextNode(' ' + optText));
-          optsWrapper.appendChild(label);
+          label.appendChild(document.createTextNode(" " + optText));
+          optsDiv.appendChild(label);
         });
 
-        questionDiv.appendChild(optsWrapper);
+        questionDiv.appendChild(optsDiv);
         quizContainer.appendChild(questionDiv);
       });
     }
 
-    /************************************************************
+    /********************************************************************
      * ONE-AT-A-TIME MODE
-     ************************************************************/
-    function showNextOneAtATime() {
+     ********************************************************************/
+    function showNextOneAtATimeQuestion() {
+      // If no questions remain => user got them all correct
       if (questionQueue.length === 0) {
-        finishOneAtATime();
+        handleSubmitOneAtATime();
         return;
       }
-      quizContainer.innerHTML = '';
-      const q = questionQueue[0];
 
+      quizContainer.innerHTML = '';
+
+      const qData = questionQueue[0]; // front of the queue
       const questionDiv = document.createElement('div');
       questionDiv.classList.add('question-container');
 
-      const h3 = document.createElement('h3');
-      h3.textContent = `Question: ${q.questionText}`;
-      questionDiv.appendChild(h3);
+      const header = document.createElement('h3');
+      header.textContent = `Question: ${qData.questionText}`;
+      questionDiv.appendChild(header);
 
-      const grid = document.createElement('div');
-      grid.classList.add('options-grid');
+      // 2x2 grid of answers
+      const gridDiv = document.createElement('div');
+      gridDiv.classList.add('options-grid');
 
-      // Re-shuffle to randomize each display
-      shuffleArray(q.options);
-      q.correctOption = q.options.indexOf(q.correctAnswer);
+      // Thoroughly reshuffle so each display is random
+      shuffleArray(qData.options);
 
-      q.options.forEach((optText, optIdx) => {
-        const block = document.createElement('div');
-        block.classList.add('option-block');
-        block.textContent = optText;
+      // After re-shuffle, figure out the new correct index again
+      qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
-        block.addEventListener('click', () => {
-          // disable clicks
-          Array.from(grid.children).forEach(el => el.style.pointerEvents = 'none');
+      qData.options.forEach((optText, optIdx) => {
+        const blockDiv = document.createElement('div');
+        blockDiv.classList.add('option-block');
+        blockDiv.textContent = optText;
 
-          const isCorrect = (optIdx === q.correctOption);
-          block.classList.add(isCorrect ? 'correct' : 'wrong');
+        blockDiv.addEventListener('click', () => {
+          // Disable further clicks
+          const siblings = gridDiv.querySelectorAll('.option-block');
+          siblings.forEach(el => el.style.pointerEvents = 'none');
 
-          // Show explanation if present
-          if (q.explanation) {
-            const expl = document.createElement('p');
-            expl.style.fontStyle = 'italic';
-            expl.textContent = q.explanation;
-            questionDiv.appendChild(expl);
+          // Check correctness
+          const isCorrect = (optIdx === qData.correctOption);
+          if (isCorrect) {
+            blockDiv.classList.add('correct');
+          } else {
+            blockDiv.classList.add('wrong');
           }
 
-          // Show next button
+          // Show explanation + feedback
+          showFeedback(questionDiv, isCorrect, qData.explanation);
+
+          // Show next question button
           nextQuestionBtn.style.display = 'inline-block';
           nextQuestionBtn.onclick = () => {
             nextQuestionBtn.style.display = 'none';
             if (isCorrect) {
+              // Remove from queue
               questionQueue.shift();
             } else {
+              // Put this question at the end of the queue
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
             updateProgressBar(totalQuestions - questionQueue.length);
-            showNextOneAtATime();
+            showNextOneAtATimeQuestion();
           };
         });
 
-        grid.appendChild(block);
+        gridDiv.appendChild(blockDiv);
       });
 
-      questionDiv.appendChild(grid);
+      questionDiv.appendChild(gridDiv);
       quizContainer.appendChild(questionDiv);
     }
 
-    function finishOneAtATime() {
+    function handleSubmitOneAtATime() {
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-      scoreDisplay.textContent =
-        `You eventually got them all correct! Time: ${formatTime(timeElapsed)}`;
+      scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
+      displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
     }
 
-    /************************************************************
-     * SUBMIT (ALL-AT-ONCE)
-     ************************************************************/
+    /********************************************************************
+     * NEXT QUESTION BUTTON
+     ********************************************************************/
+    function handleNextQuestion() {
+      // Not used in forced-correct flow but kept for reference
+    }
+
+    /********************************************************************
+     * SUBMIT BUTTON (ALL-AT-ONCE)
+     ********************************************************************/
     function handleSubmitQuiz() {
       let score = 0;
       currentQuestions.forEach((q, i) => {
@@ -524,38 +903,120 @@
           score++;
         }
       });
+
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-      scoreDisplay.textContent =
-        `You answered ${score} out of ${currentQuestions.length} correctly in ${formatTime(timeElapsed)}.`;
+
+      scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.
+      Time taken: ${formatTime(timeElapsed)}.`;
+
+      displayHighScores(score, currentQuestions.length, chapterSelect.value);
     }
 
-    /************************************************************
+    /********************************************************************
+     * FEEDBACK (ONE-AT-A-TIME)
+     ********************************************************************/
+    function showFeedback(parentDiv, isCorrect, explanation) {
+      // Remove old feedback if any
+      const oldFeedback = parentDiv.querySelector('.feedback');
+      if (oldFeedback) oldFeedback.remove();
+
+      const feedbackEl = document.createElement('div');
+      feedbackEl.classList.add('feedback', isCorrect ? 'correct' : 'incorrect');
+      feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
+      parentDiv.appendChild(feedbackEl);
+
+      // Always show explanation
+      if (explanation) {
+        const explEl = document.createElement('div');
+        explEl.classList.add('explanation');
+        explEl.textContent = explanation;
+        parentDiv.appendChild(explEl);
+      }
+    }
+
+    /********************************************************************
      * RESET QUIZ
-     ************************************************************/
+     ********************************************************************/
     function resetQuiz() {
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
+      topRightMenu.style.display = 'none';
 
-      // Stop timer & reset
+      quizContainer.innerHTML = '';
+      currentQuestions = [];
+      questionQueue = [];
+      userAnswers = [];
+
+      // Reset progress
+      updateProgressBar(0);
+
+      // Stop & reset timer
       stopTimer();
       timeElapsed = 0;
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
-
-      // Clear data
-      currentQuestions = [];
-      questionQueue    = [];
-      userAnswers      = [];
-      updateProgressBar(0);
-      remainingCountEl.textContent = '';
     }
 
-    /************************************************************
-     * TIMER & PROGRESS
-     ************************************************************/
+    /********************************************************************
+     * UTILITIES
+     ********************************************************************/
+    function getSelectedFormat() {
+      let val = 'allAtOnce';
+      formatRadioButtons.forEach(rb => {
+        if (rb.checked) {
+          val = rb.value;
+        }
+      });
+      return val;
+    }
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    /* Dark/Light Mode Toggle */
+    function toggleDarkMode() {
+      const bodyClassList = document.body.classList;
+      if (bodyClassList.contains('light-mode')) {
+        bodyClassList.remove('light-mode');
+        bodyClassList.add('dark-mode');
+      } else {
+        bodyClassList.remove('dark-mode');
+        bodyClassList.add('light-mode');
+      }
+    }
+
+    /* Progress Bar */
+    function updateProgressBar(completedQuestions) {
+      const percentage = (completedQuestions / totalQuestions) * 100;
+      progressFill.style.width = `${percentage}%`;
+    }
+
+    /* Remaining Count */
+    function updateRemainingCount() {
+      remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
+    }
+
+    /********************************************************************
+     * TIMER FUNCTIONS
+     ********************************************************************/
     function startTimer() {
       if (isTimerRunning) return;
       isTimerRunning = true;
@@ -567,7 +1028,6 @@
 
     function stopTimer() {
       clearInterval(timerInterval);
-      timerInterval = null;
       isTimerRunning = false;
     }
 
@@ -581,45 +1041,53 @@
       }
     }
 
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60);
-      const s = sec % 60;
-      return (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      const mm = mins < 10 ? '0'+mins : mins;
+      const ss = secs < 10 ? '0'+secs : secs;
+      return `${mm}:${ss}`;
     }
 
-    function updateProgressBar(completed) {
-      const pct = (completed / totalQuestions) * 100;
-      progressFill.style.width = pct + '%';
-    }
+    /********************************************************************
+     * HIGH SCORES USING LOCAL STORAGE
+     ********************************************************************/
+    function displayHighScores(score, total, chapter) {
+      // Show the high score section
+      highScoreSection.style.display = 'block';
 
-    function updateRemainingCount() {
-      remainingCountEl.textContent =
-        `Remaining: ${questionQueue.length} question(s)`;
-    }
+      // Generate a key for local storage, e.g. "chapter_all" or "chapter_5"
+      const key = `chapter_${chapter}`;
 
-    /************************************************************
-     * DARK/LIGHT MODE
-     ************************************************************/
-    function toggleDarkMode() {
-      const body = document.body;
-      if (body.classList.contains('light-mode')) {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-      } else {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
+      // Retrieve existing best score
+      const stored = localStorage.getItem(key);
+      const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
+
+      const newTime = timeElapsed;
+
+      // If user beats the previous record or if no record exists
+      // Score priority, if tie in score => time priority
+      if (score > bestScore.score ||
+          (score === bestScore.score && newTime < bestScore.time)) {
+        const newRecord = {
+          score: score,
+          total: total,
+          time: newTime
+        };
+        localStorage.setItem(key, JSON.stringify(newRecord));
       }
-    }
 
-    /************************************************************
-     * SHUFFLE
-     ************************************************************/
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+      // Now read the updated best score from storage
+      const updatedBest = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
+
+      // If we have a high score record, show it
+      if (updatedBest) {
+        highScoreList.innerHTML = `
+          <li><strong>Chapter:</strong> ${chapter}</li>
+          <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
+          <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
+        `;
       }
-      return arr;
     }
   </script>
 </body>
