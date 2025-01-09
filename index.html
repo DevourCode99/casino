@@ -6,101 +6,109 @@
   <title>Real Estate Broker Quiz - Revamped</title>
 
   <style>
-    /* =========================================
-       CSS VARIABLES & GLOBAL STYLES
-    ========================================== */
+    /*********************************************************
+     * CSS VARIABLES & GLOBAL STYLES
+     *********************************************************/
     :root {
-      --primary-color: #2563eb;
+      --primary-color: #2563eb;     /* Main accent color: deeper blue */
       --primary-hover: #1d4ed8;
-      --secondary-color: #4a5568;
-      --light-bg: #f7f9fc;
-      --dark-bg: #2d3748;
-      --light-text: #333;
-      --dark-text: #f1f1f1;
+      --secondary-color: #4a5568;   /* For secondary buttons, etc. */
+      --light-blue:    #f0f8ff;     /* Very light blue background accent */
+      --white:         #ffffff;     
       --success-color: #0f9d58;
-      --error-color: #d93025;
+      --error-color:   #d93025;
       --warning-color: #faad14;
+
+      --text-color-light: #444;
+      --text-color-dark:  #f1f1f1;
     }
 
-    /* The body color and text color will swap in dark mode */
-    body.light-mode {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: var(--light-text);
-    }
-
-    body.dark-mode {
-      background: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    /* =================================================
+       BODY & THEME MODES
+    ================================================== */
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100vh;
       font-family: "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden; 
       transition: background 0.3s ease, color 0.3s ease;
-      overflow-x: hidden; /* only allow vertical scrolling */
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 900px;
-      margin: 2rem 1rem;
-      background: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-      transform: translateY(20px);
-      padding: 2rem;
+      /* Center all content by default (flex container) */
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: background-color 0.3s ease;
+      justify-content: flex-start;
     }
 
-    /* Dark mode container override */
-    body.dark-mode .container {
-      background-color: #1a202c;
-      color: var(--dark-text);
+    body.light-mode {
+      background-color: var(--white); /* White background */
+      color: var(--text-color-light);
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    body.dark-mode {
+      background-color: #2d3748;
+      color: var(--text-color-dark);
     }
 
-    /* =========================================
-       TOP-RIGHT MENU & DARK MODE TOGGLE
-    ========================================== */
-    .top-right-menu {
+    /* Make base text bigger */
+    body {
+      font-size: 1.125rem; /* ~18px */
+      line-height: 1.6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* =================================================
+       EXPANDABLE MENU (Hamburger) - Desktop & Mobile
+    ================================================== */
+    .expandable-menu {
       position: fixed;
       top: 1rem;
       right: 1rem;
       z-index: 1000;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      justify-content: flex-end;
+      text-align: center;
     }
-
-    .menu-btn {
+    .menu-toggle-button {
       background: var(--primary-color);
       color: #fff;
       border: none;
       padding: 0.6rem 1rem;
       border-radius: 0.25rem;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .menu-toggle-button:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.03);
+    }
+    .menu-content {
+      display: none;
+      margin-top: 0.5rem;
+      background: var(--light-blue);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+    .menu-content.show {
+      display: block;
+    }
+    .menu-btn {
+      display: block;
+      margin: 0.5rem auto;
+      width: 100%;
+      max-width: 180px;
+      text-align: center;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
       font-weight: 600;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
@@ -108,14 +116,20 @@
       background-color: var(--primary-hover);
       transform: scale(1.03);
     }
-
+    .menu-btn.btn-secondary {
+      background-color: #eee;
+      color: #444;
+    }
+    .menu-btn.btn-secondary:hover {
+      background-color: #ddd;
+    }
     #dark-mode-toggle {
       background: var(--secondary-color);
     }
 
-    /* =========================================
-       FULLSCREEN BUTTON
-    ========================================== */
+    /* =================================================
+       FULLSCREEN BUTTON (floats at bottom-right)
+    ================================================== */
     #fullscreen-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -140,9 +154,44 @@
       transform: scale(1.05);
     }
 
-    /* =========================================
-       BUTTONS
-    ========================================== */
+    /* =================================================
+       MAIN CONTAINER
+    ================================================== */
+    .container {
+      width: 100%;
+      max-width: 1200px; /* Make the white box bigger */
+      margin: 2rem 1rem;
+      background: var(--white);
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      padding: 3rem; /* More padding for a bigger feel */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      text-align: center; /* Center text inside the container */
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dark mode container override */
+    body.dark-mode .container {
+      background-color: #1a202c;
+      color: var(--text-color-dark);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+    }
+
+    /* =================================================
+       BUTTONS (Shared Classes)
+    ================================================== */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -151,7 +200,7 @@
       border: none;
       border-radius: 0.25rem;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.1rem; /* slightly bigger */
       font-weight: 600;
       transition: background-color 0.2s ease, transform 0.2s ease;
       margin-top: 1rem;
@@ -162,15 +211,6 @@
       transform: translateY(-1px);
     }
 
-    .btn-secondary {
-      background-color: #eee;
-      color: #444;
-    }
-    .btn-secondary:hover {
-      background-color: #ddd;
-    }
-
-    /* For the “Pause Timer” button (optional) */
     .btn-warning {
       background-color: var(--warning-color);
       color: #333;
@@ -179,16 +219,14 @@
       filter: brightness(1.1);
     }
 
-    /* =========================================
+    /* =================================================
        START MENU
-    ========================================== */
+    ================================================== */
     #start-menu h1 {
-      text-align: center;
       margin-bottom: 1rem;
-      color: #444;
+      color: var(--text-color-light);
     }
     #start-menu p {
-      text-align: center;
       color: #555;
       max-width: 600px;
       margin: 0 auto 1.25rem auto;
@@ -202,11 +240,12 @@
     select, .radio-group {
       width: 100%;
       max-width: 300px;
-      padding: 0.5rem;
+      padding: 0.6rem;
       margin-bottom: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 0.25rem;
       outline: none;
+      font-size: 1rem;
     }
     .radio-group {
       display: flex;
@@ -218,6 +257,7 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
+      cursor: pointer;
     }
 
     /* Dark mode overrides for form elements */
@@ -228,9 +268,9 @@
       border-color: #444;
     }
 
-    /* =========================================
+    /* =================================================
        QUIZ SECTION
-    ========================================== */
+    ================================================== */
     #quiz-section {
       width: 100%;
       display: none;
@@ -238,27 +278,27 @@
     }
 
     .question-container {
-      margin-bottom: 1.5rem;
-      text-align: center;
+      margin-bottom: 2rem;
       max-width: 700px;
       width: 100%;
       margin: 0 auto 2rem auto;
       animation: fadeInUp 0.4s ease;
-      background: var(--light-bg);
+      background: var(--light-blue);
       padding: 1.5rem;
       border-radius: 0.25rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: background-color 0.3s ease;
+      text-align: center;
     }
     body.dark-mode .question-container {
       background: #2d3748;
       box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-      color: var(--dark-text);
+      color: var(--text-color-dark);
     }
 
     .question-container h3 {
       margin-top: 0;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     .options-grid {
@@ -319,16 +359,17 @@
       color: #ddd;
     }
 
-    /* For the default "All-At-Once" mode radio lists */
+    /* For the “All-At-Once” mode (vertical radio list) */
     .vertical-radio-list label {
       display: block;
-      margin: 0.25rem 0;
+      margin: 0.4rem 0;
       cursor: pointer;
+      text-align: left; 
     }
 
-    /* =========================================
-       QUIZ UTILITIES: PROGRESS BAR & REMAINING
-    ========================================== */
+    /* =================================================
+       PROGRESS BAR & REMAINING
+    ================================================== */
     .remaining-count {
       font-weight: bold;
       margin-bottom: 1rem;
@@ -351,9 +392,9 @@
       transition: width 0.4s ease;
     }
 
-    /* =========================================
+    /* =================================================
        TIMER & PAUSE/RESUME
-    ========================================== */
+    ================================================== */
     #timer-container {
       text-align: center;
       margin-top: 0.5rem;
@@ -367,24 +408,23 @@
       font-size: 1.2rem;
     }
 
-    /* =========================================
+    /* =================================================
        RESULT SECTION
-    ========================================== */
+    ================================================== */
     #result-section {
       width: 100%;
       display: none;
       text-align: center;
     }
     #score-display {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       font-weight: bold;
     }
 
-    /* High score area */
     #high-score-section {
       margin-top: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
     #high-score-list {
       list-style: none;
@@ -397,19 +437,19 @@
       margin: 0.25rem 0;
     }
 
-    /* =========================================
-       RESPONSIVE MEDIA QUERIES
-    ========================================== */
+    /* =================================================
+       RESPONSIVE
+    ================================================== */
     @media (max-width: 768px) {
       .options-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack options in one column on small screens */
       }
-      .menu-btn {
-        font-size: 0.8rem;
+      .menu-toggle-button {
+        font-size: 0.9rem;
       }
       .container {
         margin: 1rem;
-        padding: 1rem;
+        padding: 1.5rem;
       }
       #fullscreen-btn {
         bottom: 1rem;
@@ -419,7 +459,7 @@
         padding: 1rem;
       }
       .option-block {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 1rem;
       }
     }
@@ -427,10 +467,13 @@
 </head>
 <body class="light-mode">
 
-  <!-- TOP RIGHT MENU (visible after quiz starts) -->
-  <div class="top-right-menu" id="top-right-menu" style="display: none;">
-    <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
-    <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
+  <!-- EXPANDABLE MENU (Hamburger) -->
+  <div class="expandable-menu">
+    <button id="menu-toggle" class="menu-toggle-button">☰ Menu</button>
+    <div class="menu-content">
+      <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
+      <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
+    </div>
   </div>
 
   <!-- FULLSCREEN BUTTON -->
@@ -548,9 +591,12 @@
     const scoreDisplay        = document.getElementById('score-display');
     const restartBtn          = document.getElementById('restart-btn');
     const backToMenuBtn       = document.getElementById('back-to-menu-btn');
-    const topRightMenu        = document.getElementById('top-right-menu');
     const fullscreenBtn       = document.getElementById('fullscreen-btn');
     const darkModeToggle      = document.getElementById('dark-mode-toggle');
+
+    // Expandable menu toggle
+    const menuToggle          = document.getElementById('menu-toggle');
+    const menuContent         = document.querySelector('.menu-content');
 
     // "Remaining" count & progress bar
     const remainingCountEl    = document.getElementById('remaining-count');
@@ -613,7 +659,6 @@
     restartBtn.addEventListener('click', resetQuiz);
     backToMenuBtn.addEventListener('click', resetQuiz);
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
-
     nextQuestionBtn.addEventListener('click', handleNextQuestion);
     submitBtn.addEventListener('click', handleSubmitQuiz);
 
@@ -625,6 +670,11 @@
 
     // Timer pause/resume
     pauseTimerBtn.addEventListener('click', toggleTimer);
+
+    // Hamburger menu toggle
+    menuToggle.addEventListener('click', () => {
+      menuContent.classList.toggle('show');
+    });
 
     // On load, initialize question-count for default selection
     window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
@@ -650,9 +700,6 @@
      * START QUIZ
      ********************************************************************/
     async function startQuiz() {
-      // Show top-right menu
-      topRightMenu.style.display = 'flex';
-
       // Hide start menu, show quiz
       startMenu.style.display   = 'none';
       quizSection.style.display = 'block';
@@ -667,21 +714,23 @@
 
       let allFetched;
       if (chapterValue === 'all') {
+        // Could fetch each chapter and merge
         allFetched = await fetchAllChapters();
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // Remove duplicates to ensure more variety
+      // Remove duplicates to ensure no repeated question text
       allFetched = removeDuplicateQuestions(allFetched);
 
-      // Thoroughly randomize entire question set
-      shuffleArray(allFetched);
+      // "Advanced" random mixing for extra randomness
+      // (multiple shuffles + possible reversal passes)
+      advancedRandomMix(allFetched);
 
       // Slice to user's chosen question count
       currentQuestions = allFetched.slice(0, questionCount);
 
-      // Shuffle each question's options, THEN set the correctOption index
+      // Shuffle each question's options & fix correct index
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
@@ -698,22 +747,18 @@
         timerContainer.style.display = 'none';
       }
 
+      // Render per chosen format
       if (chosenFormat === 'allAtOnce') {
         userAnswers = [];
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'inline-block';
         renderAllAtOnceMode(currentQuestions);
-        // No "remaining" in allAtOnce mode
         remainingCountEl.textContent = '';
       } else {
         // One at a time
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'none';
-
-        // Copy to queue
         questionQueue = [...currentQuestions];
-
-        // Show initial "remaining" count
         updateRemainingCount();
         showNextOneAtATimeQuestion();
       }
@@ -721,7 +766,6 @@
 
     /********************************************************************
      * FETCH HELPERS
-     * (Replace fetch paths with your own data endpoints)
      ********************************************************************/
     async function fetchAllChapters() {
       let merged = [];
@@ -733,7 +777,6 @@
     }
 
     async function fetchSingleChapter(chapterNumber) {
-      // Example: fetch from /data/chapterX.json
       const url = `./data/chapter${chapterNumber}.json`;
       try {
         const response = await fetch(url);
@@ -764,6 +807,20 @@
     }
 
     /********************************************************************
+     * ADVANCED RANDOM MIXING
+     * (Shuffle multiple times + random reversal to increase randomness)
+     ********************************************************************/
+    function advancedRandomMix(arr, times = 3) {
+      for (let i = 0; i < times; i++) {
+        shuffleArray(arr);
+        if (Math.random() < 0.5) {
+          arr.reverse();
+        }
+      }
+      return arr;
+    }
+
+    /********************************************************************
      * ALL-AT-ONCE RENDER
      ********************************************************************/
     function renderAllAtOnceMode(questions) {
@@ -777,7 +834,7 @@
         header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
         questionDiv.appendChild(header);
 
-        // vertical arrangement
+        // Vertical radio list
         const optsDiv = document.createElement('div');
         optsDiv.classList.add('vertical-radio-list');
 
@@ -807,7 +864,7 @@
      * ONE-AT-A-TIME MODE
      ********************************************************************/
     function showNextOneAtATimeQuestion() {
-      // If no questions remain => user got them all correct
+      // If no questions remain => user eventually got them all correct
       if (questionQueue.length === 0) {
         handleSubmitOneAtATime();
         return;
@@ -823,14 +880,12 @@
       header.textContent = `Question: ${qData.questionText}`;
       questionDiv.appendChild(header);
 
-      // 2x2 grid of answers
+      // 2x2 grid
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // Thoroughly reshuffle so each display is random
+      // Re-shuffle options each time we show them
       shuffleArray(qData.options);
-
-      // After re-shuffle, figure out the new correct index again
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
       qData.options.forEach((optText, optIdx) => {
@@ -918,7 +973,6 @@
      * FEEDBACK (ONE-AT-A-TIME)
      ********************************************************************/
     function showFeedback(parentDiv, isCorrect, explanation) {
-      // Remove old feedback if any
       const oldFeedback = parentDiv.querySelector('.feedback');
       if (oldFeedback) oldFeedback.remove();
 
@@ -927,7 +981,6 @@
       feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
       parentDiv.appendChild(feedbackEl);
 
-      // Always show explanation
       if (explanation) {
         const explEl = document.createElement('div');
         explEl.classList.add('explanation');
@@ -943,17 +996,14 @@
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
-      topRightMenu.style.display = 'none';
 
       quizContainer.innerHTML = '';
       currentQuestions = [];
       questionQueue = [];
       userAnswers = [];
 
-      // Reset progress
       updateProgressBar(0);
 
-      // Stop & reset timer
       stopTimer();
       timeElapsed = 0;
       timerEl.textContent = 'Time: 00:00';
@@ -1053,20 +1103,14 @@
      * HIGH SCORES USING LOCAL STORAGE
      ********************************************************************/
     function displayHighScores(score, total, chapter) {
-      // Show the high score section
       highScoreSection.style.display = 'block';
 
-      // Generate a key for local storage, e.g. "chapter_all" or "chapter_5"
       const key = `chapter_${chapter}`;
-
-      // Retrieve existing best score
       const stored = localStorage.getItem(key);
       const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
-
       const newTime = timeElapsed;
 
-      // If user beats the previous record or if no record exists
-      // Score priority, if tie in score => time priority
+      // If user beats the previous record or if no record
       if (score > bestScore.score ||
           (score === bestScore.score && newTime < bestScore.time)) {
         const newRecord = {
@@ -1077,10 +1121,7 @@
         localStorage.setItem(key, JSON.stringify(newRecord));
       }
 
-      // Now read the updated best score from storage
       const updatedBest = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
-
-      // If we have a high score record, show it
       if (updatedBest) {
         highScoreList.innerHTML = `
           <li><strong>Chapter:</strong> ${chapter}</li>
