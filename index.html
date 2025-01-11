@@ -7,7 +7,7 @@
 
   <style>
     /*********************************************************
-     * (ORIGINAL STYLES)
+     * (ORIGINAL GLOBAL & THEME VARIABLES)
      *********************************************************/
     :root {
       --primary-color: #2563eb;     
@@ -41,7 +41,6 @@
       background-color: var(--white);
       color: var(--text-color-light);
     }
-
     body.dark-mode {
       background-color: #2d3748;
       color: var(--text-color-dark);
@@ -56,7 +55,9 @@
       box-sizing: border-box;
     }
 
-    /* (Existing hamburger menu CSS) */
+    /*********************************************************
+     * (EXISTING HAMBURGER MENU STYLES)
+     *********************************************************/
     .expandable-menu {
       position: fixed;
       top: 1rem;
@@ -119,6 +120,7 @@
     #dark-mode-toggle {
       background: var(--secondary-color);
     }
+
     .audio-panel {
       background: var(--light-blue);
       border: 2px solid var(--primary-color);
@@ -137,7 +139,9 @@
       margin-top: 0;
     }
 
-    /* Fullscreen button */
+    /*********************************************************
+     * FULLSCREEN BUTTON
+     *********************************************************/
     #fullscreen-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -162,6 +166,9 @@
       transform: scale(1.05);
     }
 
+    /*********************************************************
+     * MAIN CONTAINER FOR QUIZ
+     *********************************************************/
     .container {
       width: 100%;
       max-width: 1200px;
@@ -179,7 +186,6 @@
       transition: background-color 0.3s ease;
       text-align: center;
     }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -218,19 +224,46 @@
       filter: brightness(1.1);
     }
 
+    /*********************************************************
+     * (NEW/UPDATED) START MENU STYLING (make it “beautiful”)
+     *********************************************************/
+    #start-menu {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      /* Subtle fade-in animation */
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+      transform: translateY(10px);
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     #start-menu h1 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: var(--text-color-light);
+      font-size: 1.8rem;
     }
     #start-menu p {
       color: #555;
-      max-width: 600px;
-      margin: 0 auto 1.25rem auto;
+      max-width: 500px;
+      margin: 0 auto 1.5rem auto;
       line-height: 1.4;
     }
+
     .form-group {
       margin-bottom: 1.25rem;
       text-align: center;
+      margin: 1.5rem auto;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
     select, .radio-group {
       width: 100%;
@@ -241,6 +274,7 @@
       border-radius: 0.25rem;
       outline: none;
       font-size: 1rem;
+      text-align: center;
     }
     .radio-group {
       display: flex;
@@ -261,10 +295,14 @@
       border-color: #444;
     }
 
+    /*********************************************************
+     * QUIZ SECTION, QUESTIONS, ETC. (Make them uniform/centered)
+     *********************************************************/
     #quiz-section {
       width: 100%;
       display: none;
       position: relative;
+      text-align: center; /* center the content */
     }
     .question-container {
       margin-bottom: 2rem;
@@ -349,6 +387,7 @@
       cursor: pointer;
       text-align: left; 
     }
+
     .remaining-count {
       font-weight: bold;
       margin-bottom: 1rem;
@@ -382,6 +421,10 @@
     #timer {
       font-size: 1.2rem;
     }
+
+    /*********************************************************
+     * RESULT SECTION
+     *********************************************************/
     #result-section {
       width: 100%;
       display: none;
@@ -406,6 +449,10 @@
     #high-score-list li {
       margin: 0.25rem 0;
     }
+
+    /*********************************************************
+     * MEDIA QUERIES (RESPONSIVE)
+     *********************************************************/
     @media (max-width: 768px) {
       .options-grid {
         grid-template-columns: 1fr;
@@ -430,18 +477,20 @@
       }
     }
 
-
     /*********************************************************
-     * (NEW) STORY-MODE & NEW MAIN MENU STYLES
+     * (NEW) MAIN MENU & STORY MODE STYLES
      *********************************************************/
-    /* A separate section for our new main menu */
     #new-main-menu {
-      display: none; /* hidden by default */
+      display: none; 
       text-align: center;
       margin-top: 2rem;
+      animation: fadeIn 0.8s ease forwards; /* reuse fadeIn keyframe */
+      opacity: 0;
+      transform: translateY(10px);
     }
     #new-main-menu h1 {
       margin-bottom: 1.5rem;
+      font-size: 2rem;
     }
     .menu-option-btn {
       display: inline-block;
@@ -460,32 +509,46 @@
       transform: translateY(-1px);
     }
 
-    /* Story mode container */
+    /* (UPDATED) Story mode container: One at a time with bigger takeaway */
     #story-mode-container {
       display: none;
       width: 100%;
-      max-width: 1200px;
+      max-width: 700px;
       margin: 2rem auto;
       padding: 1rem;
+      text-align: center;
     }
     .story-card {
       background: var(--light-blue);
       border: 1px solid #ccc;
       border-radius: 0.25rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.5s ease;
     }
     body.dark-mode .story-card {
       background: #2d3748;
       border-color: #444;
       color: var(--text-color-dark);
     }
-    .story-card h3 {
-      margin-top: 0;
+    /* Key takeaway is bigger */
+    .story-key {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
     }
-    .story-card p {
-      margin: 0.5rem 0 0 0;
+    /* Example story is smaller text */
+    .story-example {
+      font-size: 1rem;
+      color: #555;
       line-height: 1.4;
+    }
+    body.dark-mode .story-example {
+      color: #ccc;
+    }
+    /* Next story button */
+    .story-next-btn {
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -495,10 +558,12 @@
   <div class="expandable-menu">
     <button id="menu-toggle" class="menu-toggle-button">☰ Menu</button>
     <div class="menu-content">
-      <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
+      <!-- (MODIFIED) "Back to Main" => goes to new main menu -->
       <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
 
-      <!-- (Existing audio settings) -->
+      <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
+      
+      <!-- Audio Panels -->
       <button class="menu-btn" id="music-settings-btn">Music Settings</button>
       <div class="audio-panel" id="music-settings-panel">
         <h4>Music Settings</h4>
@@ -534,24 +599,23 @@
   <!-- (NEW) MAIN MENU -->
   <div id="new-main-menu">
     <h1>Main Menu</h1>
-    <!-- Three Options as requested: Story Mode, Questions, Options -->
     <button class="menu-option-btn" id="go-to-story">Story Mode</button>
     <button class="menu-option-btn" id="go-to-quiz">Questions</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
 
-  <!-- (NEW) STORY MODE CONTAINER -->
+  <!-- (UPDATED) STORY MODE CONTAINER (One at a time) -->
   <div id="story-mode-container">
     <h2>Story Mode - Wisconsin Real Estate Chapter 1</h2>
     <div id="story-entries"></div>
-    <!-- A button to return to the new main menu -->
-    <button class="btn btn-secondary" id="back-to-main-menu-btn">Back to Main Menu</button>
+    <!-- A button to return to the new main menu (hidden when “nexting” stories) -->
+    <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
   <!-- MAIN CONTAINER (EXISTING QUIZ) -->
   <div class="container" id="main-container">
 
-    <!-- START MENU -->
+    <!-- START MENU (QUIZ MENU) -->
     <div id="start-menu">
       <h1>Real Estate Broker Quiz - Revamped</h1>
       <p>
@@ -559,7 +623,7 @@
       </p>
 
       <div class="form-group">
-        <label for="chapter-select">Choose Chapter or All:</label><br>
+        <label for="chapter-select">Choose Chapter or All:</label>
         <select id="chapter-select">
           <option value="all">All Chapters</option>
           <option value="1">Chapter 1</option>
@@ -578,12 +642,12 @@
       </div>
 
       <div class="form-group">
-        <label for="question-count-select">Number of Questions:</label><br>
+        <label for="question-count-select">Number of Questions:</label>
         <select id="question-count-select"></select>
       </div>
 
       <div class="form-group">
-        <label>Select Display Format:</label><br>
+        <label>Select Display Format:</label>
         <div class="radio-group">
           <label>
             <input type="radio" name="format" value="allAtOnce" checked />
@@ -636,7 +700,7 @@
 
   <script>
     /********************************************************************
-     * (EXISTING VARIABLES & DOM ELEMENTS)
+     * DOM ELEMENTS
      ********************************************************************/
     const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
@@ -648,7 +712,7 @@
     const submitBtn           = document.getElementById('submit-btn');
     const scoreDisplay        = document.getElementById('score-display');
     const restartBtn          = document.getElementById('restart-btn');
-    const backToMenuBtn       = document.getElementById('back-to-menu-btn');
+    const backToMenuBtn       = document.getElementById('back-to-menu-btn'); /* Hamburger menu's back to main */
     const fullscreenBtn       = document.getElementById('fullscreen-btn');
     const darkModeToggle      = document.getElementById('dark-mode-toggle');
     const menuToggle          = document.getElementById('menu-toggle');
@@ -666,7 +730,7 @@
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
-    /* (Music & Sound) */
+    /* Audio Settings */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
     const musicSettingsPanel  = document.getElementById('music-settings-panel');
     const closeMusicBtn       = document.getElementById('close-music-settings');
@@ -678,9 +742,7 @@
     const sfxToggle           = document.getElementById('toggle-sfx');
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
-    /********************************************************************
-     * (NEW) STORY MODE & NEW MAIN MENU DOM ELEMENTS
-     ********************************************************************/
+    /* (NEW) MAIN MENU & STORY MODE DOM ELEMENTS */
     const newMainMenu         = document.getElementById('new-main-menu');
     const storyModeContainer  = document.getElementById('story-mode-container');
     const storyEntriesDiv     = document.getElementById('story-entries');
@@ -698,7 +760,7 @@
     let userAnswers      = [];
     let chosenFormat     = 'allAtOnce';
     let totalQuestions   = 0;
-    let wrongAnsweredSet = new Set(); // track "wrong" in oneAtATime
+    let wrongAnsweredSet = new Set();
 
     /* Timer */
     let timerInterval    = null;
@@ -725,8 +787,8 @@
     };
 
     /********************************************************************
-     * (NEW) STORY DATA (As Provided)
-     * We only show CHAPTER 1 in this example. Adjust as you see fit.
+     * (NEW) STORY DATA
+     * (For brevity, only “Chapter 1” as in your example)
      ********************************************************************/
     const storyDataChapter1 = {
       "referenceCode": "Chapter 1",
@@ -801,7 +863,12 @@
     let sfxEnabled        = true;
 
     /********************************************************************
-     * (EXISTING) EVENT LISTENERS
+     * (NEW) STORY MODE STATE
+     ********************************************************************/
+    let currentStoryIndex = 0;
+
+    /********************************************************************
+     * EVENT LISTENERS
      ********************************************************************/
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -811,10 +878,13 @@
       playSFX('tap');
       resetQuiz();
     });
+
+    /* (MODIFIED) Back to main from the hamburger => go to NEW MAIN MENU */
     backToMenuBtn.addEventListener('click', () => {
       playSFX('tap');
-      resetQuiz();
+      goBackToMainMenu(); 
     });
+
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
     nextQuestionBtn.addEventListener('click', handleNextQuestion);
     submitBtn.addEventListener('click', () => {
@@ -878,69 +948,101 @@
     });
 
     /********************************************************************
-     * (NEW) STORY MODE & MAIN MENU EVENT LISTENERS
+     * (NEW) MAIN MENU EVENT LISTENERS
      ********************************************************************/
-    // Show the new main menu by default instead of the quiz interface
-    // (You can invert this logic if you want the quiz to be the default)
     window.addEventListener('load', () => {
       newMainMenu.style.display = 'block';
-      mainContainer.style.display = 'none'; // hide old quiz container by default
+      mainContainer.style.display = 'none';
     });
 
-    // “Story Mode” button
     goToStoryBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'block';
-      loadStoryMode();
+      currentStoryIndex = 0; 
+      loadStoryAtIndex(currentStoryIndex);
     });
 
-    // “Questions” button
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
       mainContainer.style.display = 'block';
     });
 
-    // “Options for Now” button
     goToOptionsBtn.addEventListener('click', () => {
       playSFX('tap');
-      alert("You clicked 'Options for now' - This is just a placeholder!");
+      alert("You clicked 'Options for now' - Just a placeholder!");
     });
 
-    // Back to Main Menu from Story Mode
     backToNewMenuBtn.addEventListener('click', () => {
       playSFX('tap');
       storyModeContainer.style.display = 'none';
       newMainMenu.style.display = 'block';
     });
 
+
     /********************************************************************
-     * (NEW) FUNCTION: LOAD STORY MODE
+     * (NEW) GO BACK TO MAIN MENU FUNCTION
      ********************************************************************/
-    function loadStoryMode() {
-      // Clear out old entries
-      storyEntriesDiv.innerHTML = '';
-
-      const entries = storyDataChapter1.entries;
-      entries.forEach((entry, index) => {
-        const card = document.createElement('div');
-        card.classList.add('story-card');
-
-        const heading = document.createElement('h3');
-        heading.textContent = `Key Takeaway #${index + 1}: ${entry.keyTakeaway}`;
-
-        const para = document.createElement('p');
-        para.textContent = entry.exampleStory;
-
-        card.appendChild(heading);
-        card.appendChild(para);
-        storyEntriesDiv.appendChild(card);
-      });
+    function goBackToMainMenu() {
+      // Hide everything quiz/story-related
+      mainContainer.style.display = 'none';
+      storyModeContainer.style.display = 'none';
+      // Show the new main menu
+      newMainMenu.style.display = 'block';
     }
 
     /********************************************************************
-     * (EXISTING) QUIZ-RELATED FUNCTIONS (unchanged)
+     * (NEW) STORY MODE - ONE AT A TIME
+     ********************************************************************/
+    function loadStoryAtIndex(index) {
+      // Hide the "Back to Main Menu" button until last story is shown
+      backToNewMenuBtn.style.display = 'none';
+
+      const total = storyDataChapter1.entries.length;
+      if (index >= total) {
+        // If user has viewed all stories, show the "Back to Main Menu" button
+        storyEntriesDiv.innerHTML = '';
+        backToNewMenuBtn.style.display = 'inline-block';
+        return;
+      }
+
+      // Clear out old entry
+      storyEntriesDiv.innerHTML = '';
+
+      const entry = storyDataChapter1.entries[index];
+
+      // Build a single story card
+      const card = document.createElement('div');
+      card.classList.add('story-card');
+
+      const keyDiv = document.createElement('div');
+      keyDiv.classList.add('story-key');
+      keyDiv.textContent = entry.keyTakeaway;
+
+      const exDiv = document.createElement('div');
+      exDiv.classList.add('story-example');
+      exDiv.textContent = entry.exampleStory;
+
+      card.appendChild(keyDiv);
+      card.appendChild(exDiv);
+
+      // Add "Next" button
+      const nextBtn = document.createElement('button');
+      nextBtn.classList.add('btn', 'story-next-btn');
+      nextBtn.textContent = (index < total - 1) ? 'Next' : 'Finish';
+      nextBtn.addEventListener('click', () => {
+        playSFX('tap');
+        currentStoryIndex++;
+        loadStoryAtIndex(currentStoryIndex);
+      });
+
+      card.appendChild(nextBtn);
+      storyEntriesDiv.appendChild(card);
+    }
+
+    /********************************************************************
+     * QUIZ FORM & FETCH
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selectedChapter = chapterSelect.value;
@@ -960,8 +1062,8 @@
       quizSection.style.display = 'block';
       resultSection.style.display = 'none';
       wrongAnsweredSet.clear();
-      chosenFormat = getSelectedFormat();
 
+      chosenFormat = getSelectedFormat();
       const chapterValue = chapterSelect.value;
       const questionCount = parseInt(questionCountSelect.value, 10);
       totalQuestions = questionCount;
@@ -1052,11 +1154,15 @@
       return arr;
     }
 
+    /********************************************************************
+     * RENDER FUNCTIONS
+     ********************************************************************/
     function renderAllAtOnceMode(questions) {
       quizContainer.innerHTML = '';
       questions.forEach((qData, qIndex) => {
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
+
         const header = document.createElement('h3');
         header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
         questionDiv.appendChild(header);
@@ -1090,9 +1196,11 @@
         return;
       }
       quizContainer.innerHTML = '';
+
       const qData = questionQueue[0];
       const questionDiv = document.createElement('div');
       questionDiv.classList.add('question-container');
+
       const header = document.createElement('h3');
       header.textContent = `Question: ${qData.questionText}`;
       questionDiv.appendChild(header);
@@ -1148,11 +1256,13 @@
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
+
       scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
       if (chosenFormat === 'oneAtATime') {
         const btnContainer = document.createElement('div');
+
         const finishBtn = document.createElement('button');
         finishBtn.classList.add('btn');
         finishBtn.textContent = 'Finish';
@@ -1187,7 +1297,7 @@
     }
 
     function handleNextQuestion() {
-      // (placeholder)
+      /* placeholder */
     }
 
     function handleSubmitQuiz() {
@@ -1200,6 +1310,7 @@
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
+
       scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.
       Time taken: ${formatTime(timeElapsed)}.`;
       displayHighScores(score, currentQuestions.length, chapterSelect.value);
@@ -1208,10 +1319,12 @@
     function showFeedback(parentDiv, isCorrect, explanation) {
       const oldFeedback = parentDiv.querySelector('.feedback');
       if (oldFeedback) oldFeedback.remove();
+
       const feedbackEl = document.createElement('div');
       feedbackEl.classList.add('feedback', isCorrect ? 'correct' : 'incorrect');
       feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
       parentDiv.appendChild(feedbackEl);
+
       if (explanation) {
         const explEl = document.createElement('div');
         explEl.classList.add('explanation');
@@ -1220,6 +1333,47 @@
       }
     }
 
+    function reviewQuestions(questionsToReview) {
+      quizSection.style.display = 'block';
+      quizContainer.innerHTML = '';
+
+      questionsToReview.forEach((qData) => {
+        const sortedOptions = [...qData.options];
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question-container');
+
+        const header = document.createElement('h3');
+        header.textContent = `Q: ${qData.questionText}`;
+        questionDiv.appendChild(header);
+
+        const gridDiv = document.createElement('div');
+        gridDiv.classList.add('options-grid');
+
+        sortedOptions.forEach(optText => {
+          const blockDiv = document.createElement('div');
+          blockDiv.classList.add('option-block');
+          blockDiv.textContent = optText;
+          if (optText === qData.correctAnswer) {
+            blockDiv.classList.add('correct');
+          }
+          gridDiv.appendChild(blockDiv);
+        });
+
+        questionDiv.appendChild(gridDiv);
+
+        if (qData.explanation) {
+          const explEl = document.createElement('div');
+          explEl.classList.add('explanation');
+          explEl.textContent = qData.explanation;
+          questionDiv.appendChild(explEl);
+        }
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    /********************************************************************
+     * RESET QUIZ
+     ********************************************************************/
     function resetQuiz() {
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
@@ -1229,18 +1383,22 @@
       questionQueue = [];
       userAnswers = [];
       wrongAnsweredSet.clear();
+
       updateProgressBar(0);
       stopTimer();
       timeElapsed = 0;
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
 
-      // Optionally return to old quiz container if you want
+      /* Optionally show quiz container or go back to new main menu */
       mainContainer.style.display = 'block';
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'none';
     }
 
+    /********************************************************************
+     * UTILITIES
+     ********************************************************************/
     function getSelectedFormat() {
       let val = 'allAtOnce';
       formatRadioButtons.forEach(rb => {
@@ -1330,11 +1488,7 @@
 
       if (score > bestScore.score ||
           (score === bestScore.score && newTime < bestScore.time)) {
-        const newRecord = {
-          score: score,
-          total: total,
-          time: newTime
-        };
+        const newRecord = { score, total, time: newTime };
         localStorage.setItem(key, JSON.stringify(newRecord));
       }
 
@@ -1371,10 +1525,6 @@
       sound.currentTime = 0;
       sound.play();
     }
-
-    /********************************************************************
-     * END OF SCRIPT
-     ********************************************************************/
   </script>
 </body>
 </html>
