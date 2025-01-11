@@ -1,0 +1,61 @@
+{
+  "referenceCode": "Chapter 12",
+  "entries": [
+    {
+      "keyTakeaway": "Property exchanges (1031 Exchanges) allow for tax deferral when trading like-kind properties.",
+      "exampleStory": "Mr. Jones, an investor, wanted to sell his office building and reinvest in a retail strip mall. Lisa, his real estate agent, introduced him to a 1031 Exchange. By using a WB-35 Simultaneous Exchange Agreement, he deferred capital gains taxes. Lisa coordinated with a tax advisor to ensure compliance. The simultaneous exchange involved another investor trading a retail strip mall for Mr. Jones' office building, enabling both parties to benefit without immediate tax liabilities."
+    },
+    {
+      "keyTakeaway": "An option gives the buyer the right, but not the obligation, to purchase property within a specified timeframe.",
+      "exampleStory": "To secure land for a future development, XYZ Developers negotiated a five-year option on a vacant lot. They paid an option fee to the seller for exclusive rights to purchase the property within the agreed timeframe. This allowed XYZ time to secure zoning approvals and financing. When the approvals came through, XYZ exercised the option, and the seller was contractually bound to sell under the predetermined terms."
+    },
+    {
+      "keyTakeaway": "A bill of sale transfers personal property ownership during a real estate transaction.",
+      "exampleStory": "Samantha purchased a furnished vacation rental. The real estate contract included appliances and furniture. At closing, the seller used a WB-25 Bill of Sale to transfer title to the personal property, confirming that the furniture was free of liens. This ensured the personal property transfer was legally documented separately from the real estate."
+    },
+    {
+      "keyTakeaway": "Foreclosure terminates a borrower’s rights to a property due to unpaid debt.",
+      "exampleStory": "After Mr. Green missed six months of mortgage payments, his lender initiated a foreclosure lawsuit. Despite efforts to sell the home, Mr. Green couldn’t repay the debt within the redemption period. The property was auctioned at a sheriff’s sale, with the bank buying it back to cover the unpaid balance. Throughout the process, his real estate agent guided him on potential alternatives like short sales, but time constraints limited his options."
+    },
+    {
+      "keyTakeaway": "A short sale allows a seller to sell a property for less than the amount owed on the mortgage, with lender approval.",
+      "exampleStory": "Jessica owed $250,000 on her home, but its market value was only $200,000. Facing foreclosure, she listed the property as a short sale. Her agent worked with the lender, providing a comparative market analysis and Jessica’s financial hardship documents. The lender approved the short sale, forgiving the $50,000 difference, though Jessica faced potential tax consequences for the forgiven debt."
+    },
+    {
+      "keyTakeaway": "Cooperative ownership involves purchasing stock in a corporation that owns a building, not the physical unit.",
+      "exampleStory": "Mike wanted to purchase a unit in a historic building structured as a cooperative. Instead of buying the unit outright, he bought shares in the cooperative corporation, which provided him a lease for the unit. Mike was required to undergo board approval, ensuring his financial stability before the transaction could proceed."
+    },
+    {
+      "keyTakeaway": "A land contract allows a buyer to make installment payments to the seller while receiving equitable title.",
+      "exampleStory": "Tim couldn’t secure conventional financing, so he and the seller agreed to a land contract. Tim made monthly payments directly to the seller and gained equitable title to the property. The agreement outlined payment schedules, interest rates, and default remedies. After five years, Tim refinanced and paid off the remaining balance, receiving the deed and full ownership."
+    },
+    {
+      "keyTakeaway": "A lease with an option to purchase allows a tenant to rent with the potential to buy later.",
+      "exampleStory": "Tom and Jane rented a home with a lease-to-own agreement. They paid an option fee and a portion of their monthly rent went toward a down payment. After two years, they improved their credit score and exercised their option to purchase the home, applying the credited rent toward their mortgage down payment."
+    },
+    {
+      "keyTakeaway": "Bills of sale ensure the separate transfer of personal property in a real estate transaction.",
+      "exampleStory": "During a lake home sale, the buyers wanted to keep the seller’s pontoon boat and dock. The agent included these items in the WB-25 Bill of Sale, ensuring they were legally transferred at closing. This clarified the distinction between the real property in the deed and the personal property in the bill of sale."
+    },
+    {
+      "keyTakeaway": "Misrepresenting personal property value in an offer can lead to legal issues.",
+      "exampleStory": "A lender insisted that appliances included in a home purchase be listed as “no value.” The licensee explained that this could misrepresent the property’s value. Instead, the parties allocated a minimal value of $1 in the offer to purchase, avoiding potential fraud while satisfying the lender's requirements."
+    },
+    {
+      "keyTakeaway": "Only brokers can draft land contracts using approved forms.",
+      "exampleStory": "A broker drafted a State Bar of Wisconsin Form 11 Land Contract for a transaction where the seller financed the buyer’s purchase. The broker ensured all terms—like payment schedules and default remedies—were clearly outlined. To address complex terms, the broker referred the parties to their attorneys, ensuring all details were legally sound."
+    },
+    {
+      "keyTakeaway": "Installment sales provide flexible financing between buyers and sellers.",
+      "exampleStory": "When Mark couldn’t secure a mortgage, the seller offered an installment sale. Mark made monthly payments directly to the seller under a legally binding contract. After five years, he secured financing to pay the remaining balance. This creative financing helped both parties complete the transaction."
+    },
+    {
+      "keyTakeaway": "Sellers can choose remedies like foreclosure or strict foreclosure for land contract defaults.",
+      "exampleStory": "When Emma defaulted on her land contract payments, the seller pursued strict foreclosure, reclaiming ownership without a sheriff’s sale. Emma lost all equity in the property, but the seller forgave the remaining balance owed, avoiding further legal costs."
+    },
+    {
+      "keyTakeaway": "Real estate licensees can participate in cooperative stock transfers if incidental to real estate practice.",
+      "exampleStory": "Sarah, a real estate agent, helped a buyer purchase shares in a cooperative building. She collaborated with the cooperative’s board to complete the sale, ensuring compliance with all lease and stock transfer requirements."
+    }
+  ]
+}
