@@ -1,0 +1,45 @@
+{
+  "referenceCode": "Chapter 3",
+  "entries": [
+    {
+      "keyTakeaway": "Licensees may sign, but not alter, unapproved forms.",
+      "exampleStory": "Sarah, a real estate agent, was hired by a bank to sell a foreclosed property. The bank provided its own listing contract, which was not a Wisconsin-approved form. Sarah noticed it lacked a section for her rights to protected buyers and tried to add it herself. Her broker explained that Wis. Admin. Code § REEB 16.06 prohibits licensees from modifying unapproved forms. Sarah signed the bank’s contract as is but ensured she provided a separate Disclosure to Clients form to comply with state law."
+    },
+    {
+      "keyTakeaway": "Sellers must complete a real estate condition report for residential properties with 1-4 dwelling units.",
+      "exampleStory": "John listed his duplex with the help of his agent, Michelle. Michelle explained that under Wis. Stat. Chapter 709, John was required to complete a real estate condition report within 10 days of accepting an offer. John initially refused, thinking the property was “as-is.” Michelle clarified that even in “as-is” sales, the seller must disclose known defects. John completed the report, which helped the buyer make an informed decision and avoided potential legal disputes."
+    },
+    {
+      "keyTakeaway": "Addenda must be properly incorporated into approved forms.",
+      "exampleStory": "Lisa, an agent, was helping her clients sell a home with a well. She attached a pre-prepared WRA Addendum A for well testing to the WB-11 Residential Offer to Purchase but forgot to reference it in the main contract. When the buyer later disputed the testing requirements, Lisa’s broker pointed out that unreferenced addenda might not be enforceable. Lisa learned to always reference addenda in the approved form to ensure their terms are part of the contract."
+    },
+    {
+      "keyTakeaway": "Only brokers can use Wisconsin State Bar forms.",
+      "exampleStory": "Joe, a salesperson, was assisting with a transaction involving a land contract. He decided to complete a State Bar-approved form for the land contract. When Joe’s supervising broker reviewed the file, they informed him that Wis. Admin. Code § REEB 16.03 restricts the use of State Bar forms to brokers. The broker completed the form instead, and Joe was reminded to consult his broker for such cases in the future."
+    },
+    {
+      "keyTakeaway": "Property management agreements must meet specific requirements.",
+      "exampleStory": "Susan, a property manager, was hired by a landlord to oversee rental units. The landlord asked her to draft a custom property management agreement. Susan consulted her broker, who explained that under Wis. Admin. Code § REEB 16.03, the agreement must be drafted by the broker, the landlord, or an attorney. To ensure compliance, Susan’s broker prepared the agreement, including provisions for marketing, leasing, and maintenance."
+    },
+    {
+      "keyTakeaway": "Licensees must provide proper agency disclosures to clients and customers.",
+      "exampleStory": "Mark, a buyer's agent, wrote an offer on a for-sale-by-owner property. He forgot to provide a Disclosure to Customers form to the seller. When the transaction was challenged, Mark’s broker emphasized that Chapter 452 of the Wisconsin Statutes requires agency disclosures before negotiations. Mark corrected his process and ensured that all parties received proper disclosures in future transactions."
+    },
+    {
+      "keyTakeaway": "Addenda that alter non-optional provisions must be drafted by an attorney.",
+      "exampleStory": "A bank-owned property required a special addendum for unique financing terms. The agent attempted to draft the addendum herself, but her broker stepped in, explaining that addenda modifying non-optional provisions of approved forms must be drafted by an attorney, as per Wis. Admin. Code § REEB 16.06. The attorney-drafted addendum was properly incorporated, protecting both the agent and the transaction."
+    },
+    {
+      "keyTakeaway": "Licensees must be competent to use another state’s forms.",
+      "exampleStory": "Emma, a Wisconsin agent, was helping her client purchase a vacation property in Minnesota. The seller’s agent provided a Minnesota purchase agreement. Unsure about Minnesota’s real estate laws, Emma referred the client to a Minnesota-licensed agent and negotiated a referral fee instead. Her broker praised her decision to avoid practicing outside her expertise and comply with Wis. Admin. Code § REEB 16.03."
+    },
+    {
+      "keyTakeaway": "Uniform Commercial Code (UCC) forms are complex and often require legal assistance.",
+      "exampleStory": "A broker, Tom, was managing the sale of a business that included personal property secured by a UCC lien. The seller asked Tom to complete a UCC-1 Financing Statement. Tom declined, explaining that such forms should be completed by an attorney due to their complexity and potential legal ramifications. Instead, he referred the seller to a trusted attorney, avoiding any potential missteps."
+    },
+    {
+      "keyTakeaway": "Licensees must inspect properties and document conditions, even if sellers refuse to complete condition reports.",
+      "exampleStory": "Alice, a listing agent, was hired to sell a commercial property. The seller refused to complete a condition report, claiming it wasn’t required for commercial properties. Alice reminded the seller that while the report wasn’t mandatory, Wis. Stat. Chapter 709 requires agents to inspect properties and document their condition. Alice used her firm’s standard commercial condition form to note observable issues, ensuring transparency and compliance."
+    }
+  ]
+}
