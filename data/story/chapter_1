@@ -1,0 +1,53 @@
+{
+  "referenceCode": "Chapter 1",
+  "entries": [
+    {
+      "keyTakeaway": "A conveyance in Wisconsin must meet specific statutory requirements to be valid.",
+      "exampleStory": "Sarah and Mark wanted to transfer a small plot of land to their son, David. They handwrote a deed and signed it without including a legal description of the property or delivering it to the county register of deeds. When David tried to sell the land years later, the title company refused to clear the sale, stating that the deed was invalid because it didn’t meet the requirements of Wis. Stat. § 706.02. Sarah and Mark learned they needed to properly describe the land, have both spouses sign the document (since it was part of their homestead), and ensure delivery for the conveyance to be legally enforceable."
+    },
+    {
+      "keyTakeaway": "Contracts for real estate transactions in Wisconsin must include valid consideration to be enforceable.",
+      "exampleStory": "Jenny agreed to sell her vacant lot to Aaron for $50,000. However, Aaron proposed an oral agreement: \"I’ll pay you when I have the money next year, and we don’t need to involve lawyers.\" Jenny, concerned about getting her payment, asked her broker about the arrangement. The broker explained that under Wis. Admin. Code § REEB 24.08, the agreement had to be in writing and specify the consideration—$50,000—in order to be enforceable. Aaron’s oral promise, without documented consideration, could not hold up in court. They formalized the agreement with a written offer to purchase, securing both parties’ obligations."
+    },
+    {
+      "keyTakeaway": "Timely delivery of signed documents is crucial for a binding contract in Wisconsin real estate transactions.",
+      "exampleStory": "Lisa submitted an offer to buy a home with a binding acceptance deadline of 5:00 PM on December 15. The seller, John, signed the offer at 4:50 PM but emailed it to Lisa at 5:10 PM. Because the Wisconsin offer to purchase form requires both acceptance and delivery to occur before the binding acceptance deadline, Lisa’s agent advised her that the contract wasn’t valid. Lisa chose not to proceed with the purchase, and John lost the sale. This highlights how delivery is a legally significant action under Wisconsin law."
+    },
+    {
+      "keyTakeaway": "Poorly drafted contingencies in Wisconsin real estate contracts can lead to disputes and unenforceable agreements.",
+      "exampleStory": "Mike made an offer on a home contingent on a “satisfactory water test.” The seller agreed, but when the test revealed high nitrate levels, Mike refused to proceed with the sale. The seller argued that “satisfactory” wasn’t clearly defined and believed Mike had no valid reason to terminate the agreement. The dispute escalated to the point where a court had to decide whether the contingency was enforceable. Mike’s agent later realized they should have included clear performance standards, such as a specific nitrate limit, and outlined who would pay for remediation if needed. Vague contingencies violate Wisconsin’s drafting expectations and can cause legal headaches."
+    },
+    {
+      "keyTakeaway": "Breach of contract may not automatically terminate a contractual relationship in Wisconsin.",
+      "exampleStory": "Madison signed a listing agreement with a real estate firm to sell her condo. She later refused to allow showings for three weeks, claiming she was too busy. Frustrated, her agent wanted to terminate the agreement, believing Madison had breached the contract. However, Madison’s refusal didn’t automatically terminate the agreement under Wisconsin law. The firm’s supervising broker explained that contracts require a legal process for termination, and breaches don’t immediately void the agreement. They gave Madison a written notice of her non-compliance and continued working with her until the issue was resolved."
+    },
+    {
+      "keyTakeaway": "Authority to sign real estate contracts must be properly granted and documented in Wisconsin.",
+      "exampleStory": "Lisa and her husband, Paul, owned a home together, but Paul was traveling for work when they decided to sell. Lisa signed the offer to purchase on behalf of both herself and Paul, believing she had the authority. When the buyers attempted to close, the title company refused to proceed because Paul had not signed the contract or provided a power of attorney. According to Wis. Stat. § 706.03, a person must have explicit written authorization to sign on behalf of another party in real estate transactions. The deal was delayed until Paul executed the necessary documents."
+    },
+    {
+      "keyTakeaway": "Acceptance and binding acceptance are required for a real estate offer to become enforceable in Wisconsin.",
+      "exampleStory": "Brian, a buyer, made an offer to purchase a lakefront property with a deadline for binding acceptance by 5:00 PM on June 1. The seller, Karen, signed the offer at 4:00 PM and handed it to her agent, but the agent didn’t deliver it to Brian until June 2. Karen thought the contract was binding, but under Wisconsin law, binding acceptance requires timely delivery of the signed offer to the buyer. Because the deadline wasn’t met, Brian was no longer obligated, and Karen had to re-list the property."
+    },
+    {
+      "keyTakeaway": "Real estate contracts in Wisconsin must comply with the statute of frauds and be in writing.",
+      "exampleStory": "A landlord, Sarah, agreed to lease her commercial building to Ben for two years. They discussed terms over the phone and shook hands on the deal. However, when Ben tried to enforce their agreement after Sarah changed her mind, the court ruled in Sarah’s favor. According to Wisconsin’s law of conveyances and Wis. Stat. § 706.02, leases longer than one year must be in writing to be legally enforceable. Ben learned the hard way that verbal agreements for real estate transactions don’t hold up in Wisconsin."
+    },
+    {
+      "keyTakeaway": "Time is of the essence provisions in Wisconsin real estate contracts can significantly impact enforcement.",
+      "exampleStory": "Emily and James agreed to sell their home to Claire, with a closing deadline of October 15. The offer specified that “time is of the essence” for all deadlines. Claire’s lender delayed processing her loan, and she couldn’t close until October 18. Emily and James refused to extend the deadline, arguing that the “time is of the essence” clause made any delay a breach of contract. Because Wisconsin law enforces these clauses strictly, Claire lost the home and forfeited her earnest money. Without the “time is of the essence” clause, the delay might have been considered reasonable."
+    },
+    {
+      "keyTakeaway": "Delivery methods in Wisconsin real estate contracts must comply with the agreed-upon terms.",
+      "exampleStory": "A seller, Mr. Thompson, agreed to deliver a counteroffer to the buyer, Sarah, via email. However, Mr. Thompson decided to send it by U.S. mail instead, thinking it wouldn’t matter. When Sarah received the counteroffer two days late, she declined to proceed. According to Wisconsin real estate law, delivery must occur through the specified method in the contract to be valid. Mr. Thompson’s failure to adhere to the delivery terms rendered the counteroffer void, and he lost the sale."
+    },
+    {
+      "keyTakeaway": "Wisconsin real estate contracts must address contingencies with clear, enforceable language.",
+      "exampleStory": "Patrick wanted to purchase a home but made the offer contingent on selling his current property. His agent drafted the contingency but didn’t include a deadline for the sale or specify what would happen if Patrick couldn’t sell in time. When Patrick’s home didn’t sell, the seller tried to terminate the contract and sell to another buyer. However, the vague contingency language caused a legal dispute over whether the seller had the right to terminate. Wisconsin real estate law emphasizes clear and measurable performance standards for contingencies to avoid disputes like this one."
+    },
+    {
+      "keyTakeaway": "Rescission can terminate a real estate contract in Wisconsin if both parties agree.",
+      "exampleStory": "Mark signed a buyer agency agreement with a real estate firm, but after two weeks, he decided to pause his search due to financial concerns. The supervising broker agreed to rescind the contract because no significant services had been provided yet. Both parties signed a cancellation agreement and mutual release. Under Wisconsin law, rescission is a mutually agreed-upon termination that restores the parties to their original positions as if the contract never existed."
+    }
+  ]
+}
