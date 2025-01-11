@@ -1,0 +1,65 @@
+{
+  "referenceCode": "Chapter 8",
+  "entries": [
+    {
+      "keyTakeaway": "Proper management of trust accounts is essential to protect consumers and comply with regulations.",
+      "exampleStory": "Sarah, a new broker, opened her firm and immediately set up an interest-bearing real estate trust account (IBRETA) for client funds. She also established a separate account for non-client funds, ensuring compliance with Wis. Admin. Code § REEB 18.02. By implementing strict policies and regular reconciliations, Sarah avoided the common pitfalls that lead to DSPS disciplinary actions."
+    },
+    {
+      "keyTakeaway": "Brokers must notify DSPS when opening or closing trust accounts.",
+      "exampleStory": "John’s firm opened a new trust account for managing rental security deposits. Within 10 days, John submitted the required “Consent to Examine and Audit Trust Account” form to DSPS, as mandated by Wis. Admin. Code § REEB 18.035. This proactive step ensured compliance and demonstrated transparency in financial management."
+    },
+    {
+      "keyTakeaway": "Firms must maintain proper trust account records, including journals, ledgers, and reconciliations.",
+      "exampleStory": "Emily’s brokerage meticulously recorded all trust account transactions in a cash journal, posted entries to individual ledgers, and conducted monthly reconciliations. By aligning her practices with Wis. Admin. Code § REEB 18.13, Emily ensured her records were ready for inspection and avoided potential fines for mismanagement."
+    },
+    {
+      "keyTakeaway": "Firms cannot hold non-depositable items like stock certificates as earnest money.",
+      "exampleStory": "A buyer offered a car title as earnest money for a property. The firm informed the parties that such items are non-depositable and could not be held in the firm’s trust account. Instead, they recommended using an escrow agreement drafted by an attorney, per Wis. Admin. Code § REEB 18.11."
+    },
+    {
+      "keyTakeaway": "Earnest money must be deposited within 48 hours of receipt.",
+      "exampleStory": "When Alex received a buyer’s earnest money on a Friday, he ensured it was deposited into the firm’s trust account by Tuesday, as the bank was closed over the weekend. This timely deposit complied with Wis. Admin. Code § REEB 18.031 and protected the integrity of the transaction."
+    },
+    {
+      "keyTakeaway": "Disbursement of trust funds must follow specific rules, especially for earnest money disputes.",
+      "exampleStory": "A seller and buyer disagreed on the disbursement of earnest money after a failed transaction. The firm waited the required 60 days and then sought an impartial attorney’s opinion, deducting $250 from the earnest money to cover legal fees. By following Wis. Admin. Code § REEB 18.09, the firm resolved the issue ethically and legally."
+    },
+    {
+      "keyTakeaway": "Brokers must avoid commingling personal funds with trust account funds.",
+      "exampleStory": "To cover bank service fees, Mary’s firm kept $300 of personal funds in the trust account, as allowed by Wis. Admin. Code § REEB 18.10. This ensured compliance while avoiding accidental commingling of personal and client funds."
+    },
+    {
+      "keyTakeaway": "Parties must use escrow agreements for funds not held by the firm.",
+      "exampleStory": "A buyer and seller wanted their earnest money to accrue interest. The firm informed them that it could not hold the funds for this purpose. Instead, the parties had an attorney draft an escrow agreement, ensuring compliance with Wis. Admin. Code § REEB 18.06."
+    },
+    {
+      "keyTakeaway": "Title insurance protects buyers and lenders from title defects.",
+      "exampleStory": "During a transaction, the title company discovered an undisclosed easement. The seller resolved the issue by providing an owner’s affidavit and obtaining a lien waiver. The title commitment was updated, ensuring the buyer received merchantable title free of unexpected encumbrances."
+    },
+    {
+      "keyTakeaway": "Closing statements must accurately reflect transaction details.",
+      "exampleStory": "A seller asked their agent for an estimate of net proceeds. The agent prepared a trial closing statement, accounting for prorated taxes, commissions, and mortgage payoffs. By providing this estimate, the agent helped the seller make an informed decision while preparing for the actual closing."
+    },
+    {
+      "keyTakeaway": "Prorations ensure fair allocation of property expenses and income.",
+      "exampleStory": "In a closing, the buyer and seller prorated property taxes based on the previous year’s tax bill. The seller’s share was credited to the buyer, who would pay the full tax bill later. This standard proration method aligned with Wisconsin real estate practices."
+    },
+    {
+      "keyTakeaway": "Brokers must disburse earned commissions within 24 hours of closing.",
+      "exampleStory": "After a property sale closed, Jane’s firm disbursed the earned commission from the trust account within 24 hours, as required by Wis. Admin. Code § REEB 18.09. This prompt action avoided any potential disputes or delays."
+    },
+    {
+      "keyTakeaway": "Brokers must manage property management funds appropriately.",
+      "exampleStory": "A firm handling rental properties deposited tenant security deposits into a non-interest-bearing trust account, while monthly rents were deposited directly into the owner’s account. These practices complied with Wis. Admin. Code § REEB 18.031 and avoided misuse of tenant funds."
+    },
+    {
+      "keyTakeaway": "Brokers must prepare for closing by coordinating deadlines and contingencies.",
+      "exampleStory": "A buyer’s agent ensured all financing and inspection contingencies were met before the closing date. The agent worked closely with the title company to resolve a boundary line issue discovered in the survey. This proactive approach ensured a smooth closing for all parties."
+    },
+    {
+      "keyTakeaway": "Brokers must adhere to government requirements for closing agents.",
+      "exampleStory": "A broker serving as a closing agent filed a 1099-S form with the IRS for the sale of a commercial property. The broker also verified the parties against anti-money-laundering lists, meeting all government-mandated requirements and ensuring compliance."
+    }
+  ]
+}
