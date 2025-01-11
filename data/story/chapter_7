@@ -1,0 +1,65 @@
+{
+  "referenceCode": "Chapter 7",
+  "entries": [
+    {
+      "keyTakeaway": "Brokers must register with the DSPS before operating as a firm.",
+      "exampleStory": "Tom, a newly licensed broker, wanted to open his own real estate firm. He submitted his application for a sole proprietorship through the DSPS online portal, but started listing properties before the license was issued. A complaint was filed, and Tom learned that brokers cannot begin practicing as a firm until properly licensed, per Wis. Stat. § 452.01. After this, he carefully followed the process, ensuring compliance with DSPS regulations."
+    },
+    {
+      "keyTakeaway": "Choosing the right business structure impacts liability and taxes.",
+      "exampleStory": "Sarah wanted to open her firm as a sole proprietorship but was concerned about personal liability. After consulting with an attorney, she decided to form an LLC, which protected her personal assets from business debts while allowing income to pass through to her individual tax return. This decision aligned with her business goals and offered the liability protection she needed."
+    },
+    {
+      "keyTakeaway": "Business entities require separate licenses.",
+      "exampleStory": "Mark transitioned his real estate practice from a sole proprietorship to a corporation for tax advantages. He applied for a new entity license with the DSPS before operating under the new structure, as required by Wis. Admin. Code § REEB 23.04. Mark ensured a smooth transition by notifying his clients and updating his advertising materials."
+    },
+    {
+      "keyTakeaway": "Errors and omissions insurance (E&O) protects brokers and firms.",
+      "exampleStory": "A buyer sued a firm, claiming the agent had failed to disclose a material defect in a property. The firm’s E&O insurance covered the defense costs and settlement, saving the business from financial strain. The broker later updated office policies to prevent future claims and reviewed their E&O coverage to ensure it aligned with the firm’s risk exposure."
+    },
+    {
+      "keyTakeaway": "Brokers must comply with advertising rules.",
+      "exampleStory": "Rachel, a broker, ran an ad for a rental property she owned but didn’t include her firm’s name. A complaint was filed, and she learned that while Wis. Admin. Code § REEB 24.04 allows exceptions for personally owned rental properties, all other advertisements must clearly display the firm’s name. Rachel updated her advertising practices to ensure compliance."
+    },
+    {
+      "keyTakeaway": "Brokers must follow regulations for cold calling and emails.",
+      "exampleStory": "Lisa’s firm initiated a cold-calling campaign to target FSBO properties. Before launching, Lisa ensured compliance with DATCP regulations and verified that phone numbers were not on the Do Not Call Registry. By doing so, she avoided penalties and maintained the firm’s reputation."
+    },
+    {
+      "keyTakeaway": "Proper budgeting and financial planning are essential for firm operations.",
+      "exampleStory": "Mike opened a new brokerage firm and created a detailed start-up budget, accounting for fixed costs like office rent and variable costs like advertising. By carefully monitoring his expenses and tracking revenue, Mike avoided financial shortfalls during the firm’s initial months, ensuring sustainable growth."
+    },
+    {
+      "keyTakeaway": "Compensation agreements must be clearly documented.",
+      "exampleStory": "A cooperating firm disputed the commission offered in a listing agreement after the transaction closed. The listing broker, Alex, pointed to the written offer of compensation in the MLS, which clearly outlined the terms. This documentation resolved the dispute amicably and reinforced the importance of clear agreements."
+    },
+    {
+      "keyTakeaway": "Brokers must understand and avoid antitrust violations.",
+      "exampleStory": "Two brokers agreed informally to raise their commission rates for residential listings in their area. A third broker reported this to the DSPS, leading to an investigation. The brokers faced penalties under the Sherman Act, learning that such agreements are considered price fixing and are strictly prohibited."
+    },
+    {
+      "keyTakeaway": "Brokers must ensure accurate advertising data.",
+      "exampleStory": "Emily advertised a property’s lot size as \"100 x 200,\" but the dimensions were later found to be inaccurate. Because the ad included the source as \"per tax records,\" Emily avoided liability. This demonstrated the importance of citing data sources in advertising to mitigate risk."
+    },
+    {
+      "keyTakeaway": "Commission liens secure payment in commercial transactions.",
+      "exampleStory": "A firm filed a commission lien on a commercial property after the seller failed to pay the agreed-upon commission. By following the notice and lien perfection steps outlined in Wis. Stat. § 779.32, the firm secured payment after the property sale."
+    },
+    {
+      "keyTakeaway": "Brokers must comply with trade name and business form requirements.",
+      "exampleStory": "After years as a partnership, John’s firm transitioned to an LLC for liability protection. John applied for a new entity license and notified the DSPS of the trade name change. By adhering to Wis. Admin. Code § REEB 23.04, John avoided delays in his firm’s operations."
+    },
+    {
+      "keyTakeaway": "Referral agreements should be documented.",
+      "exampleStory": "Lisa referred a client to an out-of-state broker and ensured the referral agreement was documented in writing. When the transaction closed, the agreement guaranteed that Lisa received her referral fee, illustrating the importance of written agreements."
+    },
+    {
+      "keyTakeaway": "Tail coverage ensures continued E&O protection.",
+      "exampleStory": "When Sarah retired and closed her firm, she purchased tail coverage for her E&O insurance to protect against future claims for past transactions. This foresight ensured that any unresolved liabilities wouldn’t jeopardize her financial stability."
+    },
+    {
+      "keyTakeaway": "Brokers must prevent errors and omissions through proactive policies.",
+      "exampleStory": "A buyer claimed an agent misrepresented zoning restrictions, leading to a lawsuit. The broker reviewed the firm’s policies and implemented stricter disclosure procedures and ongoing training to prevent similar issues. These actions demonstrated the broker’s commitment to ethical and competent practice."
+    }
+  ]
+}
