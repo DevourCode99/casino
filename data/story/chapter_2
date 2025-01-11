@@ -1,0 +1,45 @@
+{
+  "referenceCode": "Chapter 2",
+  "entries": [
+    {
+      "keyTakeaway": "Wisconsin real estate licensees rely on approved forms to ensure uniformity and compliance.",
+      "exampleStory": "Mary, a newly licensed real estate agent, was excited to assist her first client. She drafted an offer to purchase on her own without using an approved form. When the seller’s attorney reviewed the offer, they found it noncompliant with Wisconsin statutes and voided the agreement. Mary’s broker explained that Wis. Admin. Code § REEB 16.02 mandates the use of approved forms in real estate transactions. By failing to use the WB-11 Residential Offer to Purchase, Mary put her client at risk. Moving forward, she ensured all her transactions adhered to the state’s requirements for approved forms."
+    },
+    {
+      "keyTakeaway": "Licensees cannot provide legal advice but may explain approved forms.",
+      "exampleStory": "A seller, Rachel, asked her agent, Tim, whether she should disclose a known plumbing issue on the real estate condition report. Tim, eager to help, advised her to omit the issue because \"it’s minor and unlikely to come up.\" When the buyer discovered the problem post-closing, they sued Rachel for nondisclosure. Tim’s broker reminded him that under Wis. Admin. Code § REEB 16.05, licensees may not provide legal advice regarding contractual obligations. Tim should have directed Rachel to consult an attorney rather than providing potentially harmful guidance."
+    },
+    {
+      "keyTakeaway": "Modifications to approved forms must be clear and properly executed.",
+      "exampleStory": "Mark and Susan, sellers working with agent Linda, wanted to exclude their antique chandelier from the sale of their home. Linda crossed out the section on included fixtures but didn’t ensure the changes were legible or properly initialed by both parties. At closing, the buyers argued the chandelier was included, and a legal dispute ensued. Linda’s broker explained that per Wis. Admin. Code § REEB 16.06, any modifications to approved forms must be legible and explicitly agreed upon by all parties to avoid misunderstandings."
+    },
+    {
+      "keyTakeaway": "The Real Estate Examining Board (REEB) regulates forms and enforces disciplinary actions for violations.",
+      "exampleStory": "During a transaction, agent Paul misrepresented his client’s financial capability to the seller. The seller filed a complaint with the Real Estate Examining Board (REEB). After an investigation, the REEB issued Paul a suspension and required him to attend educational courses on ethical practices. This disciplinary action, aligned with Wis. Stat. § 452.05, reinforced the importance of honesty and professionalism in real estate transactions."
+    },
+    {
+      "keyTakeaway": "Approved forms like the WB-11 Residential Offer to Purchase streamline transactions and reduce errors.",
+      "exampleStory": "Jake, a buyer’s agent, helped his client, Lisa, submit an offer on a condo using the WB-11 form. The pre-filled fields for property description, financing contingencies, and inspection timelines ensured no key details were overlooked. The seller’s agent remarked how smooth the process was compared to states without standardized forms. Jake explained that Wisconsin’s approved forms provide consistency and clarity, benefiting both buyers and sellers while reducing reliance on costly legal drafting."
+    },
+    {
+      "keyTakeaway": "The WB-36 Buyer Agency Agreement establishes the relationship between a buyer and their agent.",
+      "exampleStory": "Emily signed a WB-36 Buyer Agency Agreement with her agent, John, which detailed his compensation and the excluded properties she had already considered. When Emily purchased one of the excluded properties directly from the seller, John didn’t earn a commission. Emily appreciated the clarity of the agreement, which protected both parties and ensured John focused on finding her new opportunities."
+    },
+    {
+      "keyTakeaway": "A cancellation agreement releases parties from contractual obligations.",
+      "exampleStory": "After weeks on the market, seller Andrea decided not to sell her home due to a change in circumstances. Her agent suggested using the WB-45 Cancellation Agreement and Mutual Release to terminate the listing contract. Andrea signed, and the agreement ensured all parties, including the listing firm, released claims against each other, preventing future disputes."
+    },
+    {
+      "keyTakeaway": "Counter-offers must be precise to ensure the final terms reflect the parties’ intentions.",
+      "exampleStory": "Seller Tom received an offer for his property but wanted to adjust the closing date. His agent used the WB-44 Counter-Offer, which explicitly incorporated the unchanged terms of the original offer while modifying the closing date. When Tom accepted the buyer’s counter to the counter-offer, the WB-44 ensured the final contract accurately captured all agreed-upon terms."
+    },
+    {
+      "keyTakeaway": "The WB-46 Multiple Counter-Proposal allows sellers to negotiate with multiple buyers simultaneously.",
+      "exampleStory": "Karen received two offers on her property. Instead of rejecting one, her agent used the WB-46 Multiple Counter-Proposal to present terms to both buyers. Each buyer had the option to accept, reject, or counter. Karen ultimately chose the offer with the best terms, and the other proposal expired without binding her to a second buyer."
+    },
+    {
+      "keyTakeaway": "Proper execution of the WB-41 Notice ensures contract terms are addressed without requiring agreement.",
+      "exampleStory": "After a home inspection, buyer David issued a WB-41 Notice Relating to Offer to Purchase, notifying the seller of defects but not proposing any changes to the contract. Because the notice didn’t require the seller’s agreement, David effectively exercised his right to address the issue while preserving the original contract’s terms."
+    }
+  ]
+}
