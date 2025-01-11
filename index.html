@@ -7,13 +7,13 @@
 
   <style>
     /*********************************************************
-     * CSS VARIABLES & GLOBAL STYLES
+     * (ORIGINAL STYLES)
      *********************************************************/
     :root {
-      --primary-color: #2563eb;     /* Main accent color: deeper blue */
+      --primary-color: #2563eb;     
       --primary-hover: #1d4ed8;
-      --secondary-color: #4a5568;   /* For secondary buttons, etc. */
-      --light-blue:    #f0f8ff;     /* Very light blue background accent */
+      --secondary-color: #4a5568;   
+      --light-blue:    #f0f8ff;     
       --white:         #ffffff;     
       --success-color: #0f9d58;
       --error-color:   #d93025;
@@ -23,9 +23,6 @@
       --text-color-dark:  #f1f1f1;
     }
 
-    /* =================================================
-       BODY & THEME MODES
-    ================================================== */
     body {
       margin: 0;
       padding: 0;
@@ -34,7 +31,6 @@
       font-family: "Helvetica Neue", Arial, sans-serif;
       overflow-x: hidden; 
       transition: background 0.3s ease, color 0.3s ease;
-      /* Center all content by default (flex container) */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -42,7 +38,7 @@
     }
 
     body.light-mode {
-      background-color: var(--white); /* White background */
+      background-color: var(--white);
       color: var(--text-color-light);
     }
 
@@ -51,9 +47,8 @@
       color: var(--text-color-dark);
     }
 
-    /* Make base text bigger */
     body {
-      font-size: 1.125rem; /* ~18px */
+      font-size: 1.125rem; 
       line-height: 1.6;
     }
 
@@ -61,9 +56,7 @@
       box-sizing: border-box;
     }
 
-    /* =================================================
-       EXPANDABLE MENU (Hamburger) - Desktop & Mobile
-    ================================================== */
+    /* (Existing hamburger menu CSS) */
     .expandable-menu {
       position: fixed;
       top: 1rem;
@@ -126,8 +119,6 @@
     #dark-mode-toggle {
       background: var(--secondary-color);
     }
-
-    /* Small pop-up panels for audio settings */
     .audio-panel {
       background: var(--light-blue);
       border: 2px solid var(--primary-color);
@@ -146,9 +137,7 @@
       margin-top: 0;
     }
 
-    /* =================================================
-       FULLSCREEN BUTTON (floats at bottom-right)
-    ================================================== */
+    /* Fullscreen button */
     #fullscreen-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -173,12 +162,9 @@
       transform: scale(1.05);
     }
 
-    /* =================================================
-       MAIN CONTAINER
-    ================================================== */
     .container {
       width: 100%;
-      max-width: 1200px; /* Make the white box bigger */
+      max-width: 1200px;
       margin: 2rem 1rem;
       background: var(--white);
       border-radius: 0.5rem;
@@ -186,12 +172,12 @@
       animation: fadeInUp 0.6s ease forwards;
       opacity: 0;
       transform: translateY(20px);
-      padding: 3rem; /* More padding for a bigger feel */
+      padding: 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: background-color 0.3s ease;
-      text-align: center; /* Center text inside the container */
+      text-align: center;
     }
 
     @keyframes fadeInUp {
@@ -200,17 +186,12 @@
         transform: translateY(0);
       }
     }
-
-    /* Dark mode container override */
     body.dark-mode .container {
       background-color: #1a202c;
       color: var(--text-color-dark);
       box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
     }
 
-    /* =================================================
-       BUTTONS (Shared Classes)
-    ================================================== */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -219,7 +200,7 @@
       border: none;
       border-radius: 0.25rem;
       cursor: pointer;
-      font-size: 1.1rem; /* slightly bigger */
+      font-size: 1.1rem;
       font-weight: 600;
       transition: background-color 0.2s ease, transform 0.2s ease;
       margin-top: 1rem;
@@ -229,7 +210,6 @@
       background-color: var(--primary-hover);
       transform: translateY(-1px);
     }
-
     .btn-warning {
       background-color: var(--warning-color);
       color: #333;
@@ -238,9 +218,6 @@
       filter: brightness(1.1);
     }
 
-    /* =================================================
-       START MENU
-    ================================================== */
     #start-menu h1 {
       margin-bottom: 1rem;
       color: var(--text-color-light);
@@ -251,7 +228,6 @@
       margin: 0 auto 1.25rem auto;
       line-height: 1.4;
     }
-
     .form-group {
       margin-bottom: 1.25rem;
       text-align: center;
@@ -278,8 +254,6 @@
       gap: 0.4rem;
       cursor: pointer;
     }
-
-    /* Dark mode overrides for form elements */
     body.dark-mode select,
     body.dark-mode .radio-group {
       background: #2a2a2a;
@@ -287,15 +261,11 @@
       border-color: #444;
     }
 
-    /* =================================================
-       QUIZ SECTION
-    ================================================== */
     #quiz-section {
       width: 100%;
       display: none;
       position: relative;
     }
-
     .question-container {
       margin-bottom: 2rem;
       max-width: 700px;
@@ -314,12 +284,10 @@
       box-shadow: 0 2px 5px rgba(255,255,255,0.1);
       color: var(--text-color-dark);
     }
-
     .question-container h3 {
       margin-top: 0;
       font-size: 1.3rem;
     }
-
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -328,7 +296,6 @@
       width: 100%;
       margin-top: 1rem;
     }
-
     .option-block {
       background: #f9f9f9;
       border: 1px solid #ccc;
@@ -349,14 +316,13 @@
       transform: scale(1.02);
     }
     .option-block.correct {
-      background-color: #c8f7c5 !important; /* green highlight */
+      background-color: #c8f7c5 !important; 
       border-color: var(--success-color);
     }
     .option-block.wrong {
-      background-color: #f7c5c5 !important; /* red highlight */
+      background-color: #f7c5c5 !important; 
       border-color: var(--error-color);
     }
-
     .feedback {
       margin-top: 0.5rem;
       font-weight: 600;
@@ -377,18 +343,12 @@
     body.dark-mode .explanation {
       color: #ddd;
     }
-
-    /* For the “All-At-Once” mode (vertical radio list) */
     .vertical-radio-list label {
       display: block;
       margin: 0.4rem 0;
       cursor: pointer;
       text-align: left; 
     }
-
-    /* =================================================
-       PROGRESS BAR & REMAINING
-    ================================================== */
     .remaining-count {
       font-weight: bold;
       margin-bottom: 1rem;
@@ -410,10 +370,6 @@
       border-radius: 5px;
       transition: width 0.4s ease;
     }
-
-    /* =================================================
-       TIMER & PAUSE/RESUME
-    ================================================== */
     #timer-container {
       text-align: center;
       margin-top: 0.5rem;
@@ -426,10 +382,6 @@
     #timer {
       font-size: 1.2rem;
     }
-
-    /* =================================================
-       RESULT SECTION
-    ================================================== */
     #result-section {
       width: 100%;
       display: none;
@@ -440,7 +392,6 @@
       margin-bottom: 1rem;
       font-weight: bold;
     }
-
     #high-score-section {
       margin-top: 1rem;
       font-size: 0.95rem;
@@ -455,13 +406,9 @@
     #high-score-list li {
       margin: 0.25rem 0;
     }
-
-    /* =================================================
-       RESPONSIVE
-    ================================================== */
     @media (max-width: 768px) {
       .options-grid {
-        grid-template-columns: 1fr; /* Stack options in one column on small screens */
+        grid-template-columns: 1fr;
       }
       .menu-toggle-button {
         font-size: 0.9rem;
@@ -482,20 +429,77 @@
         padding: 1rem;
       }
     }
+
+
+    /*********************************************************
+     * (NEW) STORY-MODE & NEW MAIN MENU STYLES
+     *********************************************************/
+    /* A separate section for our new main menu */
+    #new-main-menu {
+      display: none; /* hidden by default */
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #new-main-menu h1 {
+      margin-bottom: 1.5rem;
+    }
+    .menu-option-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .menu-option-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Story mode container */
+    #story-mode-container {
+      display: none;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .story-card {
+      background: var(--light-blue);
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    body.dark-mode .story-card {
+      background: #2d3748;
+      border-color: #444;
+      color: var(--text-color-dark);
+    }
+    .story-card h3 {
+      margin-top: 0;
+    }
+    .story-card p {
+      margin: 0.5rem 0 0 0;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body class="light-mode">
 
-  <!-- EXPANDABLE MENU (Hamburger) -->
+  <!-- (EXISTING HAMBURGER MENU) -->
   <div class="expandable-menu">
     <button id="menu-toggle" class="menu-toggle-button">☰ Menu</button>
     <div class="menu-content">
       <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
       <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
-      
-      <!-- 1) New button to open/close music settings panel -->
+
+      <!-- (Existing audio settings) -->
       <button class="menu-btn" id="music-settings-btn">Music Settings</button>
-      <!-- 2) Music settings panel -->
       <div class="audio-panel" id="music-settings-panel">
         <h4>Music Settings</h4>
         <p><strong>Choose a track or turn music off:</strong></p>
@@ -510,9 +514,7 @@
         <button class="menu-btn btn-secondary" id="close-music-settings">Close</button>
       </div>
 
-      <!-- 3) New button to open/close sound effects (SFX) panel -->
       <button class="menu-btn" id="sound-settings-btn">Sound Settings</button>
-      <!-- 4) Sound effects settings panel -->
       <div class="audio-panel" id="sound-settings-panel">
         <h4>Sound Effects Settings</h4>
         <label>
@@ -529,7 +531,24 @@
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
-  <!-- MAIN CONTAINER -->
+  <!-- (NEW) MAIN MENU -->
+  <div id="new-main-menu">
+    <h1>Main Menu</h1>
+    <!-- Three Options as requested: Story Mode, Questions, Options -->
+    <button class="menu-option-btn" id="go-to-story">Story Mode</button>
+    <button class="menu-option-btn" id="go-to-quiz">Questions</button>
+    <button class="menu-option-btn" id="go-to-options">Options for Now</button>
+  </div>
+
+  <!-- (NEW) STORY MODE CONTAINER -->
+  <div id="story-mode-container">
+    <h2>Story Mode - Wisconsin Real Estate Chapter 1</h2>
+    <div id="story-entries"></div>
+    <!-- A button to return to the new main menu -->
+    <button class="btn btn-secondary" id="back-to-main-menu-btn">Back to Main Menu</button>
+  </div>
+
+  <!-- MAIN CONTAINER (EXISTING QUIZ) -->
   <div class="container" id="main-container">
 
     <!-- START MENU -->
@@ -539,7 +558,6 @@
         Welcome! Select a chapter or “All Chapters,” choose how many questions you’d like, pick a display format, and optionally set a timer. Good luck!
       </p>
 
-      <!-- SELECT CHAPTER(S) -->
       <div class="form-group">
         <label for="chapter-select">Choose Chapter or All:</label><br>
         <select id="chapter-select">
@@ -559,13 +577,11 @@
         </select>
       </div>
 
-      <!-- SELECT QUESTION COUNT -->
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label><br>
         <select id="question-count-select"></select>
       </div>
 
-      <!-- DISPLAY FORMAT RADIO -->
       <div class="form-group">
         <label>Select Display Format:</label><br>
         <div class="radio-group">
@@ -580,35 +596,27 @@
         </div>
       </div>
 
-      <!-- TIMER OPTION -->
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
         <input type="checkbox" id="timer-toggle" />
       </div>
 
-      <!-- START QUIZ BUTTON -->
       <button class="btn" id="start-quiz-btn">Start Quiz</button>
     </div>
     <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
     <div id="quiz-section">
-      <!-- PROGRESS BAR -->
       <div class="progress-bar" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
-
-      <!-- For one question at a time: show how many left to answer -->
       <div class="remaining-count" id="remaining-count"></div>
-
-      <!-- Timer container (optional) -->
       <div id="timer-container" style="display:none;">
         <div id="timer">Time: 00:00</div>
         <button class="btn btn-warning" id="pause-timer-btn">Pause</button>
       </div>
 
       <div id="quiz-questions-container"></div>
-
       <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
       <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
     </div>
@@ -621,7 +629,6 @@
         <h3>High Scores</h3>
         <ul id="high-score-list"></ul>
       </div>
-      <!-- “Restart” button (always there for either mode) -->
       <button class="btn btn-secondary" id="restart-btn">Restart</button>
     </div>
 
@@ -629,7 +636,7 @@
 
   <script>
     /********************************************************************
-     * DOM ELEMENTS
+     * (EXISTING VARIABLES & DOM ELEMENTS)
      ********************************************************************/
     const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
@@ -644,58 +651,56 @@
     const backToMenuBtn       = document.getElementById('back-to-menu-btn');
     const fullscreenBtn       = document.getElementById('fullscreen-btn');
     const darkModeToggle      = document.getElementById('dark-mode-toggle');
-
-    // Expandable menu toggle
     const menuToggle          = document.getElementById('menu-toggle');
     const menuContent         = document.querySelector('.menu-content');
-
-    // "Remaining" count & progress bar
     const remainingCountEl    = document.getElementById('remaining-count');
     const progressBar         = document.getElementById('progress-bar');
     const progressFill        = document.getElementById('progress-fill');
-
-    // Timer-related
     const timerToggle         = document.getElementById('timer-toggle');
     const timerContainer      = document.getElementById('timer-container');
     const timerEl             = document.getElementById('timer');
     const pauseTimerBtn       = document.getElementById('pause-timer-btn');
-
-    // Form Controls
     const chapterSelect       = document.getElementById('chapter-select');
     const questionCountSelect = document.getElementById('question-count-select');
     const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
-
-    // High Score elements
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
-    // NEW: Music and Sound Settings DOM
+    /* (Music & Sound) */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
     const musicSettingsPanel  = document.getElementById('music-settings-panel');
     const closeMusicBtn       = document.getElementById('close-music-settings');
     const soundSettingsBtn    = document.getElementById('sound-settings-btn');
     const soundSettingsPanel  = document.getElementById('sound-settings-panel');
     const closeSfxBtn         = document.getElementById('close-sfx-settings');
-
-    // NEW: Radio inputs for music, volume sliders, SFX toggle
     const musicRadioInputs    = document.querySelectorAll('input[name="music-track"]');
     const musicVolumeSlider   = document.getElementById('music-volume');
     const sfxToggle           = document.getElementById('toggle-sfx');
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
     /********************************************************************
+     * (NEW) STORY MODE & NEW MAIN MENU DOM ELEMENTS
+     ********************************************************************/
+    const newMainMenu         = document.getElementById('new-main-menu');
+    const storyModeContainer  = document.getElementById('story-mode-container');
+    const storyEntriesDiv     = document.getElementById('story-entries');
+    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
+
+    const goToStoryBtn        = document.getElementById('go-to-story');
+    const goToQuizBtn         = document.getElementById('go-to-quiz');
+    const goToOptionsBtn      = document.getElementById('go-to-options');
+
+    /********************************************************************
      * QUIZ STATE
      ********************************************************************/
-    let currentQuestions = [];  // Full set of chosen questions
-    let questionQueue    = [];  // For "oneAtATime"
-    let userAnswers      = [];  // For "allAtOnce"
+    let currentQuestions = [];
+    let questionQueue    = [];
+    let userAnswers      = [];
     let chosenFormat     = 'allAtOnce';
     let totalQuestions   = 0;
+    let wrongAnsweredSet = new Set(); // track "wrong" in oneAtATime
 
-    // Track questions answered incorrectly at least once in One-at-a-Time mode
-    let wrongAnsweredSet = new Set();
-
-    // Timer variables
+    /* Timer */
     let timerInterval    = null;
     let timeElapsed      = 0;
     let isTimerRunning   = false;
@@ -720,29 +725,83 @@
     };
 
     /********************************************************************
-     * NEW: AUDIO OBJECTS (Music & Sound Effects)
+     * (NEW) STORY DATA (As Provided)
+     * We only show CHAPTER 1 in this example. Adjust as you see fit.
      ********************************************************************/
-    // Music tracks
+    const storyDataChapter1 = {
+      "referenceCode": "Chapter 1",
+      "entries": [
+        {
+          "keyTakeaway": "A conveyance in Wisconsin must meet specific statutory requirements to be valid.",
+          "exampleStory": "Sarah and Mark wanted to transfer a small plot of land ..."
+        },
+        {
+          "keyTakeaway": "Contracts for real estate transactions in Wisconsin must include valid consideration ...",
+          "exampleStory": "Jenny agreed to sell her vacant lot to Aaron for $50,000 ..."
+        },
+        {
+          "keyTakeaway": "Timely delivery of signed documents is crucial ...",
+          "exampleStory": "Lisa submitted an offer to buy a home with a binding acceptance deadline ..."
+        },
+        {
+          "keyTakeaway": "Poorly drafted contingencies in Wisconsin real estate contracts can lead to disputes ...",
+          "exampleStory": "Mike made an offer on a home contingent on a 'satisfactory water test.' ..."
+        },
+        {
+          "keyTakeaway": "Breach of contract may not automatically terminate a contractual relationship in Wisconsin.",
+          "exampleStory": "Madison signed a listing agreement ... She later refused to allow showings ..."
+        },
+        {
+          "keyTakeaway": "Authority to sign real estate contracts must be properly granted ...",
+          "exampleStory": "Lisa and her husband, Paul, owned a home together, but Paul was traveling ..."
+        },
+        {
+          "keyTakeaway": "Acceptance and binding acceptance are required for a real estate offer ...",
+          "exampleStory": "Brian, a buyer, made an offer to purchase a lakefront property ..."
+        },
+        {
+          "keyTakeaway": "Real estate contracts in Wisconsin must comply with the statute of frauds ...",
+          "exampleStory": "A landlord, Sarah, agreed to lease her commercial building to Ben ..."
+        },
+        {
+          "keyTakeaway": "Time is of the essence provisions in Wisconsin real estate contracts ...",
+          "exampleStory": "Emily and James agreed to sell their home to Claire, with a closing deadline ..."
+        },
+        {
+          "keyTakeaway": "Delivery methods in Wisconsin real estate contracts must comply ...",
+          "exampleStory": "A seller, Mr. Thompson, agreed to deliver a counteroffer to the buyer, Sarah ..."
+        },
+        {
+          "keyTakeaway": "Wisconsin real estate contracts must address contingencies with clear language ...",
+          "exampleStory": "Patrick wanted to purchase a home but made the offer contingent on selling his current property ..."
+        },
+        {
+          "keyTakeaway": "Rescission can terminate a real estate contract in Wisconsin if both parties agree.",
+          "exampleStory": "Mark signed a buyer agency agreement ... The supervising broker agreed to rescind ..."
+        }
+      ]
+    };
+
+    /********************************************************************
+     * AUDIO (Music & Sound Effects)
+     ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
       new Audio('sound/music/music_2.mp3'),
       new Audio('sound/music/music_3.mp3'),
       new Audio('sound/music/music_4.mp3')
     ];
-    // Loop all music by default
     musicTracks.forEach(track => { track.loop = true; });
 
-    // Sound effects (correct, tap, wrong)
     const correctSound = new Audio('sound/sound effects/correct.wav');
     const tapSound    = new Audio('sound/sound effects/tap.wav');
     const wrongSound  = new Audio('sound/sound effects/wrong.wav');
 
-    // Control flags for SFX
-    let currentMusicIndex = -1; // -1 = off
+    let currentMusicIndex = -1; 
     let sfxEnabled        = true;
 
     /********************************************************************
-     * EVENT LISTENERS
+     * (EXISTING) EVENT LISTENERS
      ********************************************************************/
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -762,41 +821,29 @@
       playSFX('tap');
       handleSubmitQuiz();
     });
-
-    // Fullscreen toggle
     fullscreenBtn.addEventListener('click', () => {
       playSFX('tap');
       toggleFullScreen();
     });
-
-    // Dark/Light mode toggle
     darkModeToggle.addEventListener('click', () => {
       playSFX('tap');
       toggleDarkMode();
     });
-
-    // Timer pause/resume
     pauseTimerBtn.addEventListener('click', () => {
       playSFX('tap');
       toggleTimer();
     });
-
-    // Hamburger menu toggle
     menuToggle.addEventListener('click', () => {
       menuContent.classList.toggle('show');
       playSFX('tap');
     });
-
-    // On load, initialize question-count for default selection
     window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
-    /********************************************************************
-     * NEW: MUSIC & SOUND SETTINGS EVENT LISTENERS
-     ********************************************************************/
+    /* Audio settings */
     musicSettingsBtn.addEventListener('click', () => {
       playSFX('tap');
       musicSettingsPanel.style.display = (musicSettingsPanel.style.display === 'block') ? 'none' : 'block';
-      soundSettingsPanel.style.display = 'none'; // hide other if open
+      soundSettingsPanel.style.display = 'none';
     });
     closeMusicBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -805,20 +852,17 @@
     soundSettingsBtn.addEventListener('click', () => {
       playSFX('tap');
       soundSettingsPanel.style.display = (soundSettingsPanel.style.display === 'block') ? 'none' : 'block';
-      musicSettingsPanel.style.display = 'none'; // hide other if open
+      musicSettingsPanel.style.display = 'none';
     });
     closeSfxBtn.addEventListener('click', () => {
       playSFX('tap');
       soundSettingsPanel.style.display = 'none';
     });
-
-    // Update music track on radio change
     musicRadioInputs.forEach(input => {
       input.addEventListener('change', () => {
         updateMusicChoice(parseInt(input.value, 10));
       });
     });
-    // Update volumes
     musicVolumeSlider.addEventListener('input', () => {
       const vol = parseFloat(musicVolumeSlider.value);
       musicTracks.forEach(track => { track.volume = vol; });
@@ -834,12 +878,73 @@
     });
 
     /********************************************************************
-     * DYNAMIC QUESTION COUNT DROPDOWN
+     * (NEW) STORY MODE & MAIN MENU EVENT LISTENERS
+     ********************************************************************/
+    // Show the new main menu by default instead of the quiz interface
+    // (You can invert this logic if you want the quiz to be the default)
+    window.addEventListener('load', () => {
+      newMainMenu.style.display = 'block';
+      mainContainer.style.display = 'none'; // hide old quiz container by default
+    });
+
+    // “Story Mode” button
+    goToStoryBtn.addEventListener('click', () => {
+      playSFX('tap');
+      newMainMenu.style.display = 'none';
+      storyModeContainer.style.display = 'block';
+      loadStoryMode();
+    });
+
+    // “Questions” button
+    goToQuizBtn.addEventListener('click', () => {
+      playSFX('tap');
+      newMainMenu.style.display = 'none';
+      mainContainer.style.display = 'block';
+    });
+
+    // “Options for Now” button
+    goToOptionsBtn.addEventListener('click', () => {
+      playSFX('tap');
+      alert("You clicked 'Options for now' - This is just a placeholder!");
+    });
+
+    // Back to Main Menu from Story Mode
+    backToNewMenuBtn.addEventListener('click', () => {
+      playSFX('tap');
+      storyModeContainer.style.display = 'none';
+      newMainMenu.style.display = 'block';
+    });
+
+    /********************************************************************
+     * (NEW) FUNCTION: LOAD STORY MODE
+     ********************************************************************/
+    function loadStoryMode() {
+      // Clear out old entries
+      storyEntriesDiv.innerHTML = '';
+
+      const entries = storyDataChapter1.entries;
+      entries.forEach((entry, index) => {
+        const card = document.createElement('div');
+        card.classList.add('story-card');
+
+        const heading = document.createElement('h3');
+        heading.textContent = `Key Takeaway #${index + 1}: ${entry.keyTakeaway}`;
+
+        const para = document.createElement('p');
+        para.textContent = entry.exampleStory;
+
+        card.appendChild(heading);
+        card.appendChild(para);
+        storyEntriesDiv.appendChild(card);
+      });
+    }
+
+    /********************************************************************
+     * (EXISTING) QUIZ-RELATED FUNCTIONS (unchanged)
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selectedChapter = chapterSelect.value;
       const questionOptions = CHAPTER_QUESTION_OPTIONS[selectedChapter] || [15,30,45,60,75,90,100];
-
       questionCountSelect.innerHTML = '';
       questionOptions.forEach(num => {
         const opt = document.createElement('option');
@@ -850,18 +955,11 @@
       questionCountSelect.selectedIndex = 0;
     }
 
-    /********************************************************************
-     * START QUIZ
-     ********************************************************************/
     async function startQuiz() {
-      // Hide start menu, show quiz
       startMenu.style.display   = 'none';
       quizSection.style.display = 'block';
       resultSection.style.display = 'none';
-
-      // Reset any leftover "wrong" tracking
       wrongAnsweredSet.clear();
-
       chosenFormat = getSelectedFormat();
 
       const chapterValue = chapterSelect.value;
@@ -874,22 +972,18 @@
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
-
       allFetched = removeDuplicateQuestions(allFetched);
       advancedRandomMix(allFetched);
 
       currentQuestions = allFetched.slice(0, questionCount);
 
-      // Shuffle each question's options & fix correct index
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
       });
 
-      // Initialize progress bar to 0
       updateProgressBar(0);
 
-      // Check if timer is enabled
       if (timerToggle.checked) {
         timerContainer.style.display = 'flex';
         startTimer();
@@ -904,7 +998,6 @@
         renderAllAtOnceMode(currentQuestions);
         remainingCountEl.textContent  = '';
       } else {
-        // One at a time
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'none';
         questionQueue = [...currentQuestions];
@@ -913,9 +1006,6 @@
       }
     }
 
-    /********************************************************************
-     * FETCH HELPERS
-     ********************************************************************/
     async function fetchAllChapters() {
       let merged = [];
       for (let i = 1; i <= 12; i++) {
@@ -941,9 +1031,6 @@
       }
     }
 
-    /********************************************************************
-     * REMOVE DUPLICATE QUESTIONS (by questionText)
-     ********************************************************************/
     function removeDuplicateQuestions(questionArray) {
       const seen = new Set();
       return questionArray.filter(q => {
@@ -955,9 +1042,6 @@
       });
     }
 
-    /********************************************************************
-     * ADVANCED RANDOM MIXING
-     ********************************************************************/
     function advancedRandomMix(arr, times = 3) {
       for (let i = 0; i < times; i++) {
         shuffleArray(arr);
@@ -968,37 +1052,28 @@
       return arr;
     }
 
-    /********************************************************************
-     * ALL-AT-ONCE RENDER
-     ********************************************************************/
     function renderAllAtOnceMode(questions) {
       quizContainer.innerHTML = '';
-
       questions.forEach((qData, qIndex) => {
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
-
         const header = document.createElement('h3');
         header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
         questionDiv.appendChild(header);
 
-        // Vertical radio list
         const optsDiv = document.createElement('div');
         optsDiv.classList.add('vertical-radio-list');
 
         qData.options.forEach((optText, optIdx) => {
           const label = document.createElement('label');
-
           const radio = document.createElement('input');
           radio.type = 'radio';
           radio.name = `question${qIndex}`;
           radio.value = optIdx;
-
           radio.addEventListener('change', () => {
             userAnswers[qIndex] = optIdx;
-            playSFX('tap'); // user clicked an option
+            playSFX('tap');
           });
-
           label.appendChild(radio);
           label.appendChild(document.createTextNode(" " + optText));
           optsDiv.appendChild(label);
@@ -1009,27 +1084,19 @@
       });
     }
 
-    /********************************************************************
-     * ONE-AT-A-TIME MODE
-     ********************************************************************/
     function showNextOneAtATimeQuestion() {
-      // If no questions remain => user eventually got them all correct
       if (questionQueue.length === 0) {
         handleSubmitOneAtATime();
         return;
       }
-
       quizContainer.innerHTML = '';
-
-      const qData = questionQueue[0]; 
+      const qData = questionQueue[0];
       const questionDiv = document.createElement('div');
       questionDiv.classList.add('question-container');
-
       const header = document.createElement('h3');
       header.textContent = `Question: ${qData.questionText}`;
       questionDiv.appendChild(header);
 
-      // 2x2 grid
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
@@ -1042,13 +1109,10 @@
         blockDiv.textContent = optText;
 
         blockDiv.addEventListener('click', () => {
-          playSFX('tap'); // user clicked on an option
-          
-          // Disable further clicks
+          playSFX('tap');
           const siblings = gridDiv.querySelectorAll('.option-block');
           siblings.forEach(el => el.style.pointerEvents = 'none');
 
-          // Check correctness
           const isCorrect = (optIdx === qData.correctOption);
           if (isCorrect) {
             blockDiv.classList.add('correct');
@@ -1056,10 +1120,8 @@
           } else {
             blockDiv.classList.add('wrong');
             playSFX('wrong');
-            // Mark question as "wrong"
             wrongAnsweredSet.add(qData);
           }
-
           showFeedback(questionDiv, isCorrect, qData.explanation);
 
           nextQuestionBtn.style.display = 'inline-block';
@@ -1075,7 +1137,6 @@
             showNextOneAtATimeQuestion();
           };
         });
-
         gridDiv.appendChild(blockDiv);
       });
 
@@ -1087,14 +1148,11 @@
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-
       scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
-
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
       if (chosenFormat === 'oneAtATime') {
         const btnContainer = document.createElement('div');
-
         const finishBtn = document.createElement('button');
         finishBtn.classList.add('btn');
         finishBtn.textContent = 'Finish';
@@ -1128,60 +1186,10 @@
       }
     }
 
-    /********************************************************************
-     * REVIEW FUNCTION
-     ********************************************************************/
-    function reviewQuestions(questionsToReview) {
-      quizSection.style.display = 'block';
-      quizContainer.innerHTML = '';
-      
-      questionsToReview.forEach((qData) => {
-        const sortedOptions = [...qData.options];
-
-        const questionDiv = document.createElement('div');
-        questionDiv.classList.add('question-container');
-
-        const header = document.createElement('h3');
-        header.textContent = `Q: ${qData.questionText}`;
-        questionDiv.appendChild(header);
-
-        const gridDiv = document.createElement('div');
-        gridDiv.classList.add('options-grid');
-
-        sortedOptions.forEach(optText => {
-          const blockDiv = document.createElement('div');
-          blockDiv.classList.add('option-block');
-          blockDiv.textContent = optText;
-
-          if (optText === qData.correctAnswer) {
-            blockDiv.classList.add('correct');
-          }
-          gridDiv.appendChild(blockDiv);
-        });
-
-        questionDiv.appendChild(gridDiv);
-
-        if (qData.explanation) {
-          const explEl = document.createElement('div');
-          explEl.classList.add('explanation');
-          explEl.textContent = qData.explanation;
-          questionDiv.appendChild(explEl);
-        }
-
-        quizContainer.appendChild(questionDiv);
-      });
-    }
-
-    /********************************************************************
-     * NEXT QUESTION BUTTON
-     ********************************************************************/
     function handleNextQuestion() {
-      // (Not used in forced-correct flow, but kept for reference)
+      // (placeholder)
     }
 
-    /********************************************************************
-     * SUBMIT BUTTON (ALL-AT-ONCE)
-     ********************************************************************/
     function handleSubmitQuiz() {
       let score = 0;
       currentQuestions.forEach((q, i) => {
@@ -1189,29 +1197,21 @@
           score++;
         }
       });
-
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
       stopTimer();
-
       scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.
       Time taken: ${formatTime(timeElapsed)}.`;
-
       displayHighScores(score, currentQuestions.length, chapterSelect.value);
     }
 
-    /********************************************************************
-     * FEEDBACK (ONE-AT-A-TIME)
-     ********************************************************************/
     function showFeedback(parentDiv, isCorrect, explanation) {
       const oldFeedback = parentDiv.querySelector('.feedback');
       if (oldFeedback) oldFeedback.remove();
-
       const feedbackEl = document.createElement('div');
       feedbackEl.classList.add('feedback', isCorrect ? 'correct' : 'incorrect');
       feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
       parentDiv.appendChild(feedbackEl);
-
       if (explanation) {
         const explEl = document.createElement('div');
         explEl.classList.add('explanation');
@@ -1220,31 +1220,27 @@
       }
     }
 
-    /********************************************************************
-     * RESET QUIZ
-     ********************************************************************/
     function resetQuiz() {
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
-
       quizContainer.innerHTML = '';
       currentQuestions = [];
       questionQueue = [];
       userAnswers = [];
       wrongAnsweredSet.clear();
-
       updateProgressBar(0);
-
       stopTimer();
       timeElapsed = 0;
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
+
+      // Optionally return to old quiz container if you want
+      mainContainer.style.display = 'block';
+      newMainMenu.style.display = 'none';
+      storyModeContainer.style.display = 'none';
     }
 
-    /********************************************************************
-     * UTILITIES
-     ********************************************************************/
     function getSelectedFormat() {
       let val = 'allAtOnce';
       formatRadioButtons.forEach(rb => {
@@ -1273,7 +1269,6 @@
       }
     }
 
-    /* Dark/Light Mode Toggle */
     function toggleDarkMode() {
       const bodyClassList = document.body.classList;
       if (bodyClassList.contains('light-mode')) {
@@ -1285,20 +1280,15 @@
       }
     }
 
-    /* Progress Bar */
     function updateProgressBar(completedQuestions) {
       const percentage = (completedQuestions / totalQuestions) * 100;
       progressFill.style.width = `${percentage}%`;
     }
 
-    /* Remaining Count */
     function updateRemainingCount() {
       remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
     }
 
-    /********************************************************************
-     * TIMER FUNCTIONS
-     ********************************************************************/
     function startTimer() {
       if (isTimerRunning) return;
       isTimerRunning = true;
@@ -1331,12 +1321,8 @@
       return `${mm}:${ss}`;
     }
 
-    /********************************************************************
-     * HIGH SCORES USING LOCAL STORAGE
-     ********************************************************************/
     function displayHighScores(score, total, chapter) {
       highScoreSection.style.display = 'block';
-
       const key = `chapter_${chapter}`;
       const stored = localStorage.getItem(key);
       const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
@@ -1362,28 +1348,19 @@
       }
     }
 
-    /********************************************************************
-     * NEW: MUSIC + SFX HELPER FUNCTIONS
-     ********************************************************************/
-    // Called whenever a radio button for music is changed
     function updateMusicChoice(index) {
-      // Pause any currently playing track
       if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
         musicTracks[currentMusicIndex].pause();
         musicTracks[currentMusicIndex].currentTime = 0;
       }
-
       currentMusicIndex = index;
-      // If index == -1 => Off
       if (index >= 0 && index < musicTracks.length) {
         musicTracks[index].play();
       }
     }
 
-    // Simplified SFX function. Resets currentTime so it can be “interrupted.”
     function playSFX(type) {
       if (!sfxEnabled) return;
-
       let sound = null;
       switch(type) {
         case 'correct': sound = correctSound; break;
@@ -1394,6 +1371,10 @@
       sound.currentTime = 0;
       sound.play();
     }
+
+    /********************************************************************
+     * END OF SCRIPT
+     ********************************************************************/
   </script>
 </body>
 </html>
