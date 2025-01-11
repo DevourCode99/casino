@@ -127,6 +127,25 @@
       background: var(--secondary-color);
     }
 
+    /* Small pop-up panels for audio settings */
+    .audio-panel {
+      background: var(--light-blue);
+      border: 2px solid var(--primary-color);
+      padding: 1rem;
+      margin-top: 0.5rem;
+      border-radius: 0.25rem;
+      display: none;
+      text-align: left;
+    }
+    body.dark-mode .audio-panel {
+      background: #2d3748;
+      border-color: var(--secondary-color);
+      color: var(--text-color-dark);
+    }
+    .audio-panel h4 {
+      margin-top: 0;
+    }
+
     /* =================================================
        FULLSCREEN BUTTON (floats at bottom-right)
     ================================================== */
@@ -473,6 +492,37 @@
     <div class="menu-content">
       <button class="menu-btn" id="dark-mode-toggle">Dark/Light</button>
       <button class="menu-btn btn-secondary" id="back-to-menu-btn">Back to Main</button>
+      
+      <!-- 1) New button to open/close music settings panel -->
+      <button class="menu-btn" id="music-settings-btn">Music Settings</button>
+      <!-- 2) Music settings panel -->
+      <div class="audio-panel" id="music-settings-panel">
+        <h4>Music Settings</h4>
+        <p><strong>Choose a track or turn music off:</strong></p>
+        <label><input type="radio" name="music-track" value="-1" checked> Off</label><br>
+        <label><input type="radio" name="music-track" value="0"> Music 1</label><br>
+        <label><input type="radio" name="music-track" value="1"> Music 2</label><br>
+        <label><input type="radio" name="music-track" value="2"> Music 3</label><br>
+        <label><input type="radio" name="music-track" value="3"> Music 4</label><br><br>
+        
+        <label for="music-volume">Music Volume:</label>
+        <input type="range" id="music-volume" min="0" max="1" step="0.1" value="1"><br>
+        <button class="menu-btn btn-secondary" id="close-music-settings">Close</button>
+      </div>
+
+      <!-- 3) New button to open/close sound effects (SFX) panel -->
+      <button class="menu-btn" id="sound-settings-btn">Sound Settings</button>
+      <!-- 4) Sound effects settings panel -->
+      <div class="audio-panel" id="sound-settings-panel">
+        <h4>Sound Effects Settings</h4>
+        <label>
+          <input type="checkbox" id="toggle-sfx" checked> Enable SFX
+        </label>
+        <br><br>
+        <label for="sfx-volume">SFX Volume:</label>
+        <input type="range" id="sfx-volume" min="0" max="1" step="0.1" value="1"><br>
+        <button class="menu-btn btn-secondary" id="close-sfx-settings">Close</button>
+      </div>
     </div>
   </div>
 
@@ -619,6 +669,20 @@
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
+    // NEW: Music and Sound Settings DOM
+    const musicSettingsBtn    = document.getElementById('music-settings-btn');
+    const musicSettingsPanel  = document.getElementById('music-settings-panel');
+    const closeMusicBtn       = document.getElementById('close-music-settings');
+    const soundSettingsBtn    = document.getElementById('sound-settings-btn');
+    const soundSettingsPanel  = document.getElementById('sound-settings-panel');
+    const closeSfxBtn         = document.getElementById('close-sfx-settings');
+
+    // NEW: Radio inputs for music, volume sliders, SFX toggle
+    const musicRadioInputs    = document.querySelectorAll('input[name="music-track"]');
+    const musicVolumeSlider   = document.getElementById('music-volume');
+    const sfxToggle           = document.getElementById('toggle-sfx');
+    const sfxVolumeSlider     = document.getElementById('sfx-volume');
+
     /********************************************************************
      * QUIZ STATE
      ********************************************************************/
@@ -638,7 +702,6 @@
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
-     * (Adjust these as appropriate for your chapters/data)
      ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
       all:    [15, 30, 45, 60, 75, 90, 100],
@@ -657,31 +720,118 @@
     };
 
     /********************************************************************
+     * NEW: AUDIO OBJECTS (Music & Sound Effects)
+     ********************************************************************/
+    // Music tracks
+    const musicTracks = [
+      new Audio('sound/music/music_1.mp3'),
+      new Audio('sound/music/music_2.mp3'),
+      new Audio('sound/music/music_3.mp3'),
+      new Audio('sound/music/music_4.mp3')
+    ];
+    // Loop all music by default
+    musicTracks.forEach(track => { track.loop = true; });
+
+    // Sound effects (correct, tap, wrong)
+    const correctSound = new Audio('sound/sound effects/correct.wav');
+    const tapSound    = new Audio('sound/sound effects/tap.wav');
+    const wrongSound  = new Audio('sound/sound effects/wrong.wav');
+
+    // Control flags for SFX
+    let currentMusicIndex = -1; // -1 = off
+    let sfxEnabled        = true;
+
+    /********************************************************************
      * EVENT LISTENERS
      ********************************************************************/
-    startQuizBtn.addEventListener('click', startQuiz);
-    restartBtn.addEventListener('click', resetQuiz);
-    backToMenuBtn.addEventListener('click', resetQuiz);
+    startQuizBtn.addEventListener('click', () => {
+      playSFX('tap');
+      startQuiz();
+    });
+    restartBtn.addEventListener('click', () => {
+      playSFX('tap');
+      resetQuiz();
+    });
+    backToMenuBtn.addEventListener('click', () => {
+      playSFX('tap');
+      resetQuiz();
+    });
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
     nextQuestionBtn.addEventListener('click', handleNextQuestion);
-    submitBtn.addEventListener('click', handleSubmitQuiz);
+    submitBtn.addEventListener('click', () => {
+      playSFX('tap');
+      handleSubmitQuiz();
+    });
 
     // Fullscreen toggle
-    fullscreenBtn.addEventListener('click', toggleFullScreen);
+    fullscreenBtn.addEventListener('click', () => {
+      playSFX('tap');
+      toggleFullScreen();
+    });
 
     // Dark/Light mode toggle
-    darkModeToggle.addEventListener('click', toggleDarkMode);
+    darkModeToggle.addEventListener('click', () => {
+      playSFX('tap');
+      toggleDarkMode();
+    });
 
     // Timer pause/resume
-    pauseTimerBtn.addEventListener('click', toggleTimer);
+    pauseTimerBtn.addEventListener('click', () => {
+      playSFX('tap');
+      toggleTimer();
+    });
 
     // Hamburger menu toggle
     menuToggle.addEventListener('click', () => {
       menuContent.classList.toggle('show');
+      playSFX('tap');
     });
 
     // On load, initialize question-count for default selection
     window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
+
+    /********************************************************************
+     * NEW: MUSIC & SOUND SETTINGS EVENT LISTENERS
+     ********************************************************************/
+    musicSettingsBtn.addEventListener('click', () => {
+      playSFX('tap');
+      musicSettingsPanel.style.display = (musicSettingsPanel.style.display === 'block') ? 'none' : 'block';
+      soundSettingsPanel.style.display = 'none'; // hide other if open
+    });
+    closeMusicBtn.addEventListener('click', () => {
+      playSFX('tap');
+      musicSettingsPanel.style.display = 'none';
+    });
+    soundSettingsBtn.addEventListener('click', () => {
+      playSFX('tap');
+      soundSettingsPanel.style.display = (soundSettingsPanel.style.display === 'block') ? 'none' : 'block';
+      musicSettingsPanel.style.display = 'none'; // hide other if open
+    });
+    closeSfxBtn.addEventListener('click', () => {
+      playSFX('tap');
+      soundSettingsPanel.style.display = 'none';
+    });
+
+    // Update music track on radio change
+    musicRadioInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        updateMusicChoice(parseInt(input.value, 10));
+      });
+    });
+    // Update volumes
+    musicVolumeSlider.addEventListener('input', () => {
+      const vol = parseFloat(musicVolumeSlider.value);
+      musicTracks.forEach(track => { track.volume = vol; });
+    });
+    sfxToggle.addEventListener('change', () => {
+      sfxEnabled = sfxToggle.checked;
+    });
+    sfxVolumeSlider.addEventListener('input', () => {
+      const vol = parseFloat(sfxVolumeSlider.value);
+      correctSound.volume = vol;
+      tapSound.volume     = vol;
+      wrongSound.volume   = vol;
+    });
 
     /********************************************************************
      * DYNAMIC QUESTION COUNT DROPDOWN
@@ -714,26 +864,20 @@
 
       chosenFormat = getSelectedFormat();
 
-      // Possibly fetch the relevant JSON
       const chapterValue = chapterSelect.value;
       const questionCount = parseInt(questionCountSelect.value, 10);
       totalQuestions = questionCount;
 
       let allFetched;
       if (chapterValue === 'all') {
-        // Could fetch each chapter and merge
         allFetched = await fetchAllChapters();
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // Remove duplicates to ensure no repeated question text
       allFetched = removeDuplicateQuestions(allFetched);
-
-      // "Advanced" random mixing for extra randomness
       advancedRandomMix(allFetched);
 
-      // Slice to user's chosen question count
       currentQuestions = allFetched.slice(0, questionCount);
 
       // Shuffle each question's options & fix correct index
@@ -753,13 +897,12 @@
         timerContainer.style.display = 'none';
       }
 
-      // Render per chosen format
       if (chosenFormat === 'allAtOnce') {
         userAnswers = [];
         nextQuestionBtn.style.display = 'none';
         submitBtn.style.display       = 'inline-block';
         renderAllAtOnceMode(currentQuestions);
-        remainingCountEl.textContent = '';
+        remainingCountEl.textContent  = '';
       } else {
         // One at a time
         nextQuestionBtn.style.display = 'none';
@@ -783,7 +926,6 @@
     }
 
     async function fetchSingleChapter(chapterNumber) {
-      // Adjust the path if needed, or replace with actual fetching logic
       const url = `./data/chapter${chapterNumber}.json`;
       try {
         const response = await fetch(url);
@@ -815,7 +957,6 @@
 
     /********************************************************************
      * ADVANCED RANDOM MIXING
-     * (Shuffle multiple times + random reversal to increase randomness)
      ********************************************************************/
     function advancedRandomMix(arr, times = 3) {
       for (let i = 0; i < times; i++) {
@@ -855,6 +996,7 @@
 
           radio.addEventListener('change', () => {
             userAnswers[qIndex] = optIdx;
+            playSFX('tap'); // user clicked an option
           });
 
           label.appendChild(radio);
@@ -879,7 +1021,7 @@
 
       quizContainer.innerHTML = '';
 
-      const qData = questionQueue[0]; // front of the queue
+      const qData = questionQueue[0]; 
       const questionDiv = document.createElement('div');
       questionDiv.classList.add('question-container');
 
@@ -891,7 +1033,6 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // Re-shuffle options each time we show them
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
@@ -901,6 +1042,8 @@
         blockDiv.textContent = optText;
 
         blockDiv.addEventListener('click', () => {
+          playSFX('tap'); // user clicked on an option
+          
           // Disable further clicks
           const siblings = gridDiv.querySelectorAll('.option-block');
           siblings.forEach(el => el.style.pointerEvents = 'none');
@@ -909,24 +1052,22 @@
           const isCorrect = (optIdx === qData.correctOption);
           if (isCorrect) {
             blockDiv.classList.add('correct');
+            playSFX('correct');
           } else {
             blockDiv.classList.add('wrong');
-            // Mark this question as "wrong at least once"
+            playSFX('wrong');
+            // Mark question as "wrong"
             wrongAnsweredSet.add(qData);
           }
 
-          // Show explanation + feedback
           showFeedback(questionDiv, isCorrect, qData.explanation);
 
-          // Show next question button
           nextQuestionBtn.style.display = 'inline-block';
           nextQuestionBtn.onclick = () => {
             nextQuestionBtn.style.display = 'none';
             if (isCorrect) {
-              // Remove from queue
               questionQueue.shift();
             } else {
-              // Put this question at the end of the queue
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -949,19 +1090,16 @@
 
       scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
 
-      // Display high scores as before
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
-      // Now add the 3 requested buttons (Finish, Review Wrong, Review All) ONLY for oneAtATime
-      // so we don’t conflict with the “allAtOnce” mode’s interface.
       if (chosenFormat === 'oneAtATime') {
-        // Create container for these new buttons so we don’t keep appending multiple times:
         const btnContainer = document.createElement('div');
 
         const finishBtn = document.createElement('button');
         finishBtn.classList.add('btn');
         finishBtn.textContent = 'Finish';
         finishBtn.addEventListener('click', () => {
+          playSFX('tap');
           resetQuiz();
         });
         btnContainer.appendChild(finishBtn);
@@ -970,9 +1108,9 @@
         reviewWrongBtn.classList.add('btn');
         reviewWrongBtn.textContent = 'Review Wrong Questions';
         reviewWrongBtn.addEventListener('click', () => {
-          // Hide results, show review
+          playSFX('tap');
           resultSection.style.display = 'none';
-          reviewQuestions(Array.from(wrongAnsweredSet)); // convert set to array
+          reviewQuestions(Array.from(wrongAnsweredSet));
         });
         btnContainer.appendChild(reviewWrongBtn);
 
@@ -980,7 +1118,7 @@
         reviewAllBtn.classList.add('btn');
         reviewAllBtn.textContent = 'Review All Questions';
         reviewAllBtn.addEventListener('click', () => {
-          // Hide results, show review
+          playSFX('tap');
           resultSection.style.display = 'none';
           reviewQuestions(currentQuestions);
         });
@@ -991,20 +1129,14 @@
     }
 
     /********************************************************************
-     * REVIEW FUNCTION (Highlights correct answer + shows explanation)
+     * REVIEW FUNCTION
      ********************************************************************/
     function reviewQuestions(questionsToReview) {
-      // Show the quiz section again for “review” but we’ll re-use the quizContainer
       quizSection.style.display = 'block';
       quizContainer.innerHTML = '';
       
-      // We’re not re-testing; just showing Qs with correct answer highlighted
-      questionsToReview.forEach((qData, index) => {
-        // Sort the options so correct answer always shows consistently
-        // (But you can keep them random if you prefer.)
+      questionsToReview.forEach((qData) => {
         const sortedOptions = [...qData.options];
-        // If you like, you can skip sorting:
-        // Or forcibly place the correct answer last, etc.
 
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
@@ -1029,7 +1161,6 @@
 
         questionDiv.appendChild(gridDiv);
 
-        // Explanation
         if (qData.explanation) {
           const explEl = document.createElement('div');
           explEl.classList.add('explanation');
@@ -1045,7 +1176,7 @@
      * NEXT QUESTION BUTTON
      ********************************************************************/
     function handleNextQuestion() {
-      // Not used in forced-correct flow but kept for reference
+      // (Not used in forced-correct flow, but kept for reference)
     }
 
     /********************************************************************
@@ -1211,7 +1342,6 @@
       const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
       const newTime = timeElapsed;
 
-      // If user beats the previous record or if no record
       if (score > bestScore.score ||
           (score === bestScore.score && newTime < bestScore.time)) {
         const newRecord = {
@@ -1230,6 +1360,39 @@
           <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
         `;
       }
+    }
+
+    /********************************************************************
+     * NEW: MUSIC + SFX HELPER FUNCTIONS
+     ********************************************************************/
+    // Called whenever a radio button for music is changed
+    function updateMusicChoice(index) {
+      // Pause any currently playing track
+      if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
+        musicTracks[currentMusicIndex].pause();
+        musicTracks[currentMusicIndex].currentTime = 0;
+      }
+
+      currentMusicIndex = index;
+      // If index == -1 => Off
+      if (index >= 0 && index < musicTracks.length) {
+        musicTracks[index].play();
+      }
+    }
+
+    // Simplified SFX function. Resets currentTime so it can be “interrupted.”
+    function playSFX(type) {
+      if (!sfxEnabled) return;
+
+      let sound = null;
+      switch(type) {
+        case 'correct': sound = correctSound; break;
+        case 'wrong':   sound = wrongSound;   break;
+        case 'tap':     sound = tapSound;     break;
+        default: return;
+      }
+      sound.currentTime = 0;
+      sound.play();
     }
   </script>
 </body>
