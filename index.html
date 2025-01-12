@@ -920,6 +920,8 @@
       mainContainer.style.display = 'none';
       storyModeContainer.style.display = 'none';
       newMainMenu.style.display = 'block';
+      // RESET so user must reselect next time
+      resetQuiz();
     }
 
     /********************************************************************
@@ -1098,7 +1100,7 @@
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
-      qData.options.forEach((optText, optIdx) => {
+      qData.options.forEach((optText) => {
         const blockDiv = document.createElement('div');
         blockDiv.classList.add('option-block');
         blockDiv.textContent = optText;
@@ -1237,6 +1239,16 @@
         }
         quizContainer.appendChild(questionDiv);
       });
+
+      // Add a "Done Reviewing" button so user can reset
+      const doneReviewingBtn = document.createElement('button');
+      doneReviewingBtn.classList.add('btn');
+      doneReviewingBtn.textContent = 'Done Reviewing';
+      doneReviewingBtn.addEventListener('click', () => {
+        playSFX('tap');
+        resetQuiz();
+      });
+      quizContainer.appendChild(doneReviewingBtn);
     }
 
     /********************************************************************
