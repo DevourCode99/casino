@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- (CHANGED) Title -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Real Estate Broker Quiz - Revamped</title>
+  <title>Single Question Quiz</title> <!-- was "Real Estate Broker Quiz - Revamped" -->
 
   <style>
     /*********************************************************
@@ -326,7 +327,6 @@
       font-size: 1.3rem;
     }
 
-    /* (MODIFIED) Make radio/checkbox area centered + uniform widths */
     .vertical-radio-list {
       display: flex;              
       flex-direction: column;     
@@ -350,7 +350,6 @@
       background-color: #eee;
     }
 
-    /* 2x2 grid for one-at-a-time mode */
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -529,7 +528,7 @@
       transform: translateY(-1px);
     }
 
-    /* Story mode container - ensure all text is visible */
+    /* (UPDATED) Story mode container */
     #story-mode-container {
       display: none;
       width: 100%;
@@ -539,12 +538,10 @@
       text-align: center;
     }
 
-    /* (ADDED) Sub-menu for picking a chapter (or all) */
     #story-mode-menu {
       margin-bottom: 2rem;
     }
 
-    /* Larger KeyTakeaway */
     .story-key {
       font-size: 1.3rem;
       font-weight: 700;
@@ -552,7 +549,7 @@
       white-space: normal;
     }
     .story-example {
-      font-size: 1.05rem; /* slightly bigger than default */
+      font-size: 1.05rem;
       color: #555;
       line-height: 1.4;
       white-space: normal;
@@ -562,7 +559,6 @@
       color: #ccc;
     }
 
-    /* Card-like container for each story entry */
     .story-card {
       background: var(--light-blue);
       border: 1px solid #ccc;
@@ -627,13 +623,13 @@
   <div id="new-main-menu">
     <h1>Main Menu</h1>
     <button class="menu-option-btn" id="go-to-story">Story Mode</button>
-    <button class="menu-option-btn" id="go-to-quiz">Questions</button>
+    <!-- (CHANGED) from "Questions" to "Single Question Quiz" -->
+    <button class="menu-option-btn" id="go-to-quiz">Single Question Quiz</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
 
   <!-- STORY MODE CONTAINER -->
   <div id="story-mode-container">
-    <!-- (ADDED) Sub-menu for choosing chapter(s) -->
     <div id="story-mode-menu">
       <h2>Select Chapter or “All” for Story Mode</h2>
       <p>Choose which chapter to read, or pick “All.” Then click Start.</p>
@@ -656,10 +652,8 @@
       <button class="btn" id="start-story-btn">Start Reading</button>
     </div>
 
-    <!-- Where the actual story entries are displayed -->
     <div id="story-entries"></div>
 
-    <!-- These appear after finishing all stories -->
     <button class="btn btn-secondary" id="restart-story-btn" style="display:none;">Restart</button>
     <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
@@ -669,18 +663,19 @@
 
     <!-- START MENU -->
     <div id="start-menu">
-      <h1>Real Estate Broker Quiz - Revamped</h1>
+      <!-- (CHANGED) H1 text -->
+      <h1>Single Question Quiz</h1> <!-- was "Real Estate Broker Quiz - Revamped" -->
+
       <p>
-        You may select one chapter (and you’ll get 10 random questions), 
-        or select “All/Mix” and choose from 10, 15, 20, 25, 30, or 40 questions. 
+        You may select a chapter or "All", then choose how many questions you want. 
+        (Removed the display format option as requested.)
       </p>
 
-      <!-- (MODIFIED) Chapter Select & All/Mix -->
+      <!-- (CHANGED) Label: "Choose a Chapter" + "All" + chapters 1..12 -->
       <div class="form-group">
-        <label for="chapter-select">Choose Single Chapter or "Mix":</label>
+        <label for="chapter-select">Choose a Chapter:</label>
         <select id="chapter-select">
-          <option value="mix">All / Mix (10,15,20,25,30,40)</option>
-          <!-- Single-chapter options (always 10) -->
+          <option value="all">All</option>
           <option value="1">Chapter 1</option>
           <option value="2">Chapter 2</option>
           <option value="3">Chapter 3</option>
@@ -696,27 +691,15 @@
         </select>
       </div>
 
-      <!-- (MODIFIED) Question Count Options -->
+      <!-- (CHANGED) Number of Questions - adjusted automatically via CHAPTER_QUESTION_OPTIONS -->
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label>
         <select id="question-count-select">
-          <!-- Will be updated dynamically based on user’s chapter selection -->
+          <!-- updated dynamically when user changes "chapter-select" -->
         </select>
       </div>
 
-      <div class="form-group">
-        <label>Select Display Format:</label>
-        <div class="radio-group">
-          <label>
-            <input type="radio" name="format" value="allAtOnce" checked />
-            All at Once
-          </label>
-          <label>
-            <input type="radio" name="format" value="oneAtATime" />
-            One at a Time
-          </label>
-        </div>
-      </div>
+      <!-- (REMOVED) Display format radio-group -->
 
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
@@ -728,7 +711,7 @@
     <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
-    <div id="quiz-section">
+    <div id="quiz-section" style="display:none;">
       <div class="progress-bar" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -744,7 +727,7 @@
     </div>
 
     <!-- RESULT SECTION -->
-    <div id="result-section">
+    <div id="result-section" style="display:none;">
       <h2>Quiz Results</h2>
       <div id="score-display"></div>
       <div id="high-score-section" style="display:none;">
@@ -784,10 +767,7 @@
     const pauseTimerBtn       = document.getElementById('pause-timer-btn');
     const chapterSelect       = document.getElementById('chapter-select');
     const questionCountSelect = document.getElementById('question-count-select');
-    const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
-    const highScoreSection    = document.getElementById('high-score-section');
-    const highScoreList       = document.getElementById('high-score-list');
-
+    
     /* Audio */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
     const musicSettingsPanel  = document.getElementById('music-settings-panel');
@@ -800,15 +780,13 @@
     const sfxToggle           = document.getElementById('toggle-sfx');
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
-    /* NEW MAIN MENU & STORY MODE */
+    /* STORY MODE */
     const newMainMenu           = document.getElementById('new-main-menu');
     const storyModeContainer    = document.getElementById('story-mode-container');
     const storyEntriesDiv       = document.getElementById('story-entries');
     const goToStoryBtn          = document.getElementById('go-to-story');
     const goToQuizBtn           = document.getElementById('go-to-quiz');
     const goToOptionsBtn        = document.getElementById('go-to-options');
-
-    // (ADDED) Submenu for story mode
     const storyChapterSelect    = document.getElementById('story-chapter-select-mode');
     const startStoryBtn         = document.getElementById('start-story-btn');
     const restartStoryBtn       = document.getElementById('restart-story-btn');
@@ -820,7 +798,7 @@
     let currentQuestions = [];
     let questionQueue    = [];
     let userAnswers      = [];
-    let chosenFormat     = 'allAtOnce';
+    let chosenFormat     = 'oneAtATime'; // (FORCED) no "allAtOnce" available
     let totalQuestions   = 0;
     let wrongAnsweredSet = new Set();
 
@@ -830,33 +808,24 @@
     let isTimerRunning   = false;
 
     /********************************************************************
-     * (NEW) CHAPTER -> QUESTION COUNT MAP
+     * CHAPTER -> QUESTION COUNT MAP
+     * (As requested: custom sets for each chapter, "all" is arbitrary)
      ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
-      "mix": [10,15,20,25,30,40], 
-      "1":   [10],
-      "2":   [10],
-      "3":   [10],
-      "4":   [10],
-      "5":   [10],
-      "6":   [10],
-      "7":   [10],
-      "8":   [10],
-      "9":   [10],
-      "10":  [10],
-      "11":  [10],
-      "12":  [10]
+      "all": [10, 20, 30, 45, 60, 75, 90],
+      "1":  [10, 20, 30, 45, 57],
+      "2":  [10, 20, 35, 50, 72],
+      "3":  [10, 20, 30, 45, 60],
+      "4":  [10, 20, 30, 40, 54],
+      "5":  [10, 20, 30, 40, 52],
+      "6":  [10, 20, 30, 45, 60],
+      "7":  [5, 10, 15, 20, 30],
+      "8":  [5, 10, 15, 20, 30],
+      "9":  [5, 10, 15, 20, 30],
+      "10": [10, 25, 45, 70, 90],
+      "11": [5, 10, 15, 20, 25],
+      "12": [5, 10, 15, 20, 35]
     };
-
-    /********************************************************************
-     * STORY MODE STATE
-     * We'll fetch from the JSON files located in:
-     * casino/data/story/chapter_1.json
-     * ...
-     * casino/data/story/chapter_12.json
-     ********************************************************************/
-    let storyDataSelected = [];  // combined stories for the chosen chapter(s)
-    let currentStoryIndex = 0;
 
     /********************************************************************
      * AUDIO (Music & Sound Effects)
@@ -877,7 +846,7 @@
     let sfxEnabled        = true;
 
     /********************************************************************
-     * EVENT LISTENERS - QUIZ
+     * EVENT LISTENERS (QUIZ)
      ********************************************************************/
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -954,7 +923,7 @@
     });
 
     /********************************************************************
-     * MAIN MENU EVENT LISTENERS - STORY MODE
+     * MAIN MENU EVENT LISTENERS (STORY MODE)
      ********************************************************************/
     window.addEventListener('load', () => {
       newMainMenu.style.display = 'block';
@@ -965,7 +934,6 @@
       playSFX('tap');
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'block';
-      // Show the story sub-menu (pick chapter, etc.)
       resetStoryModeUI();
     });
 
@@ -980,13 +948,10 @@
       alert("You clicked 'Options for now' - Just a placeholder!");
     });
 
-    // (ADDED) Start reading the chosen chapter(s)
     startStoryBtn.addEventListener('click', () => {
       playSFX('tap');
       startStoryMode();
     });
-
-    // (ADDED) Restart or go back after finishing
     restartStoryBtn.addEventListener('click', () => {
       playSFX('tap');
       resetStoryModeUI();
@@ -1007,10 +972,11 @@
     }
 
     /********************************************************************
-     * STORY MODE LOGIC
+     * STORY MODE FUNCTIONS (UNCHANGED)
      ********************************************************************/
+    let storyDataSelected = []; 
+    let currentStoryIndex = 0;
 
-    // Clears/Resets the sub-menu and hides the story list
     function resetStoryModeUI() {
       storyEntriesDiv.innerHTML = '';
       storyChapterSelect.value = 'all';
@@ -1018,12 +984,10 @@
       storyDataSelected = [];
       restartStoryBtn.style.display = 'none';
       backToNewMenuBtn.style.display = 'none';
-      // Show the sub-menu again
       document.getElementById('story-mode-menu').style.display = 'block';
     }
 
     async function startStoryMode() {
-      // Hide the sub-menu
       document.getElementById('story-mode-menu').style.display = 'none';
       restartStoryBtn.style.display = 'none';
       backToNewMenuBtn.style.display = 'none';
@@ -1031,7 +995,6 @@
 
       const choice = storyChapterSelect.value;
       if (choice === 'all') {
-        // fetch all 12 chapters
         let all = [];
         for (let i = 1; i <= 12; i++) {
           const data = await fetchStoryChapter(i);
@@ -1039,14 +1002,12 @@
         }
         storyDataSelected = all;
       } else {
-        // fetch single
         const singleData = await fetchStoryChapter(choice);
         storyDataSelected = singleData;
       }
 
       currentStoryIndex = 0;
       if (storyDataSelected.length === 0) {
-        // if no data, just show back button
         storyEntriesDiv.innerHTML = '<p>No story data found.</p>';
         backToNewMenuBtn.style.display = 'inline-block';
         return;
@@ -1054,7 +1015,6 @@
       loadCurrentStory();
     }
 
-    // Function to fetch a single chapter from your story JSON
     async function fetchStoryChapter(chapterNumber) {
       try {
         const response = await fetch(`casino/data/story/chapter_${chapterNumber}.json`);
@@ -1063,7 +1023,6 @@
           return [];
         }
         const jsonData = await response.json();
-        // We assume jsonData.entries is an array of { keyTakeaway, exampleStory }
         return jsonData.entries || [];
       } catch (err) {
         console.error("Error fetching story data:", err);
@@ -1073,14 +1032,13 @@
 
     function loadCurrentStory() {
       if (currentStoryIndex >= storyDataSelected.length) {
-        // done reading all
         storyEntriesDiv.innerHTML = '<h3>You have reached the end of the stories!</h3>';
         restartStoryBtn.style.display = 'inline-block';
         backToNewMenuBtn.style.display = 'inline-block';
         return;
       }
 
-      storyEntriesDiv.innerHTML = ''; // clear
+      storyEntriesDiv.innerHTML = '';
 
       const entry = storyDataSelected[currentStoryIndex];
       const card = document.createElement('div');
@@ -1097,10 +1055,8 @@
       card.appendChild(keyDiv);
       card.appendChild(exDiv);
 
-      // Next or Finish button
       const nextBtn = document.createElement('button');
       nextBtn.classList.add('btn', 'story-next-btn');
-      // If there's more to read, label is "Next". Otherwise "Finish"
       const isLast = (currentStoryIndex === storyDataSelected.length - 1);
       nextBtn.textContent = isLast ? 'Finish' : 'Next';
       nextBtn.addEventListener('click', () => {
@@ -1118,7 +1074,7 @@
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selected = chapterSelect.value;
-      const questionOptions = CHAPTER_QUESTION_OPTIONS[selected] || [10,15,20,25,30,40];
+      const questionOptions = CHAPTER_QUESTION_OPTIONS[selected] || [10];
       questionCountSelect.innerHTML = '';
       questionOptions.forEach(num => {
         const opt = document.createElement('option');
@@ -1138,25 +1094,21 @@
       resultSection.style.display = 'none';
       wrongAnsweredSet.clear();
 
-      chosenFormat = getSelectedFormat();
       const chapterValue = chapterSelect.value;
       const questionCount = parseInt(questionCountSelect.value, 10);
       totalQuestions = questionCount;
 
-      /* If “mix” => fetch all chapters. Otherwise fetch single chapter. */
       let allFetched;
-      if (chapterValue === 'mix') {
+      if (chapterValue === 'all') {
         allFetched = await fetchAllChapters();
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      /* random shuffle, remove duplicates, then slice */
       allFetched = removeDuplicateQuestions(allFetched);
       advancedRandomMix(allFetched);
       currentQuestions = allFetched.slice(0, questionCount);
 
-      /* shuffle each question's options */
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
@@ -1171,19 +1123,13 @@
         timerContainer.style.display = 'none';
       }
 
-      if (chosenFormat === 'allAtOnce') {
-        userAnswers = [];
-        nextQuestionBtn.style.display = 'none';
-        submitBtn.style.display       = 'inline-block';
-        renderAllAtOnceMode(currentQuestions);
-        remainingCountEl.textContent  = '';
-      } else {
-        nextQuestionBtn.style.display = 'none';
-        submitBtn.style.display       = 'none';
-        questionQueue = [...currentQuestions];
-        updateRemainingCount();
-        showNextOneAtATimeQuestion();
-      }
+      // We forcibly use "oneAtATime" since you removed "allAtOnce"
+      questionQueue = [...currentQuestions];
+      userAnswers   = [];
+      nextQuestionBtn.style.display = 'none';
+      submitBtn.style.display       = 'none';
+      updateRemainingCount();
+      showNextOneAtATimeQuestion();
     }
 
     async function fetchAllChapters() {
@@ -1232,45 +1178,6 @@
       return arr;
     }
 
-    /********************************************************************
-     * RENDER ALL-AT-ONCE
-     ********************************************************************/
-    function renderAllAtOnceMode(questions) {
-      quizContainer.innerHTML = '';
-      questions.forEach((qData, qIndex) => {
-        const questionDiv = document.createElement('div');
-        questionDiv.classList.add('question-container');
-
-        const header = document.createElement('h3');
-        header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
-        questionDiv.appendChild(header);
-
-        const optsDiv = document.createElement('div');
-        optsDiv.classList.add('vertical-radio-list');
-
-        qData.options.forEach((optText, optIdx) => {
-          const label = document.createElement('label');
-          const radio = document.createElement('input');
-          radio.type = 'radio';
-          radio.name = `question${qIndex}`;
-          radio.value = optIdx;
-          radio.addEventListener('change', () => {
-            userAnswers[qIndex] = optIdx;
-            playSFX('tap');
-          });
-          label.appendChild(radio);
-          label.appendChild(document.createTextNode(" " + optText));
-          optsDiv.appendChild(label);
-        });
-
-        questionDiv.appendChild(optsDiv);
-        quizContainer.appendChild(questionDiv);
-      });
-    }
-
-    /********************************************************************
-     * ONE-AT-A-TIME
-     ********************************************************************/
     function showNextOneAtATimeQuestion() {
       if (questionQueue.length === 0) {
         handleSubmitOneAtATime();
@@ -1319,7 +1226,6 @@
             if (isCorrect) {
               questionQueue.shift();
             } else {
-              // push the same question to the end
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -1342,40 +1248,38 @@
       scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
-      if (chosenFormat === 'oneAtATime') {
-        const btnContainer = document.createElement('div');
+      const btnContainer = document.createElement('div');
 
-        const finishBtn = document.createElement('button');
-        finishBtn.classList.add('btn');
-        finishBtn.textContent = 'Finish';
-        finishBtn.addEventListener('click', () => {
-          playSFX('tap');
-          resetQuiz();
-        });
-        btnContainer.appendChild(finishBtn);
+      const finishBtn = document.createElement('button');
+      finishBtn.classList.add('btn');
+      finishBtn.textContent = 'Finish';
+      finishBtn.addEventListener('click', () => {
+        playSFX('tap');
+        resetQuiz();
+      });
+      btnContainer.appendChild(finishBtn);
 
-        const reviewWrongBtn = document.createElement('button');
-        reviewWrongBtn.classList.add('btn');
-        reviewWrongBtn.textContent = 'Review Wrong Questions';
-        reviewWrongBtn.addEventListener('click', () => {
-          playSFX('tap');
-          resultSection.style.display = 'none';
-          reviewQuestions(Array.from(wrongAnsweredSet));
-        });
-        btnContainer.appendChild(reviewWrongBtn);
+      const reviewWrongBtn = document.createElement('button');
+      reviewWrongBtn.classList.add('btn');
+      reviewWrongBtn.textContent = 'Review Wrong Questions';
+      reviewWrongBtn.addEventListener('click', () => {
+        playSFX('tap');
+        resultSection.style.display = 'none';
+        reviewQuestions(Array.from(wrongAnsweredSet));
+      });
+      btnContainer.appendChild(reviewWrongBtn);
 
-        const reviewAllBtn = document.createElement('button');
-        reviewAllBtn.classList.add('btn');
-        reviewAllBtn.textContent = 'Review All Questions';
-        reviewAllBtn.addEventListener('click', () => {
-          playSFX('tap');
-          resultSection.style.display = 'none';
-          reviewQuestions(currentQuestions);
-        });
-        btnContainer.appendChild(reviewAllBtn);
+      const reviewAllBtn = document.createElement('button');
+      reviewAllBtn.classList.add('btn');
+      reviewAllBtn.textContent = 'Review All Questions';
+      reviewAllBtn.addEventListener('click', () => {
+        playSFX('tap');
+        resultSection.style.display = 'none';
+        reviewQuestions(currentQuestions);
+      });
+      btnContainer.appendChild(reviewAllBtn);
 
-        resultSection.appendChild(btnContainer);
-      }
+      resultSection.appendChild(btnContainer);
     }
 
     function handleNextQuestion() {
@@ -1383,6 +1287,9 @@
     }
 
     function handleSubmitQuiz() {
+      // If you had an "allAtOnce" approach, you'd do scoring here. 
+      // But we've removed it from the UI. 
+      // This function remains for legacy or completeness if needed.
       let score = 0;
       currentQuestions.forEach((q, i) => {
         if (userAnswers[i] === q.correctOption) {
@@ -1480,16 +1387,6 @@
     /********************************************************************
      * UTILITIES
      ********************************************************************/
-    function getSelectedFormat() {
-      let val = 'allAtOnce';
-      formatRadioButtons.forEach(rb => {
-        if (rb.checked) {
-          val = rb.value;
-        }
-      });
-      return val;
-    }
-
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -1561,6 +1458,9 @@
     }
 
     function displayHighScores(score, total, chapter) {
+      const highScoreSection = document.getElementById('high-score-section');
+      const highScoreList    = document.getElementById('high-score-list');
+
       highScoreSection.style.display = 'block';
       const key = `chapter_${chapter}`;
       const stored = localStorage.getItem(key);
