@@ -171,8 +171,7 @@
      * MAIN CONTAINER FOR QUIZ
      *********************************************************/
     .container {
-      /* (CHANGED) Hide by default so it doesn't flash on page load */
-      display: none;
+      display: none; /* hidden by default so we start on the main menu */
       width: 100%;
       max-width: 1200px;
       margin: 2rem 1rem;
@@ -501,7 +500,7 @@
      * NEW MAIN MENU & STORY MODE STYLES
      *********************************************************/
     #new-main-menu {
-      display: block; /* (CHANGED) Show main menu immediately */
+      display: block; 
       text-align: center;
       margin-top: 2rem;
       animation: fadeIn 0.8s ease forwards; 
@@ -691,7 +690,7 @@
         <select id="question-count-select"></select>
       </div>
 
-      <!-- Removed the display format UI; we're always in 'oneAtATime' mode -->
+      <!-- Removed the display format UI; always "oneAtATime" mode -->
 
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
@@ -703,7 +702,7 @@
     <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
-    <div id="quiz-section">
+    <div id="quiz-section" style="display:none;">
       <div class="progress-bar" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -880,7 +879,7 @@
       playSFX('tap');
     });
 
-    // Update question counts on DOMContentLoaded (but don't show quiz yet)
+    // Update question counts on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
       updateQuestionCountOptions();
     });
@@ -967,7 +966,7 @@
 
     /********************************************************************
      * STORY MODE FUNCTIONS
-     * (CHANGED) fetch path: 'data/story/chapter_X.json'
+     * Here we fetch from "data/story/chapter_1.json" ... "chapter_12.json"
      ********************************************************************/
     function resetStoryModeUI() {
       storyEntriesDiv.innerHTML = '';
@@ -1009,7 +1008,6 @@
 
     async function fetchStoryChapter(chapterNumber) {
       try {
-        // (CHANGED) Fixing the path from 'casino/data/story' to 'data/story'
         const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch story chapter ${chapterNumber}.`);
@@ -1080,6 +1078,7 @@
 
     /********************************************************************
      * START QUIZ
+     * We also fetch from "data/story/chapter_X.json" for quiz questions
      ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
@@ -1134,14 +1133,15 @@
     }
 
     async function fetchSingleChapter(chapterNumber) {
-      const url = `./data/chapter${chapterNumber}.json`;
       try {
-        const response = await fetch(url);
+        // Also fetch quiz data from "data/story/chapter_X.json"
+        const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
           return [];
         }
         const jsonData = await response.json();
+        // We'll assume "questions" field has the actual quiz Q&A
         return jsonData.questions || [];
       } catch (error) {
         console.error("Error fetching chapter data:", error);
@@ -1371,7 +1371,7 @@
 
       // Return to main quiz container
       mainContainer.style.display = 'block';
-      // Hide the story container and show main menu is optional here
+      // Hide story mode for now
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'none';
     }
