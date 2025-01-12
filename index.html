@@ -7,14 +7,14 @@
 
   <style>
     /*********************************************************
-     * GLOBAL & THEME
+     * (GLOBAL & THEME VARIABLES)
      *********************************************************/
     :root {
-      --primary-color: #2563eb;
+      --primary-color: #2563eb;     
       --primary-hover: #1d4ed8;
-      --secondary-color: #4a5568;
-      --light-blue:    #f0f8ff;
-      --white:         #ffffff;
+      --secondary-color: #4a5568;   
+      --light-blue:    #f0f8ff;     
+      --white:         #ffffff;     
       --success-color: #0f9d58;
       --error-color:   #d93025;
       --warning-color: #faad14;
@@ -29,14 +29,12 @@
       width: 100%;
       min-height: 100vh;
       font-family: "Helvetica Neue", Arial, sans-serif;
-      overflow-x: hidden;
+      overflow-x: hidden; 
       transition: background 0.3s ease, color 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      font-size: 1.125rem; 
-      line-height: 1.6;
     }
 
     body.light-mode {
@@ -48,12 +46,17 @@
       color: var(--text-color-dark);
     }
 
+    body {
+      font-size: 1.125rem; 
+      line-height: 1.6;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     /*********************************************************
-     * HAMBURGER MENU
+     * (HAMBURGER MENU)
      *********************************************************/
     .expandable-menu {
       position: fixed;
@@ -164,122 +167,7 @@
     }
 
     /*********************************************************
-     * NEW MAIN MENU
-     *********************************************************/
-    #new-main-menu {
-      display: none; 
-      text-align: center;
-      margin-top: 2rem;
-      animation: fadeIn 0.8s ease forwards; 
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    #new-main-menu h1 {
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-    .menu-option-btn {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 0.8rem 1.2rem;
-      margin: 0.5rem;
-      border: none;
-      border-radius: 0.25rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-    .menu-option-btn:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-1px);
-    }
-
-    /*********************************************************
-     * STORY MODE MENU & CONTAINER
-     *********************************************************/
-    #story-menu {
-      display: none;
-      text-align: center;
-      margin-top: 2rem;
-      animation: fadeIn 0.8s ease forwards; 
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    #story-menu h2 {
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-      color: var(--text-color-light);
-    }
-    #story-menu .form-group {
-      margin-bottom: 1.25rem;
-      text-align: center;
-    }
-    #story-menu label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    #story-menu select {
-      width: 100%;
-      max-width: 300px;
-      padding: 0.6rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      outline: none;
-      font-size: 1rem;
-      text-align: center;
-    }
-    #story-menu button {
-      margin-top: 1rem;
-    }
-
-    #story-mode-container {
-      display: none;
-      width: 100%;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      text-align: center;
-    }
-    #story-list-container {
-      margin-top: 1rem;
-    }
-
-    .story-card {
-      background: var(--light-blue);
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 0.5s ease;
-    }
-    body.dark-mode .story-card {
-      background: #2d3748;
-      border-color: #444;
-      color: var(--text-color-dark);
-    }
-    .story-key {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      white-space: normal;
-    }
-    .story-example {
-      font-size: 1rem;
-      line-height: 1.4;
-      white-space: normal;
-    }
-    body.dark-mode .story-example {
-      color: #ccc;
-    }
-    .story-next-btn {
-      margin-top: 1rem;
-    }
-
-    /*********************************************************
-     * QUIZ CONTAINER & ANIMATIONS
+     * MAIN CONTAINER FOR QUIZ
      *********************************************************/
     .container {
       width: 100%;
@@ -297,12 +185,6 @@
       align-items: center;
       transition: background-color 0.3s ease;
       text-align: center;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     @keyframes fadeInUp {
       to {
@@ -334,11 +216,267 @@
       background-color: var(--primary-hover);
       transform: translateY(-1px);
     }
+    .btn-warning {
+      background-color: var(--warning-color);
+      color: #333;
+    }
+    .btn-warning:hover {
+      filter: brightness(1.1);
+    }
 
     /*********************************************************
-     * RESPONSIVE
+     * QUIZ START MENU (be “beautiful” & centered)
+     *********************************************************/
+    #start-menu {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+      transform: translateY(10px);
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    #start-menu h1 {
+      margin-bottom: 1.5rem;
+      color: var(--text-color-light);
+      font-size: 1.8rem;
+    }
+    #start-menu p {
+      color: #555;
+      max-width: 500px;
+      margin: 0 auto 1.5rem auto;
+      line-height: 1.4;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+      text-align: center;
+      margin: 1.5rem auto;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    select, .radio-group {
+      width: 100%;
+      max-width: 300px;
+      padding: 0.6rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      outline: none;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .radio-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+    body.dark-mode select,
+    body.dark-mode .radio-group {
+      background: #2a2a2a;
+      color: #fff;
+      border-color: #444;
+    }
+
+    /*********************************************************
+     * QUIZ SECTION, QUESTIONS, ETC. (uniform, centered)
+     *********************************************************/
+    #quiz-section {
+      width: 100%;
+      display: none;
+      position: relative;
+      text-align: center; 
+    }
+    .question-container {
+      margin-bottom: 2rem;
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto 2rem auto;
+      animation: fadeInUp 0.4s ease;
+      background: var(--light-blue);
+      padding: 1.5rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    body.dark-mode .question-container {
+      background: #2d3748;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+      color: var(--text-color-dark);
+    }
+    .question-container h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    /* (MODIFIED) Make radio/checkbox area centered + uniform widths */
+    .vertical-radio-list {
+      display: flex;              /* new */
+      flex-direction: column;     /* stack vertically */
+      align-items: center;        /* center horizontally */
+      gap: 0.5rem;
+    }
+    .vertical-radio-list label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      width: 100%;
+      max-width: 400px;     /* uniform width */
+      background: #fff;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.2s;
+      cursor: pointer;
+      text-align: left; 
+    }
+    .vertical-radio-list label:hover {
+      background-color: #eee;
+    }
+
+    /* 2x2 grid for one-at-a-time mode */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      justify-items: stretch;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .option-block {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+      text-align: center;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .option-block:hover {
+      background-color: #eee;
+      transform: scale(1.02);
+    }
+    .option-block.correct {
+      background-color: #c8f7c5 !important; 
+      border-color: var(--success-color);
+    }
+    .option-block.wrong {
+      background-color: #f7c5c5 !important; 
+      border-color: var(--error-color);
+    }
+
+    .feedback {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .feedback.correct {
+      color: var(--success-color);
+    }
+    .feedback.incorrect {
+      color: var(--error-color);
+    }
+    .explanation {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    body.dark-mode .explanation {
+      color: #ddd;
+    }
+
+    .remaining-count {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .progress-bar {
+      width: 100%;
+      max-width: 600px;
+      height: 10px;
+      background: #ddd;
+      border-radius: 5px;
+      margin: 0.5rem auto 1.5rem auto;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--primary-color);
+      border-radius: 5px;
+      transition: width 0.4s ease;
+    }
+    #timer-container {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    #timer {
+      font-size: 1.2rem;
+    }
+
+    /*********************************************************
+     * RESULT SECTION
+     *********************************************************/
+    #result-section {
+      width: 100%;
+      display: none;
+      text-align: center;
+    }
+    #score-display {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    #high-score-section {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    #high-score-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem auto;
+      text-align: left;
+      max-width: 300px;
+    }
+    #high-score-list li {
+      margin: 0.25rem 0;
+    }
+
+    /*********************************************************
+     * MEDIA QUERIES (RESPONSIVE)
      *********************************************************/
     @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
       .menu-toggle-button {
         font-size: 0.9rem;
       }
@@ -350,15 +488,94 @@
         bottom: 1rem;
         right: 1rem;
       }
-      .story-card {
+      .question-container {
         padding: 1rem;
       }
+      .option-block {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+    }
+
+    /*********************************************************
+     * NEW MAIN MENU & STORY MODE STYLES
+     *********************************************************/
+    #new-main-menu {
+      display: none; 
+      text-align: center;
+      margin-top: 2rem;
+      animation: fadeIn 0.8s ease forwards; 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    #new-main-menu h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .menu-option-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .menu-option-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* (UPDATED) Story mode container: remove any hidden overflow so text is fully visible */
+    #story-mode-container {
+      display: none;
+      width: 100%;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .story-card {
+      background: var(--light-blue);
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.5s ease;
+      /* remove any height constraints to show all text */
+    }
+    body.dark-mode .story-card {
+      background: #2d3748;
+      border-color: #444;
+      color: var(--text-color-dark);
+    }
+    .story-key {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      /* ensure text can wrap fully */
+      white-space: normal;
+    }
+    .story-example {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+      white-space: normal;  /* ensures wrapping */
+    }
+    body.dark-mode .story-example {
+      color: #ccc;
+    }
+    .story-next-btn {
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body class="light-mode">
 
-  <!-- HAMBURGER MENU -->
+  <!-- (HAMBURGER MENU) -->
   <div class="expandable-menu">
     <button id="menu-toggle" class="menu-toggle-button">☰ Menu</button>
     <div class="menu-content">
@@ -405,155 +622,296 @@
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
 
-  <!-- STORY MENU -->
-  <div id="story-menu">
-    <h2>Story Mode Selection</h2>
-    <div class="form-group">
-      <label for="story-chapter-select">Pick a Chapter (or All):</label>
-      <select id="story-chapter-select">
-        <option value="all">All Chapters</option>
-        <!-- Single chapters: 1-12 -->
-        <option value="1">Chapter 1</option>
-        <option value="2">Chapter 2</option>
-        <option value="3">Chapter 3</option>
-        <option value="4">Chapter 4</option>
-        <option value="5">Chapter 5</option>
-        <option value="6">Chapter 6</option>
-        <option value="7">Chapter 7</option>
-        <option value="8">Chapter 8</option>
-        <option value="9">Chapter 9</option>
-        <option value="10">Chapter 10</option>
-        <option value="11">Chapter 11</option>
-        <option value="12">Chapter 12</option>
-      </select>
-    </div>
-    <div class="form-group" id="story-count-group" style="display: none;">
-      <label for="story-count-select">Number of Stories:</label>
-      <select id="story-count-select">
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="30">30</option>
-        <option value="40">40</option>
-      </select>
-    </div>
-    <div id="single-chapter-note" style="color:#666; font-size:0.9rem; display:none;">
-      If you select a single chapter, <strong>8 random stories</strong> will be shown.
-    </div>
-    <button class="btn" id="start-story-btn">Start Story Mode</button>
-  </div>
-
   <!-- STORY MODE CONTAINER -->
   <div id="story-mode-container">
-    <h2 id="story-mode-title"></h2>
-    <div id="story-list-container"></div>
-    <!-- “Back to Main Menu” or “Done” will show after final story -->
-    <button class="btn btn-secondary" id="back-to-main-story-menu-btn" style="display:none;">Back to Story Menu</button>
+    <h2>Story Mode - Now with 12 Chapters!</h2>
+    <div id="story-entries"></div>
+    <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
-  <!-- MAIN QUIZ CONTAINER -->
-  <div class="container" id="main-container" style="display:none;">
-    <!-- (Quiz content omitted for brevity) -->
-    <h1>Quiz Goes Here...</h1>
-  </div>
+  <!-- MAIN CONTAINER (QUIZ) -->
+  <div class="container" id="main-container">
+
+    <!-- START MENU -->
+    <div id="start-menu">
+      <h1>Real Estate Broker Quiz - Revamped</h1>
+      <p>
+        You may select one chapter (and you’ll get 10 random questions), 
+        or select “All/Mix” and choose from 10, 15, 20, 25, 30, or 40 questions. 
+      </p>
+
+      <!-- (MODIFIED) Chapter Select & All/Mix -->
+      <div class="form-group">
+        <label for="chapter-select">Choose Single Chapter or "Mix":</label>
+        <select id="chapter-select">
+          <option value="mix">All / Mix (10,15,20,25,30,40)</option>
+          <!-- Single-chapter options (always 10) -->
+          <option value="1">Chapter 1</option>
+          <option value="2">Chapter 2</option>
+          <option value="3">Chapter 3</option>
+          <option value="4">Chapter 4</option>
+          <option value="5">Chapter 5</option>
+          <option value="6">Chapter 6</option>
+          <option value="7">Chapter 7</option>
+          <option value="8">Chapter 8</option>
+          <option value="9">Chapter 9</option>
+          <option value="10">Chapter 10</option>
+          <option value="11">Chapter 11</option>
+          <option value="12">Chapter 12</option>
+        </select>
+      </div>
+
+      <!-- (MODIFIED) Question Count Options -->
+      <div class="form-group">
+        <label for="question-count-select">Number of Questions:</label>
+        <select id="question-count-select">
+          <!-- Will be updated dynamically based on user’s chapter selection -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Select Display Format:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="format" value="allAtOnce" checked />
+            All at Once
+          </label>
+          <label>
+            <input type="radio" name="format" value="oneAtATime" />
+            One at a Time
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="timer-toggle">Enable Timer?</label>
+        <input type="checkbox" id="timer-toggle" />
+      </div>
+
+      <button class="btn" id="start-quiz-btn">Start Quiz</button>
+    </div>
+    <!-- END START MENU -->
+
+    <!-- QUIZ SECTION -->
+    <div id="quiz-section">
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="remaining-count" id="remaining-count"></div>
+      <div id="timer-container" style="display:none;">
+        <div id="timer">Time: 00:00</div>
+        <button class="btn btn-warning" id="pause-timer-btn">Pause</button>
+      </div>
+
+      <div id="quiz-questions-container"></div>
+      <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
+      <button class="btn" id="submit-btn" style="display: none;">Submit Quiz</button>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div id="result-section">
+      <h2>Quiz Results</h2>
+      <div id="score-display"></div>
+      <div id="high-score-section" style="display:none;">
+        <h3>High Scores</h3>
+        <ul id="high-score-list"></ul>
+      </div>
+      <button class="btn btn-secondary" id="restart-btn">Restart</button>
+    </div>
+
+  </div><!-- end .container -->
 
   <script>
-    /***********************************************************
+    /********************************************************************
      * DOM ELEMENTS
-     ***********************************************************/
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuContent = document.querySelector('.menu-content');
-    const backToMenuBtn = document.getElementById('back-to-menu-btn');
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const fullscreenBtn = document.getElementById('fullscreen-btn');
-    
-    // Audio
-    const musicSettingsBtn = document.getElementById('music-settings-btn');
-    const musicSettingsPanel = document.getElementById('music-settings-panel');
-    const closeMusicBtn = document.getElementById('close-music-settings');
-    const soundSettingsBtn = document.getElementById('sound-settings-btn');
-    const soundSettingsPanel = document.getElementById('sound-settings-panel');
-    const closeSfxBtn = document.getElementById('close-sfx-settings');
-    const sfxToggle = document.getElementById('toggle-sfx');
-    const sfxVolumeSlider = document.getElementById('sfx-volume');
-    const musicRadioInputs = document.querySelectorAll('input[name="music-track"]');
-    const musicVolumeSlider = document.getElementById('music-volume');
+     ********************************************************************/
+    const mainContainer       = document.getElementById('main-container');
+    const startMenu           = document.getElementById('start-menu');
+    const quizSection         = document.getElementById('quiz-section');
+    const resultSection       = document.getElementById('result-section');
+    const quizContainer       = document.getElementById('quiz-questions-container');
+    const startQuizBtn        = document.getElementById('start-quiz-btn');
+    const nextQuestionBtn     = document.getElementById('next-question-btn');
+    const submitBtn           = document.getElementById('submit-btn');
+    const scoreDisplay        = document.getElementById('score-display');
+    const restartBtn          = document.getElementById('restart-btn');
+    const backToMenuBtn       = document.getElementById('back-to-menu-btn');
+    const fullscreenBtn       = document.getElementById('fullscreen-btn');
+    const darkModeToggle      = document.getElementById('dark-mode-toggle');
+    const menuToggle          = document.getElementById('menu-toggle');
+    const menuContent         = document.querySelector('.menu-content');
+    const remainingCountEl    = document.getElementById('remaining-count');
+    const progressBar         = document.getElementById('progress-bar');
+    const progressFill        = document.getElementById('progress-fill');
+    const timerToggle         = document.getElementById('timer-toggle');
+    const timerContainer      = document.getElementById('timer-container');
+    const timerEl             = document.getElementById('timer');
+    const pauseTimerBtn       = document.getElementById('pause-timer-btn');
+    const chapterSelect       = document.getElementById('chapter-select');
+    const questionCountSelect = document.getElementById('question-count-select');
+    const formatRadioButtons  = document.querySelectorAll('input[name="format"]');
+    const highScoreSection    = document.getElementById('high-score-section');
+    const highScoreList       = document.getElementById('high-score-list');
 
-    // New main menu
-    const newMainMenu = document.getElementById('new-main-menu');
-    const goToStoryBtn = document.getElementById('go-to-story');
-    const goToQuizBtn = document.getElementById('go-to-quiz');
-    const goToOptionsBtn = document.getElementById('go-to-options');
+    /* Audio */
+    const musicSettingsBtn    = document.getElementById('music-settings-btn');
+    const musicSettingsPanel  = document.getElementById('music-settings-panel');
+    const closeMusicBtn       = document.getElementById('close-music-settings');
+    const soundSettingsBtn    = document.getElementById('sound-settings-btn');
+    const soundSettingsPanel  = document.getElementById('sound-settings-panel');
+    const closeSfxBtn         = document.getElementById('close-sfx-settings');
+    const musicRadioInputs    = document.querySelectorAll('input[name="music-track"]');
+    const musicVolumeSlider   = document.getElementById('music-volume');
+    const sfxToggle           = document.getElementById('toggle-sfx');
+    const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
-    // Story menu & container
-    const storyMenu = document.getElementById('story-menu');
-    const storyChapterSelect = document.getElementById('story-chapter-select');
-    const storyCountGroup = document.getElementById('story-count-group');
-    const storyCountSelect = document.getElementById('story-count-select');
-    const singleChapterNote = document.getElementById('single-chapter-note');
-    const startStoryBtn = document.getElementById('start-story-btn');
-    const storyModeContainer = document.getElementById('story-mode-container');
-    const storyModeTitle = document.getElementById('story-mode-title');
-    const storyListContainer = document.getElementById('story-list-container');
-    const backToMainStoryMenuBtn = document.getElementById('back-to-main-story-menu-btn');
+    /* NEW MAIN MENU & STORY MODE */
+    const newMainMenu         = document.getElementById('new-main-menu');
+    const storyModeContainer  = document.getElementById('story-mode-container');
+    const storyEntriesDiv     = document.getElementById('story-entries');
+    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
 
-    // Quiz container
-    const mainContainer = document.getElementById('main-container');
+    const goToStoryBtn        = document.getElementById('go-to-story');
+    const goToQuizBtn         = document.getElementById('go-to-quiz');
+    const goToOptionsBtn      = document.getElementById('go-to-options');
 
-    /***********************************************************
-     * AUDIO SETUP
-     ***********************************************************/
-    let sfxEnabled = true;
-    const correctSound = new Audio('sound/sound effects/correct.wav');
-    const tapSound    = new Audio('sound/sound effects/tap.wav');
-    const wrongSound  = new Audio('sound/sound effects/wrong.wav');
+    /********************************************************************
+     * QUIZ STATE
+     ********************************************************************/
+    let currentQuestions = [];
+    let questionQueue    = [];
+    let userAnswers      = [];
+    let chosenFormat     = 'allAtOnce';
+    let totalQuestions   = 0;
+    let wrongAnsweredSet = new Set();
+
+    /* Timer */
+    let timerInterval    = null;
+    let timeElapsed      = 0;
+    let isTimerRunning   = false;
+
+    /********************************************************************
+     * (NEW) CHAPTER -> QUESTION COUNT MAP
+     * “mix” => [10,15,20,25,30,40]
+     * Single chapters => 10 only
+     ********************************************************************/
+    const CHAPTER_QUESTION_OPTIONS = {
+      "mix": [10,15,20,25,30,40], 
+      "1":   [10],
+      "2":   [10],
+      "3":   [10],
+      "4":   [10],
+      "5":   [10],
+      "6":   [10],
+      "7":   [10],
+      "8":   [10],
+      "9":   [10],
+      "10":  [10],
+      "11":  [10],
+      "12":  [10]
+    };
+
+    /********************************************************************
+     * (UPDATED) STORY DATA (12 chapters)
+     * For brevity, only showing short placeholders. Extend as needed.
+     ********************************************************************/
+    const storyDataAllChapters = {
+      "1": [
+        {
+          "keyTakeaway": "Chapter 1 - Key #1",
+          "exampleStory": "Full text for story #1 in Chapter 1 ..."
+        },
+        {
+          "keyTakeaway": "Chapter 1 - Key #2",
+          "exampleStory": "Full text for story #2 in Chapter 1 ..."
+        }
+        // ... up to 10 or more as you see fit
+      ],
+      "2": [
+        {
+          "keyTakeaway": "Chapter 2 - Key #1",
+          "exampleStory": "Full text for story #1 in Chapter 2 ..."
+        }
+        // ...
+      ],
+      // ...
+      "12": [
+        {
+          "keyTakeaway": "Chapter 12 - Key #1",
+          "exampleStory": "Full text for story #1 in Chapter 12 ..."
+        }
+        // ...
+      ]
+    };
+
+    /* We will show 10 random stories from selected chapter or do a custom approach if you want “mix.” 
+       If you want “mix” of stories from multiple chapters, you can similarly combine them. 
+    */
+
+    /* For the sake of example, let's say story mode is always "single-chapter" 
+       (But you can adapt the logic to do a mix if desired)
+    */
+    let storyDataCurrentChapter = [];
+    let currentStoryIndex = 0;
+
+    /********************************************************************
+     * AUDIO (Music & Sound Effects)
+     ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
       new Audio('sound/music/music_2.mp3'),
       new Audio('sound/music/music_3.mp3'),
       new Audio('sound/music/music_4.mp3')
     ];
-    musicTracks.forEach(m => m.loop = true);
-    let currentMusicIndex = -1;
+    musicTracks.forEach(track => { track.loop = true; });
 
-    /***********************************************************
-     * STORY MODE STATE
-     ***********************************************************/
-    let combinedStories = [];
-    let currentStoryIndex = 0;
-    let chosenStoryCount = 8;  // default for single chapter
-    let currentStories = [];
+    const correctSound = new Audio('sound/sound effects/correct.wav');
+    const tapSound    = new Audio('sound/sound effects/tap.wav');
+    const wrongSound  = new Audio('sound/sound effects/wrong.wav');
 
-    /***********************************************************
+    let currentMusicIndex = -1; 
+    let sfxEnabled        = true;
+
+    /********************************************************************
      * EVENT LISTENERS
-     ***********************************************************/
-    // On load, show newMainMenu
-    window.addEventListener('load', () => {
-      newMainMenu.style.display = 'block'; // default
-    });
-
-    // Hamburger menu
-    menuToggle.addEventListener('click', () => {
-      menuContent.classList.toggle('show');
+     ********************************************************************/
+    startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
+      startQuiz();
+    });
+    restartBtn.addEventListener('click', () => {
+      playSFX('tap');
+      resetQuiz();
     });
     backToMenuBtn.addEventListener('click', () => {
       playSFX('tap');
-      goBackToMainMenu();
+      goBackToMainMenu(); 
     });
-
-    // Dark mode toggle
-    darkModeToggle.addEventListener('click', () => {
+    chapterSelect.addEventListener('change', updateQuestionCountOptions);
+    nextQuestionBtn.addEventListener('click', handleNextQuestion);
+    submitBtn.addEventListener('click', () => {
       playSFX('tap');
-      toggleDarkMode();
+      handleSubmitQuiz();
     });
-
-    // Fullscreen toggle
     fullscreenBtn.addEventListener('click', () => {
       playSFX('tap');
       toggleFullScreen();
     });
+    darkModeToggle.addEventListener('click', () => {
+      playSFX('tap');
+      toggleDarkMode();
+    });
+    pauseTimerBtn.addEventListener('click', () => {
+      playSFX('tap');
+      toggleTimer();
+    });
+    menuToggle.addEventListener('click', () => {
+      menuContent.classList.toggle('show');
+      playSFX('tap');
+    });
+    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
-    // Audio settings
+    /* Audio settings */
     musicSettingsBtn.addEventListener('click', () => {
       playSFX('tap');
       musicSettingsPanel.style.display = (musicSettingsPanel.style.display === 'block') ? 'none' : 'block';
@@ -572,14 +930,14 @@
       playSFX('tap');
       soundSettingsPanel.style.display = 'none';
     });
-    musicRadioInputs.forEach(r => {
-      r.addEventListener('change', () => {
-        updateMusicChoice(parseInt(r.value,10));
+    musicRadioInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        updateMusicChoice(parseInt(input.value, 10));
       });
     });
     musicVolumeSlider.addEventListener('input', () => {
       const vol = parseFloat(musicVolumeSlider.value);
-      musicTracks.forEach(m => m.volume = vol);
+      musicTracks.forEach(track => { track.volume = vol; });
     });
     sfxToggle.addEventListener('change', () => {
       sfxEnabled = sfxToggle.checked;
@@ -591,187 +949,478 @@
       wrongSound.volume   = vol;
     });
 
-    // New Main Menu
+    /* MAIN MENU EVENT LISTENERS */
+    window.addEventListener('load', () => {
+      newMainMenu.style.display = 'block';
+      mainContainer.style.display = 'none';
+    });
+
     goToStoryBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
-      storyMenu.style.display = 'block';
+      storyModeContainer.style.display = 'block';
+      
+      // (Example) We'll just load Chapter 1 stories or ask user? 
+      // For simplicity, let's load chapter 1
+      storyDataCurrentChapter = shuffleArray([...storyDataAllChapters["1"]]);
+      if (storyDataCurrentChapter.length > 10) {
+        storyDataCurrentChapter = storyDataCurrentChapter.slice(0,10);
+      }
+      currentStoryIndex = 0; 
+      loadStoryAtIndex(currentStoryIndex);
     });
+
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
       mainContainer.style.display = 'block';
     });
+
     goToOptionsBtn.addEventListener('click', () => {
       playSFX('tap');
-      alert('Options placeholder!');
+      alert("You clicked 'Options for now' - Just a placeholder!");
     });
 
-    // Story Menu
-    storyChapterSelect.addEventListener('change', () => {
-      const val = storyChapterSelect.value;
-      if (val === 'all') {
-        // Show story-count-group for 10,20,30,40
-        storyCountGroup.style.display = 'block';
-        singleChapterNote.style.display = 'none';
-      } else {
-        // Single chapter => 8 stories
-        storyCountGroup.style.display = 'none';
-        singleChapterNote.style.display = 'block';
-      }
-    });
-
-    startStoryBtn.addEventListener('click', async () => {
-      playSFX('tap');
-      // Show story mode container
-      storyMenu.style.display = 'none';
-      storyModeContainer.style.display = 'block';
-
-      currentStoryIndex = 0;
-      currentStories = []; // reset
-
-      const chosenChapter = storyChapterSelect.value;
-      if (chosenChapter === 'all') {
-        // user wants all chapters
-        chosenStoryCount = parseInt(storyCountSelect.value,10); // 10,20,30,40
-        currentStories = await fetchAllChapters();
-      } else {
-        // single chapter => always 8
-        chosenStoryCount = 8;
-        currentStories = await fetchSingleChapter(chosenChapter);
-      }
-      shuffleArray(currentStories);
-      if (currentStories.length > chosenStoryCount) {
-        currentStories = currentStories.slice(0, chosenStoryCount);
-      }
-
-      // Display
-      storyModeTitle.textContent = (chosenChapter==='all')
-        ? `Showing ${chosenStoryCount} Stories from All Chapters`
-        : `Showing 8 Stories from Chapter ${chosenChapter}`;
-
-      loadCurrentStory();
-    });
-
-    backToMainStoryMenuBtn.addEventListener('click', () => {
+    backToNewMenuBtn.addEventListener('click', () => {
       playSFX('tap');
       storyModeContainer.style.display = 'none';
-      storyMenu.style.display = 'block';
+      newMainMenu.style.display = 'block';
     });
 
-    /***********************************************************
-     * STORY FETCH FUNCTIONS
-     * We'll assume your JSON is at data/story/chapter_X.json
-     ***********************************************************/
-    async function fetchSingleChapter(chapterNum) {
-      const url = `data/story/chapter_${chapterNum}.json`;
-      try {
-        const resp = await fetch(url);
-        if (!resp.ok) {
-          console.warn(`Could not fetch Chapter ${chapterNum}`);
-          return [];
-        }
-        const data = await resp.json();
-        return data.entries || [];
-      } catch (err) {
-        console.error('Error fetching single chapter:', err);
-        return [];
-      }
+    /********************************************************************
+     * GO BACK TO MAIN MENU
+     ********************************************************************/
+    function goBackToMainMenu() {
+      mainContainer.style.display = 'none';
+      storyModeContainer.style.display = 'none';
+      newMainMenu.style.display = 'block';
     }
 
-    async function fetchAllChapters() {
-      let all = [];
-      for (let i = 1; i <= 12; i++) {
-        const chunk = await fetchSingleChapter(i);
-        all = all.concat(chunk);
-      }
-      return all;
-    }
-
-    /***********************************************************
-     * STORY PRESENTATION (ONE AT A TIME)
-     ***********************************************************/
-    function loadCurrentStory() {
-      // If we've passed the last story
-      if (currentStoryIndex >= currentStories.length) {
-        storyListContainer.innerHTML = '';
-        backToMainStoryMenuBtn.style.display = 'inline-block'; 
+    /********************************************************************
+     * STORY MODE - Display
+     ********************************************************************/
+    function loadStoryAtIndex(index) {
+      backToNewMenuBtn.style.display = 'none';
+      if (index >= storyDataCurrentChapter.length) {
+        // done
+        storyEntriesDiv.innerHTML = '';
+        backToNewMenuBtn.style.display = 'inline-block';
         return;
       }
-      backToMainStoryMenuBtn.style.display = 'none'; 
-      storyListContainer.innerHTML = ''; // clear old
+      storyEntriesDiv.innerHTML = '';
 
-      const story = currentStories[currentStoryIndex];
+      const entry = storyDataCurrentChapter[index];
       const card = document.createElement('div');
       card.classList.add('story-card');
 
       const keyDiv = document.createElement('div');
       keyDiv.classList.add('story-key');
-      keyDiv.textContent = story.keyTakeaway || 'Key Takeaway (missing)';
+      keyDiv.textContent = entry.keyTakeaway;
 
       const exDiv = document.createElement('div');
       exDiv.classList.add('story-example');
-      exDiv.textContent = story.exampleStory || 'Example story text missing.';
+      exDiv.textContent = entry.exampleStory;
 
       card.appendChild(keyDiv);
       card.appendChild(exDiv);
 
-      // Next button
       const nextBtn = document.createElement('button');
-      nextBtn.classList.add('btn','story-next-btn');
-      nextBtn.textContent = (currentStoryIndex < currentStories.length - 1)
-        ? 'Next'
-        : 'Finish';
-
+      nextBtn.classList.add('btn', 'story-next-btn');
+      nextBtn.textContent = (index < storyDataCurrentChapter.length - 1) ? 'Next' : 'Finish';
       nextBtn.addEventListener('click', () => {
         playSFX('tap');
         currentStoryIndex++;
-        loadCurrentStory();
+        loadStoryAtIndex(currentStoryIndex);
       });
-      card.appendChild(nextBtn);
 
-      storyListContainer.appendChild(card);
+      card.appendChild(nextBtn);
+      storyEntriesDiv.appendChild(card);
     }
 
-    /***********************************************************
-     * HELPER: SHUFFLE
-     ***********************************************************/
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+    /********************************************************************
+     * UPDATE QUESTION COUNT OPTIONS
+     ********************************************************************/
+    function updateQuestionCountOptions() {
+      const selected = chapterSelect.value;
+      const questionOptions = CHAPTER_QUESTION_OPTIONS[selected] || [10,15,20,25,30,40];
+      questionCountSelect.innerHTML = '';
+      questionOptions.forEach(num => {
+        const opt = document.createElement('option');
+        opt.value = num;
+        opt.textContent = num;
+        questionCountSelect.appendChild(opt);
+      });
+      questionCountSelect.selectedIndex = 0;
+    }
+
+    /********************************************************************
+     * START QUIZ
+     ********************************************************************/
+    async function startQuiz() {
+      startMenu.style.display   = 'none';
+      quizSection.style.display = 'block';
+      resultSection.style.display = 'none';
+      wrongAnsweredSet.clear();
+
+      chosenFormat = getSelectedFormat();
+      const chapterValue = chapterSelect.value;
+      const questionCount = parseInt(questionCountSelect.value, 10);
+      totalQuestions = questionCount;
+
+      /* If “mix” => fetch all chapters. Otherwise fetch single chapter. */
+      let allFetched;
+      if (chapterValue === 'mix') {
+        allFetched = await fetchAllChapters();
+      } else {
+        allFetched = await fetchSingleChapter(chapterValue);
+      }
+
+      /* random shuffle, remove duplicates, then slice */
+      allFetched = removeDuplicateQuestions(allFetched);
+      advancedRandomMix(allFetched);
+      currentQuestions = allFetched.slice(0, questionCount);
+
+      /* shuffle each question's options */
+      currentQuestions.forEach(q => {
+        shuffleArray(q.options);
+        q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
+      });
+
+      updateProgressBar(0);
+
+      if (timerToggle.checked) {
+        timerContainer.style.display = 'flex';
+        startTimer();
+      } else {
+        timerContainer.style.display = 'none';
+      }
+
+      if (chosenFormat === 'allAtOnce') {
+        userAnswers = [];
+        nextQuestionBtn.style.display = 'none';
+        submitBtn.style.display       = 'inline-block';
+        renderAllAtOnceMode(currentQuestions);
+        remainingCountEl.textContent  = '';
+      } else {
+        nextQuestionBtn.style.display = 'none';
+        submitBtn.style.display       = 'none';
+        questionQueue = [...currentQuestions];
+        updateRemainingCount();
+        showNextOneAtATimeQuestion();
+      }
+    }
+
+    async function fetchAllChapters() {
+      let merged = [];
+      for (let i = 1; i <= 12; i++) {
+        const data = await fetchSingleChapter(i);
+        merged = merged.concat(data);
+      }
+      return merged;
+    }
+
+    async function fetchSingleChapter(chapterNumber) {
+      const url = `./data/chapter${chapterNumber}.json`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
+          return [];
+        }
+        const jsonData = await response.json();
+        return jsonData.questions || [];
+      } catch (error) {
+        console.error("Error fetching chapter data:", error);
+        return [];
+      }
+    }
+
+    function removeDuplicateQuestions(questionArray) {
+      const seen = new Set();
+      return questionArray.filter(q => {
+        if (!seen.has(q.questionText)) {
+          seen.add(q.questionText);
+          return true;
+        }
+        return false;
+      });
+    }
+
+    function advancedRandomMix(arr, times = 3) {
+      for (let i = 0; i < times; i++) {
+        shuffleArray(arr);
+        if (Math.random() < 0.5) {
+          arr.reverse();
+        }
       }
       return arr;
     }
 
-    /***********************************************************
-     * GO BACK TO MAIN MENU
-     ***********************************************************/
-    function goBackToMainMenu() {
-      // Hide everything else
-      storyModeContainer.style.display = 'none';
-      storyMenu.style.display = 'none';
-      newMainMenu.style.display = 'block';
-      mainContainer.style.display = 'none';
+    /********************************************************************
+     * RENDER ALL-AT-ONCE
+     ********************************************************************/
+    function renderAllAtOnceMode(questions) {
+      quizContainer.innerHTML = '';
+      questions.forEach((qData, qIndex) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question-container');
+
+        const header = document.createElement('h3');
+        header.textContent = `Q${qIndex + 1}: ${qData.questionText}`;
+        questionDiv.appendChild(header);
+
+        const optsDiv = document.createElement('div');
+        optsDiv.classList.add('vertical-radio-list');
+
+        qData.options.forEach((optText, optIdx) => {
+          const label = document.createElement('label');
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          radio.name = `question${qIndex}`;
+          radio.value = optIdx;
+          radio.addEventListener('change', () => {
+            userAnswers[qIndex] = optIdx;
+            playSFX('tap');
+          });
+          label.appendChild(radio);
+          label.appendChild(document.createTextNode(" " + optText));
+          optsDiv.appendChild(label);
+        });
+
+        questionDiv.appendChild(optsDiv);
+        quizContainer.appendChild(questionDiv);
+      });
     }
 
-    /***********************************************************
-     * DARK MODE
-     ***********************************************************/
-    function toggleDarkMode() {
-      const bodyClass = document.body.classList;
-      if (bodyClass.contains('light-mode')) {
-        bodyClass.remove('light-mode');
-        bodyClass.add('dark-mode');
-      } else {
-        bodyClass.remove('dark-mode');
-        bodyClass.add('light-mode');
+    /********************************************************************
+     * ONE-AT-A-TIME
+     ********************************************************************/
+    function showNextOneAtATimeQuestion() {
+      if (questionQueue.length === 0) {
+        handleSubmitOneAtATime();
+        return;
+      }
+      quizContainer.innerHTML = '';
+
+      const qData = questionQueue[0];
+      const questionDiv = document.createElement('div');
+      questionDiv.classList.add('question-container');
+
+      const header = document.createElement('h3');
+      header.textContent = `Question: ${qData.questionText}`;
+      questionDiv.appendChild(header);
+
+      const gridDiv = document.createElement('div');
+      gridDiv.classList.add('options-grid');
+
+      shuffleArray(qData.options);
+      qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
+
+      qData.options.forEach((optText, optIdx) => {
+        const blockDiv = document.createElement('div');
+        blockDiv.classList.add('option-block');
+        blockDiv.textContent = optText;
+
+        blockDiv.addEventListener('click', () => {
+          playSFX('tap');
+          const siblings = gridDiv.querySelectorAll('.option-block');
+          siblings.forEach(el => el.style.pointerEvents = 'none');
+
+          const isCorrect = (optIdx === qData.correctOption);
+          if (isCorrect) {
+            blockDiv.classList.add('correct');
+            playSFX('correct');
+          } else {
+            blockDiv.classList.add('wrong');
+            playSFX('wrong');
+            wrongAnsweredSet.add(qData);
+          }
+          showFeedback(questionDiv, isCorrect, qData.explanation);
+
+          nextQuestionBtn.style.display = 'inline-block';
+          nextQuestionBtn.onclick = () => {
+            nextQuestionBtn.style.display = 'none';
+            if (isCorrect) {
+              questionQueue.shift();
+            } else {
+              questionQueue.push(questionQueue.shift());
+            }
+            updateRemainingCount();
+            updateProgressBar(totalQuestions - questionQueue.length);
+            showNextOneAtATimeQuestion();
+          };
+        });
+        gridDiv.appendChild(blockDiv);
+      });
+
+      questionDiv.appendChild(gridDiv);
+      quizContainer.appendChild(questionDiv);
+    }
+
+    function handleSubmitOneAtATime() {
+      quizSection.style.display = 'none';
+      resultSection.style.display = 'block';
+      stopTimer();
+
+      scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
+      displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
+
+      if (chosenFormat === 'oneAtATime') {
+        const btnContainer = document.createElement('div');
+
+        const finishBtn = document.createElement('button');
+        finishBtn.classList.add('btn');
+        finishBtn.textContent = 'Finish';
+        finishBtn.addEventListener('click', () => {
+          playSFX('tap');
+          resetQuiz();
+        });
+        btnContainer.appendChild(finishBtn);
+
+        const reviewWrongBtn = document.createElement('button');
+        reviewWrongBtn.classList.add('btn');
+        reviewWrongBtn.textContent = 'Review Wrong Questions';
+        reviewWrongBtn.addEventListener('click', () => {
+          playSFX('tap');
+          resultSection.style.display = 'none';
+          reviewQuestions(Array.from(wrongAnsweredSet));
+        });
+        btnContainer.appendChild(reviewWrongBtn);
+
+        const reviewAllBtn = document.createElement('button');
+        reviewAllBtn.classList.add('btn');
+        reviewAllBtn.textContent = 'Review All Questions';
+        reviewAllBtn.addEventListener('click', () => {
+          playSFX('tap');
+          resultSection.style.display = 'none';
+          reviewQuestions(currentQuestions);
+        });
+        btnContainer.appendChild(reviewAllBtn);
+
+        resultSection.appendChild(btnContainer);
       }
     }
 
-    /***********************************************************
-     * FULLSCREEN
-     ***********************************************************/
+    function handleNextQuestion() {
+      /* Not used in forced-correct flow */
+    }
+
+    function handleSubmitQuiz() {
+      let score = 0;
+      currentQuestions.forEach((q, i) => {
+        if (userAnswers[i] === q.correctOption) {
+          score++;
+        }
+      });
+      quizSection.style.display = 'none';
+      resultSection.style.display = 'block';
+      stopTimer();
+
+      scoreDisplay.textContent = `You answered ${score} out of ${currentQuestions.length} correctly.
+      Time taken: ${formatTime(timeElapsed)}.`;
+      displayHighScores(score, currentQuestions.length, chapterSelect.value);
+    }
+
+    function showFeedback(parentDiv, isCorrect, explanation) {
+      const oldFeedback = parentDiv.querySelector('.feedback');
+      if (oldFeedback) oldFeedback.remove();
+
+      const feedbackEl = document.createElement('div');
+      feedbackEl.classList.add('feedback', isCorrect ? 'correct' : 'incorrect');
+      feedbackEl.textContent = isCorrect ? 'Correct!' : 'Incorrect!';
+      parentDiv.appendChild(feedbackEl);
+
+      if (explanation) {
+        const explEl = document.createElement('div');
+        explEl.classList.add('explanation');
+        explEl.textContent = explanation;
+        parentDiv.appendChild(explEl);
+      }
+    }
+
+    function reviewQuestions(questionsToReview) {
+      quizSection.style.display = 'block';
+      quizContainer.innerHTML = '';
+
+      questionsToReview.forEach((qData) => {
+        const sortedOptions = [...qData.options];
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question-container');
+
+        const header = document.createElement('h3');
+        header.textContent = `Q: ${qData.questionText}`;
+        questionDiv.appendChild(header);
+
+        const gridDiv = document.createElement('div');
+        gridDiv.classList.add('options-grid');
+
+        sortedOptions.forEach(optText => {
+          const blockDiv = document.createElement('div');
+          blockDiv.classList.add('option-block');
+          blockDiv.textContent = optText;
+          if (optText === qData.correctAnswer) {
+            blockDiv.classList.add('correct');
+          }
+          gridDiv.appendChild(blockDiv);
+        });
+
+        questionDiv.appendChild(gridDiv);
+
+        if (qData.explanation) {
+          const explEl = document.createElement('div');
+          explEl.classList.add('explanation');
+          explEl.textContent = qData.explanation;
+          questionDiv.appendChild(explEl);
+        }
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    /********************************************************************
+     * RESET QUIZ
+     ********************************************************************/
+    function resetQuiz() {
+      startMenu.style.display   = 'block';
+      quizSection.style.display = 'none';
+      resultSection.style.display = 'none';
+      quizContainer.innerHTML = '';
+      currentQuestions = [];
+      questionQueue = [];
+      userAnswers = [];
+      wrongAnsweredSet.clear();
+
+      updateProgressBar(0);
+      stopTimer();
+      timeElapsed = 0;
+      timerEl.textContent = 'Time: 00:00';
+      timerContainer.style.display = 'none';
+
+      mainContainer.style.display = 'block';
+      newMainMenu.style.display = 'none';
+      storyModeContainer.style.display = 'none';
+    }
+
+    /********************************************************************
+     * UTILITIES
+     ********************************************************************/
+    function getSelectedFormat() {
+      let val = 'allAtOnce';
+      formatRadioButtons.forEach(rb => {
+        if (rb.checked) {
+          val = rb.value;
+        }
+      });
+      return val;
+    }
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function toggleFullScreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(err => {
@@ -782,11 +1431,82 @@
       }
     }
 
-    /***********************************************************
-     * AUDIO CHOICES
-     ***********************************************************/
+    function toggleDarkMode() {
+      const bodyClassList = document.body.classList;
+      if (bodyClassList.contains('light-mode')) {
+        bodyClassList.remove('light-mode');
+        bodyClassList.add('dark-mode');
+      } else {
+        bodyClassList.remove('dark-mode');
+        bodyClassList.add('light-mode');
+      }
+    }
+
+    function updateProgressBar(completedQuestions) {
+      const percentage = (completedQuestions / totalQuestions) * 100;
+      progressFill.style.width = `${percentage}%`;
+    }
+
+    function updateRemainingCount() {
+      remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
+    }
+
+    function startTimer() {
+      if (isTimerRunning) return;
+      isTimerRunning = true;
+      timerInterval = setInterval(() => {
+        timeElapsed++;
+        timerEl.textContent = `Time: ${formatTime(timeElapsed)}`;
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+    }
+
+    function toggleTimer() {
+      if (isTimerRunning) {
+        stopTimer();
+        pauseTimerBtn.textContent = 'Resume';
+      } else {
+        startTimer();
+        pauseTimerBtn.textContent = 'Pause';
+      }
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      const mm = mins < 10 ? '0'+mins : mins;
+      const ss = secs < 10 ? '0'+secs : secs;
+      return `${mm}:${ss}`;
+    }
+
+    function displayHighScores(score, total, chapter) {
+      highScoreSection.style.display = 'block';
+      const key = `chapter_${chapter}`;
+      const stored = localStorage.getItem(key);
+      const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
+      const newTime = timeElapsed;
+
+      if (score > bestScore.score ||
+          (score === bestScore.score && newTime < bestScore.time)) {
+        const newRecord = { score, total, time: newTime };
+        localStorage.setItem(key, JSON.stringify(newRecord));
+      }
+
+      const updatedBest = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
+      if (updatedBest) {
+        highScoreList.innerHTML = `
+          <li><strong>Chapter:</strong> ${chapter}</li>
+          <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
+          <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
+        `;
+      }
+    }
+
     function updateMusicChoice(index) {
-      // stop old track
       if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
         musicTracks[currentMusicIndex].pause();
         musicTracks[currentMusicIndex].currentTime = 0;
@@ -797,9 +1517,6 @@
       }
     }
 
-    /***********************************************************
-     * PLAY SFX
-     ***********************************************************/
     function playSFX(type) {
       if (!sfxEnabled) return;
       let sound = null;
