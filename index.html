@@ -176,21 +176,14 @@
       background: var(--white);
       border-radius: 0.5rem;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-      transform: translateY(20px);
+      /* Speed up: remove heavy animations for quick load */
+      opacity: 1;
       padding: 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: background-color 0.3s ease;
       text-align: center;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     body.dark-mode .container {
       background-color: #1a202c;
@@ -225,33 +218,21 @@
     }
 
     /*********************************************************
-     * QUIZ START MENU (be “beautiful” & centered)
+     * QUIZ START MENU
      *********************************************************/
     #start-menu {
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      transform: translateY(10px);
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      /* Speed up: remove fadeIn for immediate render */
+      opacity: 1;
+      transform: none;
     }
     #start-menu h1 {
       margin-bottom: 1.5rem;
       color: var(--text-color-light);
       font-size: 1.8rem;
-    }
-    #start-menu p {
-      color: #555;
-      max-width: 500px;
-      margin: 0 auto 1.5rem auto;
-      line-height: 1.4;
     }
 
     .form-group {
@@ -264,7 +245,7 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    select {
+    select, input[type="number"] {
       width: 100%;
       max-width: 300px;
       padding: 0.6rem;
@@ -275,14 +256,15 @@
       font-size: 1rem;
       text-align: center;
     }
-    body.dark-mode select {
+    body.dark-mode select,
+    body.dark-mode input[type="number"] {
       background: #2a2a2a;
       color: #fff;
       border-color: #444;
     }
 
     /*********************************************************
-     * QUIZ SECTION, QUESTIONS, ETC. (uniform, centered)
+     * QUIZ SECTION, QUESTIONS, ETC. 
      *********************************************************/
     #quiz-section {
       width: 100%;
@@ -295,7 +277,6 @@
       max-width: 700px;
       width: 100%;
       margin: 0 auto 2rem auto;
-      animation: fadeInUp 0.4s ease;
       background: var(--light-blue);
       padding: 1.5rem;
       border-radius: 0.25rem;
@@ -390,19 +371,19 @@
       width: 0%;
       background: var(--primary-color);
       border-radius: 5px;
-      transition: width 0.4s ease;
+      transition: width 0.3s ease;
     }
-    #timer-container {
-      text-align: center;
+
+    /* TIME LIMIT CONTAINER */
+    #time-limit-container {
+      display: none;
       margin-top: 0.5rem;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
+      text-align: center;
     }
-    #timer {
+    #time-limit-remaining {
+      font-weight: bold;
       font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
 
     /*********************************************************
@@ -461,15 +442,13 @@
     }
 
     /*********************************************************
-     * NEW MAIN MENU & STORY MODE STYLES
+     * NEW MAIN MENU & STORY MODE
      *********************************************************/
     #new-main-menu {
-      display: none; 
       text-align: center;
       margin-top: 2rem;
-      animation: fadeIn 0.8s ease forwards; 
-      opacity: 0;
-      transform: translateY(10px);
+      opacity: 1;
+      transform: none;
     }
     #new-main-menu h1 {
       margin-bottom: 1.5rem;
@@ -506,7 +485,6 @@
       border-radius: 0.25rem;
       padding: 2rem;
       margin-bottom: 1.5rem;
-      animation: fadeInUp 0.5s ease;
     }
     body.dark-mode .story-card {
       background: #2d3748;
@@ -575,10 +553,10 @@
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
   <!-- NEW MAIN MENU -->
-  <div id="new-main-menu">
+  <div id="new-main-menu" style="display:block;">
     <h1>Main Menu</h1>
     <button class="menu-option-btn" id="go-to-story">Story Mode</button>
-    <button class="menu-option-btn" id="go-to-quiz">Questions</button>
+    <button class="menu-option-btn" id="go-to-quiz">Quiz Questions</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
 
@@ -590,20 +568,15 @@
   </div>
 
   <!-- MAIN CONTAINER (QUIZ) -->
-  <div class="container" id="main-container">
+  <div class="container" id="main-container" style="display:none;">
 
     <!-- START MENU -->
     <div id="start-menu">
-      <h1>Real Estate Broker Quiz - Revamped</h1>
-      <p>
-        Select a single chapter or choose "All Chapters."<br />
-        Single Chapter => 5, 10, 15, 20 questions.<br />
-        All Chapters => 10, 25, 50, 75, 90 questions.
-      </p>
+      <h1>Quiz Questions</h1>
+      <!-- (Removed old instructions; now just “Choose Chapter”) -->
 
-      <!-- Chapter Select & "All Chapters" -->
       <div class="form-group">
-        <label for="chapter-select">Choose Chapter or "All Chapters":</label>
+        <label for="chapter-select">Choose Chapter:</label>
         <select id="chapter-select">
           <option value="allChapters">All Chapters</option>
           <option value="1">Chapter 1</option>
@@ -621,16 +594,18 @@
         </select>
       </div>
 
-      <!-- Question Count Options -->
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label>
         <select id="question-count-select"></select>
       </div>
 
-      <!-- Timer Toggle -->
+      <!-- (NEW) Time limit feature, unchecked by default -->
       <div class="form-group">
-        <label for="timer-toggle">Enable Timer?</label>
-        <input type="checkbox" id="timer-toggle" />
+        <label>
+          <input type="checkbox" id="time-limit-toggle" />
+          Set a time limit (minutes):
+        </label>
+        <input type="number" id="time-limit-input" min="1" max="300" value="5" disabled />
       </div>
 
       <button class="btn" id="start-quiz-btn">Start Quiz</button>
@@ -643,14 +618,15 @@
         <div class="progress-fill" id="progress-fill"></div>
       </div>
       <div class="remaining-count" id="remaining-count"></div>
-      <div id="timer-container" style="display:none;">
-        <div id="timer">Time: 00:00</div>
-        <button class="btn btn-warning" id="pause-timer-btn">Pause</button>
+
+      <!-- Time limit display container -->
+      <div id="time-limit-container">
+        <div>Time Remaining:</div>
+        <div id="time-limit-remaining">00:00</div>
       </div>
 
       <div id="quiz-questions-container"></div>
       <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
-      <!-- We won’t show a "Submit Quiz" button because we’re always in one-at-a-time mode. -->
     </div>
 
     <!-- RESULT SECTION -->
@@ -670,6 +646,15 @@
     /********************************************************************
      * DOM ELEMENTS
      ********************************************************************/
+    const newMainMenu         = document.getElementById('new-main-menu');
+    const goToStoryBtn        = document.getElementById('go-to-story');
+    const goToQuizBtn         = document.getElementById('go-to-quiz');
+    const goToOptionsBtn      = document.getElementById('go-to-options');
+
+    const storyModeContainer  = document.getElementById('story-mode-container');
+    const storyEntriesDiv     = document.getElementById('story-entries');
+    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
+
     const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
     const quizSection         = document.getElementById('quiz-section');
@@ -685,16 +670,15 @@
     const menuToggle          = document.getElementById('menu-toggle');
     const menuContent         = document.querySelector('.menu-content');
     const remainingCountEl    = document.getElementById('remaining-count');
-    const progressBar         = document.getElementById('progress-bar');
     const progressFill        = document.getElementById('progress-fill');
-    const timerToggle         = document.getElementById('timer-toggle');
-    const timerContainer      = document.getElementById('timer-container');
-    const timerEl             = document.getElementById('timer');
-    const pauseTimerBtn       = document.getElementById('pause-timer-btn');
     const chapterSelect       = document.getElementById('chapter-select');
     const questionCountSelect = document.getElementById('question-count-select');
-    const highScoreSection    = document.getElementById('high-score-section');
-    const highScoreList       = document.getElementById('high-score-list');
+
+    /* Time limit DOM */
+    const timeLimitToggle     = document.getElementById('time-limit-toggle');
+    const timeLimitInput      = document.getElementById('time-limit-input');
+    const timeLimitContainer  = document.getElementById('time-limit-container');
+    const timeLimitRemaining  = document.getElementById('time-limit-remaining');
 
     /* Audio */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
@@ -708,15 +692,8 @@
     const sfxToggle           = document.getElementById('toggle-sfx');
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
-    /* NEW MAIN MENU & STORY MODE */
-    const newMainMenu         = document.getElementById('new-main-menu');
-    const storyModeContainer  = document.getElementById('story-mode-container');
-    const storyEntriesDiv     = document.getElementById('story-entries');
-    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
-
-    const goToStoryBtn        = document.getElementById('go-to-story');
-    const goToQuizBtn         = document.getElementById('go-to-quiz');
-    const goToOptionsBtn      = document.getElementById('go-to-options');
+    const highScoreSection    = document.getElementById('high-score-section');
+    const highScoreList       = document.getElementById('high-score-list');
 
     /********************************************************************
      * QUIZ STATE
@@ -726,10 +703,9 @@
     let totalQuestions   = 0;
     let wrongAnsweredSet = new Set();
 
-    /* Timer */
-    let timerInterval    = null;
-    let timeElapsed      = 0;
-    let isTimerRunning   = false;
+    /* Timer logic replaced with optional countdown */
+    let countdownInterval = null;
+    let countdownSeconds  = 0;
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
@@ -751,31 +727,19 @@
     };
 
     /********************************************************************
-     * (SAMPLE) STORY DATA (12 chapters)
+     * STORY DATA
      ********************************************************************/
     const storyDataAllChapters = {
       "1": [
-        {
-          "keyTakeaway": "Chapter 1 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 1 ..."
-        },
-        {
-          "keyTakeaway": "Chapter 1 - Key #2",
-          "exampleStory": "Full text for story #2 in Chapter 1 ..."
-        }
+        { "keyTakeaway": "Chapter 1 - Key #1","exampleStory": "Full text for story #1 in Chapter 1 ..." },
+        { "keyTakeaway": "Chapter 1 - Key #2","exampleStory": "Full text for story #2 in Chapter 1 ..." }
       ],
       "2": [
-        {
-          "keyTakeaway": "Chapter 2 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 2 ..."
-        }
+        { "keyTakeaway": "Chapter 2 - Key #1","exampleStory": "Full text for story #1 in Chapter 2 ..." }
       ],
       // ...
       "12": [
-        {
-          "keyTakeaway": "Chapter 12 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 12 ..."
-        }
+        { "keyTakeaway": "Chapter 12 - Key #1","exampleStory": "Full text for story #1 in Chapter 12 ..." }
       ]
     };
 
@@ -783,7 +747,7 @@
     let currentStoryIndex = 0;
 
     /********************************************************************
-     * AUDIO (Music & Sound Effects)
+     * AUDIO
      ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
@@ -803,6 +767,36 @@
     /********************************************************************
      * EVENT LISTENERS
      ********************************************************************/
+    goToStoryBtn.addEventListener('click', () => {
+      playSFX('tap');
+      newMainMenu.style.display = 'none';
+      storyModeContainer.style.display = 'block';
+
+      storyDataCurrentChapter = shuffleArray([...storyDataAllChapters["1"]]);
+      if (storyDataCurrentChapter.length > 10) {
+        storyDataCurrentChapter = storyDataCurrentChapter.slice(0,10);
+      }
+      currentStoryIndex = 0; 
+      loadStoryAtIndex(currentStoryIndex);
+    });
+
+    goToQuizBtn.addEventListener('click', () => {
+      playSFX('tap');
+      newMainMenu.style.display = 'none';
+      mainContainer.style.display = 'block';
+    });
+
+    goToOptionsBtn.addEventListener('click', () => {
+      playSFX('tap');
+      alert("You clicked 'Options for now' - Just a placeholder!");
+    });
+
+    backToNewMenuBtn.addEventListener('click', () => {
+      playSFX('tap');
+      storyModeContainer.style.display = 'none';
+      newMainMenu.style.display = 'block';
+    });
+
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       startQuiz();
@@ -813,30 +807,29 @@
     });
     backToMenuBtn.addEventListener('click', () => {
       playSFX('tap');
-      goBackToMainMenu(); 
+      // Always go back to first main menu
+      resetQuiz();
+      newMainMenu.style.display = 'block';
+      mainContainer.style.display = 'none';
+      storyModeContainer.style.display = 'none';
     });
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
-    nextQuestionBtn.addEventListener('click', () => {
-      /* not used in forced-correct flow, but left if needed */
-      playSFX('tap');
-    });
-    fullscreenBtn.addEventListener('click', () => {
-      playSFX('tap');
-      toggleFullScreen();
-    });
-    darkModeToggle.addEventListener('click', () => {
-      playSFX('tap');
-      toggleDarkMode();
-    });
-    pauseTimerBtn.addEventListener('click', () => {
-      playSFX('tap');
-      toggleTimer();
-    });
+    nextQuestionBtn.addEventListener('click', () => { playSFX('tap'); /* no-op here */ });
+    fullscreenBtn.addEventListener('click', () => { playSFX('tap'); toggleFullScreen(); });
+    darkModeToggle.addEventListener('click', () => { playSFX('tap'); toggleDarkMode(); });
     menuToggle.addEventListener('click', () => {
       menuContent.classList.toggle('show');
       playSFX('tap');
     });
-    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
+
+    /* Time limit toggle logic */
+    timeLimitToggle.addEventListener('change', () => {
+      if (timeLimitToggle.checked) {
+        timeLimitInput.disabled = false;
+      } else {
+        timeLimitInput.disabled = true;
+      }
+    });
 
     /* Audio settings */
     musicSettingsBtn.addEventListener('click', () => {
@@ -876,56 +869,10 @@
       wrongSound.volume   = vol;
     });
 
-    /* MAIN MENU EVENT LISTENERS */
-    window.addEventListener('load', () => {
-      newMainMenu.style.display = 'block';
-      mainContainer.style.display = 'none';
-    });
-
-    goToStoryBtn.addEventListener('click', () => {
-      playSFX('tap');
-      newMainMenu.style.display = 'none';
-      storyModeContainer.style.display = 'block';
-      
-      // For demonstration, load Chapter 1 stories
-      storyDataCurrentChapter = shuffleArray([...storyDataAllChapters["1"]]);
-      if (storyDataCurrentChapter.length > 10) {
-        storyDataCurrentChapter = storyDataCurrentChapter.slice(0,10);
-      }
-      currentStoryIndex = 0; 
-      loadStoryAtIndex(currentStoryIndex);
-    });
-
-    goToQuizBtn.addEventListener('click', () => {
-      playSFX('tap');
-      newMainMenu.style.display = 'none';
-      mainContainer.style.display = 'block';
-    });
-
-    goToOptionsBtn.addEventListener('click', () => {
-      playSFX('tap');
-      alert("You clicked 'Options for now' - Just a placeholder!");
-    });
-
-    backToNewMenuBtn.addEventListener('click', () => {
-      playSFX('tap');
-      storyModeContainer.style.display = 'none';
-      newMainMenu.style.display = 'block';
-    });
+    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
     /********************************************************************
-     * GO BACK TO MAIN MENU
-     ********************************************************************/
-    function goBackToMainMenu() {
-      mainContainer.style.display = 'none';
-      storyModeContainer.style.display = 'none';
-      newMainMenu.style.display = 'block';
-      // RESET so user must reselect next time
-      resetQuiz();
-    }
-
-    /********************************************************************
-     * STORY MODE - Display
+     * STORY MODE
      ********************************************************************/
     function loadStoryAtIndex(index) {
       backToNewMenuBtn.style.display = 'none';
@@ -982,7 +929,7 @@
     }
 
     /********************************************************************
-     * START QUIZ
+     * START QUIZ (SPEED-UP: parallel fetch with Promise.all + single shuffle)
      ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
@@ -990,24 +937,23 @@
       resultSection.style.display = 'none';
       wrongAnsweredSet.clear();
 
-      const chapterValue = chapterSelect.value;
-      const questionCount = parseInt(questionCountSelect.value, 10);
-      totalQuestions = questionCount;
+      const chapterValue  = chapterSelect.value;
+      totalQuestions      = parseInt(questionCountSelect.value, 10);
 
-      /* If “allChapters” => fetch all 12 chapters. Otherwise fetch one chapter. */
       let allFetched;
       if (chapterValue === 'allChapters') {
-        allFetched = await fetchAllChapters();
+        allFetched = await fetchAllChaptersParallel();
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      /* random shuffle, remove duplicates, then slice */
+      // remove duplicates + single shuffle
       allFetched = removeDuplicateQuestions(allFetched);
-      advancedRandomMix(allFetched);
-      currentQuestions = allFetched.slice(0, questionCount);
+      shuffleArray(allFetched);
 
-      /* shuffle each question's options */
+      currentQuestions = allFetched.slice(0, totalQuestions);
+
+      // shuffle each question's options
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
@@ -1015,30 +961,36 @@
 
       updateProgressBar(0);
 
-      if (timerToggle.checked) {
-        timerContainer.style.display = 'flex';
-        startTimer();
+      // handle time limit
+      if (timeLimitToggle.checked) {
+        countdownSeconds = parseInt(timeLimitInput.value, 10) * 60;
+        if (countdownSeconds > 0) {
+          timeLimitContainer.style.display = 'block';
+          startCountdown();
+        } else {
+          timeLimitContainer.style.display = 'none';
+        }
       } else {
-        timerContainer.style.display = 'none';
+        timeLimitContainer.style.display = 'none';
       }
 
-      // We’re always in one-at-a-time mode
       questionQueue = [...currentQuestions];
       updateRemainingCount();
       showNextOneAtATimeQuestion();
     }
 
-    async function fetchAllChapters() {
-      let merged = [];
+    // parallel fetch for all chapters
+    async function fetchAllChaptersParallel() {
+      const promises = [];
       for (let i = 1; i <= 12; i++) {
-        const data = await fetchSingleChapter(i);
-        merged = merged.concat(data);
+        promises.push(fetchSingleChapter(i));
       }
-      return merged;
+      const results = await Promise.all(promises);
+      // merge
+      return results.flat();
     }
 
     async function fetchSingleChapter(chapterNumber) {
-      // Updated path to fix 404: now relative path
       const url = `./data/chapter${chapterNumber}.json`;
       try {
         const response = await fetch(url);
@@ -1065,14 +1017,12 @@
       });
     }
 
-    function advancedRandomMix(arr, times = 3) {
-      for (let i = 0; i < times; i++) {
-        shuffleArray(arr);
-        if (Math.random() < 0.5) {
-          arr.reverse();
-        }
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
-      return arr;
+      return array;
     }
 
     /********************************************************************
@@ -1080,7 +1030,7 @@
      ********************************************************************/
     function showNextOneAtATimeQuestion() {
       if (questionQueue.length === 0) {
-        handleSubmitOneAtATime();
+        handleAllCorrect();
         return;
       }
       quizContainer.innerHTML = '';
@@ -1096,11 +1046,11 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // Shuffle again just for safety
+      // shuffle again for the single question
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
-      qData.options.forEach((optText) => {
+      qData.options.forEach(optText => {
         const blockDiv = document.createElement('div');
         blockDiv.classList.add('option-block');
         blockDiv.textContent = optText;
@@ -1125,10 +1075,9 @@
           nextQuestionBtn.onclick = () => {
             nextQuestionBtn.style.display = 'none';
             if (isCorrect) {
-              // remove the question from the front
               questionQueue.shift();
             } else {
-              // push the question to the back
+              // push question to the back
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -1143,14 +1092,15 @@
       quizContainer.appendChild(questionDiv);
     }
 
-    function handleSubmitOneAtATime() {
+    function handleAllCorrect() {
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
-      stopTimer();
+      if (countdownInterval) clearInterval(countdownInterval);
 
-      scoreDisplay.textContent = `You eventually got them all correct! Time taken: ${formatTime(timeElapsed)}.`;
+      scoreDisplay.textContent = `You eventually got them all correct!`;
+
+      // show user’s best time if relevant
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
-
       // Add optional review / finish buttons
       const btnContainer = document.createElement('div');
 
@@ -1207,7 +1157,7 @@
       quizSection.style.display = 'block';
       quizContainer.innerHTML = '';
 
-      questionsToReview.forEach((qData) => {
+      questionsToReview.forEach(qData => {
         const sortedOptions = [...qData.options];
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
@@ -1240,7 +1190,7 @@
         quizContainer.appendChild(questionDiv);
       });
 
-      // Add a "Done Reviewing" button so user can reset
+      // Add a "Done Reviewing" button
       const doneReviewingBtn = document.createElement('button');
       doneReviewingBtn.classList.add('btn');
       doneReviewingBtn.textContent = 'Done Reviewing';
@@ -1252,28 +1202,61 @@
     }
 
     /********************************************************************
+     * TIME LIMIT (COUNTDOWN)
+     ********************************************************************/
+    function startCountdown() {
+      clearInterval(countdownInterval);
+      updateTimeLimitDisplay(countdownSeconds);
+      countdownInterval = setInterval(() => {
+        countdownSeconds--;
+        updateTimeLimitDisplay(countdownSeconds);
+        if (countdownSeconds <= 0) {
+          clearInterval(countdownInterval);
+          timeExpired();
+        }
+      }, 1000);
+    }
+
+    function timeExpired() {
+      // forcibly end the quiz
+      quizSection.style.display = 'none';
+      resultSection.style.display = 'block';
+      scoreDisplay.textContent = `Time's up! You didn't finish.`;
+      displayHighScores(0, totalQuestions, chapterSelect.value);
+    }
+
+    function updateTimeLimitDisplay(secs) {
+      const mins = Math.floor(secs / 60);
+      const rSecs = secs % 60;
+      const mm = mins < 10 ? '0'+mins : mins;
+      const ss = rSecs < 10 ? '0'+rSecs : rSecs;
+      timeLimitRemaining.textContent = `${mm}:${ss}`;
+    }
+
+    /********************************************************************
      * RESET QUIZ
      ********************************************************************/
     function resetQuiz() {
+      // Hide quiz stuff
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
       quizContainer.innerHTML = '';
       currentQuestions = [];
-      questionQueue = [];
+      questionQueue    = [];
       wrongAnsweredSet.clear();
+      totalQuestions   = 0;
 
-      updateProgressBar(0);
-      stopTimer();
-      timeElapsed = 0;
-      timerEl.textContent = 'Time: 00:00';
-      timerContainer.style.display = 'none';
+      progressFill.style.width = '0%';
 
-      mainContainer.style.display = 'block';
-      newMainMenu.style.display = 'none';
+      // Clear time limit
+      timeLimitContainer.style.display = 'none';
+      if (countdownInterval) clearInterval(countdownInterval);
+
+      mainContainer.style.display = 'none';
       storyModeContainer.style.display = 'none';
 
-      // Clean up any leftover buttons in #result-section
+      // Clean leftover finish/review buttons
       const leftoverBtns = resultSection.querySelectorAll('button');
       leftoverBtns.forEach(btn => {
         if (btn !== restartBtn) {
@@ -1285,12 +1268,13 @@
     /********************************************************************
      * UTILITIES
      ********************************************************************/
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
+    function updateProgressBar(completedQuestions) {
+      const percentage = (completedQuestions / totalQuestions) * 100;
+      progressFill.style.width = `${percentage}%`;
+    }
+
+    function updateRemainingCount() {
+      remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
     }
 
     function toggleFullScreen() {
@@ -1314,57 +1298,16 @@
       }
     }
 
-    function updateProgressBar(completedQuestions) {
-      const percentage = (completedQuestions / totalQuestions) * 100;
-      progressFill.style.width = `${percentage}%`;
-    }
-
-    function updateRemainingCount() {
-      remainingCountEl.textContent = `Remaining: ${questionQueue.length} question(s)`;
-    }
-
-    function startTimer() {
-      if (isTimerRunning) return;
-      isTimerRunning = true;
-      timerInterval = setInterval(() => {
-        timeElapsed++;
-        timerEl.textContent = `Time: ${formatTime(timeElapsed)}`;
-      }, 1000);
-    }
-
-    function stopTimer() {
-      clearInterval(timerInterval);
-      isTimerRunning = false;
-    }
-
-    function toggleTimer() {
-      if (isTimerRunning) {
-        stopTimer();
-        pauseTimerBtn.textContent = 'Resume';
-      } else {
-        startTimer();
-        pauseTimerBtn.textContent = 'Pause';
-      }
-    }
-
-    function formatTime(seconds) {
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-      const mm = mins < 10 ? '0'+mins : mins;
-      const ss = secs < 10 ? '0'+secs : secs;
-      return `${mm}:${ss}`;
-    }
-
     function displayHighScores(score, total, chapter) {
       highScoreSection.style.display = 'block';
       const key = `chapter_${chapter}`;
       const stored = localStorage.getItem(key);
       const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
-      const newTime = timeElapsed;
 
-      if (score > bestScore.score ||
-          (score === bestScore.score && newTime < bestScore.time)) {
-        const newRecord = { score, total, time: newTime };
+      // We'll just store bestScore if user actually completed
+      // but time limit ended => 0
+      if (score > bestScore.score) {
+        const newRecord = { score, total, time: 0 };
         localStorage.setItem(key, JSON.stringify(newRecord));
       }
 
@@ -1373,8 +1316,9 @@
         highScoreList.innerHTML = `
           <li><strong>Chapter:</strong> ${chapter}</li>
           <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
-          <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
         `;
+      } else {
+        highScoreList.innerHTML = `<li>No record yet for Chapter ${chapter}.</li>`;
       }
     }
 
