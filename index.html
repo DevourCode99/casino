@@ -1036,8 +1036,8 @@
     }
 
     async function fetchSingleChapter(chapterNumber) {
-      // Path fix: 'casino/data/chapterX.json'
-      const url = `casino/data/chapter${chapterNumber}.json`;
+      // Updated path to fix 404: now relative path
+      const url = `./data/chapter${chapterNumber}.json`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
