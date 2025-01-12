@@ -328,9 +328,9 @@
 
     /* (MODIFIED) Make radio/checkbox area centered + uniform widths */
     .vertical-radio-list {
-      display: flex;              /* new */
-      flex-direction: column;     /* stack vertically */
-      align-items: center;        /* center horizontally */
+      display: flex;              
+      flex-direction: column;     
+      align-items: center;        
       gap: 0.5rem;
     }
     .vertical-radio-list label {
@@ -338,7 +338,7 @@
       align-items: center;
       justify-content: flex-start; 
       width: 100%;
-      max-width: 400px;     /* uniform width */
+      max-width: 400px;     
       background: #fff;
       padding: 0.4rem 0.6rem;
       border-radius: 0.25rem;
@@ -529,15 +529,40 @@
       transform: translateY(-1px);
     }
 
-    /* (UPDATED) Story mode container: remove any hidden overflow so text is fully visible */
+    /* Story mode container - ensure all text is visible */
     #story-mode-container {
       display: none;
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
       text-align: center;
     }
+
+    /* (ADDED) Sub-menu for picking a chapter (or all) */
+    #story-mode-menu {
+      margin-bottom: 2rem;
+    }
+
+    /* Larger KeyTakeaway */
+    .story-key {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      white-space: normal;
+    }
+    .story-example {
+      font-size: 1.05rem; /* slightly bigger than default */
+      color: #555;
+      line-height: 1.4;
+      white-space: normal;
+      margin-bottom: 1rem;
+    }
+    body.dark-mode .story-example {
+      color: #ccc;
+    }
+
+    /* Card-like container for each story entry */
     .story-card {
       background: var(--light-blue);
       border: 1px solid #ccc;
@@ -545,29 +570,13 @@
       padding: 2rem;
       margin-bottom: 1.5rem;
       animation: fadeInUp 0.5s ease;
-      /* remove any height constraints to show all text */
     }
     body.dark-mode .story-card {
       background: #2d3748;
       border-color: #444;
       color: var(--text-color-dark);
     }
-    .story-key {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0 0 1rem 0;
-      /* ensure text can wrap fully */
-      white-space: normal;
-    }
-    .story-example {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.4;
-      white-space: normal;  /* ensures wrapping */
-    }
-    body.dark-mode .story-example {
-      color: #ccc;
-    }
+
     .story-next-btn {
       margin-top: 1rem;
     }
@@ -624,8 +633,34 @@
 
   <!-- STORY MODE CONTAINER -->
   <div id="story-mode-container">
-    <h2>Story Mode - Now with 12 Chapters!</h2>
+    <!-- (ADDED) Sub-menu for choosing chapter(s) -->
+    <div id="story-mode-menu">
+      <h2>Select Chapter or “All” for Story Mode</h2>
+      <p>Choose which chapter to read, or pick “All.” Then click Start.</p>
+      <select id="story-chapter-select-mode">
+        <option value="all">All Chapters (1–12)</option>
+        <option value="1">Chapter 1</option>
+        <option value="2">Chapter 2</option>
+        <option value="3">Chapter 3</option>
+        <option value="4">Chapter 4</option>
+        <option value="5">Chapter 5</option>
+        <option value="6">Chapter 6</option>
+        <option value="7">Chapter 7</option>
+        <option value="8">Chapter 8</option>
+        <option value="9">Chapter 9</option>
+        <option value="10">Chapter 10</option>
+        <option value="11">Chapter 11</option>
+        <option value="12">Chapter 12</option>
+      </select>
+      <br />
+      <button class="btn" id="start-story-btn">Start Reading</button>
+    </div>
+
+    <!-- Where the actual story entries are displayed -->
     <div id="story-entries"></div>
+
+    <!-- These appear after finishing all stories -->
+    <button class="btn btn-secondary" id="restart-story-btn" style="display:none;">Restart</button>
     <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
@@ -766,14 +801,18 @@
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
     /* NEW MAIN MENU & STORY MODE */
-    const newMainMenu         = document.getElementById('new-main-menu');
-    const storyModeContainer  = document.getElementById('story-mode-container');
-    const storyEntriesDiv     = document.getElementById('story-entries');
-    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
+    const newMainMenu           = document.getElementById('new-main-menu');
+    const storyModeContainer    = document.getElementById('story-mode-container');
+    const storyEntriesDiv       = document.getElementById('story-entries');
+    const goToStoryBtn          = document.getElementById('go-to-story');
+    const goToQuizBtn           = document.getElementById('go-to-quiz');
+    const goToOptionsBtn        = document.getElementById('go-to-options');
 
-    const goToStoryBtn        = document.getElementById('go-to-story');
-    const goToQuizBtn         = document.getElementById('go-to-quiz');
-    const goToOptionsBtn      = document.getElementById('go-to-options');
+    // (ADDED) Submenu for story mode
+    const storyChapterSelect    = document.getElementById('story-chapter-select-mode');
+    const startStoryBtn         = document.getElementById('start-story-btn');
+    const restartStoryBtn       = document.getElementById('restart-story-btn');
+    const backToNewMenuBtn      = document.getElementById('back-to-main-menu-btn');
 
     /********************************************************************
      * QUIZ STATE
@@ -792,8 +831,6 @@
 
     /********************************************************************
      * (NEW) CHAPTER -> QUESTION COUNT MAP
-     * “mix” => [10,15,20,25,30,40]
-     * Single chapters => 10 only
      ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
       "mix": [10,15,20,25,30,40], 
@@ -812,46 +849,13 @@
     };
 
     /********************************************************************
-     * (UPDATED) STORY DATA (12 chapters)
-     * For brevity, only showing short placeholders. Extend as needed.
+     * STORY MODE STATE
+     * We'll fetch from the JSON files located in:
+     * casino/data/story/chapter_1.json
+     * ...
+     * casino/data/story/chapter_12.json
      ********************************************************************/
-    const storyDataAllChapters = {
-      "1": [
-        {
-          "keyTakeaway": "Chapter 1 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 1 ..."
-        },
-        {
-          "keyTakeaway": "Chapter 1 - Key #2",
-          "exampleStory": "Full text for story #2 in Chapter 1 ..."
-        }
-        // ... up to 10 or more as you see fit
-      ],
-      "2": [
-        {
-          "keyTakeaway": "Chapter 2 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 2 ..."
-        }
-        // ...
-      ],
-      // ...
-      "12": [
-        {
-          "keyTakeaway": "Chapter 12 - Key #1",
-          "exampleStory": "Full text for story #1 in Chapter 12 ..."
-        }
-        // ...
-      ]
-    };
-
-    /* We will show 10 random stories from selected chapter or do a custom approach if you want “mix.” 
-       If you want “mix” of stories from multiple chapters, you can similarly combine them. 
-    */
-
-    /* For the sake of example, let's say story mode is always "single-chapter" 
-       (But you can adapt the logic to do a mix if desired)
-    */
-    let storyDataCurrentChapter = [];
+    let storyDataSelected = [];  // combined stories for the chosen chapter(s)
     let currentStoryIndex = 0;
 
     /********************************************************************
@@ -873,7 +877,7 @@
     let sfxEnabled        = true;
 
     /********************************************************************
-     * EVENT LISTENERS
+     * EVENT LISTENERS - QUIZ
      ********************************************************************/
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -949,7 +953,9 @@
       wrongSound.volume   = vol;
     });
 
-    /* MAIN MENU EVENT LISTENERS */
+    /********************************************************************
+     * MAIN MENU EVENT LISTENERS - STORY MODE
+     ********************************************************************/
     window.addEventListener('load', () => {
       newMainMenu.style.display = 'block';
       mainContainer.style.display = 'none';
@@ -959,15 +965,8 @@
       playSFX('tap');
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'block';
-      
-      // (Example) We'll just load Chapter 1 stories or ask user? 
-      // For simplicity, let's load chapter 1
-      storyDataCurrentChapter = shuffleArray([...storyDataAllChapters["1"]]);
-      if (storyDataCurrentChapter.length > 10) {
-        storyDataCurrentChapter = storyDataCurrentChapter.slice(0,10);
-      }
-      currentStoryIndex = 0; 
-      loadStoryAtIndex(currentStoryIndex);
+      // Show the story sub-menu (pick chapter, etc.)
+      resetStoryModeUI();
     });
 
     goToQuizBtn.addEventListener('click', () => {
@@ -981,6 +980,17 @@
       alert("You clicked 'Options for now' - Just a placeholder!");
     });
 
+    // (ADDED) Start reading the chosen chapter(s)
+    startStoryBtn.addEventListener('click', () => {
+      playSFX('tap');
+      startStoryMode();
+    });
+
+    // (ADDED) Restart or go back after finishing
+    restartStoryBtn.addEventListener('click', () => {
+      playSFX('tap');
+      resetStoryModeUI();
+    });
     backToNewMenuBtn.addEventListener('click', () => {
       playSFX('tap');
       storyModeContainer.style.display = 'none';
@@ -997,19 +1007,82 @@
     }
 
     /********************************************************************
-     * STORY MODE - Display
+     * STORY MODE LOGIC
      ********************************************************************/
-    function loadStoryAtIndex(index) {
+
+    // Clears/Resets the sub-menu and hides the story list
+    function resetStoryModeUI() {
+      storyEntriesDiv.innerHTML = '';
+      storyChapterSelect.value = 'all';
+      currentStoryIndex = 0;
+      storyDataSelected = [];
+      restartStoryBtn.style.display = 'none';
       backToNewMenuBtn.style.display = 'none';
-      if (index >= storyDataCurrentChapter.length) {
-        // done
-        storyEntriesDiv.innerHTML = '';
+      // Show the sub-menu again
+      document.getElementById('story-mode-menu').style.display = 'block';
+    }
+
+    async function startStoryMode() {
+      // Hide the sub-menu
+      document.getElementById('story-mode-menu').style.display = 'none';
+      restartStoryBtn.style.display = 'none';
+      backToNewMenuBtn.style.display = 'none';
+      storyEntriesDiv.innerHTML = '';
+
+      const choice = storyChapterSelect.value;
+      if (choice === 'all') {
+        // fetch all 12 chapters
+        let all = [];
+        for (let i = 1; i <= 12; i++) {
+          const data = await fetchStoryChapter(i);
+          all = all.concat(data);
+        }
+        storyDataSelected = all;
+      } else {
+        // fetch single
+        const singleData = await fetchStoryChapter(choice);
+        storyDataSelected = singleData;
+      }
+
+      currentStoryIndex = 0;
+      if (storyDataSelected.length === 0) {
+        // if no data, just show back button
+        storyEntriesDiv.innerHTML = '<p>No story data found.</p>';
         backToNewMenuBtn.style.display = 'inline-block';
         return;
       }
-      storyEntriesDiv.innerHTML = '';
+      loadCurrentStory();
+    }
 
-      const entry = storyDataCurrentChapter[index];
+    // Function to fetch a single chapter from your story JSON
+    async function fetchStoryChapter(chapterNumber) {
+      try {
+        const response = await fetch(`casino/data/story/chapter_${chapterNumber}.json`);
+        if (!response.ok) {
+          console.warn(`Failed to fetch story chapter ${chapterNumber}.`);
+          return [];
+        }
+        const jsonData = await response.json();
+        // We assume jsonData.entries is an array of { keyTakeaway, exampleStory }
+        return jsonData.entries || [];
+      } catch (err) {
+        console.error("Error fetching story data:", err);
+        return [];
+      }
+    }
+
+    function loadCurrentStory() {
+      if (currentStoryIndex >= storyDataSelected.length) {
+        // done reading all
+        storyEntriesDiv.innerHTML = '<h3>You have reached the end of the stories!</h3>';
+        restartStoryBtn.style.display = 'inline-block';
+        backToNewMenuBtn.style.display = 'inline-block';
+        return;
+      }
+
+      storyEntriesDiv.innerHTML = ''; // clear
+
+      const entry = storyDataSelected[currentStoryIndex];
       const card = document.createElement('div');
       card.classList.add('story-card');
 
@@ -1024,13 +1097,16 @@
       card.appendChild(keyDiv);
       card.appendChild(exDiv);
 
+      // Next or Finish button
       const nextBtn = document.createElement('button');
       nextBtn.classList.add('btn', 'story-next-btn');
-      nextBtn.textContent = (index < storyDataCurrentChapter.length - 1) ? 'Next' : 'Finish';
+      // If there's more to read, label is "Next". Otherwise "Finish"
+      const isLast = (currentStoryIndex === storyDataSelected.length - 1);
+      nextBtn.textContent = isLast ? 'Finish' : 'Next';
       nextBtn.addEventListener('click', () => {
         playSFX('tap');
         currentStoryIndex++;
-        loadStoryAtIndex(currentStoryIndex);
+        loadCurrentStory();
       });
 
       card.appendChild(nextBtn);
@@ -1038,7 +1114,7 @@
     }
 
     /********************************************************************
-     * UPDATE QUESTION COUNT OPTIONS
+     * UPDATE QUESTION COUNT OPTIONS (QUIZ)
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selected = chapterSelect.value;
@@ -1243,6 +1319,7 @@
             if (isCorrect) {
               questionQueue.shift();
             } else {
+              // push the same question to the end
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -1498,11 +1575,10 @@
 
       const updatedBest = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
       if (updatedBest) {
-        highScoreList.innerHTML = `
-          <li><strong>Chapter:</strong> ${chapter}</li>
-          <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
-          <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>
-        `;
+        highScoreList.innerHTML = 
+          `<li><strong>Chapter:</strong> ${chapter}</li>
+           <li><strong>Best Score:</strong> ${updatedBest.score} / ${updatedBest.total}</li>
+           <li><strong>Best Time:</strong> ${formatTime(updatedBest.time)}</li>`;
       }
     }
 
