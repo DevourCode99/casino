@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- (CHANGED) Title -->
+  <!-- Page Title -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Single Question Quiz</title> <!-- was "Real Estate Broker Quiz - Revamped" -->
+  <title>Single Question Quiz</title>
 
   <style>
     /*********************************************************
@@ -171,6 +171,8 @@
      * MAIN CONTAINER FOR QUIZ
      *********************************************************/
     .container {
+      /* (CHANGED) Hide by default so it doesn't flash on page load */
+      display: none;
       width: 100%;
       max-width: 1200px;
       margin: 2rem 1rem;
@@ -181,7 +183,6 @@
       opacity: 0;
       transform: translateY(20px);
       padding: 3rem;
-      display: flex;
       flex-direction: column;
       align-items: center;
       transition: background-color 0.3s ease;
@@ -500,7 +501,7 @@
      * NEW MAIN MENU & STORY MODE STYLES
      *********************************************************/
     #new-main-menu {
-      display: none; 
+      display: block; /* (CHANGED) Show main menu immediately */
       text-align: center;
       margin-top: 2rem;
       animation: fadeIn 0.8s ease forwards; 
@@ -528,7 +529,6 @@
       transform: translateY(-1px);
     }
 
-    /* (UPDATED) Story mode container */
     #story-mode-container {
       display: none;
       width: 100%;
@@ -619,11 +619,11 @@
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
-  <!-- NEW MAIN MENU -->
+  <!-- NEW MAIN MENU (shown immediately) -->
   <div id="new-main-menu">
     <h1>Main Menu</h1>
     <button class="menu-option-btn" id="go-to-story">Story Mode</button>
-    <!-- (CHANGED) from "Questions" to "Single Question Quiz" -->
+    <!-- Single Question Quiz button -->
     <button class="menu-option-btn" id="go-to-quiz">Single Question Quiz</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
@@ -658,20 +658,15 @@
     <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
-  <!-- MAIN CONTAINER (QUIZ) -->
+  <!-- MAIN CONTAINER (QUIZ) - hidden by default -->
   <div class="container" id="main-container">
-
     <!-- START MENU -->
     <div id="start-menu">
-      <!-- (CHANGED) H1 text -->
-      <h1>Single Question Quiz</h1> <!-- was "Real Estate Broker Quiz - Revamped" -->
-
+      <h1>Single Question Quiz</h1>
       <p>
         You may select a chapter or "All", then choose how many questions you want. 
-        (Removed the display format option as requested.)
       </p>
 
-      <!-- (CHANGED) Label: "Choose a Chapter" + "All" + chapters 1..12 -->
       <div class="form-group">
         <label for="chapter-select">Choose a Chapter:</label>
         <select id="chapter-select">
@@ -691,15 +686,12 @@
         </select>
       </div>
 
-      <!-- (CHANGED) Number of Questions - adjusted automatically via CHAPTER_QUESTION_OPTIONS -->
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label>
-        <select id="question-count-select">
-          <!-- updated dynamically when user changes "chapter-select" -->
-        </select>
+        <select id="question-count-select"></select>
       </div>
 
-      <!-- (REMOVED) Display format radio-group -->
+      <!-- Removed the display format UI; we're always in 'oneAtATime' mode -->
 
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
@@ -711,7 +703,7 @@
     <!-- END START MENU -->
 
     <!-- QUIZ SECTION -->
-    <div id="quiz-section" style="display:none;">
+    <div id="quiz-section">
       <div class="progress-bar" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -736,7 +728,6 @@
       </div>
       <button class="btn btn-secondary" id="restart-btn">Restart</button>
     </div>
-
   </div><!-- end .container -->
 
   <script>
@@ -767,7 +758,7 @@
     const pauseTimerBtn       = document.getElementById('pause-timer-btn');
     const chapterSelect       = document.getElementById('chapter-select');
     const questionCountSelect = document.getElementById('question-count-select');
-    
+
     /* Audio */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
     const musicSettingsPanel  = document.getElementById('music-settings-panel');
@@ -798,7 +789,7 @@
     let currentQuestions = [];
     let questionQueue    = [];
     let userAnswers      = [];
-    let chosenFormat     = 'oneAtATime'; // (FORCED) no "allAtOnce" available
+    let chosenFormat     = 'oneAtATime'; // forced single-question approach
     let totalQuestions   = 0;
     let wrongAnsweredSet = new Set();
 
@@ -809,7 +800,6 @@
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
-     * (As requested: custom sets for each chapter, "all" is arbitrary)
      ********************************************************************/
     const CHAPTER_QUESTION_OPTIONS = {
       "all": [10, 20, 30, 45, 60, 75, 90],
@@ -846,8 +836,15 @@
     let sfxEnabled        = true;
 
     /********************************************************************
-     * EVENT LISTENERS (QUIZ)
+     * STORY MODE STATE
      ********************************************************************/
+    let storyDataSelected = []; 
+    let currentStoryIndex = 0;
+
+    /********************************************************************
+     * EVENT LISTENERS
+     ********************************************************************/
+    // QUIZ EVENTS
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       startQuiz();
@@ -882,9 +879,13 @@
       menuContent.classList.toggle('show');
       playSFX('tap');
     });
-    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
-    /* Audio settings */
+    // Update question counts on DOMContentLoaded (but don't show quiz yet)
+    window.addEventListener('DOMContentLoaded', () => {
+      updateQuestionCountOptions();
+    });
+
+    // AUDIO SETTINGS EVENTS
     musicSettingsBtn.addEventListener('click', () => {
       playSFX('tap');
       musicSettingsPanel.style.display = (musicSettingsPanel.style.display === 'block') ? 'none' : 'block';
@@ -922,14 +923,7 @@
       wrongSound.volume   = vol;
     });
 
-    /********************************************************************
-     * MAIN MENU EVENT LISTENERS (STORY MODE)
-     ********************************************************************/
-    window.addEventListener('load', () => {
-      newMainMenu.style.display = 'block';
-      mainContainer.style.display = 'none';
-    });
-
+    // MAIN MENU EVENTS (STORY MODE)
     goToStoryBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
@@ -940,7 +934,7 @@
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
-      mainContainer.style.display = 'block';
+      mainContainer.style.display = 'block'; // show quiz container
     });
 
     goToOptionsBtn.addEventListener('click', () => {
@@ -972,11 +966,9 @@
     }
 
     /********************************************************************
-     * STORY MODE FUNCTIONS (UNCHANGED)
+     * STORY MODE FUNCTIONS
+     * (CHANGED) fetch path: 'data/story/chapter_X.json'
      ********************************************************************/
-    let storyDataSelected = []; 
-    let currentStoryIndex = 0;
-
     function resetStoryModeUI() {
       storyEntriesDiv.innerHTML = '';
       storyChapterSelect.value = 'all';
@@ -1017,7 +1009,8 @@
 
     async function fetchStoryChapter(chapterNumber) {
       try {
-        const response = await fetch(`casino/data/story/chapter_${chapterNumber}.json`);
+        // (CHANGED) Fixing the path from 'casino/data/story' to 'data/story'
+        const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch story chapter ${chapterNumber}.`);
           return [];
@@ -1123,7 +1116,6 @@
         timerContainer.style.display = 'none';
       }
 
-      // We forcibly use "oneAtATime" since you removed "allAtOnce"
       questionQueue = [...currentQuestions];
       userAnswers   = [];
       nextQuestionBtn.style.display = 'none';
@@ -1283,13 +1275,11 @@
     }
 
     function handleNextQuestion() {
-      /* Not used in forced-correct flow */
+      // Not used in forced-correct flow
     }
 
     function handleSubmitQuiz() {
-      // If you had an "allAtOnce" approach, you'd do scoring here. 
-      // But we've removed it from the UI. 
-      // This function remains for legacy or completeness if needed.
+      // Legacy or "allAtOnce" approach if needed
       let score = 0;
       currentQuestions.forEach((q, i) => {
         if (userAnswers[i] === q.correctOption) {
@@ -1379,7 +1369,9 @@
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
 
+      // Return to main quiz container
       mainContainer.style.display = 'block';
+      // Hide the story container and show main menu is optional here
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'none';
     }
