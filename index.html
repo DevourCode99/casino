@@ -690,8 +690,6 @@
         </select>
       </div>
 
-      <!-- We removed the display format UI -->
-
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
         <input type="checkbox" id="timer-toggle" />
@@ -966,7 +964,7 @@
 
     /********************************************************************
      * STORY MODE FUNCTIONS
-     * We'll fetch "entries" from data/story/chapter_X.json
+     * Key correction: using "./data/story..." to ensure correct relative path
      ********************************************************************/
     function resetStoryModeUI() {
       storyEntriesDiv.innerHTML = '';
@@ -1006,9 +1004,10 @@
       loadCurrentStory();
     }
 
+    // CORRECTED fetch path: "./data/story/chapter_${chapterNumber}.json"
     async function fetchStoryChapter(chapterNumber) {
       try {
-        const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
+        const response = await fetch(`./data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch story chapter ${chapterNumber}.`);
           return [];
@@ -1079,7 +1078,6 @@
 
     /********************************************************************
      * START QUIZ
-     * For the quiz, we also load from the same 'entries'
      ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
@@ -1098,27 +1096,24 @@
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // We'll treat each "entry" like a "question" for the quiz
+      // We'll treat each "entry" like a "question"
       allFetched = removeDuplicateEntries(allFetched);
       advancedRandomMix(allFetched);
       currentQuestions = allFetched.slice(0, questionCount);
 
-      // For quiz logic, let's define:
+      // For quiz logic, each question is basically:
       // questionText = entry.keyTakeaway
-      // options = [entry.exampleStory, "...some filler?...", etc.] 
-      // We'll just have a single "correct" option be the exampleStory.
-      // If you want more sophisticated logic, adapt accordingly.
+      // correct answer = entry.exampleStory
       currentQuestions = currentQuestions.map(entry => ({
         questionText: entry.keyTakeaway,
-        // We'll only have one correct option, which is the exampleStory 
-        // plus some random distractors if you wish
         options: [
           entry.exampleStory,
           "Random Distractor #1",
           "Random Distractor #2",
           "Random Distractor #3"
         ],
-        correctOption: 0,   // index 0 is the correct
+        correctOption: 0,
+        exampleStory: entry.exampleStory, // to keep track
         explanation: "This entry's example story is the correct answer."
       }));
 
@@ -1139,6 +1134,7 @@
       showNextOneAtATimeQuestion();
     }
 
+    // ALSO CORRECTED fetch path here.
     async function fetchAllChapters() {
       let merged = [];
       for (let i = 1; i <= 12; i++) {
@@ -1150,13 +1146,12 @@
 
     async function fetchSingleChapter(chapterNumber) {
       try {
-        const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
+        const response = await fetch(`./data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
           return [];
         }
         const jsonData = await response.json();
-        // For the quiz, we use the 'entries' array
         return jsonData.entries || [];
       } catch (error) {
         console.error("Error fetching chapter data:", error);
@@ -1167,7 +1162,6 @@
     function removeDuplicateEntries(entriesArray) {
       const seen = new Set();
       return entriesArray.filter(e => {
-        // We'll treat e.keyTakeaway as unique
         if (!seen.has(e.keyTakeaway)) {
           seen.add(e.keyTakeaway);
           return true;
@@ -1206,10 +1200,10 @@
 
       shuffleArray(qData.options);
 
-      // we already know the "correct" is the exampleStory, but now it's possibly shuffled
+      // Determine the correctIndex again after shuffle:
       const correctIndex = qData.options.indexOf(qData.exampleStory) >= 0
         ? qData.options.indexOf(qData.exampleStory)
-        : qData.correctOption; // fallback
+        : qData.correctOption; 
 
       qData.correctOption = correctIndex;
 
@@ -1240,6 +1234,7 @@
             if (isCorrect) {
               questionQueue.shift();
             } else {
+              // if wrong, push it to the back of the queue
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -1301,7 +1296,6 @@
     }
 
     function handleSubmitQuiz() {
-      // If we had an "allAtOnce" approach, we'd evaluate here
       let score = 0;
       currentQuestions.forEach((q, i) => {
         if (userAnswers[i] === q.correctOption) {
