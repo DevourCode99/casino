@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Page Title -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Single Question Quiz</title>
@@ -171,7 +170,7 @@
      * MAIN CONTAINER FOR QUIZ
      *********************************************************/
     .container {
-      display: none; /* hidden by default so we start on the main menu */
+      display: none; /* hide by default */
       width: 100%;
       max-width: 1200px;
       margin: 2rem 1rem;
@@ -226,7 +225,7 @@
     }
 
     /*********************************************************
-     * QUIZ START MENU (be “beautiful” & centered)
+     * QUIZ START MENU
      *********************************************************/
     #start-menu {
       width: 100%;
@@ -296,7 +295,7 @@
     }
 
     /*********************************************************
-     * QUIZ SECTION, QUESTIONS, ETC. (uniform, centered)
+     * QUIZ SECTION
      *********************************************************/
     #quiz-section {
       width: 100%;
@@ -470,7 +469,7 @@
     }
 
     /*********************************************************
-     * MEDIA QUERIES (RESPONSIVE)
+     * MEDIA QUERIES
      *********************************************************/
     @media (max-width: 768px) {
       .options-grid {
@@ -622,7 +621,6 @@
   <div id="new-main-menu">
     <h1>Main Menu</h1>
     <button class="menu-option-btn" id="go-to-story">Story Mode</button>
-    <!-- Single Question Quiz button -->
     <button class="menu-option-btn" id="go-to-quiz">Single Question Quiz</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
   </div>
@@ -657,7 +655,7 @@
     <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
-  <!-- MAIN CONTAINER (QUIZ) - hidden by default -->
+  <!-- MAIN CONTAINER (QUIZ) -->
   <div class="container" id="main-container">
     <!-- START MENU -->
     <div id="start-menu">
@@ -687,10 +685,12 @@
 
       <div class="form-group">
         <label for="question-count-select">Number of Questions:</label>
-        <select id="question-count-select"></select>
+        <select id="question-count-select">
+          <!-- dynamically updated -->
+        </select>
       </div>
 
-      <!-- Removed the display format UI; always "oneAtATime" mode -->
+      <!-- We removed the display format UI -->
 
       <div class="form-group">
         <label for="timer-toggle">Enable Timer?</label>
@@ -933,7 +933,7 @@
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
-      mainContainer.style.display = 'block'; // show quiz container
+      mainContainer.style.display = 'block'; 
     });
 
     goToOptionsBtn.addEventListener('click', () => {
@@ -966,7 +966,7 @@
 
     /********************************************************************
      * STORY MODE FUNCTIONS
-     * Here we fetch from "data/story/chapter_1.json" ... "chapter_12.json"
+     * We'll fetch "entries" from data/story/chapter_X.json
      ********************************************************************/
     function resetStoryModeUI() {
       storyEntriesDiv.innerHTML = '';
@@ -1014,6 +1014,7 @@
           return [];
         }
         const jsonData = await response.json();
+        // Use the 'entries' array from the JSON
         return jsonData.entries || [];
       } catch (err) {
         console.error("Error fetching story data:", err);
@@ -1078,7 +1079,7 @@
 
     /********************************************************************
      * START QUIZ
-     * We also fetch from "data/story/chapter_X.json" for quiz questions
+     * For the quiz, we also load from the same 'entries'
      ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
@@ -1097,14 +1098,29 @@
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      allFetched = removeDuplicateQuestions(allFetched);
+      // We'll treat each "entry" like a "question" for the quiz
+      allFetched = removeDuplicateEntries(allFetched);
       advancedRandomMix(allFetched);
       currentQuestions = allFetched.slice(0, questionCount);
 
-      currentQuestions.forEach(q => {
-        shuffleArray(q.options);
-        q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
-      });
+      // For quiz logic, let's define:
+      // questionText = entry.keyTakeaway
+      // options = [entry.exampleStory, "...some filler?...", etc.] 
+      // We'll just have a single "correct" option be the exampleStory.
+      // If you want more sophisticated logic, adapt accordingly.
+      currentQuestions = currentQuestions.map(entry => ({
+        questionText: entry.keyTakeaway,
+        // We'll only have one correct option, which is the exampleStory 
+        // plus some random distractors if you wish
+        options: [
+          entry.exampleStory,
+          "Random Distractor #1",
+          "Random Distractor #2",
+          "Random Distractor #3"
+        ],
+        correctOption: 0,   // index 0 is the correct
+        explanation: "This entry's example story is the correct answer."
+      }));
 
       updateProgressBar(0);
 
@@ -1134,26 +1150,26 @@
 
     async function fetchSingleChapter(chapterNumber) {
       try {
-        // Also fetch quiz data from "data/story/chapter_X.json"
         const response = await fetch(`data/story/chapter_${chapterNumber}.json`);
         if (!response.ok) {
           console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
           return [];
         }
         const jsonData = await response.json();
-        // We'll assume "questions" field has the actual quiz Q&A
-        return jsonData.questions || [];
+        // For the quiz, we use the 'entries' array
+        return jsonData.entries || [];
       } catch (error) {
         console.error("Error fetching chapter data:", error);
         return [];
       }
     }
 
-    function removeDuplicateQuestions(questionArray) {
+    function removeDuplicateEntries(entriesArray) {
       const seen = new Set();
-      return questionArray.filter(q => {
-        if (!seen.has(q.questionText)) {
-          seen.add(q.questionText);
+      return entriesArray.filter(e => {
+        // We'll treat e.keyTakeaway as unique
+        if (!seen.has(e.keyTakeaway)) {
+          seen.add(e.keyTakeaway);
           return true;
         }
         return false;
@@ -1189,7 +1205,13 @@
       gridDiv.classList.add('options-grid');
 
       shuffleArray(qData.options);
-      qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
+
+      // we already know the "correct" is the exampleStory, but now it's possibly shuffled
+      const correctIndex = qData.options.indexOf(qData.exampleStory) >= 0
+        ? qData.options.indexOf(qData.exampleStory)
+        : qData.correctOption; // fallback
+
+      qData.correctOption = correctIndex;
 
       qData.options.forEach((optText, optIdx) => {
         const blockDiv = document.createElement('div');
@@ -1279,7 +1301,7 @@
     }
 
     function handleSubmitQuiz() {
-      // Legacy or "allAtOnce" approach if needed
+      // If we had an "allAtOnce" approach, we'd evaluate here
       let score = 0;
       currentQuestions.forEach((q, i) => {
         if (userAnswers[i] === q.correctOption) {
@@ -1332,7 +1354,7 @@
           const blockDiv = document.createElement('div');
           blockDiv.classList.add('option-block');
           blockDiv.textContent = optText;
-          if (optText === qData.correctAnswer) {
+          if (optText === qData.options[qData.correctOption]) {
             blockDiv.classList.add('correct');
           }
           gridDiv.appendChild(blockDiv);
@@ -1369,9 +1391,7 @@
       timerEl.textContent = 'Time: 00:00';
       timerContainer.style.display = 'none';
 
-      // Return to main quiz container
       mainContainer.style.display = 'block';
-      // Hide story mode for now
       newMainMenu.style.display = 'none';
       storyModeContainer.style.display = 'none';
     }
