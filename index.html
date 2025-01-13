@@ -176,8 +176,6 @@
       background: var(--white);
       border-radius: 0.5rem;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      /* Speed up: remove heavy animations for quick load */
-      opacity: 1;
       padding: 3rem;
       display: flex;
       flex-direction: column;
@@ -218,16 +216,13 @@
     }
 
     /*********************************************************
-     * QUIZ START MENU
+     * QUIZ START MENU 
      *********************************************************/
     #start-menu {
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
-      /* Speed up: remove fadeIn for immediate render */
-      opacity: 1;
-      transform: none;
     }
     #start-menu h1 {
       margin-bottom: 1.5rem;
@@ -294,7 +289,6 @@
       font-size: 1.3rem;
     }
 
-    /* 2x2 grid for one-at-a-time mode */
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -374,18 +368,6 @@
       transition: width 0.3s ease;
     }
 
-    /* TIME LIMIT CONTAINER */
-    #time-limit-container {
-      display: none;
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-    #time-limit-remaining {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
     /*********************************************************
      * RESULT SECTION
      *********************************************************/
@@ -442,13 +424,12 @@
     }
 
     /*********************************************************
-     * NEW MAIN MENU & STORY MODE
+     * NEW MAIN MENU
      *********************************************************/
     #new-main-menu {
+      display: block; 
       text-align: center;
       margin-top: 2rem;
-      opacity: 1;
-      transform: none;
     }
     #new-main-menu h1 {
       margin-bottom: 1.5rem;
@@ -469,45 +450,6 @@
     .menu-option-btn:hover {
       background-color: var(--primary-hover);
       transform: translateY(-1px);
-    }
-
-    #story-mode-container {
-      display: none;
-      width: 100%;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1rem;
-      text-align: center;
-    }
-    .story-card {
-      background: var(--light-blue);
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    body.dark-mode .story-card {
-      background: #2d3748;
-      border-color: #444;
-      color: var(--text-color-dark);
-    }
-    .story-key {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0 0 1rem 0;
-      white-space: normal;
-    }
-    .story-example {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.4;
-      white-space: normal;  
-    }
-    body.dark-mode .story-example {
-      color: #ccc;
-    }
-    .story-next-btn {
-      margin-top: 1rem;
     }
   </style>
 </head>
@@ -552,19 +494,11 @@
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
-  <!-- NEW MAIN MENU -->
-  <div id="new-main-menu" style="display:block;">
+  <!-- MAIN MENU (no story mode) -->
+  <div id="new-main-menu">
     <h1>Main Menu</h1>
-    <button class="menu-option-btn" id="go-to-story">Story Mode</button>
     <button class="menu-option-btn" id="go-to-quiz">Quiz Questions</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
-  </div>
-
-  <!-- STORY MODE CONTAINER -->
-  <div id="story-mode-container">
-    <h2>Story Mode - Now with 12 Chapters!</h2>
-    <div id="story-entries"></div>
-    <button class="btn btn-secondary" id="back-to-main-menu-btn" style="display:none;">Back to Main Menu</button>
   </div>
 
   <!-- MAIN CONTAINER (QUIZ) -->
@@ -573,7 +507,6 @@
     <!-- START MENU -->
     <div id="start-menu">
       <h1>Quiz Questions</h1>
-      <!-- (Removed old instructions; now just “Choose Chapter”) -->
 
       <div class="form-group">
         <label for="chapter-select">Choose Chapter:</label>
@@ -599,15 +532,6 @@
         <select id="question-count-select"></select>
       </div>
 
-      <!-- (NEW) Time limit feature, unchecked by default -->
-      <div class="form-group">
-        <label>
-          <input type="checkbox" id="time-limit-toggle" />
-          Set a time limit (minutes):
-        </label>
-        <input type="number" id="time-limit-input" min="1" max="300" value="5" disabled />
-      </div>
-
       <button class="btn" id="start-quiz-btn">Start Quiz</button>
     </div>
     <!-- END START MENU -->
@@ -618,12 +542,6 @@
         <div class="progress-fill" id="progress-fill"></div>
       </div>
       <div class="remaining-count" id="remaining-count"></div>
-
-      <!-- Time limit display container -->
-      <div id="time-limit-container">
-        <div>Time Remaining:</div>
-        <div id="time-limit-remaining">00:00</div>
-      </div>
 
       <div id="quiz-questions-container"></div>
       <button class="btn" id="next-question-btn" style="display: none;">Next Question</button>
@@ -647,13 +565,8 @@
      * DOM ELEMENTS
      ********************************************************************/
     const newMainMenu         = document.getElementById('new-main-menu');
-    const goToStoryBtn        = document.getElementById('go-to-story');
     const goToQuizBtn         = document.getElementById('go-to-quiz');
     const goToOptionsBtn      = document.getElementById('go-to-options');
-
-    const storyModeContainer  = document.getElementById('story-mode-container');
-    const storyEntriesDiv     = document.getElementById('story-entries');
-    const backToNewMenuBtn    = document.getElementById('back-to-main-menu-btn');
 
     const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
@@ -673,12 +586,8 @@
     const progressFill        = document.getElementById('progress-fill');
     const chapterSelect       = document.getElementById('chapter-select');
     const questionCountSelect = document.getElementById('question-count-select');
-
-    /* Time limit DOM */
-    const timeLimitToggle     = document.getElementById('time-limit-toggle');
-    const timeLimitInput      = document.getElementById('time-limit-input');
-    const timeLimitContainer  = document.getElementById('time-limit-container');
-    const timeLimitRemaining  = document.getElementById('time-limit-remaining');
+    const highScoreSection    = document.getElementById('high-score-section');
+    const highScoreList       = document.getElementById('high-score-list');
 
     /* Audio */
     const musicSettingsBtn    = document.getElementById('music-settings-btn');
@@ -692,20 +601,15 @@
     const sfxToggle           = document.getElementById('toggle-sfx');
     const sfxVolumeSlider     = document.getElementById('sfx-volume');
 
-    const highScoreSection    = document.getElementById('high-score-section');
-    const highScoreList       = document.getElementById('high-score-list');
-
     /********************************************************************
      * QUIZ STATE
      ********************************************************************/
     let currentQuestions = [];
     let questionQueue    = [];
     let totalQuestions   = 0;
-    let wrongAnsweredSet = new Set();
 
-    /* Timer logic replaced with optional countdown */
-    let countdownInterval = null;
-    let countdownSeconds  = 0;
+    /* We'll track how many times each question is answered incorrectly. */
+    /* We can store this in a property "wrongCount" for each question. */
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
@@ -727,27 +631,7 @@
     };
 
     /********************************************************************
-     * STORY DATA
-     ********************************************************************/
-    const storyDataAllChapters = {
-      "1": [
-        { "keyTakeaway": "Chapter 1 - Key #1","exampleStory": "Full text for story #1 in Chapter 1 ..." },
-        { "keyTakeaway": "Chapter 1 - Key #2","exampleStory": "Full text for story #2 in Chapter 1 ..." }
-      ],
-      "2": [
-        { "keyTakeaway": "Chapter 2 - Key #1","exampleStory": "Full text for story #1 in Chapter 2 ..." }
-      ],
-      // ...
-      "12": [
-        { "keyTakeaway": "Chapter 12 - Key #1","exampleStory": "Full text for story #1 in Chapter 12 ..." }
-      ]
-    };
-
-    let storyDataCurrentChapter = [];
-    let currentStoryIndex = 0;
-
-    /********************************************************************
-     * AUDIO
+     * AUDIO (Music & Sound Effects)
      ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
@@ -767,34 +651,14 @@
     /********************************************************************
      * EVENT LISTENERS
      ********************************************************************/
-    goToStoryBtn.addEventListener('click', () => {
-      playSFX('tap');
-      newMainMenu.style.display = 'none';
-      storyModeContainer.style.display = 'block';
-
-      storyDataCurrentChapter = shuffleArray([...storyDataAllChapters["1"]]);
-      if (storyDataCurrentChapter.length > 10) {
-        storyDataCurrentChapter = storyDataCurrentChapter.slice(0,10);
-      }
-      currentStoryIndex = 0; 
-      loadStoryAtIndex(currentStoryIndex);
-    });
-
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       newMainMenu.style.display = 'none';
       mainContainer.style.display = 'block';
     });
-
     goToOptionsBtn.addEventListener('click', () => {
       playSFX('tap');
       alert("You clicked 'Options for now' - Just a placeholder!");
-    });
-
-    backToNewMenuBtn.addEventListener('click', () => {
-      playSFX('tap');
-      storyModeContainer.style.display = 'none';
-      newMainMenu.style.display = 'block';
     });
 
     startQuizBtn.addEventListener('click', () => {
@@ -807,29 +671,28 @@
     });
     backToMenuBtn.addEventListener('click', () => {
       playSFX('tap');
-      // Always go back to first main menu
       resetQuiz();
       newMainMenu.style.display = 'block';
       mainContainer.style.display = 'none';
-      storyModeContainer.style.display = 'none';
     });
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
-    nextQuestionBtn.addEventListener('click', () => { playSFX('tap'); /* no-op here */ });
-    fullscreenBtn.addEventListener('click', () => { playSFX('tap'); toggleFullScreen(); });
-    darkModeToggle.addEventListener('click', () => { playSFX('tap'); toggleDarkMode(); });
+    nextQuestionBtn.addEventListener('click', () => {
+      // Not used directly; we handle "Next Question" in forced-correct logic
+      playSFX('tap');
+    });
+    fullscreenBtn.addEventListener('click', () => {
+      playSFX('tap');
+      toggleFullScreen();
+    });
+    darkModeToggle.addEventListener('click', () => {
+      playSFX('tap');
+      toggleDarkMode();
+    });
     menuToggle.addEventListener('click', () => {
       menuContent.classList.toggle('show');
       playSFX('tap');
     });
-
-    /* Time limit toggle logic */
-    timeLimitToggle.addEventListener('change', () => {
-      if (timeLimitToggle.checked) {
-        timeLimitInput.disabled = false;
-      } else {
-        timeLimitInput.disabled = true;
-      }
-    });
+    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
     /* Audio settings */
     musicSettingsBtn.addEventListener('click', () => {
@@ -869,49 +732,6 @@
       wrongSound.volume   = vol;
     });
 
-    window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
-
-    /********************************************************************
-     * STORY MODE
-     ********************************************************************/
-    function loadStoryAtIndex(index) {
-      backToNewMenuBtn.style.display = 'none';
-      if (index >= storyDataCurrentChapter.length) {
-        // done
-        storyEntriesDiv.innerHTML = '';
-        backToNewMenuBtn.style.display = 'inline-block';
-        return;
-      }
-      storyEntriesDiv.innerHTML = '';
-
-      const entry = storyDataCurrentChapter[index];
-      const card = document.createElement('div');
-      card.classList.add('story-card');
-
-      const keyDiv = document.createElement('div');
-      keyDiv.classList.add('story-key');
-      keyDiv.textContent = entry.keyTakeaway;
-
-      const exDiv = document.createElement('div');
-      exDiv.classList.add('story-example');
-      exDiv.textContent = entry.exampleStory;
-
-      card.appendChild(keyDiv);
-      card.appendChild(exDiv);
-
-      const nextBtn = document.createElement('button');
-      nextBtn.classList.add('btn', 'story-next-btn');
-      nextBtn.textContent = (index < storyDataCurrentChapter.length - 1) ? 'Next' : 'Finish';
-      nextBtn.addEventListener('click', () => {
-        playSFX('tap');
-        currentStoryIndex++;
-        loadStoryAtIndex(currentStoryIndex);
-      });
-
-      card.appendChild(nextBtn);
-      storyEntriesDiv.appendChild(card);
-    }
-
     /********************************************************************
      * UPDATE QUESTION COUNT OPTIONS
      ********************************************************************/
@@ -929,31 +749,30 @@
     }
 
     /********************************************************************
-     * START QUIZ (SPEED-UP: parallel fetch with Promise.all + single shuffle)
+     * START QUIZ
      ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
       quizSection.style.display = 'block';
       resultSection.style.display = 'none';
-      wrongAnsweredSet.clear();
 
       const chapterValue  = chapterSelect.value;
       totalQuestions      = parseInt(questionCountSelect.value, 10);
 
       let allFetched;
       if (chapterValue === 'allChapters') {
-        allFetched = await fetchAllChaptersParallel();
+        allFetched = await fetchAllChapters();
       } else {
         allFetched = await fetchSingleChapter(chapterValue);
       }
 
-      // remove duplicates + single shuffle
       allFetched = removeDuplicateQuestions(allFetched);
       shuffleArray(allFetched);
+      // Initialize wrongCount = 0 for each question
+      allFetched.forEach(q => { q.wrongCount = 0; });
 
       currentQuestions = allFetched.slice(0, totalQuestions);
 
-      // shuffle each question's options
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
@@ -961,33 +780,18 @@
 
       updateProgressBar(0);
 
-      // handle time limit
-      if (timeLimitToggle.checked) {
-        countdownSeconds = parseInt(timeLimitInput.value, 10) * 60;
-        if (countdownSeconds > 0) {
-          timeLimitContainer.style.display = 'block';
-          startCountdown();
-        } else {
-          timeLimitContainer.style.display = 'none';
-        }
-      } else {
-        timeLimitContainer.style.display = 'none';
-      }
-
       questionQueue = [...currentQuestions];
       updateRemainingCount();
       showNextOneAtATimeQuestion();
     }
 
-    // parallel fetch for all chapters
-    async function fetchAllChaptersParallel() {
-      const promises = [];
+    async function fetchAllChapters() {
+      let merged = [];
       for (let i = 1; i <= 12; i++) {
-        promises.push(fetchSingleChapter(i));
+        const data = await fetchSingleChapter(i);
+        merged = merged.concat(data);
       }
-      const results = await Promise.all(promises);
-      // merge
-      return results.flat();
+      return merged;
     }
 
     async function fetchSingleChapter(chapterNumber) {
@@ -1017,17 +821,11 @@
       });
     }
 
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
     /********************************************************************
      * ONE-AT-A-TIME MODE
      ********************************************************************/
+    let questionQueue = [];
+
     function showNextOneAtATimeQuestion() {
       if (questionQueue.length === 0) {
         handleAllCorrect();
@@ -1046,7 +844,6 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // shuffle again for the single question
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
@@ -1067,8 +864,10 @@
           } else {
             blockDiv.classList.add('wrong');
             playSFX('wrong');
-            wrongAnsweredSet.add(qData);
+            // increment wrongCount
+            qData.wrongCount += 1;
           }
+
           showFeedback(questionDiv, isCorrect, qData.explanation);
 
           nextQuestionBtn.style.display = 'inline-block';
@@ -1077,7 +876,6 @@
             if (isCorrect) {
               questionQueue.shift();
             } else {
-              // push question to the back
               questionQueue.push(questionQueue.shift());
             }
             updateRemainingCount();
@@ -1095,13 +893,11 @@
     function handleAllCorrect() {
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
-      if (countdownInterval) clearInterval(countdownInterval);
 
       scoreDisplay.textContent = `You eventually got them all correct!`;
-
-      // show user’s best time if relevant
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
-      // Add optional review / finish buttons
+
+      // Review All Questions Only
       const btnContainer = document.createElement('div');
 
       const finishBtn = document.createElement('button');
@@ -1112,16 +908,6 @@
         resetQuiz();
       });
       btnContainer.appendChild(finishBtn);
-
-      const reviewWrongBtn = document.createElement('button');
-      reviewWrongBtn.classList.add('btn');
-      reviewWrongBtn.textContent = 'Review Wrong Questions';
-      reviewWrongBtn.addEventListener('click', () => {
-        playSFX('tap');
-        resultSection.style.display = 'none';
-        reviewQuestions(Array.from(wrongAnsweredSet));
-      });
-      btnContainer.appendChild(reviewWrongBtn);
 
       const reviewAllBtn = document.createElement('button');
       reviewAllBtn.classList.add('btn');
@@ -1153,6 +939,9 @@
       }
     }
 
+    /********************************************************************
+     * REVIEW ALL QUESTIONS (with "You got it wrong X times" tab)
+     ********************************************************************/
     function reviewQuestions(questionsToReview) {
       quizSection.style.display = 'block';
       quizContainer.innerHTML = '';
@@ -1165,6 +954,17 @@
         const header = document.createElement('h3');
         header.textContent = `Q: ${qData.questionText}`;
         questionDiv.appendChild(header);
+
+        // "nice tab" showing how many times user got it wrong
+        const wrongTab = document.createElement('div');
+        wrongTab.style.background = '#ffe5e5';
+        wrongTab.style.border = '1px solid #d93025';
+        wrongTab.style.borderRadius = '0.25rem';
+        wrongTab.style.padding = '0.5rem';
+        wrongTab.style.marginTop = '0.5rem';
+        wrongTab.style.fontWeight = 'bold';
+        wrongTab.textContent = `Wrong attempts: ${qData.wrongCount}`;
+        questionDiv.appendChild(wrongTab);
 
         const gridDiv = document.createElement('div');
         gridDiv.classList.add('options-grid');
@@ -1187,10 +987,11 @@
           explEl.textContent = qData.explanation;
           questionDiv.appendChild(explEl);
         }
+
         quizContainer.appendChild(questionDiv);
       });
 
-      // Add a "Done Reviewing" button
+      // "Done Reviewing" button
       const doneReviewingBtn = document.createElement('button');
       doneReviewingBtn.classList.add('btn');
       doneReviewingBtn.textContent = 'Done Reviewing';
@@ -1202,61 +1003,21 @@
     }
 
     /********************************************************************
-     * TIME LIMIT (COUNTDOWN)
-     ********************************************************************/
-    function startCountdown() {
-      clearInterval(countdownInterval);
-      updateTimeLimitDisplay(countdownSeconds);
-      countdownInterval = setInterval(() => {
-        countdownSeconds--;
-        updateTimeLimitDisplay(countdownSeconds);
-        if (countdownSeconds <= 0) {
-          clearInterval(countdownInterval);
-          timeExpired();
-        }
-      }, 1000);
-    }
-
-    function timeExpired() {
-      // forcibly end the quiz
-      quizSection.style.display = 'none';
-      resultSection.style.display = 'block';
-      scoreDisplay.textContent = `Time's up! You didn't finish.`;
-      displayHighScores(0, totalQuestions, chapterSelect.value);
-    }
-
-    function updateTimeLimitDisplay(secs) {
-      const mins = Math.floor(secs / 60);
-      const rSecs = secs % 60;
-      const mm = mins < 10 ? '0'+mins : mins;
-      const ss = rSecs < 10 ? '0'+rSecs : rSecs;
-      timeLimitRemaining.textContent = `${mm}:${ss}`;
-    }
-
-    /********************************************************************
      * RESET QUIZ
      ********************************************************************/
     function resetQuiz() {
-      // Hide quiz stuff
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
       quizContainer.innerHTML = '';
       currentQuestions = [];
-      questionQueue    = [];
-      wrongAnsweredSet.clear();
-      totalQuestions   = 0;
+      questionQueue = [];
 
-      progressFill.style.width = '0%';
-
-      // Clear time limit
-      timeLimitContainer.style.display = 'none';
-      if (countdownInterval) clearInterval(countdownInterval);
+      updateProgressBar(0);
 
       mainContainer.style.display = 'none';
-      storyModeContainer.style.display = 'none';
 
-      // Clean leftover finish/review buttons
+      // Clean up leftover buttons in #result-section
       const leftoverBtns = resultSection.querySelectorAll('button');
       leftoverBtns.forEach(btn => {
         if (btn !== restartBtn) {
@@ -1298,16 +1059,22 @@
       }
     }
 
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function displayHighScores(score, total, chapter) {
       highScoreSection.style.display = 'block';
       const key = `chapter_${chapter}`;
       const stored = localStorage.getItem(key);
-      const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0, time: Infinity };
+      const bestScore = stored ? JSON.parse(stored) : { score: 0, total: 0 };
 
-      // We'll just store bestScore if user actually completed
-      // but time limit ended => 0
       if (score > bestScore.score) {
-        const newRecord = { score, total, time: 0 };
+        const newRecord = { score, total };
         localStorage.setItem(key, JSON.stringify(newRecord));
       }
 
