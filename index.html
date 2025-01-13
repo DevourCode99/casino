@@ -167,7 +167,7 @@
     }
 
     /*********************************************************
-     * MAIN CONTAINER FOR QUIZ
+     * MAIN CONTAINER
      *********************************************************/
     .container {
       width: 100%;
@@ -207,13 +207,6 @@
       background-color: var(--primary-hover);
       transform: translateY(-1px);
     }
-    .btn-warning {
-      background-color: var(--warning-color);
-      color: #333;
-    }
-    .btn-warning:hover {
-      filter: brightness(1.1);
-    }
 
     /*********************************************************
      * QUIZ START MENU 
@@ -240,7 +233,7 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    select, input[type="number"] {
+    select {
       width: 100%;
       max-width: 300px;
       padding: 0.6rem;
@@ -251,8 +244,7 @@
       font-size: 1rem;
       text-align: center;
     }
-    body.dark-mode select,
-    body.dark-mode input[type="number"] {
+    body.dark-mode select {
       background: #2a2a2a;
       color: #fff;
       border-color: #444;
@@ -397,34 +389,7 @@
     }
 
     /*********************************************************
-     * MEDIA QUERIES (RESPONSIVE)
-     *********************************************************/
-    @media (max-width: 768px) {
-      .options-grid {
-        grid-template-columns: 1fr;
-      }
-      .menu-toggle-button {
-        font-size: 0.9rem;
-      }
-      .container {
-        margin: 1rem;
-        padding: 1.5rem;
-      }
-      #fullscreen-btn {
-        bottom: 1rem;
-        right: 1rem;
-      }
-      .question-container {
-        padding: 1rem;
-      }
-      .option-block {
-        font-size: 1rem;
-        padding: 1rem;
-      }
-    }
-
-    /*********************************************************
-     * NEW MAIN MENU
+     * MAIN MENU
      *********************************************************/
     #new-main-menu {
       display: block; 
@@ -450,6 +415,50 @@
     .menu-option-btn:hover {
       background-color: var(--primary-hover);
       transform: translateY(-1px);
+    }
+
+    /*********************************************************
+     * SIMULATION MENU & DISPLAY
+     *********************************************************/
+    #simulation-menu-container {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    #simulation-entries {
+      display: none; 
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .simulation-card {
+      background: var(--light-blue);
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .simulation-key {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .simulation-example {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+      white-space: normal;
+      margin-bottom: 1rem;
+    }
+    body.dark-mode .simulation-card {
+      background: #2d3748;
+      border-color: #444;
+      color: var(--text-color-dark);
     }
   </style>
 </head>
@@ -494,14 +503,40 @@
   <!-- FULLSCREEN BUTTON -->
   <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
 
-  <!-- MAIN MENU (no story mode) -->
+  <!-- MAIN MENU -->
   <div id="new-main-menu">
     <h1>Main Menu</h1>
     <button class="menu-option-btn" id="go-to-quiz">Quiz Questions</button>
     <button class="menu-option-btn" id="go-to-options">Options for Now</button>
+    <button class="menu-option-btn" id="go-to-simulation">Simulation</button>
   </div>
 
-  <!-- MAIN CONTAINER (QUIZ) -->
+  <!-- SIMULATION MENU & RESULTS -->
+  <div id="simulation-menu-container" class="container">
+    <h2>Simulation Menu</h2>
+    <div class="form-group">
+      <label for="simulation-chapter-select">Choose Chapter:</label>
+      <select id="simulation-chapter-select">
+        <option value="allChapters">All Chapters</option>
+        <option value="1">Chapter 1</option>
+        <option value="2">Chapter 2</option>
+        <option value="3">Chapter 3</option>
+        <option value="4">Chapter 4</option>
+        <option value="5">Chapter 5</option>
+        <option value="6">Chapter 6</option>
+        <option value="7">Chapter 7</option>
+        <option value="8">Chapter 8</option>
+        <option value="9">Chapter 9</option>
+        <option value="10">Chapter 10</option>
+        <option value="11">Chapter 11</option>
+        <option value="12">Chapter 12</option>
+      </select>
+    </div>
+    <button class="btn" id="load-simulation-btn">Load Simulation</button>
+    <div id="simulation-entries"></div>
+  </div>
+
+  <!-- QUIZ CONTAINER -->
   <div class="container" id="main-container" style="display:none;">
 
     <!-- START MENU -->
@@ -564,10 +599,19 @@
     /********************************************************************
      * DOM ELEMENTS
      ********************************************************************/
+    /* MAIN MENU */
     const newMainMenu         = document.getElementById('new-main-menu');
     const goToQuizBtn         = document.getElementById('go-to-quiz');
     const goToOptionsBtn      = document.getElementById('go-to-options');
+    const goToSimulationBtn   = document.getElementById('go-to-simulation');
 
+    /* SIMULATION MENU */
+    const simulationMenuContainer = document.getElementById('simulation-menu-container');
+    const simulationChapterSelect = document.getElementById('simulation-chapter-select');
+    const loadSimulationBtn       = document.getElementById('load-simulation-btn');
+    const simulationEntriesDiv    = document.getElementById('simulation-entries');
+
+    /* QUIZ */
     const mainContainer       = document.getElementById('main-container');
     const startMenu           = document.getElementById('start-menu');
     const quizSection         = document.getElementById('quiz-section');
@@ -577,6 +621,7 @@
     const nextQuestionBtn     = document.getElementById('next-question-btn');
     const scoreDisplay        = document.getElementById('score-display');
     const restartBtn          = document.getElementById('restart-btn');
+
     const backToMenuBtn       = document.getElementById('back-to-menu-btn');
     const fullscreenBtn       = document.getElementById('fullscreen-btn');
     const darkModeToggle      = document.getElementById('dark-mode-toggle');
@@ -589,27 +634,12 @@
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
-    /* Audio */
-    const musicSettingsBtn    = document.getElementById('music-settings-btn');
-    const musicSettingsPanel  = document.getElementById('music-settings-panel');
-    const closeMusicBtn       = document.getElementById('close-music-settings');
-    const soundSettingsBtn    = document.getElementById('sound-settings-btn');
-    const soundSettingsPanel  = document.getElementById('sound-settings-panel');
-    const closeSfxBtn         = document.getElementById('close-sfx-settings');
-    const musicRadioInputs    = document.querySelectorAll('input[name="music-track"]');
-    const musicVolumeSlider   = document.getElementById('music-volume');
-    const sfxToggle           = document.getElementById('toggle-sfx');
-    const sfxVolumeSlider     = document.getElementById('sfx-volume');
-
     /********************************************************************
      * QUIZ STATE
      ********************************************************************/
     let currentQuestions = [];
     let questionQueue    = [];
     let totalQuestions   = 0;
-
-    /* We'll track how many times each question is answered incorrectly. */
-    /* We can store this in a property "wrongCount" for each question. */
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
@@ -631,7 +661,7 @@
     };
 
     /********************************************************************
-     * AUDIO (Music & Sound Effects)
+     * AUDIO (Music & SFX)
      ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
@@ -649,7 +679,7 @@
     let sfxEnabled        = true;
 
     /********************************************************************
-     * EVENT LISTENERS
+     * EVENT LISTENERS (MAIN MENU & COMMON)
      ********************************************************************/
     goToQuizBtn.addEventListener('click', () => {
       playSFX('tap');
@@ -660,7 +690,20 @@
       playSFX('tap');
       alert("You clicked 'Options for now' - Just a placeholder!");
     });
+    goToSimulationBtn.addEventListener('click', () => {
+      playSFX('tap');
+      newMainMenu.style.display = 'none';
+      simulationMenuContainer.style.display = 'block';
+      simulationEntriesDiv.style.display = 'none';
+    });
 
+    /* SIMULATION MODE */
+    loadSimulationBtn.addEventListener('click', () => {
+      playSFX('tap');
+      loadSimulationEntries();
+    });
+
+    /* QUIZ MODE */
     startQuizBtn.addEventListener('click', () => {
       playSFX('tap');
       startQuiz();
@@ -673,21 +716,11 @@
       playSFX('tap');
       resetQuiz();
       newMainMenu.style.display = 'block';
-      mainContainer.style.display = 'none';
     });
     chapterSelect.addEventListener('change', updateQuestionCountOptions);
-    nextQuestionBtn.addEventListener('click', () => {
-      // Not used directly; we handle "Next Question" in forced-correct logic
-      playSFX('tap');
-    });
-    fullscreenBtn.addEventListener('click', () => {
-      playSFX('tap');
-      toggleFullScreen();
-    });
-    darkModeToggle.addEventListener('click', () => {
-      playSFX('tap');
-      toggleDarkMode();
-    });
+    nextQuestionBtn.addEventListener('click', () => { playSFX('tap'); /* no-op here */ });
+    fullscreenBtn.addEventListener('click', () => { playSFX('tap'); toggleFullScreen(); });
+    darkModeToggle.addEventListener('click', () => { playSFX('tap'); toggleDarkMode(); });
     menuToggle.addEventListener('click', () => {
       menuContent.classList.toggle('show');
       playSFX('tap');
@@ -733,7 +766,68 @@
     });
 
     /********************************************************************
-     * UPDATE QUESTION COUNT OPTIONS
+     * SIMULATION LOGIC
+     ********************************************************************/
+    async function loadSimulationEntries() {
+      simulationEntriesDiv.style.display = 'none';
+      simulationEntriesDiv.innerHTML     = '';
+
+      const selectedChapter = simulationChapterSelect.value;
+      let allStories = [];
+
+      if (selectedChapter === 'allChapters') {
+        // fetch all 12
+        for (let i = 1; i <= 12; i++) {
+          const data = await fetchSimulationChapter(i);
+          allStories = allStories.concat(data);
+        }
+      } else {
+        const data = await fetchSimulationChapter(selectedChapter);
+        allStories = allStories.concat(data);
+      }
+
+      // Now display them in the nice layout
+      allStories.forEach(entry => {
+        const card = document.createElement('div');
+        card.classList.add('simulation-card');
+
+        const keyDiv = document.createElement('div');
+        keyDiv.classList.add('simulation-key');
+        keyDiv.textContent = `Key Takeaway: ${entry.keyTakeaway}`;
+
+        const exampleDiv = document.createElement('div');
+        exampleDiv.classList.add('simulation-example');
+        exampleDiv.textContent = `Example Story: ${entry.exampleStory}`;
+
+        card.appendChild(keyDiv);
+        card.appendChild(exampleDiv);
+
+        simulationEntriesDiv.appendChild(card);
+      });
+
+      simulationEntriesDiv.style.display = 'block';
+    }
+
+    async function fetchSimulationChapter(chNum) {
+      // e.g. data/story/chapter_1 or chapter_2 etc.
+      const url = `data/story/chapter_${chNum}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          console.warn(`Failed to fetch simulation chapter ${chNum}. Using empty array.`);
+          return [];
+        }
+        const jsonData = await response.json();
+        // We'll ignore referenceCode, we only want "entries"
+        return jsonData.entries || [];
+      } catch (err) {
+        console.error("Error fetching simulation chapter data:", err);
+        return [];
+      }
+    }
+
+    /********************************************************************
+     * QUIZ LOGIC
      ********************************************************************/
     function updateQuestionCountOptions() {
       const selected = chapterSelect.value;
@@ -748,64 +842,59 @@
       questionCountSelect.selectedIndex = 0;
     }
 
-    /********************************************************************
-     * START QUIZ
-     ********************************************************************/
     async function startQuiz() {
       startMenu.style.display   = 'none';
       quizSection.style.display = 'block';
       resultSection.style.display = 'none';
 
-      const chapterValue  = chapterSelect.value;
-      totalQuestions      = parseInt(questionCountSelect.value, 10);
+      const chapterValue = chapterSelect.value;
+      totalQuestions     = parseInt(questionCountSelect.value, 10);
 
       let allFetched;
       if (chapterValue === 'allChapters') {
-        allFetched = await fetchAllChapters();
+        allFetched = await fetchAllQuizChapters();
       } else {
-        allFetched = await fetchSingleChapter(chapterValue);
+        allFetched = await fetchSingleQuizChapter(chapterValue);
       }
 
+      // remove duplicates, shuffle, slice
       allFetched = removeDuplicateQuestions(allFetched);
       shuffleArray(allFetched);
-      // Initialize wrongCount = 0 for each question
-      allFetched.forEach(q => { q.wrongCount = 0; });
-
       currentQuestions = allFetched.slice(0, totalQuestions);
 
+      // shuffle each question's options
       currentQuestions.forEach(q => {
         shuffleArray(q.options);
         q.correctOption = q.options.findIndex(opt => opt === q.correctAnswer);
       });
 
       updateProgressBar(0);
-
       questionQueue = [...currentQuestions];
       updateRemainingCount();
       showNextOneAtATimeQuestion();
     }
 
-    async function fetchAllChapters() {
+    async function fetchAllQuizChapters() {
       let merged = [];
       for (let i = 1; i <= 12; i++) {
-        const data = await fetchSingleChapter(i);
+        const data = await fetchSingleQuizChapter(i);
         merged = merged.concat(data);
       }
       return merged;
     }
 
-    async function fetchSingleChapter(chapterNumber) {
+    async function fetchSingleQuizChapter(chapterNumber) {
       const url = `./data/chapter${chapterNumber}.json`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
-          console.warn(`Failed to fetch chapter ${chapterNumber}. Using empty array.`);
+          console.warn(`Failed to fetch quiz chapter ${chapterNumber}. Using empty array.`);
           return [];
         }
         const jsonData = await response.json();
         return jsonData.questions || [];
       } catch (error) {
-        console.error("Error fetching chapter data:", error);
+        console.error("Error fetching quiz chapter data:", error);
         return [];
       }
     }
@@ -821,14 +910,9 @@
       });
     }
 
-    /********************************************************************
-     * ONE-AT-A-TIME MODE
-     ********************************************************************/
-    let questionQueue = [];
-
     function showNextOneAtATimeQuestion() {
       if (questionQueue.length === 0) {
-        handleAllCorrect();
+        handleSubmitOneAtATime();
         return;
       }
       quizContainer.innerHTML = '';
@@ -844,10 +928,11 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
+      // shuffle again just for safety
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
-      qData.options.forEach(optText => {
+      qData.options.forEach((optText) => {
         const blockDiv = document.createElement('div');
         blockDiv.classList.add('option-block');
         blockDiv.textContent = optText;
@@ -864,10 +949,7 @@
           } else {
             blockDiv.classList.add('wrong');
             playSFX('wrong');
-            // increment wrongCount
-            qData.wrongCount += 1;
           }
-
           showFeedback(questionDiv, isCorrect, qData.explanation);
 
           nextQuestionBtn.style.display = 'inline-block';
@@ -890,14 +972,14 @@
       quizContainer.appendChild(questionDiv);
     }
 
-    function handleAllCorrect() {
+    function handleSubmitOneAtATime() {
       quizSection.style.display = 'none';
       resultSection.style.display = 'block';
 
       scoreDisplay.textContent = `You eventually got them all correct!`;
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
-      // Review All Questions Only
+      // We only have "Finish" and "Review All"
       const btnContainer = document.createElement('div');
 
       const finishBtn = document.createElement('button');
@@ -939,14 +1021,11 @@
       }
     }
 
-    /********************************************************************
-     * REVIEW ALL QUESTIONS (with "You got it wrong X times" tab)
-     ********************************************************************/
     function reviewQuestions(questionsToReview) {
       quizSection.style.display = 'block';
       quizContainer.innerHTML = '';
 
-      questionsToReview.forEach(qData => {
+      questionsToReview.forEach((qData) => {
         const sortedOptions = [...qData.options];
         const questionDiv = document.createElement('div');
         questionDiv.classList.add('question-container');
@@ -954,17 +1033,6 @@
         const header = document.createElement('h3');
         header.textContent = `Q: ${qData.questionText}`;
         questionDiv.appendChild(header);
-
-        // "nice tab" showing how many times user got it wrong
-        const wrongTab = document.createElement('div');
-        wrongTab.style.background = '#ffe5e5';
-        wrongTab.style.border = '1px solid #d93025';
-        wrongTab.style.borderRadius = '0.25rem';
-        wrongTab.style.padding = '0.5rem';
-        wrongTab.style.marginTop = '0.5rem';
-        wrongTab.style.fontWeight = 'bold';
-        wrongTab.textContent = `Wrong attempts: ${qData.wrongCount}`;
-        questionDiv.appendChild(wrongTab);
 
         const gridDiv = document.createElement('div');
         gridDiv.classList.add('options-grid');
@@ -987,11 +1055,9 @@
           explEl.textContent = qData.explanation;
           questionDiv.appendChild(explEl);
         }
-
         quizContainer.appendChild(questionDiv);
       });
 
-      // "Done Reviewing" button
       const doneReviewingBtn = document.createElement('button');
       doneReviewingBtn.classList.add('btn');
       doneReviewingBtn.textContent = 'Done Reviewing';
@@ -1006,18 +1072,26 @@
      * RESET QUIZ
      ********************************************************************/
     function resetQuiz() {
+      // Hide quiz stuff
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
       quizContainer.innerHTML = '';
       currentQuestions = [];
       questionQueue = [];
+      totalQuestions  = 0;
 
-      updateProgressBar(0);
+      progressFill.style.width = '0%';
 
+      // Hide simulation
+      simulationMenuContainer.style.display = 'none';
+      simulationEntriesDiv.style.display = 'none';
+      simulationEntriesDiv.innerHTML = '';
+
+      // Return to main menu hidden
       mainContainer.style.display = 'none';
 
-      // Clean up leftover buttons in #result-section
+      // Clean leftover finish/review buttons in result-section
       const leftoverBtns = resultSection.querySelectorAll('button');
       leftoverBtns.forEach(btn => {
         if (btn !== restartBtn) {
@@ -1089,17 +1163,6 @@
       }
     }
 
-    function updateMusicChoice(index) {
-      if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
-        musicTracks[currentMusicIndex].pause();
-        musicTracks[currentMusicIndex].currentTime = 0;
-      }
-      currentMusicIndex = index;
-      if (index >= 0 && index < musicTracks.length) {
-        musicTracks[index].play();
-      }
-    }
-
     function playSFX(type) {
       if (!sfxEnabled) return;
       let sound = null;
@@ -1111,6 +1174,17 @@
       }
       sound.currentTime = 0;
       sound.play();
+    }
+
+    function updateMusicChoice(index) {
+      if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
+        musicTracks[currentMusicIndex].pause();
+        musicTracks[currentMusicIndex].currentTime = 0;
+      }
+      currentMusicIndex = index;
+      if (index >= 0 && index < musicTracks.length) {
+        musicTracks[index].play();
+      }
     }
   </script>
 </body>
