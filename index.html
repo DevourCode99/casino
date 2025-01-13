@@ -643,6 +643,19 @@
     const highScoreSection    = document.getElementById('high-score-section');
     const highScoreList       = document.getElementById('high-score-list');
 
+    /* AUDIO SETTINGS BUTTONS & PANELS */
+    const musicSettingsBtn    = document.getElementById('music-settings-btn');
+    const musicSettingsPanel  = document.getElementById('music-settings-panel');
+    const closeMusicBtn       = document.getElementById('close-music-settings');
+    const soundSettingsBtn    = document.getElementById('sound-settings-btn');
+    const soundSettingsPanel  = document.getElementById('sound-settings-panel');
+    const closeSfxBtn         = document.getElementById('close-sfx-settings');
+
+    /* AUDIO CONTROLS */
+    const musicVolume = document.getElementById('music-volume');
+    const toggleSfx   = document.getElementById('toggle-sfx');
+    const sfxVolume   = document.getElementById('sfx-volume');
+
     /********************************************************************
      * QUIZ STATE
      ********************************************************************/
@@ -751,7 +764,7 @@
     });
     window.addEventListener('DOMContentLoaded', updateQuestionCountOptions);
 
-    /* Audio settings */
+    /* Audio settings button toggles */
     musicSettingsBtn.addEventListener('click', () => {
       playSFX('tap');
       musicSettingsPanel.style.display = (musicSettingsPanel.style.display === 'block') ? 'none' : 'block';
@@ -769,6 +782,33 @@
     closeSfxBtn.addEventListener('click', () => {
       playSFX('tap');
       soundSettingsPanel.style.display = 'none';
+    });
+
+    /* Radio buttons for music track selection */
+    document.querySelectorAll('input[name="music-track"]').forEach(radio => {
+      radio.addEventListener('change', e => {
+        const value = parseInt(e.target.value, 10);
+        updateMusicChoice(value);
+      });
+    });
+
+    /* Music volume */
+    musicVolume.addEventListener('input', e => {
+      const volume = parseFloat(e.target.value);
+      musicTracks.forEach(track => {
+        track.volume = volume;
+      });
+    });
+
+    /* Toggle and volume for SFX */
+    toggleSfx.addEventListener('change', e => {
+      sfxEnabled = e.target.checked;
+    });
+    sfxVolume.addEventListener('input', e => {
+      const volume = parseFloat(e.target.value);
+      correctSound.volume = volume;
+      tapSound.volume = volume;
+      wrongSound.volume = volume;
     });
 
     /********************************************************************
