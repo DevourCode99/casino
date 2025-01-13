@@ -418,7 +418,7 @@
     }
 
     /*********************************************************
-     * SIMULATION MENU & DISPLAY
+     * SIMULATION MENU & ONE-AT-A-TIME DISPLAY
      *********************************************************/
     #simulation-menu-container {
       display: none;
@@ -427,21 +427,25 @@
       margin: 2rem auto;
       text-align: center;
     }
-    #simulation-entries {
-      display: none; 
-      margin-top: 2rem;
+    #simulation-display {
+      display: none;
+      width: 100%;
+      max-width: 700px;
+      margin: 2rem auto;
       text-align: center;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .simulation-card {
+    .simulation-container {
       background: var(--light-blue);
       border: 1px solid #ccc;
       border-radius: 0.25rem;
-      padding: 2rem;
+      padding: 1.5rem;
       margin-bottom: 1.5rem;
       text-align: center;
+    }
+    body.dark-mode .simulation-container {
+      background: #2d3748;
+      border-color: #444;
+      color: var(--text-color-dark);
     }
     .simulation-key {
       font-size: 1.2rem;
@@ -453,12 +457,9 @@
       color: #555;
       line-height: 1.4;
       white-space: normal;
-      margin-bottom: 1rem;
     }
-    body.dark-mode .simulation-card {
-      background: #2d3748;
-      border-color: #444;
-      color: var(--text-color-dark);
+    body.dark-mode .simulation-example {
+      color: #ccc;
     }
   </style>
 </head>
@@ -511,7 +512,7 @@
     <button class="menu-option-btn" id="go-to-simulation">Simulation</button>
   </div>
 
-  <!-- SIMULATION MENU & RESULTS -->
+  <!-- SIMULATION MENU -->
   <div id="simulation-menu-container" class="container">
     <h2>Simulation Menu</h2>
     <div class="form-group">
@@ -533,7 +534,12 @@
       </select>
     </div>
     <button class="btn" id="load-simulation-btn">Load Simulation</button>
-    <div id="simulation-entries"></div>
+  </div>
+
+  <!-- SIMULATION ONE-AT-A-TIME DISPLAY -->
+  <div id="simulation-display" class="container">
+    <div id="simulation-active-card" class="simulation-container" style="display:none;"></div>
+    <button class="btn" id="next-simulation-btn" style="display:none;">Next</button>
   </div>
 
   <!-- QUIZ CONTAINER -->
@@ -600,16 +606,20 @@
      * DOM ELEMENTS
      ********************************************************************/
     /* MAIN MENU */
-    const newMainMenu         = document.getElementById('new-main-menu');
-    const goToQuizBtn         = document.getElementById('go-to-quiz');
-    const goToOptionsBtn      = document.getElementById('go-to-options');
-    const goToSimulationBtn   = document.getElementById('go-to-simulation');
+    const newMainMenu           = document.getElementById('new-main-menu');
+    const goToQuizBtn           = document.getElementById('go-to-quiz');
+    const goToOptionsBtn        = document.getElementById('go-to-options');
+    const goToSimulationBtn     = document.getElementById('go-to-simulation');
 
     /* SIMULATION MENU */
     const simulationMenuContainer = document.getElementById('simulation-menu-container');
     const simulationChapterSelect = document.getElementById('simulation-chapter-select');
     const loadSimulationBtn       = document.getElementById('load-simulation-btn');
-    const simulationEntriesDiv    = document.getElementById('simulation-entries');
+
+    /* SIMULATION ONE-AT-A-TIME DISPLAY */
+    const simulationDisplay       = document.getElementById('simulation-display');
+    const simulationActiveCard    = document.getElementById('simulation-active-card');
+    const nextSimulationBtn       = document.getElementById('next-simulation-btn');
 
     /* QUIZ */
     const mainContainer       = document.getElementById('main-container');
@@ -621,7 +631,6 @@
     const nextQuestionBtn     = document.getElementById('next-question-btn');
     const scoreDisplay        = document.getElementById('score-display');
     const restartBtn          = document.getElementById('restart-btn');
-
     const backToMenuBtn       = document.getElementById('back-to-menu-btn');
     const fullscreenBtn       = document.getElementById('fullscreen-btn');
     const darkModeToggle      = document.getElementById('dark-mode-toggle');
@@ -640,6 +649,10 @@
     let currentQuestions = [];
     let questionQueue    = [];
     let totalQuestions   = 0;
+
+    /* SIMULATION STATE */
+    let simulationQueue  = [];
+    let simCurrentIndex  = 0;
 
     /********************************************************************
      * CHAPTER -> QUESTION COUNT MAP
@@ -694,13 +707,24 @@
       playSFX('tap');
       newMainMenu.style.display = 'none';
       simulationMenuContainer.style.display = 'block';
-      simulationEntriesDiv.style.display = 'none';
+      simulationDisplay.style.display = 'none';
     });
 
     /* SIMULATION MODE */
     loadSimulationBtn.addEventListener('click', () => {
       playSFX('tap');
-      loadSimulationEntries();
+      startSimulationFlow();
+    });
+    nextSimulationBtn.addEventListener('click', () => {
+      playSFX('tap');
+      simCurrentIndex++;
+      if (simCurrentIndex >= simulationQueue.length) {
+        // Done with 10 entries
+        resetQuiz(); // re-use reset to hide everything + show main menu
+        newMainMenu.style.display = 'block';
+      } else {
+        showOneSimulationEntry(simulationQueue[simCurrentIndex]);
+      }
     });
 
     /* QUIZ MODE */
@@ -768,48 +792,63 @@
     /********************************************************************
      * SIMULATION LOGIC
      ********************************************************************/
-    async function loadSimulationEntries() {
-      simulationEntriesDiv.style.display = 'none';
-      simulationEntriesDiv.innerHTML     = '';
+    async function startSimulationFlow() {
+      simulationDisplay.style.display = 'none';
+      simulationActiveCard.style.display = 'none';
+      nextSimulationBtn.style.display = 'none';
 
-      const selectedChapter = simulationChapterSelect.value;
+      // fetch data
+      const selected = simulationChapterSelect.value;
       let allStories = [];
-
-      if (selectedChapter === 'allChapters') {
-        // fetch all 12
+      if (selected === 'allChapters') {
+        // fetch from all 12
         for (let i = 1; i <= 12; i++) {
           const data = await fetchSimulationChapter(i);
           allStories = allStories.concat(data);
         }
       } else {
-        const data = await fetchSimulationChapter(selectedChapter);
+        const data = await fetchSimulationChapter(selected);
         allStories = allStories.concat(data);
       }
 
-      // Now display them in the nice layout
-      allStories.forEach(entry => {
-        const card = document.createElement('div');
-        card.classList.add('simulation-card');
+      // randomize, pick up to 10
+      shuffleArray(allStories);
+      simulationQueue = allStories.slice(0, 10);
+      simCurrentIndex = 0;
 
-        const keyDiv = document.createElement('div');
-        keyDiv.classList.add('simulation-key');
-        keyDiv.textContent = `Key Takeaway: ${entry.keyTakeaway}`;
+      simulationMenuContainer.style.display = 'none';
+      simulationDisplay.style.display = 'block';
 
-        const exampleDiv = document.createElement('div');
-        exampleDiv.classList.add('simulation-example');
-        exampleDiv.textContent = `Example Story: ${entry.exampleStory}`;
+      if (simulationQueue.length === 0) {
+        // Nothing found, just reset
+        alert("No simulation entries found!");
+        resetQuiz();
+        newMainMenu.style.display = 'block';
+        return;
+      }
 
-        card.appendChild(keyDiv);
-        card.appendChild(exampleDiv);
+      showOneSimulationEntry(simulationQueue[0]);
+    }
 
-        simulationEntriesDiv.appendChild(card);
-      });
+    function showOneSimulationEntry(entry) {
+      simulationActiveCard.innerHTML = '';
+      simulationActiveCard.style.display = 'block';
+      nextSimulationBtn.style.display = 'inline-block';
 
-      simulationEntriesDiv.style.display = 'block';
+      const keyDiv = document.createElement('div');
+      keyDiv.classList.add('simulation-key');
+      keyDiv.textContent = `Key Takeaway: ${entry.keyTakeaway}`;
+
+      const exampleDiv = document.createElement('div');
+      exampleDiv.classList.add('simulation-example');
+      exampleDiv.textContent = `Example Story: ${entry.exampleStory}`;
+
+      simulationActiveCard.appendChild(keyDiv);
+      simulationActiveCard.appendChild(exampleDiv);
     }
 
     async function fetchSimulationChapter(chNum) {
-      // e.g. data/story/chapter_1 or chapter_2 etc.
+      // data/story/chapter_X
       const url = `data/story/chapter_${chNum}`;
       try {
         const response = await fetch(url);
@@ -818,7 +857,6 @@
           return [];
         }
         const jsonData = await response.json();
-        // We'll ignore referenceCode, we only want "entries"
         return jsonData.entries || [];
       } catch (err) {
         console.error("Error fetching simulation chapter data:", err);
@@ -1069,24 +1107,28 @@
     }
 
     /********************************************************************
-     * RESET QUIZ
+     * RESET QUIZ (also resets Simulation)
      ********************************************************************/
     function resetQuiz() {
       // Hide quiz stuff
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
-      quizContainer.innerHTML = '';
-      currentQuestions = [];
-      questionQueue = [];
-      totalQuestions  = 0;
+      quizContainer.innerHTML   = '';
+      currentQuestions          = [];
+      questionQueue            = [];
+      totalQuestions           = 0;
 
       progressFill.style.width = '0%';
 
       // Hide simulation
       simulationMenuContainer.style.display = 'none';
-      simulationEntriesDiv.style.display = 'none';
-      simulationEntriesDiv.innerHTML = '';
+      simulationDisplay.style.display       = 'none';
+      simulationActiveCard.innerHTML        = '';
+      simulationActiveCard.style.display    = 'none';
+      nextSimulationBtn.style.display       = 'none';
+      simulationQueue  = [];
+      simCurrentIndex  = 0;
 
       // Return to main menu hidden
       mainContainer.style.display = 'none';
