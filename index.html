@@ -674,7 +674,7 @@
     };
 
     /********************************************************************
-     * AUDIO (Music & SFX)
+     * AUDIO (Music & Sound Effects)
      ********************************************************************/
     const musicTracks = [
       new Audio('sound/music/music_1.mp3'),
@@ -685,8 +685,8 @@
     musicTracks.forEach(track => { track.loop = true; });
 
     const correctSound = new Audio('sound/sound effects/correct.wav');
-    const tapSound    = new Audio('sound/sound effects/tap.wav');
-    const wrongSound  = new Audio('sound/sound effects/wrong.wav');
+    const tapSound     = new Audio('sound/sound effects/tap.wav');
+    const wrongSound   = new Audio('sound/sound effects/wrong.wav');
 
     let currentMusicIndex = -1; 
     let sfxEnabled        = true;
@@ -770,24 +770,6 @@
       playSFX('tap');
       soundSettingsPanel.style.display = 'none';
     });
-    musicRadioInputs.forEach(input => {
-      input.addEventListener('change', () => {
-        updateMusicChoice(parseInt(input.value, 10));
-      });
-    });
-    musicVolumeSlider.addEventListener('input', () => {
-      const vol = parseFloat(musicVolumeSlider.value);
-      musicTracks.forEach(track => { track.volume = vol; });
-    });
-    sfxToggle.addEventListener('change', () => {
-      sfxEnabled = sfxToggle.checked;
-    });
-    sfxVolumeSlider.addEventListener('input', () => {
-      const vol = parseFloat(sfxVolumeSlider.value);
-      correctSound.volume = vol;
-      tapSound.volume     = vol;
-      wrongSound.volume   = vol;
-    });
 
     /********************************************************************
      * SIMULATION LOGIC
@@ -820,7 +802,6 @@
       simulationDisplay.style.display = 'block';
 
       if (simulationQueue.length === 0) {
-        // Nothing found, just reset
         alert("No simulation entries found!");
         resetQuiz();
         newMainMenu.style.display = 'block';
@@ -966,7 +947,6 @@
       const gridDiv = document.createElement('div');
       gridDiv.classList.add('options-grid');
 
-      // shuffle again just for safety
       shuffleArray(qData.options);
       qData.correctOption = qData.options.findIndex(opt => opt === qData.correctAnswer);
 
@@ -1017,7 +997,6 @@
       scoreDisplay.textContent = `You eventually got them all correct!`;
       displayHighScores(totalQuestions, totalQuestions, chapterSelect.value);
 
-      // We only have "Finish" and "Review All"
       const btnContainer = document.createElement('div');
 
       const finishBtn = document.createElement('button');
@@ -1110,7 +1089,6 @@
      * RESET QUIZ (also resets Simulation)
      ********************************************************************/
     function resetQuiz() {
-      // Hide quiz stuff
       startMenu.style.display   = 'block';
       quizSection.style.display = 'none';
       resultSection.style.display = 'none';
@@ -1121,7 +1099,6 @@
 
       progressFill.style.width = '0%';
 
-      // Hide simulation
       simulationMenuContainer.style.display = 'none';
       simulationDisplay.style.display       = 'none';
       simulationActiveCard.innerHTML        = '';
@@ -1130,10 +1107,8 @@
       simulationQueue  = [];
       simCurrentIndex  = 0;
 
-      // Return to main menu hidden
       mainContainer.style.display = 'none';
 
-      // Clean leftover finish/review buttons in result-section
       const leftoverBtns = resultSection.querySelectorAll('button');
       leftoverBtns.forEach(btn => {
         if (btn !== restartBtn) {
@@ -1219,11 +1194,13 @@
     }
 
     function updateMusicChoice(index) {
+      // Stop any currently playing track
       if (currentMusicIndex >= 0 && currentMusicIndex < musicTracks.length) {
         musicTracks[currentMusicIndex].pause();
         musicTracks[currentMusicIndex].currentTime = 0;
       }
       currentMusicIndex = index;
+      // Start new track if valid
       if (index >= 0 && index < musicTracks.length) {
         musicTracks[index].play();
       }
